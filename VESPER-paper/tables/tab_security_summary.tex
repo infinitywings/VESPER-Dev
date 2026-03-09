@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+\caption{Security Assessment Summary across five attack suites.
+Per-scene counts (35 attacks: 18 firmware + 14 network + 3 phantom-delay),
+aggregated across 28~scenes.  Suites~4--5 are standalone demonstrations
+against the SmartThings Schema Connector and ESP32 firmware respectively.}
+\label{tab:security-summary}
+\small
+\begin{tabular}{l r r r r}
+\toprule
+\textbf{Suite} & \textbf{Attacks} & \textbf{Exploited} & \textbf{Rate} & \textbf{CVSS} \\
+\midrule
+\multicolumn{5}{l}{\textit{Per-scene suites ($\times$28 scenes)}} \\
+\quad 1.\ Firmware         & 504 & 294 & 58.3\% & 7.8 \\
+\quad 2.\ Network          & 392 & 288 & 73.5\% & 7.5 \\
+\quad 3.\ Phantom-Delay    &  84 &  78 & 92.9\% & 9.3 \\
+\midrule
+\multicolumn{5}{l}{\textit{Standalone demonstrations}} \\
+\quad 4.\ Malicious SmartApp    & 1 & 1 & 100\% & 8.8 \\
+\quad 5.\ ESP32 Buffer Overflow & 1 & 1 & 100\% & 9.8 \\
+\midrule
+\textbf{Combined} & \textbf{982} & \textbf{662} & \textbf{67.4\%} & \textbf{8.1} \\
+\bottomrule
+\end{tabular}
+\\[2pt]
+\footnotesize Suite~4 steals OAuth tokens and injects commands via a rogue SmartApp (CWE-269/862).
+Suite~5 overflows a 128-byte command buffer to crash/DoS the device (CWE-120/787).
+\end{table}

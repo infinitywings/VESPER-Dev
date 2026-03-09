@@ -1,0 +1,113 @@
+simulation:
+  # Simulation tick rate in Hz
+  tick_rate: 30
+  # Maximum number of humanoid agents
+  max_agents: 2
+  # Enable headless mode (no rendering)
+  headless: false
+  # Random seed for reproducibility
+  seed: 42
+
+environment:
+  # Dataset to use: "hssd-hab" or "replica-cad"
+  dataset: "hssd-hab"
+  # Scene identifier within the dataset
+  scene: "default"
+  # Physics engine: "bullet" or "none"
+  physics: "bullet"
+
+devices:
+  motion_sensor:
+    # Detection radius in meters
+    detection_radius: 3.0
+    # Cooldown between triggers in seconds
+    cooldown: 2.0
+    # Vertical field of view angle (degrees)
+    fov_vertical: 90.0
+  
+  contact_sensor:
+    # Debounce time in seconds
+    debounce: 0.1
+  
+  smart_door:
+    # Time to open/close in seconds
+    transition_time: 1.5
+    # Auto-close after N seconds (0 = disabled)
+    auto_close: 0
+  
+  light_sensor:
+    # Sample rate in Hz
+    sample_rate: 10.0
+    # Minimum lux change to trigger event
+    threshold: 5.0
+
+event_bus:
+  # Maximum queue size
+  max_queue_size: 1000
+  # Enable event logging
+  logging: true
+  # Log file path (relative to project root)
+  log_file: "logs/events.jsonl"
+
+# ── Network configuration ────────────────────────────────────────────────────
+network:
+  # Network mode: "bridge" (default), "macvlan", "ipvlan", "host"
+  # bridge  — isolated Docker bridge; Wireshark captures on docker0 / veth
+  # macvlan — containers get real LAN IPs; Wireshark captures on parent iface
+  mode: "bridge"
+  
+  # Subnet and gateway for the Docker network
+  subnet: "172.20.0.0/24"
+  gateway: "172.20.0.1"
+  
+  # Parent interface for macvlan/ipvlan (auto-detected if empty)
+  # Examples: "en0" (macOS WiFi), "eth0" (Linux), "wlan0"
+  parent_interface: ""
+  
+  # Wireshark / live packet capture
+  wireshark:
+    enabled: false
+    # Interface to capture on (auto-detected from mode if empty)
+    capture_interface: ""
+    # BPF filter for targeted capture
+    # e.g. "tcp port 1883 or tcp port 5555" for MQTT + firmware traffic
+    capture_filter: ""
+    # Directory for .pcap files
+    pcap_dir: "logs/pcap"
+
+  # ── MQTT broker (Mosquitto) ──────────────────────────────────────────────
+  mqtt:
+    # Enable real Mosquitto MQTT broker (vs. simplified text broker)
+    enabled: true
+    host: "127.0.0.1"
+    port: 1883
+    # Docker container name
+    container_name: "vesper-mqtt"
+    # Topic prefix for all VESPER messages
+    topic_prefix: "vesper"
+    # QoS level for published messages (0, 1, or 2)
+    qos: 1
+
+# ── ML anomaly detection ────────────────────────────────────────────────────
+anomaly_detection:
+  # Feature configuration: "A" (context-free), "B" (context-aware), "C" (oracle)
+  feature_config: "B"
+  # Models to train
+  models:
+    - random_forest
+    - xgboost
+    - cnn_1d
+    - transformer
+  # Cross-validation folds
+  cv_folds: 5
+  # Random seed
+  seed: 42
+  # Output directory for datasets and results
+  dataset_dir: "results/datasets"
+  results_dir: "results/ml"
+
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+  # Log format
+  format: "%(asctime)s | %(levelname)s | %(name)s | %(message)s"

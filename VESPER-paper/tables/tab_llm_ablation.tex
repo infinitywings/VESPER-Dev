@@ -1,0 +1,22 @@
+\begin{table}[t]
+  \centering
+  \caption{LLM ablation across six local models (50~schedules each).
+  Schedule entropy measures activity diversity (higher is better).
+  Error rate: fraction of unparseable JSON responses before retry.
+  Context sensitivity: JS divergence between weekday and weekend
+  distributions.  Values: mean $\pm$ 95\% CI.}
+  \label{tab:llm-ablation}
+  \small
+  \begin{tabular}{l c c c c}
+    \toprule
+    {Model} & {Entropy~$\uparrow$} & {Err.\,\%~$\downarrow$} & {Ctx.\ Sens.~$\uparrow$} & {Latency (s)} \\
+    \midrule
+    GPT-OSS 20B        & $2.80{\pm}.03$ & $0.0$ & $.184$ & $33.0{\pm}2.6$ \\
+    Llama 3.1 8B       & $2.71{\pm}.05$ & $0.0$ & $.125$ & $33.9{\pm}1.2$ \\
+    Phi-3.5 Mini 3.8B  & $2.69{\pm}.07$ & $4.0$ & $.194$ & $23.5{\pm}0.9$ \\
+    Gemma 2 9B IT      & $2.68{\pm}.04$ & $0.0$ & $.254$ & $55.4{\pm}2.0$ \\
+    Qwen 2.5 7B        & $2.49{\pm}.08$ & $0.0$ & $.277$ & $24.3{\pm}1.2$ \\
+    Mistral 7B v0.3    & $2.35{\pm}.06$ & $4.0$ & $.225$ & $32.1{\pm}1.0$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}

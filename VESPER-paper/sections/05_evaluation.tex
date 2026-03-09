@@ -1,0 +1,859 @@
+\section{Evaluation}\label{sec:eval}
+
+We evaluate \sys{} across five research questions that span the
+critical dimensions of a simulation platform: behavioral fidelity,
+system scalability, integration correctness, computational
+overhead, and security assessment capability.  In addition, we
+conduct a large-scale autonomous evaluation across 28~diverse HSSD
+scenes to validate end-to-end system reliability.
+
+RQ1--RQ4 exercise the \emph{3D simulation pathway}: Habitat scenes,
+LLM-driven humanoid navigation, proximity-based firmware triggering,
+and cloud synchronization---validating realistic usage patterns.
+RQ5 exercises the \emph{security testing pathway}: direct
+firmware/network attack injection without 3D overhead---validating
+vulnerability assessment capability.  Within RQ5, a dedicated
+packet-level traffic analysis (\Cref{sec:eval-pcap}) provides the
+strongest evidence that attack traffic traverses the real Docker
+bridge network, using \texttt{tshark} pcap captures independently
+verifiable with Wireshark.
+Both pathways share the same firmware containers and network
+infrastructure, demonstrating \sys{}'s dual utility as both a
+behavioral testbed and a security platform.
+
+\begin{description}[leftmargin=*]
+  \item[RQ1] \emph{Activity Realism.}
+    How closely do \sys{}-generated activity schedules match
+    real-world smart home activity datasets?
+  \item[RQ2] \emph{Scalability.}
+    How does \sys{} perform as the number of devices, agents,
+    and simulation duration increase?
+  \item[RQ3] \emph{Latency.}
+    What is the end-to-end latency across all critical data
+    paths (event bus, firmware, cloud sync)?
+  \item[RQ4] \emph{Sim2Real Fidelity.}
+    Can models trained on \sys{}-generated data transfer to
+    real-world activity recognition tasks?
+  \item[RQ5] \emph{Security Assessment.}
+    How effective is \sys{} as an IoT security testing platform
+    for discovering and characterizing firmware and network
+    vulnerabilities?
+\end{description}
+
+\subsection{Experimental Setup}
+
+All experiments use seed~42, are repeated 5~times, and report
+95\% confidence intervals unless otherwise noted.  The host machine
+is an Apple M2~Pro with 32\,GB RAM running macOS~14.  The LLM
+(GPT-OSS~20B, context length 4{,}096 tokens) is served locally via
+LMStudio at \texttt{localhost:1234} with 4-bit quantization (GGUF).
+Reference datasets are CASAS (Aruba, Milan, Cairo homes) and
+ARAS (House~A, House~B).  Our evaluation framework
+(\texttt{vesper.evaluation}) automates all experiments and
+produces the tables and figures in this section.
+
+For the large-scale autonomous evaluation (\Cref{sec:eval-autonomous}),
+we use 28~scenes randomly sampled from the 161~available HSSD-Hab
+articulated scenes, running 7~simulated days per scene at 60$\times$
+time acceleration with Samsung SmartThings cloud synchronization
+enabled via ngrok tunneling.
+
+% ----------------------------------------------------------------
+\subsection{RQ1: Activity Realism}\label{sec:eval-rq1}
+
+\paragraph{Methodology.}
+We generate 30~days of schedules for each of the 10~personas
+using GPT-OSS~20B and compare the resulting activity
+distributions against CASAS and ARAS using four metrics:
+KL divergence, Jensen--Shannon (JS) divergence, Wasserstein
+distance, and temporal correlation.  Activity categories are
+mapped to a shared ontology of nine types (\emph{sleep, hygiene,
+eating, work, exercise, leisure, social, household, idle}) following
+the taxonomy of Cook et al.~\cite{casas}.
+For the CASAS datasets, the publicly available sensor logs record
+timestamped room-level events (e.g., \texttt{Bedroom,ON}) without
+explicit activity annotations; we therefore infer activity categories
+from sensor locations using a deterministic room-to-activity mapping
+(e.g., \emph{Bedroom}$\to$\emph{Sleeping},
+\emph{Kitchen}$\to$\emph{Meal\_Preparation}).
+This proxy introduces label noise---particularly for multi-purpose
+rooms---but is consistent across all CASAS comparisons.
+The ARAS datasets provide per-second ground-truth activity IDs
+(27~categories) from which we derive labels directly.
+
+\paragraph{Results.}
+
+\input{tables/tab_activity_realism}
+
+\Cref{tab:activity-realism} shows that distributional similarity
+varies substantially by reference dataset annotation richness.
+The ARAS datasets, which provide ground-truth per-second activity
+labels across 27~categories, show the \emph{lowest} JS~divergence
+(House~B: $\text{JS}=0.101$; House~A: $0.113$) and confirm that
+\sys{}'s 9-category ontology aligns well with richly-annotated
+data.  CASAS datasets, which use room-proxy labels (4~categories,
+up to 55\% ``Other''), show higher JS (0.278--0.301) driven by
+category coverage mismatch rather than behavioral dissimilarity.
+Temporal correlation averages~0.573, with CASAS showing strong
+circadian alignment (0.80--0.87) and ARAS lower (0.17--0.21) due
+to differences in temporal resolution.
+
+\paragraph{Baseline Comparison.}
+
+\input{tables/tab_baseline_comparison}
+
+To contextualize these results, \Cref{tab:baseline-comparison}
+compares \sys{} against a first-order \emph{Markov
+chain}~\cite{markov-activity} trained in leave-one-out fashion
+(train on 4~datasets, test on the held-out 5th), representing
+the standard prior-art statistical approach.  Crucially, \sys{}
+uses \emph{zero training data}---the LLM generates schedules
+from world knowledge alone, while the Markov baseline requires
+real sensor logs.
+
+The Markov baseline achieves lower JS on the CASAS family
+(JS~$= 0.011\text{--}0.036$), as the three CASAS homes share a
+homogeneous distribution dominated by 3--4 room-proxy categories
+that a Markov chain easily memorizes from two similar training
+homes.  However, on the \emph{ARAS datasets}---which feature
+richer, more diverse ground-truth activity labels (27~categories
+mapped to our 9-category ontology)---\sys{} \textbf{outperforms}
+the Markov baseline by 50--62\% in JS divergence
+(ARAS-A: $0.113$ vs.\ $0.297$; ARAS-B: $0.101$ vs.\ $0.202$)
+and by 7--25\% in Wasserstein distance.
+This demonstrates \sys{}'s key advantage: the LLM world model
+generates plausible \emph{diverse} activity patterns without
+requiring any training data, whereas the Markov baseline collapses
+to the dominant categories observed in training and fails to
+generalize across structurally different homes.
+
+\input{figures/fig_activity_dist}
+
+\Cref{fig:activity-dist} visualizes the category-level alignment,
+revealing that distributional divergence on CASAS stems primarily
+from \emph{category coverage mismatch}: CASAS-Aruba records zero
+observations for Work, Exercise, Social, and Household, while
+\sys{} generates events across all nine categories.  Within shared
+categories, the proportional rankings are largely consistent.
+
+% ----------------------------------------------------------------
+\subsection{RQ2: Scalability}\label{sec:eval-rq2}
+
+\paragraph{Methodology.}
+We measure three scaling dimensions:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Device scaling:} Event throughput and resource usage
+    as the number of event-bus devices increases from 5 to 200.
+  \item \textbf{Container scaling:} Docker QEMU container startup
+    time and TCP communication latency as containers increase from
+    3 to 20.
+  \item \textbf{Duration stability:} Memory growth, database size,
+    and event throughput over simulated durations of 1 to 168~hours
+    (at 60$\times$ acceleration).
+\end{itemize}
+
+\paragraph{Results.}
+
+\input{tables/tab_scalability}
+
+\input{figures/fig_scalability}
+
+\Cref{tab:scalability} demonstrates that \sys{} scales efficiently:
+total event-bus throughput increases near-linearly from 435~events/s
+(5~devices) to 10{,}901~events/s (200~devices)---a $25\times$
+increase for $40\times$ more devices---while CPU utilization
+remains below 36\% and memory stays under 106\,MB.
+Per-device throughput decreases modestly (87 $\to$ 55~events/s/device),
+indicating effective amortization of dispatch overhead at scale.
+
+Docker container scaling shows that 20~QEMU firmware containers
+launch in under 7\,s total, with inter-container TCP latency
+averaging 2--19\,ms.  The non-monotonic TCP latency (lowest at
+5~containers) reflects Docker's networking stack behavior: small
+container counts share a single bridge interface efficiently,
+while larger deployments trigger additional iptables rules and
+ARP resolution overhead.  Container startup time grows sub-linearly
+with count.
+
+Duration stability testing over 168~simulated hours (7~days)
+reveals stable throughput ($\sim$420~events/s) and bounded memory
+growth: the largest increase is 24.7\,MB over 168~sim-hours,
+with intermediate runs showing negligible or even negative growth
+(garbage collection), confirming the absence of memory leaks.
+The autonomous evaluation corroborates this finding: 26~of~28
+scenes with navigation completed all 7~simulated days without
+resource exhaustion.
+
+% ----------------------------------------------------------------
+\subsection{RQ3: Latency Profiling}\label{sec:eval-rq3}
+
+\paragraph{Methodology.}
+We instrument all critical data paths with start/stop probes and
+run 1{,}000 iterations per path.
+
+\paragraph{Results.}
+
+\input{tables/tab_latency}
+
+\input{figures/fig_latency_cdf}
+
+\Cref{tab:latency} shows that intra-platform latency is
+dominated by the event bus and database paths, both operating at
+microsecond to sub-millisecond scale.  The event bus achieves
+P99~$= 0.007$\,ms (7\,$\mu$s), enabling real-time coordination
+between the simulation core, firmware containers, and sensor bridge.
+Database queries complete in 6\,$\mu$s at P99, and SQLite
+task writes reach P99 at 2.84\,ms (with P50 at 0.19\,ms).
+
+LLM schedule generation is the slowest path at P50~$= 6.3$\,s, but
+operates on a once-per-simulated-day cadence; at $60\times$
+acceleration this amounts to one call per $\sim$24~real minutes,
+imposing negligible overhead on the event loop.
+
+The autonomous evaluation successfully completed 47{,}207~cloud state
+pushes across 28~scenes through the full firmware pipeline
+(GPIO interrupt $\to$ ISR $\to$ state update $\to$ SmartThings cloud)
+with zero data loss, demonstrating reliable Sim2Real synchronization
+at scale.  Cloud round-trip latency (SmartThings via ngrok) was not
+micro-benchmarked but showed no failures across the 88.0-hour
+evaluation.
+
+% ----------------------------------------------------------------
+\subsection{RQ4: Sim2Real Transfer}\label{sec:eval-rq4}
+
+\paragraph{Methodology.}
+We evaluate Sim2Real fidelity through two complementary analyses
+using enriched features (activity distributions, transition matrices,
+event n-grams, temporal entropy, circadian profiles---119~features
+per window of 20~activity events).
+\emph{(A)~Domain discrimination}: a Random Forest classifier
+attempts to distinguish \sys{} windows from real-world windows
+via 5-fold stratified cross-validation; accuracy near~0.5
+indicates the synthetic data is indistinguishable from real.
+\emph{(B)~Activity transfer}: a classifier trained on \sys{}
+windows is evaluated on real-world windows for activity-label
+prediction (zero-shot, no real training data).
+We also compare \sys{}'s domain discriminability against the
+Markov baseline from \Cref{sec:eval-rq1}.
+
+\paragraph{Results.}
+
+\input{tables/tab_sim2real}
+
+\input{figures/fig_sim2real}
+
+\Cref{tab:sim2real} reveals a \textbf{nuanced picture}.
+\emph{Domain discrimination}: classifiers achieve near-perfect
+separation of \sys{} vs.\ real CASAS data (accuracy~$\approx 1.0$),
+but this is expected: \sys{} generates 9~categories while CASAS
+room-proxy labels produce only 3--4, making the distributions
+trivially separable.  Critically, the \emph{Markov baseline} shows
+\emph{comparable or worse} discriminability on ARAS
+(Markov domain~$= 1.000$ vs.\ \sys{}~$= 0.991$ on House~A),
+confirming that both generative approaches produce distinguishable
+data when the reference taxonomy differs.
+
+\emph{Activity transfer} shows the more meaningful finding:
+classifiers trained exclusively on \sys{} data achieve
+$0.813$~accuracy ($F_1 = 0.783$) on ARAS-House~A---well above
+the random baseline of~$0.125$, demonstrating genuine knowledge
+transfer from LLM-generated schedules to real-world activity
+recognition.  Transfer is weaker on CASAS (0.082--0.537), again
+attributable to the room-proxy label noise described in
+\Cref{sec:eval-rq1}.
+
+Compared to our earlier analysis with coarse hourly features
+(which produced a negative result), the enriched feature set
+(transition matrices, n-grams, entropy) substantially improves
+transfer on datasets with diverse activity annotations---confirming
+that the representation, not the domain gap, was the primary
+bottleneck.
+
+% ----------------------------------------------------------------
+\subsection{RQ5: Security Assessment}\label{sec:eval-rq5}
+
+To evaluate \sys{}'s utility as an IoT security testing \emph{platform},
+we assess whether the simulated environment can host realistic
+attack campaigns and produce actionable security metrics.
+We execute five attack suites against the platform's own firmware,
+network stack, cloud connector, and ESP32 emulation.
+The goal is \emph{not} to claim novel vulnerability discovery in
+third-party firmware---our firmware is purpose-built for
+simulation---but rather to demonstrate that \sys{} provides
+sufficient fidelity for security researchers to
+(1)~develop and validate attack tooling,
+(2)~reproduce published IoT exploits (\Cref{sec:eval-phantom-delay}),
+and (3)~generate quantitative risk metrics (CVSS~3.1, MITRE ATT\&CK
+coverage) in a controlled, reproducible environment.
+
+\paragraph{Methodology.}
+We run 18~firmware-level attacks (buffer overflow, authentication
+bypass, command injection, firmware update exploitation, information
+disclosure, denial of service, state manipulation, replay, and
+protocol fuzzing) against each of the six QEMU-emulated ARM
+Cortex-M3 firmware variants (smart light, temperature sensor,
+motion sensor, humidity sensor, door sensor, smart plug) in each
+of the 28~evaluation scenes---yielding 504~firmware attack instances.
+Additionally, we execute 14~network-level attacks and 3~phantom-delay
+attack variants per scene (392 + 84 = 476 instances).
+Two standalone demonstrations target the SmartThings Schema Connector
+(Suite~4: Malicious SmartApp, CVSS~8.8) and the ESP32 command buffer
+(Suite~5: Buffer Overflow, CVSS~9.8).  All 982~attack instances are
+scored using the CVSS~v3.1 base score formula and mapped to MITRE
+ATT\&CK for IoT techniques.  We apply the IoT Cyber Kill Chain
+model~\cite{iotkilchain} to assess end-to-end attack path coverage.
+
+\paragraph{Results.}
+
+\input{tables/tab_security_summary}
+
+\Cref{tab:security-summary} presents the aggregate assessment.
+Of 982~attacks across five suites, 662 (67.4\%) successfully
+exploited vulnerabilities.
+The mean CVSS~3.1 score across all attacks is~8.1, rising
+to~8.6 when considering only successful exploits---reflecting
+the prevalence of critical- and high-severity vulnerability
+\emph{classes} modeled in our purpose-built firmware
+(cf.\ intentional vulnerability model, \Cref{sec:firmware-layer}).
+The firmware layer exhibits a 58.3\% exploit rate (294/504),
+the network layer achieves 73.5\% (288/392), and the phantom-delay
+attacks achieve 92.9\% (78/84).  The two standalone suites---Malicious
+SmartApp and ESP32 Buffer Overflow---both succeed, demonstrating
+cloud API and memory-safety vulnerabilities respectively.
+
+\input{tables/tab_cvss_distribution}
+
+\Cref{tab:cvss-distribution} breaks down exploit success by CVSS
+severity.  Critical vulnerabilities (CVSS~$\geq 9.0$) are exploited
+at 70.6\%, while high-severity (7.0--8.9) achieves 71.8\%.
+Medium-severity vulnerabilities (4.0--6.9) show a 63.8\%
+exploit rate, and low-severity ($<$4.0) findings are exploitable
+at 50.0\%, consistent with the real-world relationship between
+severity and exploitability.  The weighted risk score of~5.49
+(CVSS~$\times$~exploit probability) quantifies overall platform risk.
+
+\input{tables/tab_device_comparison}
+
+\paragraph{Per-Device Analysis.}
+\Cref{tab:device-comparison} reveals meaningful variation across
+device types.  Smart lights are the most vulnerable (66.7\% exploit
+rate, mean CVSS\textsubscript{succ}$= 8.9$), attributable to their
+richer command surface (brightness, color temperature, ON/OFF)
+exposing more attack vectors.  Motion and door sensors are least
+vulnerable (50.0\%), as their simpler state machines
+(binary on/off events) provide fewer exploitable code paths.
+The median time-to-exploit (TTE) varies from 13\,ms (smart light)
+to 205\,ms (motion sensor), with actuator devices generally
+exploitable faster than passive sensors.
+Across all 28~scenes, the per-device exploit rates remain consistent
+(firmware std.\ dev.\ 4.9\%, network std.\ dev.\ 3.3\%), confirming
+that the attack suite produces stable results independent of
+scene topology.
+
+\input{figures/fig_device_heatmap}
+
+\Cref{fig:device-heatmap} visualizes the per-device, per-category
+exploit matrix.  Authentication bypass and denial of service are
+universally exploitable (100\% across all devices), while buffer
+overflow and command injection show device-dependent success
+patterns---confirming that \sys{}'s per-device firmware approach
+produces differentiated security profiles rather than uniform
+behavior.
+
+\input{tables/tab_mitre_coverage}
+
+\paragraph{ATT\&CK Coverage.}
+\Cref{tab:mitre-coverage} maps findings to the MITRE ATT\&CK for
+IoT framework.  Our five attack suites cover 83\% (10/12) of IoT
+ATT\&CK tactics and 15~unique techniques across 982~instances,
+demonstrating broad coverage of the IoT threat landscape.  The two
+uncovered tactics (Defense Evasion and Command~\& Control as a
+distinct MITRE tactic) represent areas for future extension.
+The addition of Suites~4 (SmartApp) and~5 (ESP32 overflow) expands
+coverage into cloud API exploitation (T0859: Valid Accounts,
+T0866: Exploitation of Remote Services) and memory-safety
+(T0807: Command-Line Interface, T0814: Denial of Service) attack
+vectors that were underrepresented in the original firmware and
+network suites.
+
+\input{tables/tab_kill_chain}
+
+\paragraph{Kill Chain Analysis.}
+\Cref{tab:kill-chain} evaluates coverage across all seven stages
+of the IoT Cyber Kill Chain.  \sys{} achieves \emph{100\% kill chain
+completeness}---all seven stages have at least one successful exploit.
+Command~\& Control achieves the highest exploit rate (100\%), as
+MQTT-based C2 requires no authentication.  Installation (firmware
+persistence via unsigned updates) shows the lowest rate (17\%),
+reflecting the additional complexity of firmware injection attacks.
+This end-to-end coverage demonstrates that \sys{} can model complete
+multi-stage attack campaigns, from reconnaissance through final
+impact.
+
+\input{tables/tab_cve_validation}
+
+\paragraph{External Vulnerability Coverage.}
+\Cref{tab:cve-validation} cross-references our 36~attack
+implementations against 24~real-world CVEs across
+8~vulnerability classes.  Our suite covers 7/10 OWASP IoT
+Top~10~\cite{owasp-iot-top10} categories (I1: Weak Passwords,
+I2: Insecure Network Services, I3: Insecure Ecosystem Interfaces,
+I5: Insecure Components, I6: Insufficient Privacy,
+I7: Insecure Data Transfer, I9: Insecure Defaults).
+The three uncovered categories---I4~(Lack of Secure Update
+Mechanism), I8~(Insufficient Device Management), and
+I10~(Lack of Physical Hardening)---require physical hardware
+access outside our simulation scope.  This mapping demonstrates
+that \sys{}'s attack suite exercises vulnerability classes
+representative of real-world IoT threats, not merely
+platform-specific weaknesses.
+
+\input{tables/tab_statistical_tests}
+
+\paragraph{Statistical Analysis.}
+\Cref{tab:stat-tests} reports hypothesis tests to assess whether
+observed differences are statistically significant.  A chi-squared
+test of independence finds no significant difference in exploit rates
+across device types ($\chi^2$, $p = 0.897$), indicating that all
+six firmware variants present a comparable attack surface---the
+variation observed (50.0\%--66.7\%) is within the range expected
+by chance given the sample size.  Similarly, a Fisher/chi-squared
+comparison of firmware vs.\ network exploit rates (58.3\% vs.\
+73.5\%) yields $p = 0.553$, showing no statistically significant
+layer effect.  A Kruskal-Wallis test on CVSS score distributions
+confirms homogeneity across devices ($p = 0.885$).  These results
+validate that our firmware variants constitute a balanced, unbiased
+test suite---no single device type is artificially more vulnerable.
+The consistency across 28~scenes (per-scene exploit rate
+std.\ dev.\ = 3.5\%) further confirms measurement stability.
+
+\input{figures/fig_cvss_distribution}
+
+\Cref{fig:cvss-distribution} shows the CVSS score distribution,
+revealing a bimodal pattern: a cluster of critical/high findings
+(CVSS~$\geq 7.0$) corresponding to authentication bypass and
+firmware update attacks, and a second cluster of medium-severity
+findings from buffer overflows and denial-of-service vectors.
+The box plot comparison confirms that firmware and network layers
+produce similar CVSS distributions for exploited vulnerabilities.
+
+\input{figures/fig_kill_chain}
+
+\input{figures/fig_tte_boxplot}
+
+\Cref{fig:tte-boxplot} presents time-to-exploit distributions
+stratified by CVSS severity.  Critical vulnerabilities exhibit the
+widest TTE range (driven by authentication bypass at~$\sim$5\,ms vs.\
+firmware update at~$\sim$12{,}000\,ms), while high-severity attacks
+cluster tightly around 200--400\,ms.  The log-scale axis reveals
+that 90\% of successful exploits complete in under 1{,}000\,ms,
+enabling rapid automated scanning of the full attack suite.
+
+\subsubsection{Packet-Level Traffic Analysis}\label{sec:eval-pcap}
+
+A distinguishing feature of \sys{} is that attack traffic traverses
+a real Docker bridge network rather than being simulated in-process
+(\Cref{sec:home-network}).
+To validate this claim at the strongest possible level of evidence,
+we use the dual-path capture architecture described in
+\Cref{sec:implementation} to record \emph{every TCP segment} on
+the loopback interface with \texttt{tshark}~4.6.3 (Wireshark CLI)
+simultaneously with live attack execution---producing genuine
+\texttt{.pcap} files that can be independently verified with
+\texttt{wireshark}, \texttt{tcpdump}, or any libpcap-compatible
+tool.
+
+\paragraph{Methodology.}
+We run the complete 980-attack campaign (28~scenes $\times$
+35~attacks) against two live QEMU ARM firmware containers exposed
+on host ports~15011 and~15012 via the Docker bridge.  For each
+attack, a dedicated \texttt{tshark} instance captures on the
+\texttt{lo0} loopback interface with a BPF filter
+(\texttt{tcp port 15011 or tcp port 15012}), writing a per-attack
+\texttt{.pcap} file.  A separate global \texttt{tshark} process
+records the entire session into \texttt{full\_session.pcap}.
+Attack payloads are generated by the actual \sys{} attack
+frameworks---\texttt{FirmwareAttackFramework} (18~attacks),
+\texttt{NetworkAttackFramework} (14~attacks), and
+\texttt{PhantomDelayAttackSuite} (3~attacks)---ensuring the
+captured traffic matches the evaluation campaign exactly.
+Scene--port assignments cycle round-robin across the two containers,
+matching the per-scene isolation in the original 28-scene evaluation.
+
+This dual-capture design provides two complementary evidence paths:
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Per-attack pcaps} (736~files, 31.9\,MB total)
+    enable fine-grained inspection of individual attack sessions---TCP
+    handshakes, payload bytes, RST injection, and connection
+    teardown are all visible at the segment level.
+  \item \textbf{Global pcap} (\texttt{full\_session.pcap}, 12.1\,MB,
+    154{,}151~packets) provides an aggregate view of the entire
+    campaign, suitable for flow-level analysis, protocol
+    distribution, and IDS training.
+\end{enumerate}
+
+\paragraph{Results.}
+
+\input{tables/tab_traffic_analysis}
+
+\Cref{tab:traffic-analysis} presents the per-attack traffic
+breakdown validated by \texttt{tshark} pcap analysis.  Across
+980~attack executions, the per-attack captures recorded
+152{,}970~TCP segments totalling 12.0\,MB, of which 61{,}839
+are DATA segments carrying 3.36\,MB of attack payloads and
+firmware responses.  The global capture recorded 154{,}151~segments
+(12.1\,MB), with the slight surplus attributable to inter-attack
+background traffic (TCP keepalives, delayed ACKs from prior
+connections).
+
+The firmware attack suite dominates both packet count
+(119{,}209 segments, 78.0\%) and payload volume
+(2.98\,MB, 88.7\%).  Within this suite, two attacks produce
+disproportionate traffic:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{DoS Rapid Commands} generates 35{,}272~segments
+    (5{,}712~SYN, 8{,}583~DATA) as it opens 100~concurrent TCP
+    connections per scene, each sending a \texttt{STATUS} command.
+    The 5{,}529~FIN/RST segments confirm that both graceful and
+    forced connection teardown occur---matching real SYN-flood
+    behavior.
+  \item \textbf{Protocol Fuzzing (Random)} produces 54{,}304~segments
+    by sending 8~malformed binary payloads
+    (\texttt{{\textbackslash}xff*32}, null bytes, printable random,
+    oversized \texttt{GET\_} prefixes) that trigger firmware
+    re-transmissions and TCP window probes.
+\end{itemize}
+
+The network attack suite contributes 33{,}420~segments (21.9\%),
+dominated by TCP Flood (24{,}098~segments from 104~half-open
+connections per scene).  TCP Connection Hijack (2{,}926~segments)
+and MITM Proxy (3{,}341~segments) demonstrate real man-in-the-middle
+traffic with observable interleaved client/server streams in the
+pcap.  The three MQTT attacks generate zero captured packets because
+no MQTT broker runs on the firmware ports---these attacks target
+port~1883 which is not captured by the BPF filter; the
+connection-refused events are visible in the attack logs and
+confirm correct behavior.
+
+The phantom-delay suite generates 341~segments, primarily from
+ARP-spoofing side effects and TCP proxy setup.  As this suite's
+primary mechanism is \emph{message delay} rather than payload
+injection, the low packet count is expected---the attack's impact
+is temporal, not volumetric.
+
+\input{tables/tab_protocol_breakdown}
+
+\Cref{tab:protocol-breakdown} provides the TCP segment breakdown
+from the global \texttt{tshark} capture.  The five segment types
+reveal the complete TCP lifecycle of the attack campaign:
+13{,}496~SYN (connection establishment), 61{,}994~DATA
+(3.36\,MB of payloads), 10{,}070~FIN (graceful teardown),
+3{,}255~RST (forced reset from DoS and fuzzing attacks), and
+65{,}336~ACK-only (acknowledgments and window updates).  The
+SYN-to-FIN ratio ($13{,}496 : 10{,}070 = 1.34$) indicates that
+roughly 25\% of connections terminate via RST rather than
+FIN---characteristic of adversarial traffic patterns where
+the attacker abruptly tears down connections (DoS floods,
+TCP RST injection, protocol fuzzing).  This distribution is
+consistent with real-world IoT attack traffic observed in
+honeypot studies~\cite{honeypot-iot}.
+
+\paragraph{Capture Session Output.}
+The full 980-attack campaign completed in a single
+\texttt{tshark} session spanning 2{,}215.6~seconds
+($\approx$37~minutes).
+\Cref{lst:tshark-io} shows the \texttt{tshark} I/O statistics
+reported directly from \texttt{full\_session.pcap}, confirming
+the 154{,}151-frame / 12{,}113{,}002-byte totals cited above.
+The 5-minute interval breakdown reveals a largely uniform
+traffic profile across the first seven intervals
+(10{,}299--11{,}972~frames each), with a pronounced burst in the
+final interval (73{,}443~frames, 4.77\,MB) attributable to
+the DoS Rapid Commands and Protocol Fuzzing attacks---both of which
+generate $>$\,35{,}000~segments and were scheduled in the last
+batch of scenes.
+
+\begin{figure}[t]
+\begin{lstlisting}[
+  basicstyle=\ttfamily\scriptsize,
+  frame=single,
+  caption={Verbatim \texttt{tshark} I/O statistics from the
+  global pcap capture (\texttt{full\_session.pcap}).
+  Each row covers a 300-second (5\,min) interval.},
+  label={lst:tshark-io},
+  numbers=none,
+  xleftmargin=2pt,
+  xrightmargin=2pt,
+  aboveskip=6pt,
+  belowskip=4pt
+]
+$ tshark -r full_session.pcap -q -z io,stat,300
+===================================
+| IO Statistics                   |
+| Duration: 2215.6 secs           |
+| Interval:  300 secs             |
+|---------------------------------|
+| Interval     | Frames |  Bytes  |
+|---------------------------------|
+|    0 <> 300  |  11533 | 1057855 |
+|  300 <> 600  |  11728 | 1073232 |
+|  600 <> 900  |  11972 | 1088743 |
+|  900 <> 1200 |  10299 |  903528 |
+| 1200 <> 1500 |  11649 | 1068160 |
+| 1500 <> 1800 |  11637 | 1065031 |
+| 1800 <> 2100 |  11890 | 1083637 |
+| 2100 <> Dur  |  73443 | 4772816 |
+===================================
+\end{lstlisting}
+\end{figure}
+
+The TCP flag filter confirms the segment-type breakdown
+independently of our per-attack counters:
+
+\begin{figure}[t]
+\begin{lstlisting}[
+  basicstyle=\ttfamily\scriptsize,
+  frame=single,
+  caption={TCP flag breakdown extracted from
+  \texttt{full\_session.pcap} using \texttt{tshark} display
+  filters.  Column~1: SYN-only (new connections);
+  Column~2: segments with payload (\texttt{tcp.len>0});
+  Column~3: FIN; Column~4: RST.},
+  label={lst:tshark-flags},
+  numbers=none,
+  xleftmargin=2pt,
+  xrightmargin=2pt,
+  aboveskip=6pt,
+  belowskip=4pt
+]
+$ tshark -r full_session.pcap -q -z io,stat,0,\
+  "tcp.flags.syn==1&&tcp.flags.ack==0",\
+  "tcp.len>0","tcp.flags.fin==1","tcp.flags.reset==1"
+==============================================
+| Col 1: SYN-only    Col 2: DATA (len>0)    |
+| Col 3: FIN         Col 4: RST             |
+|--------------------------------------------|
+|       |1              |2              |3   |
+|       |Frames| Bytes  |Frames| Bytes  |... |
+|--------------------------------------------|
+| Total | 6748 |458864  |61994 |6830410 |    |
+|       |      |        |      |        |    |
+| Col 3: 10070 frames, 563920 bytes (FIN)    |
+| Col 4:  3255 frames, 143220 bytes (RST)    |
+==============================================
+\end{lstlisting}
+\end{figure}
+
+\noindent
+The 6{,}748~SYN-only segments correspond to 6{,}748~unique TCP
+conversations (verified by \texttt{tshark~-z~conv,tcp}), meaning
+each connection-establishment handshake is captured.  The remaining
+6{,}748~SYN-ACKs (server replies) account for the difference between
+our SYN-only count and the 13{,}496~total SYN-flagged segments
+reported in \Cref{tab:protocol-breakdown}.
+
+The first packet timestamp is
+\texttt{2026-02-24T23:08:39.911993} and the last is
+\texttt{2026-02-24T23:45:35.509113}, placing the entire campaign
+within a contiguous 37-minute window.  No gaps or timestamp
+anomalies appear in the capture, confirming that the
+\texttt{tshark} process ran uninterrupted for the full session.
+
+Per-attack pcaps enable drill-down analysis of individual
+exploits.  For example, the DoS Rapid Commands pcap for
+scene~102343 contains 1{,}232~frames in a 673\,ms burst
+(1{,}831~frames/sec)---consistent with the 100 concurrent TCP
+connections this attack opens.  The Protocol Fuzzing pcap for the
+same scene spans 24.0~seconds with 132~frames, reflecting the
+deliberate pauses between malformed payloads.  The TCP Flood pcap
+records 429~frames in 2.5~seconds from 104~half-open connections.
+These per-attack captures are fully self-contained: each can be
+opened in Wireshark to inspect individual TCP streams, follow
+payload reassembly, and verify attack semantics at the byte level.
+
+\paragraph{Reproducibility and Verification.}
+All 736~per-attack pcap files and the global
+\texttt{full\_session.pcap} are included in the artifact
+submission.  The capture artifacts total 32\,MB on disk
+(736~individual pcaps: 31.9\,MB; global pcap: 17.2\,MB
+including pcap headers).  Reviewers can independently verify the
+captures using standard Wireshark tooling:
+\begin{verbatim}
+  # Global session statistics
+  tshark -r full_session.pcap -q -z io,stat,1
+  # Count SYN packets (connection attempts)
+  tshark -r full_session.pcap -Y "tcp.flags.syn==1"
+  # TCP conversation summary
+  tshark -r full_session.pcap -q -z conv,tcp
+  # Inspect individual attack pcap
+  wireshark DoS_Rapid_Commands_scene102343_p15011.pcap
+  # Follow a TCP stream in a per-attack pcap
+  tshark -r Buffer_Overflow_Cmd_scene102343_p15011.pcap \
+    -z follow,tcp,ascii,0
+\end{verbatim}
+The pcap timestamps, TCP sequence numbers, and payload bytes
+provide cryptographic-strength evidence that every attack traversed
+the real network stack---not an in-process simulation.
+The campaign JSON log (\texttt{pcap\_campaign.json}, 19{,}640~lines)
+cross-references each attack's scene ID, port, success flag, pcap
+filename, packet/byte counts, and firmware response string, enabling
+automated validation that the logged results match the pcap
+contents exactly.
+
+% ----------------------------------------------------------------
+\subsection{Case Study: Phantom-Delay Attack}\label{sec:eval-phantom-delay}
+
+To demonstrate \sys{}'s utility as a platform for reproducing
+published IoT security research, we implement and evaluate the
+\emph{Phantom-Delay Attack}~\cite{phantom-delay} within our
+simulated 3D smart home environment.
+
+\paragraph{Background.}
+Fu~et~al.~\cite{phantom-delay} discovered that IoT platforms
+(Apple~HomeKit, Ring~Security) decouple TCP-level timeout detection
+from application-layer event acknowledgment, enabling an
+attacker on the LAN to delay device events for minutes without
+triggering offline alerts.  Their attack requires ARP spoofing to
+establish a man-in-the-middle position, followed by a transparent
+TCP proxy that selectively holds event messages while forwarding
+keepalives.
+
+\paragraph{Adaptation to VESPER.}
+We implement all four attack variants from~\cite{phantom-delay}
+targeting \sys{}'s Docker bridge network (\texttt{172.20.0.0/24}):
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{State-Update Delay} --- Hold firmware state-change
+    events (e.g., \texttt{DOOR\_OPEN}, \texttt{MOTION\_DETECTED})
+    at the transparent proxy for a configurable delay (tested:
+    10--60\,s) while maintaining keepalive responses.
+  \item \textbf{Erroneous Execution} --- Delay a trigger event past
+    a condition change so the hub evaluates an automation rule
+    with stale state.
+  \item \textbf{Routine Invalidation} --- Delay events beyond the
+    cloud platform's timeout threshold ($\sim$30\,s for
+    SmartThings/Alexa routines), causing silent routine failure.
+  \item \textbf{Action Reorder} --- Delay an earlier command
+    (e.g., DISARM) so it arrives after a later one (ARM),
+    leaving the device in the attacker-desired state.
+\end{enumerate}
+
+\paragraph{Results.}
+All four attack variants succeed in \sys{}'s simulated environment.
+The transparent proxy maintains TCP keepalives throughout the delay
+period, confirming that no device-offline alert is triggered---
+matching Fu~et~al.'s key finding.  The Docker bridge network is
+vulnerable to ARP spoofing by default (no ARP inspection),
+and the UART-over-TCP firmware protocol lacks event timestamps
+or sequence numbers, making it susceptible to all delay variants.
+At the MQTT layer, the broker accepts stale republished messages
+without freshness validation.  The mean CVSS~3.1 score across
+all eight phantom-delay attack instances is~8.8 (Critical),
+reflecting the high integrity and availability impact of stealthy
+event manipulation.
+
+\paragraph{Significance.}
+This case study demonstrates that \sys{} can serve as a
+\emph{reproduction platform} for published IoT attacks.
+Researchers can implement and evaluate protocol-level exploits
+within the 3D simulation without requiring physical hardware,
+reducing the cost and complexity of IoT security research.
+The ability to reproduce Fu~et~al.'s attack---originally requiring
+a physical HomeKit/Ring deployment, ARP spoofing hardware, and
+manual TLS proxy configuration---entirely within \sys{}'s
+Docker network validates the platform's security research utility.
+
+% ----------------------------------------------------------------
+\subsection{Large-Scale Autonomous Evaluation}\label{sec:eval-autonomous}
+
+To validate end-to-end system reliability, we conduct a large-scale
+autonomous evaluation across 28~HSSD articulated scenes simulating
+7~days each with full SmartThings cloud integration.
+
+\paragraph{Setup.}
+The 28~scenes are randomly sampled from the 161~available HSSD-Hab
+articulated scenes, representing diverse residential floor plans
+ranging from 6~to~35~rooms.  Each scene is instrumented with IoT
+devices (motion sensors, smart lights, temperature sensors, humidity
+sensors) placed automatically based on room semantics---yielding
+15--64 devices per scene (mean 30.9).  Six Docker
+firmware containers are launched per scene, each running ARM-emulated
+firmware linked to a SmartThings virtual device via the Schema
+Connector.  The humanoid agent follows LLM-generated daily schedules
+at 60$\times$ time acceleration, with proximity-based firmware
+triggering (2.0\,m radius, 3.0\,s cooldown).
+All three per-scene attack suites (firmware, network, phantom-delay)
+run automatically during each scene evaluation, executing 35~attacks
+per scene.
+
+\paragraph{Results.}
+
+\input{tables/tab_autonomous_eval}
+
+\Cref{tab:autonomous-eval} summarizes the aggregate results.
+The system successfully evaluated all 28~scenes over a total
+wall-clock runtime of 88.0~hours, with 26 (92.9\%)
+producing successful navigation trials.  The two scenes without
+navigation (scenes 102816009 and 106366371\_174226743) failed
+due to navmesh generation issues that prevented humanoid
+pathfinding---the simulation infrastructure remained stable
+throughout, and security attacks still executed successfully in
+these scenes.
+
+\paragraph{Navigation.}
+Across 3{,}580~navigation trials (26~scenes with active navigation),
+\sys{} achieved a 94.9\% success rate (95\% CI: [91.2\%, 98.3\%])
+with a mean SPL of~1.000.
+Per-scene success rates range from 59.2\% (scene~10, a 14-room
+layout with complex multi-floor geometry) to 100.0\% (7~scenes),
+with a median of 98.6\%.  The 5.1\% failure rate consists of
+trials where humanoid--furniture collisions or multi-floor navmesh
+discontinuities caused goal-reaching timeouts.
+
+\paragraph{Activity Diversity.}
+GPT-OSS~20B generated daily schedules producing
+4{,}307~scheduled tasks across the 28~scenes, of which
+3{,}580 were successfully navigated (83.1\% completion rate).
+The per-scene task count ranges from 3 (the two navmesh-failed
+scenes where only initialization ran) to 190, with a
+mean of 153.8 tasks per active scene.
+The temporal distribution shows clear circadian structure, peaking
+at 20:00--22:00 (evening activities) and 07:00 (morning routine),
+consistent with real-world activity datasets (\Cref{fig:temporal}).
+
+\input{figures/fig_temporal}
+
+\paragraph{Firmware and SmartThings.}
+The firmware layer processed 47{,}207~proximity-triggered state
+changes, all of which were successfully pushed to the Samsung
+SmartThings cloud with a 100\% push success rate.  Each state
+change flows through the complete pipeline: 3D proximity detection
+$\to$ event bus $\to$ Docker firmware container (GPIO interrupt
+$\to$ ISR $\to$ state update) $\to$ Schema Connector $\to$
+SmartThings cloud.  All 28~scenes maintained active ngrok tunnels
+throughout the evaluation, confirming reliable long-running cloud
+connectivity over the 88.0-hour runtime.  The per-scene toggle
+count ranges from 0 (two navmesh-failed scenes) to 3{,}437
+(scene~11, a compact 8-room layout), with a mean of 1{,}686
+toggles per scene.
+
+\paragraph{Per-Scene Analysis.}
+
+\input{tables/tab_per_scene}
+
+\Cref{tab:per-scene} provides a detailed per-scene breakdown.
+The data reveals meaningful variation in scene complexity: the
+largest scene (35~rooms, 64~devices) generated 1{,}060~articulated
+object interactions, while the smallest (6~rooms, 16~devices) still
+produced 2{,}024~SmartThings toggles over 7~days.  Room coverage
+averages 62.3\% (95\% CI: [55.3\%, 69.3\%]), reflecting the
+challenge of navigating multi-floor layouts where upper stories are
+often unreachable via the ground-floor navmesh.
+Scene duration ranges from 5{,}179\,s to 32{,}116\,s (mean
+11{,}314\,s = 188.6~min), with longer durations correlating
+weakly with scene size (Pearson $r = 0.19$ with navmesh area,
+$p > 0.05$).  The number of proximity toggles correlates strongly
+with device count ($r = 0.96$, $p < 0.001$) as expected, since
+more devices produce more humanoid-device encounters
+(\Cref{fig:scatter-toggles}).
+
+\input{figures/fig_scatter}

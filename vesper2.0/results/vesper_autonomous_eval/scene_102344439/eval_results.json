@@ -1,0 +1,5654 @@
+[
+  {
+    "scene_id": "102344439",
+    "scene_path": "/Users/huanbui/Desktop/vesper/data/scene_datasets/hssd-hab/scenes-articulated/102344439.scene_instance.json",
+    "num_rooms": 20,
+    "room_names": [
+      "hallway",
+      "closet",
+      "bedroom",
+      "lounge",
+      "rec/game",
+      "toilet",
+      "outdoor",
+      "garage",
+      "bathroom",
+      "laundryroom/mudroom",
+      "kitchen",
+      "living room",
+      "bedroom.001",
+      "closet.001",
+      "closet.002",
+      "bedroom.002",
+      "outdoor.001",
+      "bathroom.001",
+      "laundryroom",
+      "closet.003"
+    ],
+    "num_devices": 35,
+    "num_automations": 6,
+    "num_firmware_sensors": 73,
+    "navmesh_area_m2": 682.4,
+    "nav_trials": [
+      {
+        "trial_id": 1,
+        "task_name": "Late Night Work Session",
+        "source_room": "garage",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 21.974794387817383,
+        "actual_distance": 19.582534790039062,
+        "spl": 1.0,
+        "num_steps": 205,
+        "navigation_time_sec": 9.54868197441101,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 2,
+        "task_name": "Nap Break",
+        "source_room": "living room",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 22.29488182067871,
+        "actual_distance": 20.506488800048828,
+        "spl": 1.0,
+        "num_steps": 219,
+        "navigation_time_sec": 7.1711742877960205,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 3,
+        "task_name": "Morning Hygiene",
+        "source_room": "bedroom",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 22.2166748046875,
+        "actual_distance": 20.663633346557617,
+        "spl": 1.0,
+        "num_steps": 202,
+        "navigation_time_sec": 6.78408408164978,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 4,
+        "task_name": "Breakfast",
+        "source_room": "bathroom",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 17.104995727539062,
+        "actual_distance": 16.686477661132812,
+        "spl": 1.0,
+        "num_steps": 157,
+        "navigation_time_sec": 5.968483924865723,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 5,
+        "task_name": "Work Session",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.195385932922363,
+        "actual_distance": 11.781757354736328,
+        "spl": 1.0,
+        "num_steps": 114,
+        "navigation_time_sec": 3.942317008972168,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 6,
+        "task_name": "Exercise",
+        "source_room": "living room",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 26.877967834472656,
+        "actual_distance": 26.204811096191406,
+        "spl": 1.0,
+        "num_steps": 236,
+        "navigation_time_sec": 10.289890050888062,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 7,
+        "task_name": "Work Session",
+        "source_room": "outdoor",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 26.787546157836914,
+        "actual_distance": 26.022218704223633,
+        "spl": 1.0,
+        "num_steps": 236,
+        "navigation_time_sec": 8.338354110717773,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 8,
+        "task_name": "Dinner",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 12.282108306884766,
+        "actual_distance": 11.928552627563477,
+        "spl": 1.0,
+        "num_steps": 115,
+        "navigation_time_sec": 4.1421520709991455,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 9,
+        "task_name": "Leisure Walk",
+        "source_room": "kitchen",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 22.834022521972656,
+        "actual_distance": 19.84342384338379,
+        "spl": 1.0,
+        "num_steps": 199,
+        "navigation_time_sec": 7.466458082199097,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 10,
+        "task_name": "Bedtime Sleep",
+        "source_room": "outdoor",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 21.66853141784668,
+        "actual_distance": 11.383081436157227,
+        "spl": 1.0,
+        "num_steps": 226,
+        "navigation_time_sec": 10.280606031417847,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 11,
+        "task_name": "Wake Up",
+        "source_room": "bedroom",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 6.138566970825195,
+        "actual_distance": 4.107501983642578,
+        "spl": 1.0,
+        "num_steps": 100,
+        "navigation_time_sec": 4.000230073928833,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 12,
+        "task_name": "Morning Hygiene",
+        "source_room": "hallway",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 20.925321578979492,
+        "actual_distance": 16.72760009765625,
+        "spl": 1.0,
+        "num_steps": 198,
+        "navigation_time_sec": 7.909555912017822,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 13,
+        "task_name": "Breakfast",
+        "source_room": "bathroom",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 17.04399299621582,
+        "actual_distance": 16.696685791015625,
+        "spl": 1.0,
+        "num_steps": 154,
+        "navigation_time_sec": 5.971344947814941,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 14,
+        "task_name": "Morning Prep",
+        "source_room": "kitchen",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 10.468610763549805,
+        "actual_distance": 9.499682426452637,
+        "spl": 1.0,
+        "num_steps": 94,
+        "navigation_time_sec": 3.765228033065796,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 15,
+        "task_name": "Commute Prep",
+        "source_room": "hallway",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 0.36723509430885315,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.008035898208618164,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 16,
+        "task_name": "Work Session 1",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 20.009613037109375,
+        "actual_distance": 17.724384307861328,
+        "spl": 1.0,
+        "num_steps": 200,
+        "navigation_time_sec": 6.623777866363525,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 17,
+        "task_name": "Lunch Break",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 12.370400428771973,
+        "actual_distance": 11.926054000854492,
+        "spl": 1.0,
+        "num_steps": 110,
+        "navigation_time_sec": 3.0812039375305176,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 18,
+        "task_name": "Work Session 2",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.206274032592773,
+        "actual_distance": 11.778079986572266,
+        "spl": 1.0,
+        "num_steps": 115,
+        "navigation_time_sec": 5.095470190048218,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 19,
+        "task_name": "Exercise",
+        "source_room": "living room",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 26.627925872802734,
+        "actual_distance": 25.886829376220703,
+        "spl": 1.0,
+        "num_steps": 237,
+        "navigation_time_sec": 9.315337181091309,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 20,
+        "task_name": "Work Session 3",
+        "source_room": "outdoor",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 26.754871368408203,
+        "actual_distance": 26.01734733581543,
+        "spl": 1.0,
+        "num_steps": 237,
+        "navigation_time_sec": 8.41521406173706,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 21,
+        "task_name": "Household Chores",
+        "source_room": "living room",
+        "target_room": "garage",
+        "success": true,
+        "geodesic_distance": 21.616689682006836,
+        "actual_distance": 19.494333267211914,
+        "spl": 1.0,
+        "num_steps": 204,
+        "navigation_time_sec": 11.9114248752594,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 22,
+        "task_name": "Leisure Time",
+        "source_room": "garage",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 24.082748413085938,
+        "actual_distance": 19.32126235961914,
+        "spl": 1.0,
+        "num_steps": 234,
+        "navigation_time_sec": 10.271658897399902,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 23,
+        "task_name": "Dinner",
+        "source_room": "outdoor",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 22.045425415039062,
+        "actual_distance": 19.17591094970703,
+        "spl": 1.0,
+        "num_steps": 227,
+        "navigation_time_sec": 7.331416130065918,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 24,
+        "task_name": "Evening Relaxation",
+        "source_room": "kitchen",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 9.774687767028809,
+        "actual_distance": 9.036720275878906,
+        "spl": 1.0,
+        "num_steps": 115,
+        "navigation_time_sec": 4.114947080612183,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 25,
+        "task_name": "Social Chat",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 19.978355407714844,
+        "actual_distance": 17.691312789916992,
+        "spl": 1.0,
+        "num_steps": 195,
+        "navigation_time_sec": 12.672126054763794,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 26,
+        "task_name": "Night Routine",
+        "source_room": "living room",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 21.746578216552734,
+        "actual_distance": 17.649446487426758,
+        "spl": 1.0,
+        "num_steps": 190,
+        "navigation_time_sec": 8.599968910217285,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 27,
+        "task_name": "Bedtime Prep",
+        "source_room": "hallway",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 0.47529008984565735,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.00777888298034668,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 28,
+        "task_name": "Sleep",
+        "source_room": "hallway",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 6.051061630249023,
+        "actual_distance": 4.115499973297119,
+        "spl": 1.0,
+        "num_steps": 98,
+        "navigation_time_sec": 3.745867967605591,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 29,
+        "task_name": "Wake Up",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.39936748147010803,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.008576154708862305,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 30,
+        "task_name": "Morning Hygiene",
+        "source_room": "bedroom",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 22.250574111938477,
+        "actual_distance": 20.764633178710938,
+        "spl": 1.0,
+        "num_steps": 205,
+        "navigation_time_sec": 7.890887022018433,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 31,
+        "task_name": "Breakfast",
+        "source_room": "bathroom",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 17.06511688232422,
+        "actual_distance": 16.607616424560547,
+        "spl": 1.0,
+        "num_steps": 160,
+        "navigation_time_sec": 6.064133167266846,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 32,
+        "task_name": "Commute to Work (Home)",
+        "source_room": "kitchen",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 10.45707893371582,
+        "actual_distance": 9.324710845947266,
+        "spl": 1.0,
+        "num_steps": 92,
+        "navigation_time_sec": 6.713407039642334,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 33,
+        "task_name": "Work Session 1",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 19.895002365112305,
+        "actual_distance": 17.702192306518555,
+        "spl": 1.0,
+        "num_steps": 199,
+        "navigation_time_sec": 7.753321170806885,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 34,
+        "task_name": "Mid-Morning Break",
+        "source_room": "living room",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 21.78997802734375,
+        "actual_distance": 17.7437686920166,
+        "spl": 1.0,
+        "num_steps": 193,
+        "navigation_time_sec": 8.65873098373413,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 35,
+        "task_name": "Work Session 2",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 19.974163055419922,
+        "actual_distance": 17.68947982788086,
+        "spl": 1.0,
+        "num_steps": 195,
+        "navigation_time_sec": 8.521971940994263,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 36,
+        "task_name": "Lunch",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 12.354435920715332,
+        "actual_distance": 11.927247047424316,
+        "spl": 1.0,
+        "num_steps": 111,
+        "navigation_time_sec": 5.100263833999634,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 37,
+        "task_name": "Afternoon Work Session",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.223162651062012,
+        "actual_distance": 11.780211448669434,
+        "spl": 1.0,
+        "num_steps": 115,
+        "navigation_time_sec": 7.058764934539795,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 38,
+        "task_name": "Short Exercise",
+        "source_room": "living room",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 26.610065460205078,
+        "actual_distance": 25.945192337036133,
+        "spl": 1.0,
+        "num_steps": 242,
+        "navigation_time_sec": 8.317458868026733,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 39,
+        "task_name": "Wrap Up Work",
+        "source_room": "outdoor",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 26.839120864868164,
+        "actual_distance": 26.025732040405273,
+        "spl": 1.0,
+        "num_steps": 237,
+        "navigation_time_sec": 9.33815598487854,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 40,
+        "task_name": "Evening Leisure",
+        "source_room": "living room",
+        "target_room": "outdoor.001",
+        "success": true,
+        "geodesic_distance": 18.312660217285156,
+        "actual_distance": 16.96332550048828,
+        "spl": 1.0,
+        "num_steps": 173,
+        "navigation_time_sec": 6.222256898880005,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 41,
+        "task_name": "Dinner Prep",
+        "source_room": "outdoor.001",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 18.45981788635254,
+        "actual_distance": 17.298770904541016,
+        "spl": 1.0,
+        "num_steps": 177,
+        "navigation_time_sec": 6.213364124298096,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 42,
+        "task_name": "Dinner",
+        "source_room": "kitchen",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 0.4741291105747223,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.008418083190917969,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 43,
+        "task_name": "Social Call",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.215707778930664,
+        "actual_distance": 11.781652450561523,
+        "spl": 1.0,
+        "num_steps": 112,
+        "navigation_time_sec": 8.936639070510864,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 44,
+        "task_name": "Evening Cleanup",
+        "source_room": "living room",
+        "target_room": "laundryroom",
+        "success": true,
+        "geodesic_distance": 19.714630126953125,
+        "actual_distance": 19.3038272857666,
+        "spl": 1.0,
+        "num_steps": 181,
+        "navigation_time_sec": 7.489174842834473,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 45,
+        "task_name": "Relaxation Time",
+        "source_room": "laundryroom/mudroom",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 8.909051895141602,
+        "actual_distance": 7.209046363830566,
+        "spl": 1.0,
+        "num_steps": 110,
+        "navigation_time_sec": 7.096204042434692,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 46,
+        "task_name": "Prepare for Bed",
+        "source_room": "hallway",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 20.959959030151367,
+        "actual_distance": 16.55084228515625,
+        "spl": 1.0,
+        "num_steps": 205,
+        "navigation_time_sec": 6.73368501663208,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 47,
+        "task_name": "Bedtime Reading",
+        "source_room": "bathroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 22.179550170898438,
+        "actual_distance": 20.67283821105957,
+        "spl": 1.0,
+        "num_steps": 199,
+        "navigation_time_sec": 9.884371042251587,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 48,
+        "task_name": "Lights Out Preparation",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.4603596329689026,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.007794857025146484,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 49,
+        "task_name": "Sleep",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.4603596329689026,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.0072019100189208984,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 50,
+        "task_name": "Wake Up",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.4603596329689026,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.011725187301635742,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 51,
+        "task_name": "Morning Hygiene",
+        "source_room": "bedroom",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 22.196901321411133,
+        "actual_distance": 20.64406394958496,
+        "spl": 1.0,
+        "num_steps": 207,
+        "navigation_time_sec": 7.223661184310913,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 52,
+        "task_name": "Breakfast",
+        "source_room": "bathroom",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 16.962970733642578,
+        "actual_distance": 16.542198181152344,
+        "spl": 1.0,
+        "num_steps": 155,
+        "navigation_time_sec": 6.004263877868652,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 53,
+        "task_name": "Morning Exercise",
+        "source_room": "kitchen",
+        "target_room": "outdoor.001",
+        "success": true,
+        "geodesic_distance": 18.524635314941406,
+        "actual_distance": 17.532276153564453,
+        "spl": 1.0,
+        "num_steps": 171,
+        "navigation_time_sec": 15.205853939056396,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 54,
+        "task_name": "Return Home & Refresh",
+        "source_room": "outdoor.001",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 18.937196731567383,
+        "actual_distance": 12.779834747314453,
+        "spl": 1.0,
+        "num_steps": 193,
+        "navigation_time_sec": 8.590626001358032,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 55,
+        "task_name": "Work Session 1",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 19.873409271240234,
+        "actual_distance": 17.653173446655273,
+        "spl": 1.0,
+        "num_steps": 200,
+        "navigation_time_sec": 6.633706092834473,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 56,
+        "task_name": "Short Break",
+        "source_room": "living room",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 21.70361328125,
+        "actual_distance": 17.72883415222168,
+        "spl": 1.0,
+        "num_steps": 193,
+        "navigation_time_sec": 6.639066934585571,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 57,
+        "task_name": "Work Session 2",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 19.9246883392334,
+        "actual_distance": 17.70362663269043,
+        "spl": 1.0,
+        "num_steps": 207,
+        "navigation_time_sec": 6.7434470653533936,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 58,
+        "task_name": "Lunch",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 12.377346992492676,
+        "actual_distance": 11.928335189819336,
+        "spl": 1.0,
+        "num_steps": 110,
+        "navigation_time_sec": 4.088714122772217,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 59,
+        "task_name": "Household Chores",
+        "source_room": "kitchen",
+        "target_room": "garage",
+        "success": true,
+        "geodesic_distance": 10.449554443359375,
+        "actual_distance": 7.589850425720215,
+        "spl": 1.0,
+        "num_steps": 100,
+        "navigation_time_sec": 4.793139934539795,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 60,
+        "task_name": "Leisure Reading",
+        "source_room": "garage",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 21.524127960205078,
+        "actual_distance": 19.407793045043945,
+        "spl": 1.0,
+        "num_steps": 208,
+        "navigation_time_sec": 8.898286819458008,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 61,
+        "task_name": "Social Call",
+        "source_room": "living room",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 0.4001550078392029,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.0079193115234375,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 62,
+        "task_name": "Afternoon Snack & Hydration",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 12.280950546264648,
+        "actual_distance": 11.923556327819824,
+        "spl": 1.0,
+        "num_steps": 118,
+        "navigation_time_sec": 5.351315021514893,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 63,
+        "task_name": "Work Session 3",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.297450065612793,
+        "actual_distance": 11.928340911865234,
+        "spl": 1.0,
+        "num_steps": 115,
+        "navigation_time_sec": 3.945507049560547,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 64,
+        "task_name": "Evening Exercise",
+        "source_room": "living room",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 26.903175354003906,
+        "actual_distance": 26.205398559570312,
+        "spl": 1.0,
+        "num_steps": 232,
+        "navigation_time_sec": 13.201799869537354,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 65,
+        "task_name": "Dinner Prep",
+        "source_room": "outdoor",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 22.03496551513672,
+        "actual_distance": 19.190338134765625,
+        "spl": 1.0,
+        "num_steps": 220,
+        "navigation_time_sec": 9.153168201446533,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 66,
+        "task_name": "Dinner",
+        "source_room": "kitchen",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 0.462164968252182,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.00740504264831543,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 67,
+        "task_name": "Evening Leisure",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 13.063092231750488,
+        "actual_distance": 12.671477317810059,
+        "spl": 1.0,
+        "num_steps": 96,
+        "navigation_time_sec": 2.6612160205841064,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 68,
+        "task_name": "Prepare for Bed",
+        "source_room": "living room",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 13.166223526000977,
+        "actual_distance": 10.615304946899414,
+        "spl": 1.0,
+        "num_steps": 133,
+        "navigation_time_sec": 6.331620216369629,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 69,
+        "task_name": "Wind Down Reading",
+        "source_room": "bathroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 22.204469680786133,
+        "actual_distance": 20.668886184692383,
+        "spl": 1.0,
+        "num_steps": 200,
+        "navigation_time_sec": 7.908769845962524,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 70,
+        "task_name": "Lights Out Prep",
+        "source_room": "bedroom",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 6.072620391845703,
+        "actual_distance": 4.212123870849609,
+        "spl": 1.0,
+        "num_steps": 97,
+        "navigation_time_sec": 3.929877996444702,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 71,
+        "task_name": "Sleep",
+        "source_room": "hallway",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 6.142065048217773,
+        "actual_distance": 4.25927734375,
+        "spl": 1.0,
+        "num_steps": 100,
+        "navigation_time_sec": 7.827692031860352,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 72,
+        "task_name": "Wake Up",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.3611651360988617,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.011215925216674805,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 73,
+        "task_name": "Morning Hygiene",
+        "source_room": "bedroom",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 22.28810691833496,
+        "actual_distance": 20.759126663208008,
+        "spl": 1.0,
+        "num_steps": 210,
+        "navigation_time_sec": 7.276799917221069,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 74,
+        "task_name": "Breakfast",
+        "source_room": "bathroom",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 17.017234802246094,
+        "actual_distance": 16.673564910888672,
+        "spl": 1.0,
+        "num_steps": 164,
+        "navigation_time_sec": 10.165667057037354,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 75,
+        "task_name": "Coffee & Planning",
+        "source_room": "kitchen",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 10.40314769744873,
+        "actual_distance": 9.370817184448242,
+        "spl": 1.0,
+        "num_steps": 92,
+        "navigation_time_sec": 9.6929190158844,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 76,
+        "task_name": "Commute to Work (Home)",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 19.938232421875,
+        "actual_distance": 17.7056941986084,
+        "spl": 1.0,
+        "num_steps": 209,
+        "navigation_time_sec": 7.807186126708984,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 77,
+        "task_name": "Work Session 1",
+        "source_room": "living room",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 0.4616832435131073,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.008611202239990234,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 78,
+        "task_name": "Stand-Up Meeting",
+        "source_room": "living room",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 0.4616832435131073,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.009220123291015625,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 79,
+        "task_name": "Exercise - Morning Walk",
+        "source_room": "living room",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 26.652313232421875,
+        "actual_distance": 25.95250129699707,
+        "spl": 1.0,
+        "num_steps": 233,
+        "navigation_time_sec": 10.211609125137329,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 80,
+        "task_name": "Work Session 2",
+        "source_room": "outdoor",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 26.849756240844727,
+        "actual_distance": 25.97804069519043,
+        "spl": 1.0,
+        "num_steps": 241,
+        "navigation_time_sec": 8.457993268966675,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 81,
+        "task_name": "Lunch Break",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 12.176379203796387,
+        "actual_distance": 11.78014087677002,
+        "spl": 1.0,
+        "num_steps": 113,
+        "navigation_time_sec": 4.1065239906311035,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 82,
+        "task_name": "Work Session 3",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.25843334197998,
+        "actual_distance": 11.91950798034668,
+        "spl": 1.0,
+        "num_steps": 117,
+        "navigation_time_sec": 4.17844820022583,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 83,
+        "task_name": "Short Break",
+        "source_room": "living room",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 21.744441986083984,
+        "actual_distance": 17.725549697875977,
+        "spl": 1.0,
+        "num_steps": 194,
+        "navigation_time_sec": 6.684505939483643,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 84,
+        "task_name": "Work Session 4",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 19.8970947265625,
+        "actual_distance": 17.70287322998047,
+        "spl": 1.0,
+        "num_steps": 199,
+        "navigation_time_sec": 9.59625506401062,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 85,
+        "task_name": "End of Workday",
+        "source_room": "living room",
+        "target_room": "hallway",
+        "success": false,
+        "geodesic_distance": 21.78955078125,
+        "actual_distance": 15.223674774169922,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.0,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 86,
+        "task_name": "Leisure Time",
+        "source_room": "closet.002",
+        "target_room": "outdoor.001",
+        "success": true,
+        "geodesic_distance": 16.687589645385742,
+        "actual_distance": 16.14959716796875,
+        "spl": 1.0,
+        "num_steps": 123,
+        "navigation_time_sec": 5.154350280761719,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 87,
+        "task_name": "Dinner Preparation",
+        "source_room": "outdoor.001",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 18.63859748840332,
+        "actual_distance": 17.510009765625,
+        "spl": 1.0,
+        "num_steps": 160,
+        "navigation_time_sec": 6.890099287033081,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 88,
+        "task_name": "Dinner",
+        "source_room": "kitchen",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 0.3542507290840149,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.007215738296508789,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 89,
+        "task_name": "Social Call",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.323783874511719,
+        "actual_distance": 11.92781925201416,
+        "spl": 1.0,
+        "num_steps": 113,
+        "navigation_time_sec": 4.944284915924072,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 90,
+        "task_name": "Evening Relaxation",
+        "source_room": "living room",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 0.44474828243255615,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.006490230560302734,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 91,
+        "task_name": "Night Hygiene",
+        "source_room": "living room",
+        "target_room": "bathroom.001",
+        "success": true,
+        "geodesic_distance": 26.40049171447754,
+        "actual_distance": 21.98491096496582,
+        "spl": 1.0,
+        "num_steps": 249,
+        "navigation_time_sec": 8.727657794952393,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 92,
+        "task_name": "Wind Down Reading",
+        "source_room": "bathroom.001",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 4.620321750640869,
+        "actual_distance": 3.0814743041992188,
+        "spl": 1.0,
+        "num_steps": 53,
+        "navigation_time_sec": 6.985028028488159,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 93,
+        "task_name": "Prepare for Sleep",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.43489280343055725,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.005854129791259766,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 94,
+        "task_name": "Sleep",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.43489280343055725,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.006341218948364258,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 95,
+        "task_name": "Wake Up",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.43489280343055725,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.01069188117980957,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 96,
+        "task_name": "Morning Hygiene",
+        "source_room": "bedroom",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 23.03568458557129,
+        "actual_distance": 21.289928436279297,
+        "spl": 1.0,
+        "num_steps": 174,
+        "navigation_time_sec": 8.579676866531372,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 97,
+        "task_name": "Breakfast",
+        "source_room": "bathroom",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 17.031522750854492,
+        "actual_distance": 16.69048309326172,
+        "spl": 1.0,
+        "num_steps": 154,
+        "navigation_time_sec": 8.976064920425415,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 98,
+        "task_name": "Check Emails",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.277975082397461,
+        "actual_distance": 11.926074981689453,
+        "spl": 1.0,
+        "num_steps": 116,
+        "navigation_time_sec": 4.010293960571289,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 99,
+        "task_name": "Work Session 1",
+        "source_room": "living room",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 0.3928636908531189,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.007297992706298828,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 100,
+        "task_name": "Work Session 2",
+        "source_room": "living room",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 0.3928636908531189,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.007684230804443359,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 101,
+        "task_name": "Evening Exercise",
+        "source_room": "living room",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 26.907642364501953,
+        "actual_distance": 26.206724166870117,
+        "spl": 1.0,
+        "num_steps": 230,
+        "navigation_time_sec": 8.169939041137695,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 102,
+        "task_name": "Dinner Prep",
+        "source_room": "outdoor",
+        "target_room": "garage",
+        "success": true,
+        "geodesic_distance": 24.002567291259766,
+        "actual_distance": 19.342525482177734,
+        "spl": 1.0,
+        "num_steps": 232,
+        "navigation_time_sec": 8.348056077957153,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 103,
+        "task_name": "Dinner",
+        "source_room": "garage",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 9.628009796142578,
+        "actual_distance": 7.026184558868408,
+        "spl": 1.0,
+        "num_steps": 122,
+        "navigation_time_sec": 7.532893180847168,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 104,
+        "task_name": "Leisure Reading",
+        "source_room": "kitchen",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 22.057106018066406,
+        "actual_distance": 19.189529418945312,
+        "spl": 1.0,
+        "num_steps": 222,
+        "navigation_time_sec": 6.850791931152344,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 105,
+        "task_name": "Wind Down",
+        "source_room": "outdoor",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 20.437606811523438,
+        "actual_distance": 10.17824935913086,
+        "spl": 1.0,
+        "num_steps": 226,
+        "navigation_time_sec": 9.266733169555664,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 106,
+        "task_name": "Bedtime Routine",
+        "source_room": "hallway",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 21.047948837280273,
+        "actual_distance": 16.787839889526367,
+        "spl": 1.0,
+        "num_steps": 201,
+        "navigation_time_sec": 6.631893873214722,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 107,
+        "task_name": "Lights Out",
+        "source_room": "bathroom",
+        "target_room": "bedroom",
+        "success": false,
+        "geodesic_distance": 22.26835060119629,
+        "actual_distance": 9.399116516113281,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.0,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 108,
+        "task_name": "Wake Up",
+        "source_room": "rec/game",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 12.754095077514648,
+        "actual_distance": 11.791532516479492,
+        "spl": 1.0,
+        "num_steps": 97,
+        "navigation_time_sec": 3.7938690185546875,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 109,
+        "task_name": "Morning Hygiene",
+        "source_room": "bedroom",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 22.2387752532959,
+        "actual_distance": 20.71367073059082,
+        "spl": 1.0,
+        "num_steps": 203,
+        "navigation_time_sec": 8.012928009033203,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 110,
+        "task_name": "Breakfast",
+        "source_room": "bathroom",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 17.090852737426758,
+        "actual_distance": 16.684457778930664,
+        "spl": 1.0,
+        "num_steps": 156,
+        "navigation_time_sec": 5.07365608215332,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 111,
+        "task_name": "Commute to Work (Home Office)",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.210431098937988,
+        "actual_distance": 11.782896995544434,
+        "spl": 1.0,
+        "num_steps": 114,
+        "navigation_time_sec": 2.937394857406616,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 112,
+        "task_name": "Work Session 1",
+        "source_room": "living room",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 0.47584643959999084,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.007545948028564453,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 113,
+        "task_name": "Coffee Break",
+        "source_room": "living room",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 21.71414566040039,
+        "actual_distance": 17.779403686523438,
+        "spl": 1.0,
+        "num_steps": 210,
+        "navigation_time_sec": 6.994797945022583,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 114,
+        "task_name": "Work Session 2",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 19.871383666992188,
+        "actual_distance": 17.693561553955078,
+        "spl": 1.0,
+        "num_steps": 198,
+        "navigation_time_sec": 6.614069938659668,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 115,
+        "task_name": "Lunch",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 12.333510398864746,
+        "actual_distance": 11.928335189819336,
+        "spl": 1.0,
+        "num_steps": 112,
+        "navigation_time_sec": 5.131170034408569,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 116,
+        "task_name": "Afternoon Exercise",
+        "source_room": "kitchen",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 22.883621215820312,
+        "actual_distance": 19.679000854492188,
+        "spl": 1.0,
+        "num_steps": 200,
+        "navigation_time_sec": 7.47976279258728,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 117,
+        "task_name": "Work Session 3",
+        "source_room": "outdoor",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 26.793514251708984,
+        "actual_distance": 25.916061401367188,
+        "spl": 1.0,
+        "num_steps": 234,
+        "navigation_time_sec": 8.22055721282959,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 118,
+        "task_name": "Snack & Social Chat",
+        "source_room": "living room",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 0.4296693205833435,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.00798487663269043,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 119,
+        "task_name": "Work Session 4",
+        "source_room": "living room",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 0.4296693205833435,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.007692098617553711,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 120,
+        "task_name": "End of Workday",
+        "source_room": "living room",
+        "target_room": "hallway",
+        "success": false,
+        "geodesic_distance": 21.679468154907227,
+        "actual_distance": 11.969657897949219,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.0,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 121,
+        "task_name": "Household Chores",
+        "source_room": "kitchen",
+        "target_room": "garage",
+        "success": true,
+        "geodesic_distance": 9.663625717163086,
+        "actual_distance": 7.719637393951416,
+        "spl": 1.0,
+        "num_steps": 87,
+        "navigation_time_sec": 2.510596990585327,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 122,
+        "task_name": "Leisure Reading",
+        "source_room": "garage",
+        "target_room": "outdoor.001",
+        "success": true,
+        "geodesic_distance": 22.426082611083984,
+        "actual_distance": 22.04598045349121,
+        "spl": 1.0,
+        "num_steps": 202,
+        "navigation_time_sec": 6.75233793258667,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 123,
+        "task_name": "Dinner Prep",
+        "source_room": "outdoor.001",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 18.512014389038086,
+        "actual_distance": 17.427858352661133,
+        "spl": 1.0,
+        "num_steps": 166,
+        "navigation_time_sec": 4.978266954421997,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 124,
+        "task_name": "Evening Relaxation",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 12.289344787597656,
+        "actual_distance": 11.923562049865723,
+        "spl": 1.0,
+        "num_steps": 114,
+        "navigation_time_sec": 3.986292839050293,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 125,
+        "task_name": "Night Hygiene",
+        "source_room": "living room",
+        "target_room": "bathroom.001",
+        "success": true,
+        "geodesic_distance": 26.426668167114258,
+        "actual_distance": 21.98055648803711,
+        "spl": 1.0,
+        "num_steps": 274,
+        "navigation_time_sec": 11.121078968048096,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 126,
+        "task_name": "Prepare for Bed",
+        "source_room": "bathroom.001",
+        "target_room": "hallway",
+        "success": true,
+        "geodesic_distance": 4.337573051452637,
+        "actual_distance": 3.670586585998535,
+        "spl": 1.0,
+        "num_steps": 77,
+        "navigation_time_sec": 2.52693510055542,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 127,
+        "task_name": "Sleep",
+        "source_room": "hallway",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 6.907076835632324,
+        "actual_distance": 4.488431453704834,
+        "spl": 1.0,
+        "num_steps": 76,
+        "navigation_time_sec": 2.334707021713257,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      }
+    ],
+    "nav_success_rate": 0.9763779527559056,
+    "mean_spl": 1.0,
+    "total_room_entries": 0,
+    "motion_detections": 884,
+    "sensor_detection_rate": 0.0,
+    "camera_tracking_events": 884,
+    "total_motion_events": 292,
+    "automations_triggered": 0,
+    "automation_trigger_rate": 0.0,
+    "st_devices_created": 6,
+    "st_docker_containers": 6,
+    "st_proximity_toggles": 456,
+    "st_ngrok_connected": true,
+    "st_cloud_pushes": 456,
+    "st_cloud_commands": 0,
+    "st_cloud_sync_cycles": 0,
+    "st_interaction_log": [
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.8751005465776382
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9882270059492948
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.930207044193316
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.44425706084404065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 1.7682168840915196
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.9603918111908432
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.9020097592314187
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9543650208491905
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.956279235617572
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.9855146277237086
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.8745181193517326
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.38893470796699636
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.38893470796699636
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.38893470796699636
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.38893470796699636
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.38893470796699636
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.38893470796699636
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.38893470796699636
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.9563565405935355
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.47097918464013955
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.89811500928
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.8540227837885055
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3672350898303742
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.9685397110812493
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.885582844087357
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9044939658393234
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.9295223410425955
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 0.648670155625135
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.9762364772084846
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.99512047142389
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.8852593132225288
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3994077389802906
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3994077389802906
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3994077389802906
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.9937054422573548
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.9931277964183596
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.962476864012004
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4752900913777728
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.8866566078201175
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.39936748697960106
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.9893819842682068
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.9676206058969108
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.48032171839754123
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.8740582818988392
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.889250378294846
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4030746965998042
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.9928461008040554
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.868282957769586
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9204919169333763
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.9135673762959582
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9309975355745421
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.9816112375547998
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.6852538126756882
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.6852538126756882
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.6852538126756882
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.6852538126756882
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.6852538126756882
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.914117305097662
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4275276764184698
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.9442392089593068
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.9232886931596085
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.9532825228845032
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4603596325942722
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.9519514192077634
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.95291520672011
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.971130693653743
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.3510121106575455
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.8892655342446756
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.9436779543955056
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.45693242921322463
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.45693242921322463
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.45693242921322463
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.8908746028345325
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.8675148170284281
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9499997818150097
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.9948258751278396
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.9914313420253578
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.8822122334046845
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-toilet",
+        "room": "toilet",
+        "new_state": "on",
+        "distance": 1.9894959161705654
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.9369472401917378
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 1.9774377465046096
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4832796160287491
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4832796160287491
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4832796160287491
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4832796160287491
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4832796160287491
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.4832796160287491
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.4832796160287491
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.886337938731981
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.40036797533259516
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.40036797533259516
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.40036797533259516
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 1.9982561297410035
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3611651153223219
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 1.2492352385494252
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.9145614992349416
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.9295459032222597
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.44306433323113575
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.44306433323113575
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.44306433323113575
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.992682931388305
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9573238949865532
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.9371244218917085
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.965474717327401
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4782225380413969
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4782225380413969
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4782225380413969
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4782225380413969
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.873600243216101
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.9314653032954652
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.881831663604924
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9653472171671786
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.9867909872152372
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.9222925662514696
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.43489280605505765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.903699270677623
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.9830569350165508
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.991557308725795
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.9916176959784426
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.9851879235527923
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.3576754094593844
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.3576754094593844
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.9963411388563665
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.969510022785053
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.904105561955232
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41819532611289073
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.9748589621222705
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9128160412037907
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.94419886669689
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.9399476229003902
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.9733224587511529
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.4869025039324313
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.4869025039324313
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.8564331089370578
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.9699418968656965
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.86530856176404
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "on",
+        "distance": 1.964646485710694
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "off",
+        "distance": 1.9897390603237788
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-lounge",
+        "room": "lounge",
+        "new_state": "on",
+        "distance": 1.9941872297279177
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-rec-game",
+        "room": "rec/game",
+        "new_state": "off",
+        "distance": 1.9432557989135766
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 1.9124517134283097
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 1.9960030009665581
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.47021210985962475
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.47021210985962475
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.47021210985962475
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.47021210985962475
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.47021210985962475
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.47021210985962475
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.47021210985962475
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "on",
+        "distance": 0.47021210985962475
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-hallway",
+        "room": "hallway",
+        "new_state": "off",
+        "distance": 0.47021210985962475
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.998043293130395
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.36096180079230317
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.36096180079230317
+      }
+    ],
+    "num_articulated_objects": 14,
+    "articulated_interactions": 159,
+    "phantom_delay_attacks_run": 3,
+    "phantom_delay_attacks_success": 3,
+    "phantom_delay_mean_cvss": 9.3,
+    "phantom_delay_results": [
+      {
+        "attack_name": "State-Update Delay Attack (Fu et al. Type 1)",
+        "variant": "state_update_delay",
+        "category": "tcp_transparent_proxy_delay",
+        "success": true,
+        "cvss_score": 9.3,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+        "delay_seconds": 5.0,
+        "messages_delayed": 1,
+        "description": "Delay device state-change events via transparent TCP proxy while maintaining keepalives to avoid offline alerts. Demonstrated 5.0s delay on IoT event messages.",
+        "impact": "Critical state updates (intrusion, smoke, water leak) delayed by 5.0s. Hub's world-model is stale. Real-time alerting value destroyed. Fu et al. demonstrated up to 40 minutes on HomeKit, 64s on Ring.",
+        "mitigation": "Application-layer event acknowledgment with timestamps, accessory keepalive mechanism, event freshness validation, end-to-end encryption with replay protection",
+        "evidence": [
+          "Initial device state: ",
+          "Triggered state change: ON at t=0.000s",
+          "[Proxy] Holding state-change event for 5.0s...",
+          "[Proxy] TCP connection maintained \u2014 device sees ACK (no offline alert)",
+          "[Proxy] Maintained 0 keepalive exchanges during delay"
+        ],
+        "duration_ms": 0.0
+      },
+      {
+        "attack_name": "Erroneous Automation Execution (Fu et al. Type 2)",
+        "variant": "erroneous_execution",
+        "category": "automation_erroneous_execution",
+        "success": true,
+        "cvss_score": 9.3,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+        "delay_seconds": 5.0,
+        "messages_delayed": 1,
+        "description": "Delay trigger event so automation evaluates with stale state, causing incorrect execution. Exploits lack of event timestamp validation in IoT platforms.",
+        "impact": "Automations execute with wrong world-model state. Safety-critical automations (door locks, alarms, gas shutoff) can be triggered incorrectly or prevented. Fu et al. demonstrated on both Apple HomeKit and Ring.",
+        "mitigation": "Include monotonic timestamps in event messages, validate event freshness before automation evaluation, application-layer event acknowledgment (HAP Section 6.8.2)",
+        "evidence": [
+          "[Setup] Automation rule: IF motion_detected AND is_dark THEN light.ON",
+          "[t=0.0s] Motion sensor fires trigger event (response: )",
+          "[Proxy] Attacker delays motion event for 5.0s",
+          "[t=3.3s] Condition changes: is_dark \u2192 is_light (sunrise)",
+          "  \u2192 Automation should NOT fire (condition no longer met)"
+        ],
+        "duration_ms": 0.0
+      },
+      {
+        "attack_name": "Action Reorder Attack (Fu et al. Type 4)",
+        "variant": "action_reorder",
+        "category": "action_command_reorder",
+        "success": true,
+        "cvss_score": 9.3,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+        "delay_seconds": 5.0,
+        "messages_delayed": 1,
+        "description": "Reorder commands by selectively delaying the first, causing it to override the second. Device ends in attacker-desired state instead of user-intended state.",
+        "impact": "Device commands arrive out of order. Earlier (attacker-desired) command overrides later (user-intended) command. Security system left disarmed, locks left unlocked.",
+        "mitigation": "Implement command sequence numbers, reject out-of-order commands, use vector clocks or Lamport timestamps, validate command freshness",
+        "evidence": [
+          "[Setup] Initial device state: STATUS:OK",
+          "[Scenario] User voice-commands: 'Disarm security system'",
+          "[t=0.0s] Cloud sends DISARM (OFF) command \u2192 attacker delays for 5.0s",
+          "[t=0.5s] User manually ARMs (ON) system \u2192 delivered immediately",
+          "  \u2192 Device state: ON (armed) \u2014 response: SWITCH:on\nACK"
+        ],
+        "duration_ms": 0.0
+      }
+    ],
+    "phantom_delay_devices_targeted": 6,
+    "firmware_attacks_run": 18,
+    "firmware_attacks_success": 11,
+    "firmware_attacks_results": [
+      {
+        "attack_name": "Buffer Overflow (Command Buffer)",
+        "category": "buffer_overflow",
+        "severity": "medium",
+        "success": false,
+        "description": "Attempt to overflow the 64-byte command buffer with overlong input",
+        "impact": "Input truncated safely",
+        "mitigation": "Add strict bounds checking on command input length",
+        "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)",
+        "duration_ms": 60.083866119384766,
+        "evidence": [
+          "Firmware processed overlong command (responded with ERROR)",
+          "No crash detected \u2014 buffer truncation may be in place",
+          "Device still responsive after 128-byte input"
+        ]
+      },
+      {
+        "attack_name": "Buffer Overflow (SET_ID)",
+        "category": "buffer_overflow",
+        "severity": "medium",
+        "success": false,
+        "description": "Overflow device_id[32] buffer via SET_ID command",
+        "impact": "Device ID corruption, adjacent memory overwrite",
+        "mitigation": "Validate input length before copy, use safe string functions",
+        "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)",
+        "duration_ms": 10.074853897094727,
+        "evidence": [
+          "Original IDENTIFY: DEVICE:VESPER_LIGHT_V1\nTYPE:SMART_LIGHT\nCAPS:switch,brightness,color_temp\nFIRMWARE:1.0.0\nID:",
+          "SET_ID response: ID:BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\nACK",
+          "Post-overflow IDENTIFY: DEVICE:VESPER_LIGHT_V1\nTYPE:SMART_LIGHT\nCAPS:switch,brightness,color_temp\nFIRMWARE:1.0.0\nID:BBBBBBBB",
+          "Long ID accepted and stored (truncated to buffer size)"
+        ]
+      },
+      {
+        "attack_name": "Authentication Bypass (No Token)",
+        "category": "authentication_bypass",
+        "severity": "critical",
+        "success": true,
+        "description": "Execute privileged commands without any authentication token",
+        "impact": "Full device control without credentials",
+        "mitigation": "Implement mandatory authentication for all state-changing commands",
+        "cve_reference": "CVE-2019-19356 (Netis router auth bypass)",
+        "duration_ms": 10.367870330810547,
+        "evidence": [
+          "'ON' executed without auth: SWITCH:on\nACK",
+          "'OFF' executed without auth: SWITCH:off\nACK",
+          "'SET_ID:hacked' executed without auth: ID:hacked\nACK",
+          "'REBOOT' executed without auth: ACK:REBOOT\nBOOTED\nREADY",
+          "'DEBUG_DUMP' executed without auth: DEBUG:MEMORY_DUMP\nTOKEN:"
+        ]
+      },
+      {
+        "attack_name": "Authentication Bypass (Weak Token Validation)",
+        "category": "authentication_bypass",
+        "severity": "critical",
+        "success": true,
+        "description": "AUTH command accepts any token value including empty strings",
+        "impact": "Any attacker can authenticate with arbitrary credentials",
+        "mitigation": "Implement proper token validation, use challenge-response auth",
+        "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",
+        "duration_ms": 15.136003494262695,
+        "evidence": [
+          "Token '...' accepted: AUTH:OK\nACK",
+          "Token 'admin...' accepted: AUTH:OK\nACK",
+          "Token 'xxxxxxxxxxxxxxxxxxxx...' accepted: AUTH:OK\nACK",
+          "Token '../../etc/passwd...' accepted: AUTH:OK\nACK",
+          "Token '\u0000\u0000\u0000\u0000...' accepted: AUTH:OK\nACK"
+        ]
+      },
+      {
+        "attack_name": "Information Disclosure (Debug Dump)",
+        "category": "information_disclosure",
+        "severity": "high",
+        "success": true,
+        "description": "DEBUG_DUMP command exposes sensitive internal state without auth",
+        "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+        "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+        "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)",
+        "duration_ms": 5.390167236328125,
+        "evidence": [
+          "DEBUG_DUMP command accessible without authentication",
+          "AUTH TOKEN LEAKED in debug output!",
+          "Token field exposed: DEBUG:MEMORY_DUMP\nTOKEN:super_secret_token_12345\nFW_BUF:"
+        ]
+      },
+      {
+        "attack_name": "Information Disclosure (Token Leakage)",
+        "category": "information_disclosure",
+        "severity": "informational",
+        "success": false,
+        "description": "Check if auth token leaks through normal command responses",
+        "impact": "Credential theft via traffic interception",
+        "mitigation": "Never echo credentials in responses, use one-way hashing",
+        "cve_reference": "",
+        "duration_ms": 9.534835815429688,
+        "evidence": [
+          "Token not in 'STATUS' response (safe)",
+          "Token not in 'IDENTIFY' response (safe)",
+          "Token not in 'GET_ALL' response (safe)",
+          "Token not in 'GET_SWITCH' response (safe)"
+        ]
+      },
+      {
+        "attack_name": "Command Injection (Newline)",
+        "category": "command_injection",
+        "severity": "high",
+        "success": true,
+        "description": "Embed newline character to inject a second command in single request",
+        "impact": "Arbitrary command execution via crafted input",
+        "mitigation": "Sanitize input, reject commands containing control characters",
+        "cve_reference": "CVE-2019-17621 (D-Link command injection)",
+        "duration_ms": 410.31908988952637,
+        "evidence": [
+          "Initial state: SWITCH:on",
+          "Injection response: SWITCH:on",
+          "Final state: SWITCH:off",
+          "Command injection successful! OFF executed via newline injection"
+        ]
+      },
+      {
+        "attack_name": "Command Injection (Null Byte)",
+        "category": "command_injection",
+        "severity": "low",
+        "success": false,
+        "description": "Embed null bytes in commands to confuse C string handling",
+        "impact": "Bypass input validation, inject commands",
+        "mitigation": "Handle null bytes explicitly in input parsing",
+        "cve_reference": "",
+        "duration_ms": 3007.462739944458,
+        "evidence": [
+          "Response to null-byte injection: STATUS:OK\n"
+        ]
+      },
+      {
+        "attack_name": "Firmware Update Buffer Overflow",
+        "category": "firmware_update_attack",
+        "severity": "critical",
+        "success": true,
+        "description": "Overflow fw_update_buf[128] via FW_UPDATE command",
+        "impact": "Memory corruption, potential arbitrary code execution",
+        "mitigation": "Validate firmware size, use secure boot, verify signatures",
+        "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)",
+        "duration_ms": 26.03006362915039,
+        "evidence": [
+          "Normal FW_UPDATE (64 bytes): FW_UPDATE:ACCEPTED:53",
+          "Overflow FW_UPDATE (256 bytes): FW_UPDATE:ACCEPTED:53\nACK",
+          "Oversized firmware payload accepted without size validation"
+        ]
+      },
+      {
+        "attack_name": "Unsigned Firmware Update",
+        "category": "firmware_update_attack",
+        "severity": "critical",
+        "success": true,
+        "description": "Upload arbitrary firmware with no cryptographic signature check",
+        "impact": "Complete device takeover via malicious firmware",
+        "mitigation": "Implement secure boot chain with signed firmware verification",
+        "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)",
+        "duration_ms": 7.293939590454102,
+        "evidence": [
+          "FW_UPDATE response: FW_UPDATE:ACCEPTED:53\nACK",
+          "FW_APPLY response: FW_APPLY:INSTALLING\nACK:REBOOT\nBOOTED\nREADY",
+          "Unsigned firmware payload accepted and applied!"
+        ]
+      },
+      {
+        "attack_name": "Denial of Service (Command Flood)",
+        "category": "denial_of_service",
+        "severity": "medium",
+        "success": true,
+        "description": "Flood device with 100 rapid commands",
+        "impact": "Device becomes unresponsive, legitimate commands fail",
+        "mitigation": "Implement rate limiting, connection throttling",
+        "cve_reference": "",
+        "duration_ms": 625.4589557647705,
+        "evidence": [
+          "Pre-flood status: STATUS:OK",
+          "Flood: 100 commands in 0.12s",
+          "Success during flood: 1/100",
+          "Post-flood status: STATUS:OK",
+          "Device degraded or unresponsive after command flood!"
+        ]
+      },
+      {
+        "attack_name": "Denial of Service (Large Payload)",
+        "category": "denial_of_service",
+        "severity": "medium",
+        "success": true,
+        "description": "Send large payloads (up to 64KB) to exhaust device resources",
+        "impact": "Resource exhaustion, device crash",
+        "mitigation": "Limit maximum input size, implement input validation",
+        "cve_reference": "",
+        "duration_ms": 3780.7159423828125,
+        "evidence": [
+          "Pre-test: STATUS:OK",
+          "  1024B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+          "  4096B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+          "  16384B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+          "  65536B payload: "
+        ]
+      },
+      {
+        "attack_name": "State Manipulation (Sensor Disarm)",
+        "category": "state_manipulation",
+        "severity": "critical",
+        "success": true,
+        "description": "Remotely disable a security sensor without authentication",
+        "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+        "mitigation": "Require authenticated commands for security-critical operations",
+        "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",
+        "duration_ms": 213.5140895843506,
+        "evidence": [
+          "Before attack: SWITCH:on",
+          "DISARM response: ERROR:UNKNOWN:DISARM",
+          "OFF response: SWITCH:off\nACK",
+          "After attack: SWITCH:off",
+          "Sensor disarmed! Physical security compromised."
+        ]
+      },
+      {
+        "attack_name": "State Manipulation (Calibration Abuse)",
+        "category": "state_manipulation",
+        "severity": "low",
+        "success": false,
+        "description": "Corrupt sensor readings via CALIBRATE command with invalid values",
+        "impact": "Falsified sensor data, incorrect automation triggers",
+        "mitigation": "Validate calibration ranges, require authentication",
+        "cve_reference": "",
+        "duration_ms": 7.548093795776367,
+        "evidence": [
+          "Original temp: ERROR:UNKNOWN:GET_TEMP",
+          "CALIBRATE:-128 response: ERROR:UNKNOWN:CALIBRATE:-128",
+          "Post-calibration temp: ERROR:UNKNOWN:GET_TEMP"
+        ]
+      },
+      {
+        "attack_name": "Replay Attack",
+        "category": "replay_attack",
+        "severity": "high",
+        "success": true,
+        "description": "Replay previously captured commands \u2014 no freshness validation",
+        "impact": "Attacker can replay any previously observed command",
+        "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+        "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)",
+        "duration_ms": 212.46910095214844,
+        "evidence": [
+          "Device off: SWITCH:off",
+          "Replayed 'ON': SWITCH:on\nACK",
+          "Device after replay: SWITCH:on",
+          "Replay attack successful \u2014 no nonce/timestamp protection"
+        ]
+      },
+      {
+        "attack_name": "Protocol Fuzzing (Random)",
+        "category": "protocol_fuzzing",
+        "severity": "high",
+        "success": true,
+        "description": "Sent 8 random/malformed inputs to test robustness",
+        "impact": "Device crash or unexpected behavior",
+        "mitigation": "Implement robust input validation, fuzz testing in CI",
+        "cve_reference": "",
+        "duration_ms": 24067.1968460083,
+        "evidence": [
+          "Fuzz #0: 32B \u2192 ",
+          "Fuzz #1: 32B \u2192 ERROR:UNKNOWN:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffdSTATUS\n",
+          "Fuzz #2: 100B \u2192 ",
+          "Fuzz #3: 100B \u2192 ERROR:UNKNOWN:LEwagFN%E/38pb:]?0]K5P!NI5qds_M2\"<)v1Em[b #f~t)FMLJejX-d6:\\x;q0\nER",
+          "Fuzz #4: 25B \u2192 ERROR:UNKNOWN:GET_\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n"
+        ]
+      },
+      {
+        "attack_name": "Format String Attack",
+        "category": "protocol_fuzzing",
+        "severity": "low",
+        "success": false,
+        "description": "Test format string vulnerability with %s/%x/%n payloads",
+        "impact": "No format string vulnerability",
+        "mitigation": "Never use user input as printf format string",
+        "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)",
+        "duration_ms": 14.31584358215332,
+        "evidence": []
+      },
+      {
+        "attack_name": "Out-of-Bounds Write (Schedule Array)",
+        "category": "buffer_overflow",
+        "severity": "low",
+        "success": false,
+        "description": "Write beyond schedule[4] array bounds via SET_SCHEDULE command",
+        "impact": "Arbitrary memory write, potential code execution",
+        "mitigation": "Validate array index bounds before write",
+        "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)",
+        "duration_ms": 20.605802536010742,
+        "evidence": [
+          "Normal SET_SCHEDULE:0: ERROR:UNKNOWN:SET_SCHEDULE:0:100",
+          "OOB index 4: ERROR:UNKNOWN:SET_SCHEDULE:4:99999",
+          "OOB index 5: ERROR:UNKNOWN:SET_SCHEDULE:5:99999",
+          "OOB index 8: ERROR:UNKNOWN:SET_SCHEDULE:8:99999",
+          "OOB index 9: ERROR:UNKNOWN:SET_SCHEDULE:9:99999"
+        ]
+      }
+    ],
+    "firmware_attack_categories_hit": 8,
+    "network_attacks_run": 14,
+    "network_attacks_success": 10,
+    "network_attacks_results": [
+      {
+        "attack_name": "MQTT Unauthorized Subscribe (Eavesdropping)",
+        "category": "mqtt_eavesdropping",
+        "success": false,
+        "description": "Subscribe to device topics without authentication to eavesdrop",
+        "impact": "Full visibility into all device states, commands, and events",
+        "mitigation": "Enable MQTT ACL, require client certificates, use TLS",
+        "duration_ms": 104.97212409973145,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Connection error: [Errno 54] Connection reset by peer"
+        ]
+      },
+      {
+        "attack_name": "MQTT Message Injection",
+        "category": "mqtt_message_injection",
+        "success": false,
+        "description": "Inject false sensor data and commands into MQTT topics",
+        "impact": "Falsified sensor data triggers incorrect automations, device control",
+        "mitigation": "Implement message signing, per-topic ACLs, payload validation",
+        "duration_ms": 102.41484642028809,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Connection error: [Errno 54] Connection reset by peer"
+        ]
+      },
+      {
+        "attack_name": "MQTT Topic Hijack (Command MITM)",
+        "category": "mqtt_topic_hijack",
+        "success": false,
+        "description": "Intercept and modify device commands via MQTT topic subscription",
+        "impact": "Attacker can modify any command before it reaches devices",
+        "mitigation": "End-to-end encryption between controller and devices, signed commands",
+        "duration_ms": 102.73098945617676,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Error: [Errno 54] Connection reset by peer"
+        ]
+      },
+      {
+        "attack_name": "TCP Connection Hijack",
+        "category": "tcp_connection_hijack",
+        "success": true,
+        "description": "Connect to device TCP port and send commands alongside legitimate controller",
+        "impact": "Parallel control of device, command injection",
+        "mitigation": "Mutual TLS, connection limits, session tokens",
+        "duration_ms": 504.93407249450684,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Attacker sent OFF, got: SWITCH:off\nACK\n",
+          "Device state: SWITCH:off\n",
+          "Hijack successful \u2014 attacker has device control"
+        ]
+      },
+      {
+        "attack_name": "TCP Man-in-the-Middle Proxy",
+        "category": "tcp_man_in_the_middle",
+        "success": true,
+        "description": "Proxy TCP connection to intercept commands and credentials",
+        "impact": "Credential theft, command interception and modification",
+        "mitigation": "Use TLS/mTLS for all device connections",
+        "duration_ms": 1112.1551990509033,
+        "packets_sent": 0,
+        "packets_captured": 4,
+        "evidence": [
+          "Proxied STATUS: S",
+          "Proxied AUTH: TATUS:OK\n",
+          "Intercepted 4 messages",
+          "AUTH TOKEN INTERCEPTED in transit!"
+        ]
+      },
+      {
+        "attack_name": "TCP Connection Flood DoS",
+        "category": "network_denial_of_service",
+        "success": true,
+        "description": "Open 50 simultaneous TCP connections to exhaust resources",
+        "impact": "Device unavailable to legitimate controllers",
+        "mitigation": "Connection rate limiting, SYN cookies, connection pooling",
+        "duration_ms": 2514.218330383301,
+        "packets_sent": 50,
+        "packets_captured": 0,
+        "evidence": [
+          "Pre-flood status: S",
+          "Opened 50/50 flood connections",
+          "Legitimate connection BLOCKED during flood: timed out"
+        ]
+      },
+      {
+        "attack_name": "Zigbee Frame Replay",
+        "category": "protocol_replay",
+        "success": true,
+        "description": "Capture and replay Zigbee command frames (On/Off cluster)",
+        "impact": "Re-trigger device actions (toggle lights, unlock doors)",
+        "mitigation": "Enable Zigbee 3.0 security with frame counters, use install codes",
+        "duration_ms": 1.0759830474853516,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Captured Zigbee frame: cluster=0x0006, cmd=toggle",
+          "Replayed captured frame (no frame counter check)",
+          "Frame accepted by coordinator \u2014 no replay protection!",
+          "Zigbee HA profile does not enforce frame counters by default"
+        ]
+      },
+      {
+        "attack_name": "Zigbee Network Key Extraction",
+        "category": "protocol_downgrade",
+        "success": true,
+        "description": "Extract Zigbee network key using well-known Trust Center link key",
+        "impact": "Full network key compromise \u2014 can decrypt all Zigbee traffic",
+        "mitigation": "Use Zigbee 3.0 install codes for per-device unique link keys",
+        "duration_ms": 1.2669563293457031,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Default TC Link Key: 5a6967426565416c6c69616e63653039",
+          "ASCII: ZigBeeAlliance09",
+          "Simulated captured network key: 26f087adcb29a8c2a2f912237893742e",
+          "During device pairing, network key is encrypted with TC link key",
+          "Since TC link key is well-known, network key can be decrypted!"
+        ]
+      },
+      {
+        "attack_name": "Protocol Downgrade (No Encryption)",
+        "category": "protocol_downgrade",
+        "success": false,
+        "description": "Verify if devices accept unencrypted connections",
+        "impact": "All traffic visible in plaintext, credential theft, command injection",
+        "mitigation": "Require TLS 1.3 for all connections, reject unencrypted traffic",
+        "duration_ms": 5.690097808837891,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Attempting connection without TLS/encryption",
+          "Device response: A"
+        ]
+      },
+      {
+        "attack_name": "ARP Cache Poisoning (Simulated)",
+        "category": "arp_spoofing",
+        "success": true,
+        "description": "Poison ARP cache to redirect traffic through attacker",
+        "impact": "Man-in-the-middle position, traffic interception",
+        "mitigation": "Use Docker macvlan networks, enable ARP inspection, static ARP entries",
+        "duration_ms": 0.02288818359375,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Crafted ARP reply: 172.20.0.1 is at 52:54:00:de:ad:01",
+          "Target device: 172.20.0.10",
+          "ARP cache poisoning would redirect gateway traffic through attacker",
+          "Docker bridge networks are vulnerable to ARP spoofing by default",
+          "Requires --mac-address control and raw socket access"
+        ]
+      },
+      {
+        "attack_name": "DNS Poisoning (Simulated)",
+        "category": "dns_poisoning",
+        "success": true,
+        "description": "Poison DNS to redirect device cloud connections to attacker",
+        "impact": "Credential theft, malicious firmware delivery, data exfiltration",
+        "mitigation": "Use DNSSEC, certificate pinning, encrypted DNS (DoH/DoT)",
+        "duration_ms": 0.028848648071289062,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Poisoned: api.smartthings.com \u2192 172.20.0.99 (attacker)",
+          "Poisoned: mqtt.vesper.local \u2192 172.20.0.99 (attacker)",
+          "Poisoned: firmware.update.vesper.io \u2192 172.20.0.99 (attacker)",
+          "Poisoned: telemetry.vesper.io \u2192 172.20.0.99 (attacker)",
+          "IoT devices rarely validate DNS responses (no DNSSEC)"
+        ]
+      },
+      {
+        "attack_name": "WiFi Deauthentication Attack (Simulated)",
+        "category": "deauthentication_attack",
+        "success": true,
+        "description": "Send deauthentication frames to disconnect WiFi IoT devices",
+        "impact": "Device offline, DoS, force reconnection to evil twin",
+        "mitigation": "WPA3 with Protected Management Frames (PMF)",
+        "duration_ms": 0.028848648071289062,
+        "packets_sent": 30,
+        "packets_captured": 0,
+        "evidence": [
+          "Crafting IEEE 802.11 deauthentication frames",
+          "Target: All devices on BSS",
+          "Reason code: 7 (Class 3 frame from non-associated station)",
+          "  Deauth \u2192 127.0.0.1:15011",
+          "  Deauth \u2192 127.0.0.1:15012"
+        ]
+      },
+      {
+        "attack_name": "Evil Twin Access Point (Simulated)",
+        "category": "evil_twin_ap",
+        "success": true,
+        "description": "Fake AP captures device credentials after deauthentication",
+        "impact": "Complete credential theft, traffic interception",
+        "mitigation": "WPA3-Enterprise, certificate-based auth, network monitoring",
+        "duration_ms": 0.019073486328125,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Creating evil twin AP: 'VESPER-Home-WiFi'",
+          "Signal strength: -30 dBm (stronger than legitimate AP)",
+          "Security: Open (captive portal for credential capture)",
+          "Device temp-sensor-001 connected to evil twin!",
+          "Device motion-sensor-001 connected to evil twin!"
+        ]
+      },
+      {
+        "attack_name": "Traffic Fingerprinting",
+        "category": "traffic_analysis",
+        "success": true,
+        "description": "Passive traffic analysis to identify device types and firmware versions",
+        "impact": "Device inventory disclosure, vulnerability targeting",
+        "mitigation": "Traffic padding, random delays, encrypted metadata",
+        "duration_ms": 11824.578046798706,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Fingerprinted 127.0.0.1:15011: {\"endpoint\": \"127.0.0.1:15011\", \"response_size\": 108, \"has_device_type\": true, \"has_caps\": true, \"de",
+          "Could not fingerprint 127.0.0.1:15012: timed out",
+          "Could not fingerprint 127.0.0.1:15013: timed out",
+          "Could not fingerprint 127.0.0.1:15014: timed out",
+          "Could not fingerprint 127.0.0.1:15015: timed out"
+        ]
+      }
+    ],
+    "network_attack_categories_hit": 10,
+    "total_attacks_run": 35,
+    "total_attacks_success": 24,
+    "security_score": 68.57142857142857,
+    "tasks_scheduled": 158,
+    "tasks_navigated": 127,
+    "rooms_visited": [
+      "bathroom",
+      "bathroom.001",
+      "bedroom",
+      "garage",
+      "hallway",
+      "kitchen",
+      "laundryroom",
+      "living room",
+      "outdoor",
+      "outdoor.001"
+    ],
+    "room_coverage": 0.5,
+    "eval_duration_sec": 7902.624345064163
+  }
+]

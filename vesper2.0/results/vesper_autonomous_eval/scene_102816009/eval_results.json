@@ -1,0 +1,686 @@
+[
+  {
+    "scene_id": "102816009",
+    "scene_path": "/Users/huanbui/Desktop/vesper/data/scene_datasets/hssd-hab/scenes-articulated/102816009.scene_instance.json",
+    "num_rooms": 35,
+    "room_names": [
+      "garage",
+      "bathroom",
+      "toilet",
+      "closet",
+      "outdoor",
+      "other room",
+      "office",
+      "kitchen",
+      "laundryroom/mudroom",
+      "bedroom",
+      "dining room",
+      "hallway",
+      "entryway/foyer/lobby",
+      "living room",
+      "tv",
+      "bathroom.001",
+      "closet.001",
+      "other room.001",
+      "laundryroom",
+      "bathroom.002",
+      "garage.001",
+      "closet.003",
+      "closet.004",
+      "bedroom.001",
+      "bathroom.003",
+      "toilet.001",
+      "bathroom.004",
+      "bedroom.002",
+      "closet.005",
+      "closet.006",
+      "dining room.001",
+      "hallway.001",
+      "entryway",
+      "hallway.002",
+      "outdoor.001"
+    ],
+    "num_devices": 64,
+    "num_automations": 9,
+    "num_firmware_sensors": 127,
+    "navmesh_area_m2": 1292.8,
+    "nav_trials": [],
+    "nav_success_rate": 0.0,
+    "mean_spl": 0.0,
+    "total_room_entries": 0,
+    "motion_detections": 0,
+    "sensor_detection_rate": 0.0,
+    "camera_tracking_events": 0,
+    "total_motion_events": 0,
+    "automations_triggered": 0,
+    "automation_trigger_rate": 0.0,
+    "st_devices_created": 6,
+    "st_docker_containers": 6,
+    "st_proximity_toggles": 0,
+    "st_ngrok_connected": true,
+    "st_cloud_pushes": 0,
+    "st_cloud_commands": 0,
+    "st_cloud_sync_cycles": 0,
+    "st_interaction_log": [],
+    "num_articulated_objects": 33,
+    "articulated_interactions": 0,
+    "phantom_delay_attacks_run": 3,
+    "phantom_delay_attacks_success": 3,
+    "phantom_delay_mean_cvss": 9.3,
+    "phantom_delay_results": [
+      {
+        "attack_name": "State-Update Delay Attack (Fu et al. Type 1)",
+        "variant": "state_update_delay",
+        "category": "tcp_transparent_proxy_delay",
+        "success": true,
+        "cvss_score": 9.3,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+        "delay_seconds": 5.0,
+        "messages_delayed": 1,
+        "description": "Delay device state-change events via transparent TCP proxy while maintaining keepalives to avoid offline alerts. Demonstrated 5.0s delay on IoT event messages.",
+        "impact": "Critical state updates (intrusion, smoke, water leak) delayed by 5.0s. Hub's world-model is stale. Real-time alerting value destroyed. Fu et al. demonstrated up to 40 minutes on HomeKit, 64s on Ring.",
+        "mitigation": "Application-layer event acknowledgment with timestamps, accessory keepalive mechanism, event freshness validation, end-to-end encryption with replay protection",
+        "evidence": [
+          "Initial device state: STATUS:OK",
+          "Triggered state change: ON at t=0.000s",
+          "[Proxy] Holding state-change event for 5.0s...",
+          "[Proxy] TCP connection maintained \u2014 device sees ACK (no offline alert)",
+          "[Proxy] Maintained 4 keepalive exchanges during delay"
+        ],
+        "duration_ms": 0.0
+      },
+      {
+        "attack_name": "Erroneous Automation Execution (Fu et al. Type 2)",
+        "variant": "erroneous_execution",
+        "category": "automation_erroneous_execution",
+        "success": true,
+        "cvss_score": 9.3,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+        "delay_seconds": 5.0,
+        "messages_delayed": 1,
+        "description": "Delay trigger event so automation evaluates with stale state, causing incorrect execution. Exploits lack of event timestamp validation in IoT platforms.",
+        "impact": "Automations execute with wrong world-model state. Safety-critical automations (door locks, alarms, gas shutoff) can be triggered incorrectly or prevented. Fu et al. demonstrated on both Apple HomeKit and Ring.",
+        "mitigation": "Include monotonic timestamps in event messages, validate event freshness before automation evaluation, application-layer event acknowledgment (HAP Section 6.8.2)",
+        "evidence": [
+          "[Setup] Automation rule: IF motion_detected AND is_dark THEN light.ON",
+          "[t=0.0s] Motion sensor fires trigger event (response: SWITCH:on\nACK)",
+          "[Proxy] Attacker delays motion event for 5.0s",
+          "[t=0.3s] Condition changes: is_dark \u2192 is_light (sunrise)",
+          "  \u2192 Automation should NOT fire (condition no longer met)"
+        ],
+        "duration_ms": 0.0
+      },
+      {
+        "attack_name": "Action Reorder Attack (Fu et al. Type 4)",
+        "variant": "action_reorder",
+        "category": "action_command_reorder",
+        "success": true,
+        "cvss_score": 9.3,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+        "delay_seconds": 5.0,
+        "messages_delayed": 1,
+        "description": "Reorder commands by selectively delaying the first, causing it to override the second. Device ends in attacker-desired state instead of user-intended state.",
+        "impact": "Device commands arrive out of order. Earlier (attacker-desired) command overrides later (user-intended) command. Security system left disarmed, locks left unlocked.",
+        "mitigation": "Implement command sequence numbers, reject out-of-order commands, use vector clocks or Lamport timestamps, validate command freshness",
+        "evidence": [
+          "[Setup] Initial device state: STATUS:OK",
+          "[Scenario] User voice-commands: 'Disarm security system'",
+          "[t=0.0s] Cloud sends DISARM (OFF) command \u2192 attacker delays for 5.0s",
+          "[t=0.5s] User manually ARMs (ON) system \u2192 delivered immediately",
+          "  \u2192 Device state: ON (armed) \u2014 response: SWITCH:on\nACK"
+        ],
+        "duration_ms": 0.0
+      }
+    ],
+    "phantom_delay_devices_targeted": 6,
+    "firmware_attacks_run": 18,
+    "firmware_attacks_success": 11,
+    "firmware_attacks_results": [
+      {
+        "attack_name": "Buffer Overflow (Command Buffer)",
+        "category": "buffer_overflow",
+        "severity": "medium",
+        "success": false,
+        "description": "Attempt to overflow the 64-byte command buffer with overlong input",
+        "impact": "Input truncated safely",
+        "mitigation": "Add strict bounds checking on command input length",
+        "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)",
+        "duration_ms": 112.56599426269531,
+        "evidence": [
+          "Firmware processed overlong command (responded with ERROR)",
+          "No crash detected \u2014 buffer truncation may be in place",
+          "Device still responsive after 128-byte input"
+        ]
+      },
+      {
+        "attack_name": "Buffer Overflow (SET_ID)",
+        "category": "buffer_overflow",
+        "severity": "medium",
+        "success": false,
+        "description": "Overflow device_id[32] buffer via SET_ID command",
+        "impact": "Device ID corruption, adjacent memory overwrite",
+        "mitigation": "Validate input length before copy, use safe string functions",
+        "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)",
+        "duration_ms": 22.726058959960938,
+        "evidence": [
+          "Original IDENTIFY: DEVICE:VESPER_LIGHT_V1\nTYPE:SMART_LIGHT",
+          "SET_ID response: ID:BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\nACK",
+          "Post-overflow IDENTIFY: DEVICE:VESPER_LIGHT_V1\nTYPE:SMART_LIGHT\nCAPS:switch,brightness,color_temp\nFIRMWARE:1.0.0\nID:BBBBBBBB",
+          "Long ID accepted and stored (truncated to buffer size)"
+        ]
+      },
+      {
+        "attack_name": "Authentication Bypass (No Token)",
+        "category": "authentication_bypass",
+        "severity": "critical",
+        "success": true,
+        "description": "Execute privileged commands without any authentication token",
+        "impact": "Full device control without credentials",
+        "mitigation": "Implement mandatory authentication for all state-changing commands",
+        "cve_reference": "CVE-2019-19356 (Netis router auth bypass)",
+        "duration_ms": 14.654159545898438,
+        "evidence": [
+          "'ON' executed without auth: SWITCH:on\nACK",
+          "'OFF' executed without auth: SWITCH:off\nACK",
+          "'SET_ID:hacked' executed without auth: ID:hacked\nACK",
+          "'REBOOT' executed without auth: ACK:REBOOT\nBOOTED\nREADY",
+          "'DEBUG_DUMP' executed without auth: DEBUG:MEMORY_DUMP\nTOKEN:\nFW_BUF:"
+        ]
+      },
+      {
+        "attack_name": "Authentication Bypass (Weak Token Validation)",
+        "category": "authentication_bypass",
+        "severity": "critical",
+        "success": true,
+        "description": "AUTH command accepts any token value including empty strings",
+        "impact": "Any attacker can authenticate with arbitrary credentials",
+        "mitigation": "Implement proper token validation, use challenge-response auth",
+        "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",
+        "duration_ms": 14.659881591796875,
+        "evidence": [
+          "Token '...' accepted: AUTH:OK\nACK",
+          "Token 'admin...' accepted: AUTH:OK\nACK",
+          "Token 'xxxxxxxxxxxxxxxxxxxx...' accepted: AUTH:OK\nACK",
+          "Token '../../etc/passwd...' accepted: AUTH:OK\nACK",
+          "Token '\u0000\u0000\u0000\u0000...' accepted: AUTH:OK\nACK"
+        ]
+      },
+      {
+        "attack_name": "Information Disclosure (Debug Dump)",
+        "category": "information_disclosure",
+        "severity": "high",
+        "success": true,
+        "description": "DEBUG_DUMP command exposes sensitive internal state without auth",
+        "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+        "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+        "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)",
+        "duration_ms": 5.172014236450195,
+        "evidence": [
+          "DEBUG_DUMP command accessible without authentication",
+          "AUTH TOKEN LEAKED in debug output!",
+          "Token field exposed: DEBUG:MEMORY_DUMP\nTOKEN:super_secret_token_12345\nFW_BUF:"
+        ]
+      },
+      {
+        "attack_name": "Information Disclosure (Token Leakage)",
+        "category": "information_disclosure",
+        "severity": "informational",
+        "success": false,
+        "description": "Check if auth token leaks through normal command responses",
+        "impact": "Credential theft via traffic interception",
+        "mitigation": "Never echo credentials in responses, use one-way hashing",
+        "cve_reference": "",
+        "duration_ms": 11.45792007446289,
+        "evidence": [
+          "Token not in 'STATUS' response (safe)",
+          "Token not in 'IDENTIFY' response (safe)",
+          "Token not in 'GET_ALL' response (safe)",
+          "Token not in 'GET_SWITCH' response (safe)"
+        ]
+      },
+      {
+        "attack_name": "Command Injection (Newline)",
+        "category": "command_injection",
+        "severity": "high",
+        "success": true,
+        "description": "Embed newline character to inject a second command in single request",
+        "impact": "Arbitrary command execution via crafted input",
+        "mitigation": "Sanitize input, reject commands containing control characters",
+        "cve_reference": "CVE-2019-17621 (D-Link command injection)",
+        "duration_ms": 438.7660026550293,
+        "evidence": [
+          "Initial state: SWITCH:on",
+          "Injection response: SWITCH:on",
+          "Final state: SWITCH:off",
+          "Command injection successful! OFF executed via newline injection"
+        ]
+      },
+      {
+        "attack_name": "Command Injection (Null Byte)",
+        "category": "command_injection",
+        "severity": "low",
+        "success": false,
+        "description": "Embed null bytes in commands to confuse C string handling",
+        "impact": "Bypass input validation, inject commands",
+        "mitigation": "Handle null bytes explicitly in input parsing",
+        "cve_reference": "",
+        "duration_ms": 3006.269931793213,
+        "evidence": [
+          "Response to null-byte injection: STATUS:OK\n"
+        ]
+      },
+      {
+        "attack_name": "Firmware Update Buffer Overflow",
+        "category": "firmware_update_attack",
+        "severity": "critical",
+        "success": true,
+        "description": "Overflow fw_update_buf[128] via FW_UPDATE command",
+        "impact": "Memory corruption, potential arbitrary code execution",
+        "mitigation": "Validate firmware size, use secure boot, verify signatures",
+        "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)",
+        "duration_ms": 56.21790885925293,
+        "evidence": [
+          "Normal FW_UPDATE (64 bytes): FW_UPDATE:ACCEPTED:53",
+          "Overflow FW_UPDATE (256 bytes): FW_UPDATE:ACCEPTED:53\nACK",
+          "Oversized firmware payload accepted without size validation"
+        ]
+      },
+      {
+        "attack_name": "Unsigned Firmware Update",
+        "category": "firmware_update_attack",
+        "severity": "critical",
+        "success": true,
+        "description": "Upload arbitrary firmware with no cryptographic signature check",
+        "impact": "Complete device takeover via malicious firmware",
+        "mitigation": "Implement secure boot chain with signed firmware verification",
+        "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)",
+        "duration_ms": 18.069028854370117,
+        "evidence": [
+          "FW_UPDATE response: FW_UPDATE:ACCEPTED:53\nACK",
+          "FW_APPLY response: FW_APPLY:INSTALLING\nACK:REBOOT\nBOOTED\nREADY",
+          "Unsigned firmware payload accepted and applied!"
+        ]
+      },
+      {
+        "attack_name": "Denial of Service (Command Flood)",
+        "category": "denial_of_service",
+        "severity": "medium",
+        "success": true,
+        "description": "Flood device with 100 rapid commands",
+        "impact": "Device becomes unresponsive, legitimate commands fail",
+        "mitigation": "Implement rate limiting, connection throttling",
+        "cve_reference": "",
+        "duration_ms": 632.5838565826416,
+        "evidence": [
+          "Pre-flood status: STATUS:OK",
+          "Flood: 100 commands in 0.13s",
+          "Success during flood: 1/100",
+          "Post-flood status: STATUS:OK",
+          "Device degraded or unresponsive after command flood!"
+        ]
+      },
+      {
+        "attack_name": "Denial of Service (Large Payload)",
+        "category": "denial_of_service",
+        "severity": "medium",
+        "success": true,
+        "description": "Send large payloads (up to 64KB) to exhaust device resources",
+        "impact": "Resource exhaustion, device crash",
+        "mitigation": "Limit maximum input size, implement input validation",
+        "cve_reference": "",
+        "duration_ms": 3944.345235824585,
+        "evidence": [
+          "Pre-test: STATUS:OK",
+          "  1024B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+          "  4096B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+          "  16384B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+          "  65536B payload: "
+        ]
+      },
+      {
+        "attack_name": "State Manipulation (Sensor Disarm)",
+        "category": "state_manipulation",
+        "severity": "critical",
+        "success": true,
+        "description": "Remotely disable a security sensor without authentication",
+        "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+        "mitigation": "Require authenticated commands for security-critical operations",
+        "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",
+        "duration_ms": 213.32812309265137,
+        "evidence": [
+          "Before attack: SWITCH:on",
+          "DISARM response: ERROR:UNKNOWN:DISARM",
+          "OFF response: SWITCH:off\nACK",
+          "After attack: SWITCH:off",
+          "Sensor disarmed! Physical security compromised."
+        ]
+      },
+      {
+        "attack_name": "State Manipulation (Calibration Abuse)",
+        "category": "state_manipulation",
+        "severity": "low",
+        "success": false,
+        "description": "Corrupt sensor readings via CALIBRATE command with invalid values",
+        "impact": "Falsified sensor data, incorrect automation triggers",
+        "mitigation": "Validate calibration ranges, require authentication",
+        "cve_reference": "",
+        "duration_ms": 10.207891464233398,
+        "evidence": [
+          "Original temp: ERROR:UNKNOWN:GET_TEMP",
+          "CALIBRATE:-128 response: ERROR:UNKNOWN:CALIBRATE:-128",
+          "Post-calibration temp: ERROR:UNKNOWN:GET_TEMP"
+        ]
+      },
+      {
+        "attack_name": "Replay Attack",
+        "category": "replay_attack",
+        "severity": "high",
+        "success": true,
+        "description": "Replay previously captured commands \u2014 no freshness validation",
+        "impact": "Attacker can replay any previously observed command",
+        "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+        "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)",
+        "duration_ms": 211.39287948608398,
+        "evidence": [
+          "Device off: SWITCH:off",
+          "Replayed 'ON': SWITCH:on\nACK",
+          "Device after replay: SWITCH:on",
+          "Replay attack successful \u2014 no nonce/timestamp protection"
+        ]
+      },
+      {
+        "attack_name": "Protocol Fuzzing (Random)",
+        "category": "protocol_fuzzing",
+        "severity": "high",
+        "success": true,
+        "description": "Sent 8 random/malformed inputs to test robustness",
+        "impact": "Device crash or unexpected behavior",
+        "mitigation": "Implement robust input validation, fuzz testing in CI",
+        "cve_reference": "",
+        "duration_ms": 24054.36420440674,
+        "evidence": [
+          "Fuzz #0: 32B \u2192 ",
+          "Fuzz #1: 32B \u2192 ",
+          "Fuzz #2: 100B \u2192 ERROR:UNKNOWN:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n",
+          "Fuzz #3: 100B \u2192 ",
+          "Fuzz #4: 25B \u2192 ERROR:UNKNOWN:L@.KZ{1le YG:ncn\"!6@NR\"V*t0zVi%QA\tS;O2^4CB-z6o$aW.dzx#@'\u000bLid* 3\n"
+        ]
+      },
+      {
+        "attack_name": "Format String Attack",
+        "category": "protocol_fuzzing",
+        "severity": "low",
+        "success": false,
+        "description": "Test format string vulnerability with %s/%x/%n payloads",
+        "impact": "No format string vulnerability",
+        "mitigation": "Never use user input as printf format string",
+        "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)",
+        "duration_ms": 28.622865676879883,
+        "evidence": []
+      },
+      {
+        "attack_name": "Out-of-Bounds Write (Schedule Array)",
+        "category": "buffer_overflow",
+        "severity": "low",
+        "success": false,
+        "description": "Write beyond schedule[4] array bounds via SET_SCHEDULE command",
+        "impact": "Arbitrary memory write, potential code execution",
+        "mitigation": "Validate array index bounds before write",
+        "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)",
+        "duration_ms": 40.79389572143555,
+        "evidence": [
+          "Normal SET_SCHEDULE:0: ERROR:UNKNOWN:SET_SCHEDULE:0:100",
+          "OOB index 4: ERROR:UNKNOWN:SET_SCHEDULE:4:99999",
+          "OOB index 5: ERROR:UNKNOWN:SET_SCHEDULE:5:99999",
+          "OOB index 8: ERROR:UNKNOWN:SET_SCHEDULE:8:99999",
+          "OOB index 9: ERROR:UNKNOWN:SET_SCHEDULE:9:99999"
+        ]
+      }
+    ],
+    "firmware_attack_categories_hit": 8,
+    "network_attacks_run": 14,
+    "network_attacks_success": 10,
+    "network_attacks_results": [
+      {
+        "attack_name": "MQTT Unauthorized Subscribe (Eavesdropping)",
+        "category": "mqtt_eavesdropping",
+        "success": false,
+        "description": "Subscribe to device topics without authentication to eavesdrop",
+        "impact": "Full visibility into all device states, commands, and events",
+        "mitigation": "Enable MQTT ACL, require client certificates, use TLS",
+        "duration_ms": 105.90481758117676,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Connection error: [Errno 54] Connection reset by peer"
+        ]
+      },
+      {
+        "attack_name": "MQTT Message Injection",
+        "category": "mqtt_message_injection",
+        "success": false,
+        "description": "Inject false sensor data and commands into MQTT topics",
+        "impact": "Falsified sensor data triggers incorrect automations, device control",
+        "mitigation": "Implement message signing, per-topic ACLs, payload validation",
+        "duration_ms": 101.53317451477051,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Connection error: [Errno 54] Connection reset by peer"
+        ]
+      },
+      {
+        "attack_name": "MQTT Topic Hijack (Command MITM)",
+        "category": "mqtt_topic_hijack",
+        "success": false,
+        "description": "Intercept and modify device commands via MQTT topic subscription",
+        "impact": "Attacker can modify any command before it reaches devices",
+        "mitigation": "End-to-end encryption between controller and devices, signed commands",
+        "duration_ms": 101.58085823059082,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Error: [Errno 54] Connection reset by peer"
+        ]
+      },
+      {
+        "attack_name": "TCP Connection Hijack",
+        "category": "tcp_connection_hijack",
+        "success": true,
+        "description": "Connect to device TCP port and send commands alongside legitimate controller",
+        "impact": "Parallel control of device, command injection",
+        "mitigation": "Mutual TLS, connection limits, session tokens",
+        "duration_ms": 502.41613388061523,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Attacker sent OFF, got: SWITCH:off\nACK\n",
+          "Device state: SWITCH:off\n",
+          "Hijack successful \u2014 attacker has device control"
+        ]
+      },
+      {
+        "attack_name": "TCP Man-in-the-Middle Proxy",
+        "category": "tcp_man_in_the_middle",
+        "success": true,
+        "description": "Proxy TCP connection to intercept commands and credentials",
+        "impact": "Credential theft, command interception and modification",
+        "mitigation": "Use TLS/mTLS for all device connections",
+        "duration_ms": 1104.9540042877197,
+        "packets_sent": 0,
+        "packets_captured": 4,
+        "evidence": [
+          "Proxied STATUS: S",
+          "Proxied AUTH: TATUS:OK\n",
+          "Intercepted 4 messages",
+          "AUTH TOKEN INTERCEPTED in transit!"
+        ]
+      },
+      {
+        "attack_name": "TCP Connection Flood DoS",
+        "category": "network_denial_of_service",
+        "success": true,
+        "description": "Open 50 simultaneous TCP connections to exhaust resources",
+        "impact": "Device unavailable to legitimate controllers",
+        "mitigation": "Connection rate limiting, SYN cookies, connection pooling",
+        "duration_ms": 2514.2829418182373,
+        "packets_sent": 50,
+        "packets_captured": 0,
+        "evidence": [
+          "Pre-flood status: S",
+          "Opened 50/50 flood connections",
+          "Legitimate connection BLOCKED during flood: timed out"
+        ]
+      },
+      {
+        "attack_name": "Zigbee Frame Replay",
+        "category": "protocol_replay",
+        "success": true,
+        "description": "Capture and replay Zigbee command frames (On/Off cluster)",
+        "impact": "Re-trigger device actions (toggle lights, unlock doors)",
+        "mitigation": "Enable Zigbee 3.0 security with frame counters, use install codes",
+        "duration_ms": 2.6466846466064453,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Captured Zigbee frame: cluster=0x0006, cmd=toggle",
+          "Replayed captured frame (no frame counter check)",
+          "Frame accepted by coordinator \u2014 no replay protection!",
+          "Zigbee HA profile does not enforce frame counters by default"
+        ]
+      },
+      {
+        "attack_name": "Zigbee Network Key Extraction",
+        "category": "protocol_downgrade",
+        "success": true,
+        "description": "Extract Zigbee network key using well-known Trust Center link key",
+        "impact": "Full network key compromise \u2014 can decrypt all Zigbee traffic",
+        "mitigation": "Use Zigbee 3.0 install codes for per-device unique link keys",
+        "duration_ms": 1.0309219360351562,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Default TC Link Key: 5a6967426565416c6c69616e63653039",
+          "ASCII: ZigBeeAlliance09",
+          "Simulated captured network key: 55e3b3e415b4de8c1d26cfba510f49e0",
+          "During device pairing, network key is encrypted with TC link key",
+          "Since TC link key is well-known, network key can be decrypted!"
+        ]
+      },
+      {
+        "attack_name": "Protocol Downgrade (No Encryption)",
+        "category": "protocol_downgrade",
+        "success": false,
+        "description": "Verify if devices accept unencrypted connections",
+        "impact": "All traffic visible in plaintext, credential theft, command injection",
+        "mitigation": "Require TLS 1.3 for all connections, reject unencrypted traffic",
+        "duration_ms": 1.6398429870605469,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Attempting connection without TLS/encryption",
+          "Device response: S"
+        ]
+      },
+      {
+        "attack_name": "ARP Cache Poisoning (Simulated)",
+        "category": "arp_spoofing",
+        "success": true,
+        "description": "Poison ARP cache to redirect traffic through attacker",
+        "impact": "Man-in-the-middle position, traffic interception",
+        "mitigation": "Use Docker macvlan networks, enable ARP inspection, static ARP entries",
+        "duration_ms": 0.02574920654296875,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Crafted ARP reply: 172.20.0.1 is at 52:54:00:de:ad:01",
+          "Target device: 172.20.0.10",
+          "ARP cache poisoning would redirect gateway traffic through attacker",
+          "Docker bridge networks are vulnerable to ARP spoofing by default",
+          "Requires --mac-address control and raw socket access"
+        ]
+      },
+      {
+        "attack_name": "DNS Poisoning (Simulated)",
+        "category": "dns_poisoning",
+        "success": true,
+        "description": "Poison DNS to redirect device cloud connections to attacker",
+        "impact": "Credential theft, malicious firmware delivery, data exfiltration",
+        "mitigation": "Use DNSSEC, certificate pinning, encrypted DNS (DoH/DoT)",
+        "duration_ms": 0.028848648071289062,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Poisoned: api.smartthings.com \u2192 172.20.0.99 (attacker)",
+          "Poisoned: mqtt.vesper.local \u2192 172.20.0.99 (attacker)",
+          "Poisoned: firmware.update.vesper.io \u2192 172.20.0.99 (attacker)",
+          "Poisoned: telemetry.vesper.io \u2192 172.20.0.99 (attacker)",
+          "IoT devices rarely validate DNS responses (no DNSSEC)"
+        ]
+      },
+      {
+        "attack_name": "WiFi Deauthentication Attack (Simulated)",
+        "category": "deauthentication_attack",
+        "success": true,
+        "description": "Send deauthentication frames to disconnect WiFi IoT devices",
+        "impact": "Device offline, DoS, force reconnection to evil twin",
+        "mitigation": "WPA3 with Protected Management Frames (PMF)",
+        "duration_ms": 0.02193450927734375,
+        "packets_sent": 30,
+        "packets_captured": 0,
+        "evidence": [
+          "Crafting IEEE 802.11 deauthentication frames",
+          "Target: All devices on BSS",
+          "Reason code: 7 (Class 3 frame from non-associated station)",
+          "  Deauth \u2192 127.0.0.1:15011",
+          "  Deauth \u2192 127.0.0.1:15012"
+        ]
+      },
+      {
+        "attack_name": "Evil Twin Access Point (Simulated)",
+        "category": "evil_twin_ap",
+        "success": true,
+        "description": "Fake AP captures device credentials after deauthentication",
+        "impact": "Complete credential theft, traffic interception",
+        "mitigation": "WPA3-Enterprise, certificate-based auth, network monitoring",
+        "duration_ms": 0.04100799560546875,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Creating evil twin AP: 'VESPER-Home-WiFi'",
+          "Signal strength: -30 dBm (stronger than legitimate AP)",
+          "Security: Open (captive portal for credential capture)",
+          "Device temp-sensor-001 connected to evil twin!",
+          "Device motion-sensor-001 connected to evil twin!"
+        ]
+      },
+      {
+        "attack_name": "Traffic Fingerprinting",
+        "category": "traffic_analysis",
+        "success": true,
+        "description": "Passive traffic analysis to identify device types and firmware versions",
+        "impact": "Device inventory disclosure, vulnerability targeting",
+        "mitigation": "Traffic padding, random delays, encrypted metadata",
+        "duration_ms": 7810.664892196655,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Fingerprinted 127.0.0.1:15011: {\"endpoint\": \"127.0.0.1:15011\", \"response_size\": 108, \"has_device_type\": true, \"has_caps\": true, \"de",
+          "Fingerprinted 127.0.0.1:15012: {\"endpoint\": \"127.0.0.1:15012\", \"response_size\": 92, \"has_device_type\": true, \"has_caps\": true, \"dev",
+          "Fingerprinted 127.0.0.1:15013: {\"endpoint\": \"127.0.0.1:15013\", \"response_size\": 92, \"has_device_type\": true, \"has_caps\": true, \"dev",
+          "Could not fingerprint 127.0.0.1:15014: timed out",
+          "Could not fingerprint 127.0.0.1:15015: timed out"
+        ]
+      }
+    ],
+    "network_attack_categories_hit": 10,
+    "total_attacks_run": 35,
+    "total_attacks_success": 24,
+    "security_score": 68.57142857142857,
+    "tasks_scheduled": 3,
+    "tasks_navigated": 0,
+    "rooms_visited": [],
+    "room_coverage": 0.0,
+    "eval_duration_sec": 10381.231425762177
+  }
+]

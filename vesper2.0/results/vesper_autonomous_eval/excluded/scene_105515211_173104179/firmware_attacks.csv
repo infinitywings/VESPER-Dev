@@ -1,0 +1,19 @@
+scene_id,attack_name,category,severity,success,cve_reference,duration_ms
+105515211_173104179,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",63.0
+105515211_173104179,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",13.0
+105515211_173104179,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",12.5
+105515211_173104179,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",20.9
+105515211_173104179,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",5.1
+105515211_173104179,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",14.7
+105515211_173104179,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",412.1
+105515211_173104179,"Command Injection (Null Byte)",command_injection,low,0,"",3005.6
+105515211_173104179,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",22.0
+105515211_173104179,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",7.3
+105515211_173104179,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",617.3
+105515211_173104179,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3646.9
+105515211_173104179,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",214.2
+105515211_173104179,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",7.8
+105515211_173104179,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",207.6
+105515211_173104179,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24059.2
+105515211_173104179,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",13.4
+105515211_173104179,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",20.3

@@ -1,0 +1,15 @@
+scene_id,attack_name,category,success,packets_sent,packets_captured,duration_ms
+106879080_174887211,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,106.6
+106879080_174887211,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.4
+106879080_174887211,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,101.8
+106879080_174887211,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,503.1
+106879080_174887211,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1110.3
+106879080_174887211,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.5
+106879080_174887211,"Zigbee Frame Replay",protocol_replay,1,0,0,1.5
+106879080_174887211,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.1
+106879080_174887211,"Protocol Downgrade (No Encryption)",protocol_downgrade,1,0,0,24.1
+106879080_174887211,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+106879080_174887211,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+106879080_174887211,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+106879080_174887211,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+106879080_174887211,"Traffic Fingerprinting",traffic_analysis,1,0,0,1810.1

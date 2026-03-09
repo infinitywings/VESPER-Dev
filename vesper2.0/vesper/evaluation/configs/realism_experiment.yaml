@@ -1,0 +1,25 @@
+# VESPER — Activity Realism Experiment Only (RQ1)
+# Compare VESPER-generated activity patterns against real-world datasets.
+
+name: "activity_realism"
+description: >
+  Activity realism evaluation. Measures KL / JS divergence,
+  Wasserstein distance, temporal correlation, and schedule entropy
+  between VESPER-generated schedules and CASAS / ARAS reference data.
+
+seed: 42
+output_dir: "results/activity_realism"
+
+run_activity_comparison: true
+run_scalability: false
+run_latency: false
+run_llm_ablation: false
+
+reference_datasets:
+  casas: "data/datasets/casas"
+  aras: "data/datasets/aras"
+
+vesper_db_path: "logs/vesper_tasks.db"
+comparison_days: 30
+confidence_level: 0.95
+num_trials: 5

@@ -1,0 +1,127 @@
+======================================================================
+VESPER AUTONOMOUS EVALUATION — 28 SCENES ANALYSIS
+======================================================================
+
+======================================================================
+1. SCENE OVERVIEW
+======================================================================
+  Scenes: 28
+  Rooms:      min=6, max=35, mean=15.1, median=14
+  Devices:    min=15, max=64, mean=30.9, median=30
+  Automations: min=2, max=13, mean=5.9
+  FW Sensors: min=22, max=127, mean=56.4
+  Navmesh area: min=88.4, max=1810.2, mean=446.3 m²
+
+======================================================================
+2. NAVIGATION PERFORMANCE
+======================================================================
+  Scenes with navigation: 26/28
+  Scenes without navigation (0 trials): 2
+    Failed scene IDs: [102816009, 106366371174226743]
+  Total nav trials: 3580
+  Trials per scene: min=27, max=185, mean=137.7
+  Weighted success rate: 0.9494 (94.9%)
+  Per-scene success rate: mean=0.9476, std=0.0920
+    95% CI: [0.9122, 0.9830]
+  Mean SPL: 1.0000
+
+======================================================================
+3. ROOM COVERAGE
+======================================================================
+  Room coverage: mean=0.6226 (62.3%)
+    min=0.3103, max=1.0476
+    median=0.6077
+    95% CI: [0.5526, 0.6925]
+
+======================================================================
+4. LLM ACTIVITY GENERATION
+======================================================================
+  Total scheduled tasks: 4307
+  Total navigated tasks: 3580
+  Tasks per scene: mean=153.8, min=3, max=190
+  Task completion rate: 83.1%
+
+======================================================================
+5. SMARTTHINGS & FIRMWARE INTEGRATION
+======================================================================
+  Docker containers per scene: 6.0 (typically 6)
+  ngrok connected: 28/28 scenes
+  Total proximity toggles: 47207
+    Per scene: mean=1686, min=0, max=3437
+  Total cloud pushes: 47207
+    Per scene: mean=1686
+  Push success rate: 100.0%
+
+======================================================================
+6. ARTICULATED OBJECT INTERACTIONS
+======================================================================
+  Total articulated objects across scenes: 316
+  Per scene: mean=11.3, min=1, max=33
+  Total interactions: 11936
+  Interactions per scene: mean=426.3, min=0, max=1663
+
+======================================================================
+7. MOTION & SENSOR DETECTION
+======================================================================
+  Total motion detections: 19933
+  Total camera events: 19933
+  Total motion events: 6250
+  Per scene: mean=223, min=0, max=429
+
+======================================================================
+8. SECURITY ASSESSMENT
+======================================================================
+  --- Per Scene (consistent across all scenes) ---
+  Firmware attacks/scene: 18 (11 successful, 8 categories)
+  Network attacks/scene: 14 (10 successful, 10 categories)
+  Phantom delay attacks/scene: 3 (mean CVSS: 9.3)
+  Total attacks/scene: 35
+
+  --- Aggregate Across 28 Scenes ---
+  Grand total attacks run: 980
+  Grand total successful: 660
+  Overall exploit rate: 67.3%
+
+  Firmware exploit rate: 58.3%
+  Network exploit rate: 73.5%
+  Phantom delay exploit rate: 92.9%
+
+  Security score: mean=67.4%, min=57.1%, max=71.4%
+    95% CI: [66.1%, 68.6%]
+
+  FW attack success rates across scenes: mean=58.3%, std=4.9%
+  Network attack success rates: mean=73.5%, std=3.3%
+
+======================================================================
+9. EVALUATION DURATION
+======================================================================
+  Total eval time: 316797s = 88.0 hours
+  Per scene: mean=11314s (188.6 min), min=5179s, max=32116s
+  Median: 9374s
+
+======================================================================
+10. NOTABLE CORRELATIONS
+======================================================================
+  Navmesh area vs toggles (Pearson r): 0.190
+  Rooms vs devices (Pearson r): 0.962
+  Rooms vs duration (Pearson r): -0.048
+
+======================================================================
+PAPER-READY SUMMARY NUMBERS
+======================================================================
+  Scenes evaluated: 28
+  Scenes with full navigation: 26/28 (92.9%)
+  Total navigation trials: 3580
+  Navigation success rate: 94.9%
+  Mean SPL: 1.000
+  Room coverage: 62.3%
+  Total scheduled tasks: 4307
+  Total SmartThings toggles: 47207
+  Total cloud pushes: 47207
+  Total attacks run: 980
+  Total attacks successful: 660
+  Overall exploit rate: 67.3%
+  Mean security score: 67.4%
+  Total evaluation time: 88.0 hours
+  Total articulated interactions: 11936
+  Total motion events: 6250

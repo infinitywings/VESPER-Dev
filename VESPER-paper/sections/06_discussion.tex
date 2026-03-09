@@ -1,0 +1,145 @@
+\section{Discussion}\label{sec:discussion}
+
+\subsection{Limitations}\label{sec:limitations}
+
+\paragraph{Activity Realism.}
+The mean JS divergence of 0.218 indicates moderate distributional
+similarity between \sys{}-generated and real-world activity
+patterns.  Divergence is strongly dataset-dependent: ARAS datasets
+(ground-truth labels, 27~activity types) show low JS (0.101--0.113),
+while CASAS datasets (room-proxy labels, 3--4~categories) show
+higher JS (0.278--0.301) due to category-coverage mismatch.
+Notably, \sys{} achieves strong temporal correlation on CASAS
+(0.80--0.87), confirming realistic circadian patterns.
+A leave-one-out Markov-chain baseline achieves lower JS on CASAS
+(which favors data-trained models on homogeneous datasets) but
+\emph{higher} JS on ARAS (0.202--0.297 vs.\ 0.101--0.113),
+demonstrating \sys{}'s advantage on diverse activity profiles
+without requiring training data.
+The CASAS room-proxy labeling remains a limitation:
+since the publicly available CASAS sensor logs
+lack explicit activity annotations, we infer categories from sensor
+locations (e.g., \emph{Kitchen}$\to$\emph{Meal\_Preparation}).
+This proxy is deterministic and consistent but conflates
+multi-purpose rooms, inflating divergence metrics.
+
+\paragraph{Sim2Real Transfer.}
+With enriched features (transition matrices, n-grams, entropy),
+transfer accuracy improves substantially over our initial coarse
+features: ARAS-House~A achieves $0.813$~RF accuracy
+($F_1 = 0.783$), up from $0.075$ with hourly distributions alone.
+However, domain discrimination remains near~$1.0$ on CASAS datasets,
+indicating that \sys{}'s 9-category schedules are trivially separable
+from CASAS room-proxy data.  Practical Sim2Real transfer benefits
+from datasets with rich, diverse activity annotations;
+researchers targeting CASAS-style deployments would benefit from
+domain adaptation with a small number of real labeled samples.
+
+\paragraph{Navigation Policy.}
+The SPL of~1.0 follows from our use of a shortest-path follower
+on the navmesh.  This validates the goal reachability pipeline
+but does not evaluate learned navigation policies, which is
+orthogonal to our platform contribution.
+
+\subsection{Threats to Validity}
+
+\emph{Internal.}
+LLM-generated schedules are non-deterministic even with fixed seeds
+due to floating-point non-determinism in quantized inference.  We mitigate
+this by generating multiple schedules per configuration and reporting
+confidence intervals.  In the autonomous evaluation, GPT-OSS~20B
+produced 4{,}307~scheduled tasks across 28~scenes, with per-scene
+task counts ranging from 3 to 190.
+
+\emph{External.}
+Our reference datasets (CASAS, ARAS) represent Western households
+with sensor-based annotations; cultural and geographic diversity is
+limited.  The persona library partially addresses this but cannot
+fully capture global variation.  The 28~HSSD scenes, while diverse
+(6--35~rooms), represent a subset of possible residential layouts.
+
+\emph{Construct.}
+We use KL/JS divergence and temporal correlation as proxies for
+``realism.''  Human evaluation studies would complement these
+automated metrics but are beyond the scope of this work.
+
+\paragraph{Firmware Fidelity.}
+QEMU's ARM emulation faithfully executes instruction-level code but
+does not model analog peripherals (e.g., precise ADC noise profiles),
+RF propagation, or cycle-accurate timing.  For protocols above the
+physical layer (UART, MQTT, HTTP), the emulation is functionally
+exact.  Our autonomous evaluation
+processed 47{,}207~firmware state changes through the full pipeline
+(GPIO interrupt $\to$ ISR $\to$ state update $\to$ SmartThings cloud)
+with zero data loss, confirming protocol-level fidelity at scale.
+
+\paragraph{LLM Limitations.}
+All schedule generation uses GPT-OSS~20B, a 20-billion-parameter model
+served locally via LMStudio with 4-bit quantization.
+Our validation layer catches JSON parse errors and retries with explicit
+error feedback, bringing the effective failure rate below~1\%.
+The retry mechanism with increased temperature (0.9) proved effective:
+across the 28-scene autonomous evaluation, the model generated
+4{,}307~tasks with only 2~scenes failing to navigate (due to navmesh
+issues, not LLM errors).
+Future work could evaluate additional LLM models to assess the
+impact of model choice on schedule diversity and correctness.
+
+\paragraph{Scalability Ceiling.}
+While \sys{} handles 200~event-bus devices efficiently (10{,}901~events/s,
+35\% CPU), Docker QEMU containers introduce per-container overhead.
+The autonomous evaluation ran 6~containers per scene across
+28~scenes (88.0~hours total) without resource exhaustion; memory
+grew by at most 24.7\,MB over 168~simulated hours.  Lightweight
+container runtimes (e.g., gVisor) or multi-machine orchestration
+(Kubernetes) could raise this ceiling further.
+
+\paragraph{Navigation Reliability.}
+The 94.9\% navigation success rate (3{,}580~trials across 26~navigable
+scenes) demonstrates that the combination of navmesh snapping and
+reachability filtering produces reliable goal positions.  The 5.1\%
+failure rate consists of edge cases where humanoid--furniture
+collisions or multi-floor navmesh discontinuities caused
+goal-reaching timeouts.  Two additional scenes (102816009 and
+106366371\_174226743) failed to produce any navigation trials due
+to navmesh generation failures, reducing the navigable scene count
+from 28 to 26.  Room coverage averages 62.3\% (95\% CI: [55.3\%,
+69.3\%]), with upper floors and isolated outdoor areas accounting
+for the majority of unreachable rooms.
+
+\paragraph{Privacy and Ethics.}
+\sys{} generates synthetic behavioral data and does not collect or
+process real occupant data.  Personas are fictional.  The SmartThings
+integration uses the researcher's own account; no third-party
+accounts are accessed.
+
+\paragraph{Security Research Platform.}
+The successful reproduction of the phantom-delay
+attack~\cite{phantom-delay} within \sys{}
+(\Cref{sec:eval-phantom-delay}), combined with the addition of
+two new attack suites---Malicious SmartApp (Suite~4, CVSS~8.8)
+targeting cloud API authorization flaws, and ESP32 Buffer Overflow
+(Suite~5, CVSS~9.8) targeting firmware memory safety---demonstrates
+a broader capability: \sys{} can serve as a \emph{reproduction and
+discovery platform} for IoT security research.
+The SmartApp attack exposed that all 5 registered devices were
+enumerable without valid OAuth credentials, and a forged DISARM
+command was accepted in 5\,ms.  The ESP32 overflow caused device
+crash/DoS with a 137-byte payload, with recovery after $\sim$12\,s.
+Crucially, all attack traffic is captured as genuine
+\texttt{.pcap} files via \texttt{tshark}
+(\Cref{sec:eval-pcap}): the 154{,}151-segment global capture
+and 736~per-attack pcaps provide independently verifiable
+evidence that attacks traverse the real Docker bridge
+network---not an in-process simulation.
+Researchers can implement and evaluate protocol-level, cloud API,
+and memory-safety exploits within the 3D simulation without
+requiring physical hardware, reducing the cost and complexity of
+IoT security research.
+
+\paragraph{Broader Impact.}
+By providing a high-fidelity simulation environment, \sys{} reduces
+the need for real-world deployments during early-stage IoT research,
+lowering costs and privacy risks.  However, realistic synthetic
+behavioral data could be misused to train surveillance systems;
+we encourage responsible use aligned with ethical guidelines.

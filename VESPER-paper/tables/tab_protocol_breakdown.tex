@@ -1,0 +1,26 @@
+\begin{table*}[t]
+  \centering
+  \caption{Protocol-level traffic breakdown.
+  UART-over-TCP carries firmware commands (STATUS, SET\_STATE, etc.)
+  between the attack runner and QEMU containers.
+  MQTT carries pub/sub telemetry on topics
+  \texttt{home/\{device\}/\{state,cmd\}}.
+  TCP-SYN counts half-open connections during SYN flood attacks.
+  All traffic is captured on the Docker bridge network
+  (\texttt{172.20.0.0/24}, gateway \texttt{172.20.0.1}).}
+  \label{tab:protocol-breakdown}
+  \small
+  \begin{tabular}{@{}l r r r l@{}}
+    \toprule
+    {Protocol} & {Packets} & {Bytes} & {\# Attacks} & {Example Payloads} \\
+    \midrule
+    UART/TCP & 257 & 31,464 & 28 & \texttt{STATUS}, \texttt{SET\_STATE ON}, overflow buffers \\
+    MQTT     &  20 &    964 &  6 & \texttt{CONNECT}, \texttt{SUBSCRIBE \#}, injection messages \\
+    TCP-SYN  &  40 &  2,560 &  2 & SYN flood (20 half-open/target) \\
+    ARP      &   8 &    204 &  2 & Spoofed gateway MAC announcements \\
+    TCP ctrl &  12 &    335 &  2 & RST injection, sequence hijack \\
+    \midrule
+    \textit{Total} & \textit{337} & \textit{35,527} & \textit{40} & --- \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

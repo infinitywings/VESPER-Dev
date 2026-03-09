@@ -1,0 +1,94 @@
+# Environment and secrets
+.env
+.env.*
+*.env
+.secrets
+secrets/
+*.key
+*.pem
+
+# API Keys
+*api_key*
+*apikey*
+*secret*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Logs
+logs/
+*.log
+
+# Large data files (keep symlinks, ignore actual data)
+data/versioned_data/
+!data/versioned_data/.gitkeep
+
+# Habitat datasets (large files)
+*.glb
+*.navmesh
+*.ply
+*.obj
+*.mtl
+
+# But keep scene configs
+!*.scene_dataset_config.json
+!*.scene_instance.json
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.bin
+*.safetensors
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# LaTeX paper files
+paper-latex/

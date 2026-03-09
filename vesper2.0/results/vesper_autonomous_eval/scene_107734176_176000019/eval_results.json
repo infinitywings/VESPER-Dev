@@ -1,0 +1,3174 @@
+[
+  {
+    "scene_id": "107734176_176000019",
+    "scene_path": "/Users/huanbui/Desktop/vesper/data/scene_datasets/hssd-hab/scenes-articulated/107734176_176000019.scene_instance.json",
+    "num_rooms": 19,
+    "room_names": [
+      "outdoor",
+      "porch/terrace/deck/driveway",
+      "bedroom",
+      "closet",
+      "bathroom",
+      "living room",
+      "other room",
+      "hallway",
+      "lounge",
+      "laundryroom/mudroom",
+      "kitchen",
+      "terrace",
+      "bedroom.001",
+      "bathroom.001",
+      "hallway.001",
+      "bedroom.002",
+      "other room.002",
+      "laundryroom",
+      "other room.001"
+    ],
+    "num_devices": 35,
+    "num_automations": 7,
+    "num_firmware_sensors": 73,
+    "navmesh_area_m2": 195.1,
+    "nav_trials": [
+      {
+        "trial_id": 1,
+        "task_name": "Wind Down",
+        "source_room": "bedroom.001",
+        "target_room": "porch/terrace/deck/driveway",
+        "success": false,
+        "geodesic_distance": 19.396381378173828,
+        "actual_distance": 11.381896018981934,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.0,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 2,
+        "task_name": "Light Snack",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 4.105518341064453,
+        "actual_distance": 3.7370896339416504,
+        "spl": 1.0,
+        "num_steps": 59,
+        "navigation_time_sec": 2.0774710178375244,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 3,
+        "task_name": "Evening Shower",
+        "source_room": "kitchen",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 6.1335859298706055,
+        "actual_distance": 4.514997959136963,
+        "spl": 1.0,
+        "num_steps": 72,
+        "navigation_time_sec": 2.285442590713501,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 4,
+        "task_name": "Read Outside",
+        "source_room": "bathroom",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 7.618886470794678,
+        "actual_distance": 5.969374179840088,
+        "spl": 1.0,
+        "num_steps": 123,
+        "navigation_time_sec": 5.112778902053833,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 5,
+        "task_name": "Video Call with Friend",
+        "source_room": "outdoor",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 13.022987365722656,
+        "actual_distance": 12.070452690124512,
+        "spl": 1.0,
+        "num_steps": 140,
+        "navigation_time_sec": 4.835279941558838,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 6,
+        "task_name": "Evening Stretch",
+        "source_room": "living room",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 13.002113342285156,
+        "actual_distance": 12.09658432006836,
+        "spl": 1.0,
+        "num_steps": 146,
+        "navigation_time_sec": 4.589619159698486,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 7,
+        "task_name": "Prepare for Bed",
+        "source_room": "outdoor",
+        "target_room": "porch/terrace/deck/driveway",
+        "success": true,
+        "geodesic_distance": 22.071914672851562,
+        "actual_distance": 21.17336654663086,
+        "spl": 1.0,
+        "num_steps": 221,
+        "navigation_time_sec": 9.305588960647583,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 8,
+        "task_name": "Sleep",
+        "source_room": "porch/terrace/deck/driveway",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 19.120433807373047,
+        "actual_distance": 18.536840438842773,
+        "spl": 1.0,
+        "num_steps": 184,
+        "navigation_time_sec": 6.448704957962036,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 9,
+        "task_name": "Wake Up",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.39808791875839233,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.013217926025390625,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 10,
+        "task_name": "Morning Hygiene",
+        "source_room": "bedroom",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 4.768397331237793,
+        "actual_distance": 3.1431663036346436,
+        "spl": 1.0,
+        "num_steps": 100,
+        "navigation_time_sec": 4.101956844329834,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 11,
+        "task_name": "Breakfast",
+        "source_room": "bathroom",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 5.386396408081055,
+        "actual_distance": 3.8561911582946777,
+        "spl": 1.0,
+        "num_steps": 90,
+        "navigation_time_sec": 2.7909328937530518,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 12,
+        "task_name": "Morning Exercise",
+        "source_room": "kitchen",
+        "target_room": "outdoor",
+        "success": true,
+        "geodesic_distance": 10.770392417907715,
+        "actual_distance": 9.660209655761719,
+        "spl": 1.0,
+        "num_steps": 145,
+        "navigation_time_sec": 4.537355899810791,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 13,
+        "task_name": "Relax & Read",
+        "source_room": "outdoor",
+        "target_room": "porch/terrace/deck/driveway",
+        "success": true,
+        "geodesic_distance": 21.937705993652344,
+        "actual_distance": 21.107036590576172,
+        "spl": 1.0,
+        "num_steps": 221,
+        "navigation_time_sec": 8.511680841445923,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 14,
+        "task_name": "Work Session",
+        "source_room": "porch/terrace/deck/driveway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 8.671056747436523,
+        "actual_distance": 8.220468521118164,
+        "spl": 1.0,
+        "num_steps": 90,
+        "navigation_time_sec": 31.748559951782227,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 15,
+        "task_name": "Coffee Break",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 3.8243279457092285,
+        "actual_distance": 3.4371073246002197,
+        "spl": 1.0,
+        "num_steps": 33,
+        "navigation_time_sec": 11.605891704559326,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 16,
+        "task_name": "Work Session",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 3.1617355346679688,
+        "actual_distance": 2.6921443939208984,
+        "spl": 1.0,
+        "num_steps": 55,
+        "navigation_time_sec": 19.97516965866089,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 17,
+        "task_name": "Lunch",
+        "source_room": "living room",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 3.0871713161468506,
+        "actual_distance": 2.6917293071746826,
+        "spl": 1.0,
+        "num_steps": 54,
+        "navigation_time_sec": 18.91280508041382,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 18,
+        "task_name": "Social Call",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 3.160741090774536,
+        "actual_distance": 2.691727638244629,
+        "spl": 1.0,
+        "num_steps": 54,
+        "navigation_time_sec": 19.982409954071045,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 19,
+        "task_name": "Household Chores",
+        "source_room": "living room",
+        "target_room": "laundryroom/mudroom",
+        "success": true,
+        "geodesic_distance": 5.1953816413879395,
+        "actual_distance": 4.760165214538574,
+        "spl": 1.0,
+        "num_steps": 77,
+        "navigation_time_sec": 27.38480305671692,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 20,
+        "task_name": "Leisure Walk",
+        "source_room": "laundryroom/mudroom",
+        "target_room": "outdoor",
+        "success": false,
+        "geodesic_distance": 10.872133255004883,
+        "actual_distance": 1.87699294090271,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.0,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 21,
+        "task_name": "Work Session",
+        "source_room": "hallway",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 5.4716291427612305,
+        "actual_distance": 5.0641303062438965,
+        "spl": 1.0,
+        "num_steps": 69,
+        "navigation_time_sec": 24.294620037078857,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 22,
+        "task_name": "Evening Hygiene",
+        "source_room": "living room",
+        "target_room": "bathroom",
+        "success": true,
+        "geodesic_distance": 7.682307243347168,
+        "actual_distance": 6.767673969268799,
+        "spl": 1.0,
+        "num_steps": 104,
+        "navigation_time_sec": 7.951812982559204,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 23,
+        "task_name": "Dinner",
+        "source_room": "bathroom",
+        "target_room": "kitchen",
+        "success": true,
+        "geodesic_distance": 5.3737311363220215,
+        "actual_distance": 3.85280179977417,
+        "spl": 1.0,
+        "num_steps": 92,
+        "navigation_time_sec": 2.8038268089294434,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 24,
+        "task_name": "Free Time",
+        "source_room": "kitchen",
+        "target_room": "living room",
+        "success": true,
+        "geodesic_distance": 3.577432870864868,
+        "actual_distance": 3.140544891357422,
+        "spl": 1.0,
+        "num_steps": 38,
+        "navigation_time_sec": 0.7290117740631104,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 25,
+        "task_name": "Prepare for Bed",
+        "source_room": "living room",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 10.222959518432617,
+        "actual_distance": 9.6931791305542,
+        "spl": 1.0,
+        "num_steps": 110,
+        "navigation_time_sec": 2.916661024093628,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 26,
+        "task_name": "Bedtime Reading",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.4189298748970032,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.00821995735168457,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      },
+      {
+        "trial_id": 27,
+        "task_name": "Sleep",
+        "source_room": "bedroom",
+        "target_room": "bedroom",
+        "success": true,
+        "geodesic_distance": 0.4189298748970032,
+        "actual_distance": 0.0,
+        "spl": 0.0,
+        "num_steps": 0,
+        "navigation_time_sec": 0.009251832962036133,
+        "motion_detected_on_arrival": false,
+        "automation_triggered": false
+      }
+    ],
+    "nav_success_rate": 0.9259259259259259,
+    "mean_spl": 1.0,
+    "total_room_entries": 0,
+    "motion_detections": 39,
+    "sensor_detection_rate": 0.0,
+    "camera_tracking_events": 39,
+    "total_motion_events": 83,
+    "automations_triggered": 0,
+    "automation_trigger_rate": 0.0,
+    "st_devices_created": 6,
+    "st_docker_containers": 6,
+    "st_proximity_toggles": 302,
+    "st_ngrok_connected": true,
+    "st_cloud_pushes": 302,
+    "st_cloud_commands": 0,
+    "st_cloud_sync_cycles": 0,
+    "st_interaction_log": [
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 1.9968967564662246
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 1.922098263788011
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.9206894624388222
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 0.4686604697858172
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.373048459674999
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 0.4686604697858172
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.373048459674999
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 0.4686604697858172
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.373048459674999
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 0.4686604697858172
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.373048459674999
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 0.4686604697858172
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.373048459674999
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 0.4686604697858172
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.373048459674999
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 1.7032005285737841
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.9447033301759344
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 1.9991945785325116
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 0.44816378804727236
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 0.44816378804727236
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 0.44816378804727236
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 1.2469383810309334
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 1.8725441602261954
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 1.9557225847884365
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45739679634857094
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45739679634857094
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45739679634857094
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.9354749411970558
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 1.9056555843855387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 0.36392930339155005
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 0.36392930339155005
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 0.36392930339155005
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 0.6522993148943675
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 1.9501702345727123
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 1.9781758386890027
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 1.8825004441612392
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "on",
+        "distance": 1.882176953556065
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "off",
+        "distance": 0.3954650595468528
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "on",
+        "distance": 0.3954650595468528
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 1.9459060248983975
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 1.9906622700980947
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.8831364787654183
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.3980879198929347
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 1.961493082341305
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.975656169880271
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 0.41670115595604856
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.319342709138799
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 0.41670115595604856
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.319342709138799
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 0.41670115595604856
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.319342709138799
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 0.41670115595604856
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.319342709138799
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 0.41670115595604856
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.319342709138799
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 1.727379653926737
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 1.9998024720442305
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.9595852243515384
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 1.889066339289854
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 0.4963877516738
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 0.4963877516738
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 0.4963877516738
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 0.4963877516738
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 0.4963877516738
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 0.4963877516738
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 0.4963877516738
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "on",
+        "distance": 0.4963877516738
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-outdoor",
+        "room": "outdoor",
+        "new_state": "off",
+        "distance": 0.6451366353453195
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 1.975402273937967
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 1.983240396708792
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 1.9036087100344445
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "off",
+        "distance": 1.918343838376265
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "on",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "off",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "on",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "off",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "on",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "off",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "on",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "off",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "on",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "off",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "on",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "off",
+        "distance": 0.43196925563969124
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-porch-terrace-deck-driveway",
+        "room": "porch/terrace/deck/driveway",
+        "new_state": "on",
+        "distance": 1.4324261188309386
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 1.9459557243944476
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.9027124149340429
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.45554692495271387
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.7890988571489974
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 1.9638788622853882
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 1.9739997629726944
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 1.0824442449642084
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677667012480963
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.7743252880311765
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 1.9635283068375493
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 1.9739983765693483
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 1.0824448499467556
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677838936377693
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677838936377693
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677838936377693
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677838936377693
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677838936377693
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.48677838936377693
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.48677838936377693
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 1.0372673507070576
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 1.9067365986719444
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.8666396965125058
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4166358764148314
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 1.969320473484755
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.8801106271089432
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 0.4266337548167082
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.3350821617608948
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 0.4266337548167082
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.3350821617608948
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 0.4266337548167082
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "on",
+        "distance": 1.3350821617608948
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "off",
+        "distance": 0.4266337548167082
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-closet",
+        "room": "closet",
+        "new_state": "off",
+        "distance": 1.3350821617608948
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 1.9424850789905572
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "off",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-living-room",
+        "room": "living room",
+        "new_state": "on",
+        "distance": 0.4545063345704125
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bathroom",
+        "room": "bathroom",
+        "new_state": "on",
+        "distance": 1.9852639756491486
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 1.9040978021840014
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "off",
+        "distance": 0.41892987506087515
+      },
+      {
+        "direction": "3D\u2192cloud",
+        "device_id": "vesper-3d-bedroom",
+        "room": "bedroom",
+        "new_state": "on",
+        "distance": 0.41892987506087515
+      }
+    ],
+    "num_articulated_objects": 4,
+    "articulated_interactions": 3,
+    "phantom_delay_attacks_run": 3,
+    "phantom_delay_attacks_success": 2,
+    "phantom_delay_mean_cvss": 9.3,
+    "phantom_delay_results": [
+      {
+        "attack_name": "State-Update Delay Attack (Fu et al. Type 1)",
+        "variant": "state_update_delay",
+        "category": "tcp_transparent_proxy_delay",
+        "success": true,
+        "cvss_score": 9.3,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+        "delay_seconds": 5.0,
+        "messages_delayed": 1,
+        "description": "Delay device state-change events via transparent TCP proxy while maintaining keepalives to avoid offline alerts. Demonstrated 5.0s delay on IoT event messages.",
+        "impact": "Critical state updates (intrusion, smoke, water leak) delayed by 5.0s. Hub's world-model is stale. Real-time alerting value destroyed. Fu et al. demonstrated up to 40 minutes on HomeKit, 64s on Ring.",
+        "mitigation": "Application-layer event acknowledgment with timestamps, accessory keepalive mechanism, event freshness validation, end-to-end encryption with replay protection",
+        "evidence": [
+          "Initial device state: STATUS:OK",
+          "Triggered state change: ON at t=0.000s",
+          "[Proxy] Holding state-change event for 5.0s...",
+          "[Proxy] TCP connection maintained \u2014 device sees ACK (no offline alert)",
+          "[Proxy] Maintained 4 keepalive exchanges during delay"
+        ],
+        "duration_ms": 0.0
+      },
+      {
+        "attack_name": "Erroneous Automation Execution (Fu et al. Type 2)",
+        "variant": "erroneous_execution",
+        "category": "automation_erroneous_execution",
+        "success": true,
+        "cvss_score": 9.3,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+        "delay_seconds": 5.0,
+        "messages_delayed": 1,
+        "description": "Delay trigger event so automation evaluates with stale state, causing incorrect execution. Exploits lack of event timestamp validation in IoT platforms.",
+        "impact": "Automations execute with wrong world-model state. Safety-critical automations (door locks, alarms, gas shutoff) can be triggered incorrectly or prevented. Fu et al. demonstrated on both Apple HomeKit and Ring.",
+        "mitigation": "Include monotonic timestamps in event messages, validate event freshness before automation evaluation, application-layer event acknowledgment (HAP Section 6.8.2)",
+        "evidence": [
+          "[Setup] Automation rule: IF motion_detected AND is_dark THEN light.ON",
+          "[t=0.0s] Motion sensor fires trigger event (response: )",
+          "[Proxy] Attacker delays motion event for 5.0s",
+          "[t=3.3s] Condition changes: is_dark \u2192 is_light (sunrise)",
+          "  \u2192 Automation should NOT fire (condition no longer met)"
+        ],
+        "duration_ms": 0.0
+      },
+      {
+        "attack_name": "Action Reorder Attack (Fu et al. Type 4)",
+        "variant": "action_reorder",
+        "category": "action_command_reorder",
+        "success": false,
+        "cvss_score": 9.3,
+        "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+        "delay_seconds": 5.0,
+        "messages_delayed": 1,
+        "description": "Reorder commands by selectively delaying the first, causing it to override the second. Device ends in attacker-desired state instead of user-intended state.",
+        "impact": "Device commands arrive out of order. Earlier (attacker-desired) command overrides later (user-intended) command. Security system left disarmed, locks left unlocked.",
+        "mitigation": "Implement command sequence numbers, reject out-of-order commands, use vector clocks or Lamport timestamps, validate command freshness",
+        "evidence": [
+          "[Setup] Initial device state: ",
+          "[Scenario] User voice-commands: 'Disarm security system'",
+          "[t=0.0s] Cloud sends DISARM (OFF) command \u2192 attacker delays for 5.0s",
+          "[t=0.5s] User manually ARMs (ON) system \u2192 delivered immediately",
+          "  \u2192 Device state: ON (armed) \u2014 response: "
+        ],
+        "duration_ms": 0.0
+      }
+    ],
+    "phantom_delay_devices_targeted": 6,
+    "firmware_attacks_run": 18,
+    "firmware_attacks_success": 11,
+    "firmware_attacks_results": [
+      {
+        "attack_name": "Buffer Overflow (Command Buffer)",
+        "category": "buffer_overflow",
+        "severity": "medium",
+        "success": false,
+        "description": "Attempt to overflow the 64-byte command buffer with overlong input",
+        "impact": "Input truncated safely",
+        "mitigation": "Add strict bounds checking on command input length",
+        "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)",
+        "duration_ms": 294.08812522888184,
+        "evidence": [
+          "Firmware processed overlong command (responded with ERROR)",
+          "No crash detected \u2014 buffer truncation may be in place",
+          "Device still responsive after 128-byte input"
+        ]
+      },
+      {
+        "attack_name": "Buffer Overflow (SET_ID)",
+        "category": "buffer_overflow",
+        "severity": "medium",
+        "success": false,
+        "description": "Overflow device_id[32] buffer via SET_ID command",
+        "impact": "Device ID corruption, adjacent memory overwrite",
+        "mitigation": "Validate input length before copy, use safe string functions",
+        "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)",
+        "duration_ms": 27.350187301635742,
+        "evidence": [
+          "Original IDENTIFY: DEVICE:VESPER_LIGHT_V1\nTYPE:SMART_LIGHT\nCAPS:switch,brightness,color_temp\nFIRMWARE:1.0.0\nID:",
+          "SET_ID response: ID:BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\nACK",
+          "Post-overflow IDENTIFY: DEVICE:VESPER_LIGHT_V1\nTYPE:SMART_LIGHT\nCAPS:switch,brightness,color_temp\nFIRMWARE:1.0.0\nID:BBBBBBBB",
+          "Long ID accepted and stored (truncated to buffer size)"
+        ]
+      },
+      {
+        "attack_name": "Authentication Bypass (No Token)",
+        "category": "authentication_bypass",
+        "severity": "critical",
+        "success": true,
+        "description": "Execute privileged commands without any authentication token",
+        "impact": "Full device control without credentials",
+        "mitigation": "Implement mandatory authentication for all state-changing commands",
+        "cve_reference": "CVE-2019-19356 (Netis router auth bypass)",
+        "duration_ms": 26.955127716064453,
+        "evidence": [
+          "'ON' executed without auth: SWITCH:on\nACK",
+          "'OFF' executed without auth: SWITCH:off\nACK",
+          "'SET_ID:hacked' executed without auth: ID:hacked\nACK",
+          "'REBOOT' executed without auth: ACK:REBOOT\nBOOTED\nREADY",
+          "'DEBUG_DUMP' executed without auth: DEBUG:MEMORY_DUMP\nTOKEN:\nFW_BUF:"
+        ]
+      },
+      {
+        "attack_name": "Authentication Bypass (Weak Token Validation)",
+        "category": "authentication_bypass",
+        "severity": "critical",
+        "success": true,
+        "description": "AUTH command accepts any token value including empty strings",
+        "impact": "Any attacker can authenticate with arbitrary credentials",
+        "mitigation": "Implement proper token validation, use challenge-response auth",
+        "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",
+        "duration_ms": 19.363880157470703,
+        "evidence": [
+          "Token '...' accepted: AUTH:OK\nACK",
+          "Token 'admin...' accepted: AUTH:OK\nACK",
+          "Token 'xxxxxxxxxxxxxxxxxxxx...' accepted: AUTH:OK\nACK",
+          "Token '../../etc/passwd...' accepted: AUTH:OK\nACK",
+          "Token '\u0000\u0000\u0000\u0000...' accepted: AUTH:OK\nACK"
+        ]
+      },
+      {
+        "attack_name": "Information Disclosure (Debug Dump)",
+        "category": "information_disclosure",
+        "severity": "high",
+        "success": true,
+        "description": "DEBUG_DUMP command exposes sensitive internal state without auth",
+        "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+        "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+        "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)",
+        "duration_ms": 5.898952484130859,
+        "evidence": [
+          "DEBUG_DUMP command accessible without authentication",
+          "AUTH TOKEN LEAKED in debug output!",
+          "Token field exposed: DEBUG:MEMORY_DUMP\nTOKEN:super_secret_token_12345\nFW_BUF:"
+        ]
+      },
+      {
+        "attack_name": "Information Disclosure (Token Leakage)",
+        "category": "information_disclosure",
+        "severity": "informational",
+        "success": false,
+        "description": "Check if auth token leaks through normal command responses",
+        "impact": "Credential theft via traffic interception",
+        "mitigation": "Never echo credentials in responses, use one-way hashing",
+        "cve_reference": "",
+        "duration_ms": 10.501861572265625,
+        "evidence": [
+          "Token not in 'STATUS' response (safe)",
+          "Token not in 'IDENTIFY' response (safe)",
+          "Token not in 'GET_ALL' response (safe)",
+          "Token not in 'GET_SWITCH' response (safe)"
+        ]
+      },
+      {
+        "attack_name": "Command Injection (Newline)",
+        "category": "command_injection",
+        "severity": "high",
+        "success": true,
+        "description": "Embed newline character to inject a second command in single request",
+        "impact": "Arbitrary command execution via crafted input",
+        "mitigation": "Sanitize input, reject commands containing control characters",
+        "cve_reference": "CVE-2019-17621 (D-Link command injection)",
+        "duration_ms": 411.87286376953125,
+        "evidence": [
+          "Initial state: SWITCH:on",
+          "Injection response: SWITCH:on",
+          "Final state: SWITCH:off",
+          "Command injection successful! OFF executed via newline injection"
+        ]
+      },
+      {
+        "attack_name": "Command Injection (Null Byte)",
+        "category": "command_injection",
+        "severity": "low",
+        "success": false,
+        "description": "Embed null bytes in commands to confuse C string handling",
+        "impact": "Bypass input validation, inject commands",
+        "mitigation": "Handle null bytes explicitly in input parsing",
+        "cve_reference": "",
+        "duration_ms": 3008.7571144104004,
+        "evidence": [
+          "Response to null-byte injection: STATUS:OK\n"
+        ]
+      },
+      {
+        "attack_name": "Firmware Update Buffer Overflow",
+        "category": "firmware_update_attack",
+        "severity": "critical",
+        "success": true,
+        "description": "Overflow fw_update_buf[128] via FW_UPDATE command",
+        "impact": "Memory corruption, potential arbitrary code execution",
+        "mitigation": "Validate firmware size, use secure boot, verify signatures",
+        "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)",
+        "duration_ms": 18.815040588378906,
+        "evidence": [
+          "Normal FW_UPDATE (64 bytes): FW_UPDATE:ACCEPTED:53\nACK",
+          "Overflow FW_UPDATE (256 bytes): FW_UPDATE:ACCEPTED:53\nACK",
+          "Oversized firmware payload accepted without size validation"
+        ]
+      },
+      {
+        "attack_name": "Unsigned Firmware Update",
+        "category": "firmware_update_attack",
+        "severity": "critical",
+        "success": true,
+        "description": "Upload arbitrary firmware with no cryptographic signature check",
+        "impact": "Complete device takeover via malicious firmware",
+        "mitigation": "Implement secure boot chain with signed firmware verification",
+        "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)",
+        "duration_ms": 9.032964706420898,
+        "evidence": [
+          "FW_UPDATE response: FW_UPDATE:ACCEPTED:53\nACK",
+          "FW_APPLY response: FW_APPLY:INSTALLING\nACK:REBOOT\nBOOTED\nREADY",
+          "Unsigned firmware payload accepted and applied!"
+        ]
+      },
+      {
+        "attack_name": "Denial of Service (Command Flood)",
+        "category": "denial_of_service",
+        "severity": "medium",
+        "success": true,
+        "description": "Flood device with 100 rapid commands",
+        "impact": "Device becomes unresponsive, legitimate commands fail",
+        "mitigation": "Implement rate limiting, connection throttling",
+        "cve_reference": "",
+        "duration_ms": 675.9130954742432,
+        "evidence": [
+          "Pre-flood status: STATUS:OK",
+          "Flood: 100 commands in 0.17s",
+          "Success during flood: 3/100",
+          "Post-flood status: STATUS:OK",
+          "Device degraded or unresponsive after command flood!"
+        ]
+      },
+      {
+        "attack_name": "Denial of Service (Large Payload)",
+        "category": "denial_of_service",
+        "severity": "medium",
+        "success": true,
+        "description": "Send large payloads (up to 64KB) to exhaust device resources",
+        "impact": "Resource exhaustion, device crash",
+        "mitigation": "Limit maximum input size, implement input validation",
+        "cve_reference": "",
+        "duration_ms": 4147.1662521362305,
+        "evidence": [
+          "Pre-test: STATUS:OK",
+          "  1024B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+          "  4096B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+          "  16384B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+          "  65536B payload: "
+        ]
+      },
+      {
+        "attack_name": "State Manipulation (Sensor Disarm)",
+        "category": "state_manipulation",
+        "severity": "critical",
+        "success": true,
+        "description": "Remotely disable a security sensor without authentication",
+        "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+        "mitigation": "Require authenticated commands for security-critical operations",
+        "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",
+        "duration_ms": 218.68324279785156,
+        "evidence": [
+          "Before attack: SWITCH:on",
+          "DISARM response: ERROR:UNKNOWN:DISARM",
+          "OFF response: SWITCH:off\nACK",
+          "After attack: SWITCH:off",
+          "Sensor disarmed! Physical security compromised."
+        ]
+      },
+      {
+        "attack_name": "State Manipulation (Calibration Abuse)",
+        "category": "state_manipulation",
+        "severity": "low",
+        "success": false,
+        "description": "Corrupt sensor readings via CALIBRATE command with invalid values",
+        "impact": "Falsified sensor data, incorrect automation triggers",
+        "mitigation": "Validate calibration ranges, require authentication",
+        "cve_reference": "",
+        "duration_ms": 27.712106704711914,
+        "evidence": [
+          "Original temp: ERROR:UNKNOWN:GET_TEMP",
+          "CALIBRATE:-128 response: ERROR:UNKNOWN:CALIBRATE:-128",
+          "Post-calibration temp: ERROR:UNKNOWN:GET_TEMP"
+        ]
+      },
+      {
+        "attack_name": "Replay Attack",
+        "category": "replay_attack",
+        "severity": "high",
+        "success": true,
+        "description": "Replay previously captured commands \u2014 no freshness validation",
+        "impact": "Attacker can replay any previously observed command",
+        "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+        "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)",
+        "duration_ms": 219.46287155151367,
+        "evidence": [
+          "Device off: SWITCH:off",
+          "Replayed 'ON': SWITCH:on\nACK",
+          "Device after replay: SWITCH:on",
+          "Replay attack successful \u2014 no nonce/timestamp protection"
+        ]
+      },
+      {
+        "attack_name": "Protocol Fuzzing (Random)",
+        "category": "protocol_fuzzing",
+        "severity": "high",
+        "success": true,
+        "description": "Sent 8 random/malformed inputs to test robustness",
+        "impact": "Device crash or unexpected behavior",
+        "mitigation": "Implement robust input validation, fuzz testing in CI",
+        "cve_reference": "",
+        "duration_ms": 24061.885118484497,
+        "evidence": [
+          "Fuzz #0: 32B \u2192 ",
+          "Fuzz #1: 32B \u2192 ",
+          "Fuzz #2: 100B \u2192 ERROR:UNKNOWN:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n",
+          "Fuzz #3: 100B \u2192 ERROR:UNKNOWN:6\nERROR:UNKNOWN:>pJ'7LlD}1*G\nERROR:UNKNOWN:D$]ag t\\k314Do-Oe\n",
+          "Fuzz #4: 25B \u2192 ERROR:UNKNOWN:!\fTPm{]<3L*Q8\"mGz|Se0d6I2tSp&H*N(/kD6!,z9)1A8PZ'/*c^k4k1Jcwf$n)\n"
+        ]
+      },
+      {
+        "attack_name": "Format String Attack",
+        "category": "protocol_fuzzing",
+        "severity": "low",
+        "success": false,
+        "description": "Test format string vulnerability with %s/%x/%n payloads",
+        "impact": "No format string vulnerability",
+        "mitigation": "Never use user input as printf format string",
+        "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)",
+        "duration_ms": 18.133163452148438,
+        "evidence": []
+      },
+      {
+        "attack_name": "Out-of-Bounds Write (Schedule Array)",
+        "category": "buffer_overflow",
+        "severity": "low",
+        "success": false,
+        "description": "Write beyond schedule[4] array bounds via SET_SCHEDULE command",
+        "impact": "Arbitrary memory write, potential code execution",
+        "mitigation": "Validate array index bounds before write",
+        "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)",
+        "duration_ms": 21.448850631713867,
+        "evidence": [
+          "Normal SET_SCHEDULE:0: ERROR:UNKNOWN:SET_SCHEDULE:0:100",
+          "OOB index 4: ERROR:UNKNOWN:SET_SCHEDULE:4:99999",
+          "OOB index 5: ERROR:UNKNOWN:SET_SCHEDULE:5:99999",
+          "OOB index 8: ERROR:UNKNOWN:SET_SCHEDULE:8:99999",
+          "OOB index 9: ERROR:UNKNOWN:SET_SCHEDULE:9:99999"
+        ]
+      }
+    ],
+    "firmware_attack_categories_hit": 8,
+    "network_attacks_run": 14,
+    "network_attacks_success": 11,
+    "network_attacks_results": [
+      {
+        "attack_name": "MQTT Unauthorized Subscribe (Eavesdropping)",
+        "category": "mqtt_eavesdropping",
+        "success": false,
+        "description": "Subscribe to device topics without authentication to eavesdrop",
+        "impact": "Full visibility into all device states, commands, and events",
+        "mitigation": "Enable MQTT ACL, require client certificates, use TLS",
+        "duration_ms": 104.28166389465332,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Connection error: [Errno 54] Connection reset by peer"
+        ]
+      },
+      {
+        "attack_name": "MQTT Message Injection",
+        "category": "mqtt_message_injection",
+        "success": false,
+        "description": "Inject false sensor data and commands into MQTT topics",
+        "impact": "Falsified sensor data triggers incorrect automations, device control",
+        "mitigation": "Implement message signing, per-topic ACLs, payload validation",
+        "duration_ms": 101.35102272033691,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Connection error: [Errno 54] Connection reset by peer"
+        ]
+      },
+      {
+        "attack_name": "MQTT Topic Hijack (Command MITM)",
+        "category": "mqtt_topic_hijack",
+        "success": false,
+        "description": "Intercept and modify device commands via MQTT topic subscription",
+        "impact": "Attacker can modify any command before it reaches devices",
+        "mitigation": "End-to-end encryption between controller and devices, signed commands",
+        "duration_ms": 102.69999504089355,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Error: [Errno 54] Connection reset by peer"
+        ]
+      },
+      {
+        "attack_name": "TCP Connection Hijack",
+        "category": "tcp_connection_hijack",
+        "success": true,
+        "description": "Connect to device TCP port and send commands alongside legitimate controller",
+        "impact": "Parallel control of device, command injection",
+        "mitigation": "Mutual TLS, connection limits, session tokens",
+        "duration_ms": 502.69603729248047,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Attacker sent OFF, got: SWITCH:off\nACK\n",
+          "Device state: SWITCH:off\n",
+          "Hijack successful \u2014 attacker has device control"
+        ]
+      },
+      {
+        "attack_name": "TCP Man-in-the-Middle Proxy",
+        "category": "tcp_man_in_the_middle",
+        "success": true,
+        "description": "Proxy TCP connection to intercept commands and credentials",
+        "impact": "Credential theft, command interception and modification",
+        "mitigation": "Use TLS/mTLS for all device connections",
+        "duration_ms": 1106.767177581787,
+        "packets_sent": 0,
+        "packets_captured": 4,
+        "evidence": [
+          "Proxied STATUS: S",
+          "Proxied AUTH: TATUS:OK\n",
+          "Intercepted 4 messages",
+          "AUTH TOKEN INTERCEPTED in transit!"
+        ]
+      },
+      {
+        "attack_name": "TCP Connection Flood DoS",
+        "category": "network_denial_of_service",
+        "success": true,
+        "description": "Open 50 simultaneous TCP connections to exhaust resources",
+        "impact": "Device unavailable to legitimate controllers",
+        "mitigation": "Connection rate limiting, SYN cookies, connection pooling",
+        "duration_ms": 2513.756036758423,
+        "packets_sent": 50,
+        "packets_captured": 0,
+        "evidence": [
+          "Pre-flood status: S",
+          "Opened 50/50 flood connections",
+          "Legitimate connection BLOCKED during flood: timed out"
+        ]
+      },
+      {
+        "attack_name": "Zigbee Frame Replay",
+        "category": "protocol_replay",
+        "success": true,
+        "description": "Capture and replay Zigbee command frames (On/Off cluster)",
+        "impact": "Re-trigger device actions (toggle lights, unlock doors)",
+        "mitigation": "Enable Zigbee 3.0 security with frame counters, use install codes",
+        "duration_ms": 2.1610260009765625,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Captured Zigbee frame: cluster=0x0006, cmd=toggle",
+          "Replayed captured frame (no frame counter check)",
+          "Frame accepted by coordinator \u2014 no replay protection!",
+          "Zigbee HA profile does not enforce frame counters by default"
+        ]
+      },
+      {
+        "attack_name": "Zigbee Network Key Extraction",
+        "category": "protocol_downgrade",
+        "success": true,
+        "description": "Extract Zigbee network key using well-known Trust Center link key",
+        "impact": "Full network key compromise \u2014 can decrypt all Zigbee traffic",
+        "mitigation": "Use Zigbee 3.0 install codes for per-device unique link keys",
+        "duration_ms": 2.5069713592529297,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Default TC Link Key: 5a6967426565416c6c69616e63653039",
+          "ASCII: ZigBeeAlliance09",
+          "Simulated captured network key: 8c65e9a9683ade480f39d4ca713fd8da",
+          "During device pairing, network key is encrypted with TC link key",
+          "Since TC link key is well-known, network key can be decrypted!"
+        ]
+      },
+      {
+        "attack_name": "Protocol Downgrade (No Encryption)",
+        "category": "protocol_downgrade",
+        "success": true,
+        "description": "Verify if devices accept unencrypted connections",
+        "impact": "All traffic visible in plaintext, credential theft, command injection",
+        "mitigation": "Require TLS 1.3 for all connections, reject unencrypted traffic",
+        "duration_ms": 1003.5817623138428,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Attempting connection without TLS/encryption",
+          "Device accepts unencrypted TCP connections!",
+          "Response: STATUS:OK\n",
+          "No TLS/SSL requirement \u2014 protocol downgrade trivial"
+        ]
+      },
+      {
+        "attack_name": "ARP Cache Poisoning (Simulated)",
+        "category": "arp_spoofing",
+        "success": true,
+        "description": "Poison ARP cache to redirect traffic through attacker",
+        "impact": "Man-in-the-middle position, traffic interception",
+        "mitigation": "Use Docker macvlan networks, enable ARP inspection, static ARP entries",
+        "duration_ms": 0.026941299438476562,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Crafted ARP reply: 172.20.0.1 is at 52:54:00:de:ad:01",
+          "Target device: 172.20.0.10",
+          "ARP cache poisoning would redirect gateway traffic through attacker",
+          "Docker bridge networks are vulnerable to ARP spoofing by default",
+          "Requires --mac-address control and raw socket access"
+        ]
+      },
+      {
+        "attack_name": "DNS Poisoning (Simulated)",
+        "category": "dns_poisoning",
+        "success": true,
+        "description": "Poison DNS to redirect device cloud connections to attacker",
+        "impact": "Credential theft, malicious firmware delivery, data exfiltration",
+        "mitigation": "Use DNSSEC, certificate pinning, encrypted DNS (DoH/DoT)",
+        "duration_ms": 0.025987625122070312,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Poisoned: api.smartthings.com \u2192 172.20.0.99 (attacker)",
+          "Poisoned: mqtt.vesper.local \u2192 172.20.0.99 (attacker)",
+          "Poisoned: firmware.update.vesper.io \u2192 172.20.0.99 (attacker)",
+          "Poisoned: telemetry.vesper.io \u2192 172.20.0.99 (attacker)",
+          "IoT devices rarely validate DNS responses (no DNSSEC)"
+        ]
+      },
+      {
+        "attack_name": "WiFi Deauthentication Attack (Simulated)",
+        "category": "deauthentication_attack",
+        "success": true,
+        "description": "Send deauthentication frames to disconnect WiFi IoT devices",
+        "impact": "Device offline, DoS, force reconnection to evil twin",
+        "mitigation": "WPA3 with Protected Management Frames (PMF)",
+        "duration_ms": 0.032901763916015625,
+        "packets_sent": 30,
+        "packets_captured": 0,
+        "evidence": [
+          "Crafting IEEE 802.11 deauthentication frames",
+          "Target: All devices on BSS",
+          "Reason code: 7 (Class 3 frame from non-associated station)",
+          "  Deauth \u2192 127.0.0.1:15011",
+          "  Deauth \u2192 127.0.0.1:15012"
+        ]
+      },
+      {
+        "attack_name": "Evil Twin Access Point (Simulated)",
+        "category": "evil_twin_ap",
+        "success": true,
+        "description": "Fake AP captures device credentials after deauthentication",
+        "impact": "Complete credential theft, traffic interception",
+        "mitigation": "WPA3-Enterprise, certificate-based auth, network monitoring",
+        "duration_ms": 1.7092227935791016,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Creating evil twin AP: 'VESPER-Home-WiFi'",
+          "Signal strength: -30 dBm (stronger than legitimate AP)",
+          "Security: Open (captive portal for credential capture)",
+          "Device temp-sensor-001 connected to evil twin!",
+          "Device motion-sensor-001 connected to evil twin!"
+        ]
+      },
+      {
+        "attack_name": "Traffic Fingerprinting",
+        "category": "traffic_analysis",
+        "success": true,
+        "description": "Passive traffic analysis to identify device types and firmware versions",
+        "impact": "Device inventory disclosure, vulnerability targeting",
+        "mitigation": "Traffic padding, random delays, encrypted metadata",
+        "duration_ms": 1809.6513748168945,
+        "packets_sent": 0,
+        "packets_captured": 0,
+        "evidence": [
+          "Fingerprinted 127.0.0.1:15011: {\"endpoint\": \"127.0.0.1:15011\", \"response_size\": 108, \"has_device_type\": true, \"has_caps\": true, \"de",
+          "Fingerprinted 127.0.0.1:15012: {\"endpoint\": \"127.0.0.1:15012\", \"response_size\": 93, \"has_device_type\": true, \"has_caps\": true, \"dev",
+          "Fingerprinted 127.0.0.1:15013: {\"endpoint\": \"127.0.0.1:15013\", \"response_size\": 93, \"has_device_type\": true, \"has_caps\": true, \"dev",
+          "Fingerprinted 127.0.0.1:15014: {\"endpoint\": \"127.0.0.1:15014\", \"response_size\": 82, \"has_device_type\": true, \"has_caps\": true, \"dev",
+          "Fingerprinted 127.0.0.1:15015: {\"endpoint\": \"127.0.0.1:15015\", \"response_size\": 92, \"has_device_type\": true, \"has_caps\": true, \"dev"
+        ]
+      }
+    ],
+    "network_attack_categories_hit": 10,
+    "total_attacks_run": 35,
+    "total_attacks_success": 24,
+    "security_score": 68.57142857142857,
+    "tasks_scheduled": 38,
+    "tasks_navigated": 27,
+    "rooms_visited": [
+      "bathroom",
+      "bedroom",
+      "kitchen",
+      "laundryroom/mudroom",
+      "living room",
+      "outdoor",
+      "porch/terrace/deck/driveway"
+    ],
+    "room_coverage": 0.3684210526315789,
+    "eval_duration_sec": 5178.605537891388
+  }
+]

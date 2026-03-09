@@ -1,0 +1,148 @@
+\documentclass[sigconf,anonymous]{acmart}
+
+\title{VESPER: A High-Fidelity Smart Home Simulation Platform with
+Firmware-in-the-Loop and LLM-Driven Activity Generation}
+\author{Anonymous Author(s)}
+\affiliation{%
+  \institution{Anonymous Institution}
+  \country{United States}
+}
+
+\setcopyright{none}
+\settopmatter{printacmref=false}
+\acmDOI{}\acmISBN{}\acmPrice{}
+
+\usepackage{booktabs}
+\usepackage{siunitx}
+\sisetup{round-mode=places,round-precision=3}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{amsmath,mathtools}
+\let\Bbbk\relax
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Define JSON language for listings (not built-in)
+\lstdefinelanguage{json}{
+  basicstyle=\ttfamily\footnotesize,
+  string=[s]{"}{"},
+  stringstyle=\color{blue!70!black},
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  literate=
+    *{:}{{{\color{black!70}{:}}}}{1}
+     {,}{{{\color{black!70}{,}}}}{1}
+     {\{}{{{\color{black!70}{\{}}}}{1}
+     {\}}{{{\color{black!70}{\}}}}}{1}
+     {[}{{{\color{black!70}{[}}}}{1}
+     {]}{{{\color{black!70}{]}}}}{1},
+}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{shapes.symbols,shapes.geometric,positioning,arrows.meta,decorations.pathreplacing,calc}
+\usepackage{colortbl}
+\usepackage{pifont}
+
+% Define colors for architecture diagram
+\definecolor{habitatcolor}{RGB}{70,130,180}
+\definecolor{firmwarecolor}{RGB}{220,120,50}
+\definecolor{llmcolor}{RGB}{100,180,100}
+\definecolor{cloudcolor}{RGB}{150,100,200}
+\definecolor{buscolor}{RGB}{255,200,100}
+
+\newcommand{\sys}{\textsc{VESPER}}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  breaklines=true,
+  frame=single,
+}
+
+\settopmatter{printacmref=false, printccs=false, printfolios=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\setcopyright{none}
+\acmConference{}{}{}
+\acmBooktitle{}
+
+\begin{document}
+
+\begin{abstract}
+Testing and evaluating IoT systems at scale remains a fundamental
+challenge: physical testbeds are expensive, difficult to reproduce,
+and limited in scope, while existing simulators lack the fidelity
+needed for realistic device firmware behavior and human activity
+patterns.  We present \sys{}, a high-fidelity smart home simulation
+platform that combines three innovations:
+(1)~\emph{firmware-in-the-loop} emulation via QEMU-based ARM
+containers running real device firmware alongside a 3D household
+simulation (Habitat~3.0);
+(2)~\emph{LLM-driven humanoid activity generation} that produces
+diverse daily schedules conditioned on structured
+occupant personas; and
+(3)~\emph{bi-directional cloud synchronization} with Samsung
+SmartThings for Sim2Real validation.
+Our evaluation across five research questions and a large-scale
+autonomous study (28~HSSD scenes, 7~simulated days each,
+88.0~hours wall-clock time) demonstrates
+that \sys{}-generated activity patterns exhibit moderate distributional
+similarity to real-world datasets (CASAS, ARAS) with a mean
+JS~divergence of~0.218, outperforming a learned Markov baseline
+on diverse multi-occupant homes (50--62\% lower JS on ARAS).
+The platform scales to 200 concurrent devices at over
+10{,}000~events/s with sub-36\% CPU utilization and achieves
+microsecond-scale event-bus dispatch (P99 $= 7$\,$\mu$s).
+A security assessment of 982~attacks across five suites---firmware,
+network, phantom-delay, malicious SmartApp, and ESP32 buffer
+overflow---against six device types yields a 67.4\% exploit rate
+with a mean CVSS~3.1 score of~8.1, validated against 24~real-world
+CVEs and covering 7 of 10 OWASP IoT Top~10 categories.
+Packet-level traffic analysis---validated by \texttt{tshark}
+pcap captures independently verifiable with Wireshark---records
+154{,}151~TCP segments (12.1\,MB) across 980~attack executions
+in 28~scenes, confirming that all attack traffic traverses the
+real Docker bridge network.
+An enriched Sim2Real transfer analysis achieves 0.813~accuracy
+on ARAS-A using 119-dimensional feature representations.
+The autonomous evaluation achieves 94.9\%
+navigation success across 3{,}580~trials, generates
+47{,}207 firmware-triggered SmartThings cloud updates with zero data
+loss, and produces 4{,}307~LLM-generated tasks using GPT-OSS~20B.
+All results pass an 8-point reproducibility check against raw data.
+To our knowledge, \sys{} is the first platform to unify embodied
+AI simulation, real firmware execution, and cloud-connected IoT
+in a single reproducible framework.
+\end{abstract}
+
+\keywords{Smart Home Simulation, IoT Testing, Firmware-in-the-Loop,
+LLM Activity Generation, Habitat 3.0, Digital Twin}
+
+\maketitle
+
+% ---- Section files ----
+\input{sections/01_intro}
+\input{sections/02_background}
+\input{sections/03_system_design}
+\input{sections/04_implementation}
+\input{sections/05_evaluation}
+\input{sections/06_discussion}
+\input{sections/07_related_work}
+\input{sections/08_conclusion}
+
+\paragraph{Data Availability.}
+The \sys{} platform, evaluation framework, all experiment
+configurations, and generated datasets are available at
+\url{https://anonymous.4open.science/r/vesper}
+(anonymized for review).
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,17 @@
+# VESPER — Latency Experiment (RQ4)
+# Profile end-to-end latency across all critical data paths.
+
+name: "latency_profiling"
+description: >
+  End-to-end latency measurement for event bus, database writes,
+  Docker round-trips, and LLM schedule generation.
+
+seed: 42
+output_dir: "results/latency"
+
+run_activity_comparison: false
+run_scalability: false
+run_latency: true
+run_llm_ablation: false
+
+latency_iterations: 1000

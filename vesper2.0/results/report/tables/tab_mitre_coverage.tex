@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{MITRE ATT\&CK for IoT technique coverage. Tactic coverage indicates the fraction of IoT ATT\&CK tactics addressed by our attack suite.}
+\label{tab:mitre-coverage}
+\small
+\begin{tabular}{l l r r r}
+\toprule
+\textbf{Technique ID} & \textbf{Technique} & \textbf{Tactic} & \textbf{Attempts} & \textbf{Exploit Rate} \\
+\midrule
+T0801 & Monitor Process State & Collection & 1 & 100.0% \\
+T0802 & Automated Collection & Collection & 1 & 100.0% \\
+T0807 & Command-Line Interface & Execution & 24 & 41.7% \\
+T0814 & Denial of Service & Impact & 14 & 78.6% \\
+T0830 & Man in the Middle & Collection & 3 & 33.3% \\
+T0831 & Manipulation of Control & Impact & 12 & 58.3% \\
+T0840 & Network Sniffing & Discovery & 1 & 0.0% \\
+T0846 & Remote System Discovery & Discovery & 12 & 50.0% \\
+T0848 & Rogue Master & Initial Access & 1 & 100.0% \\
+T0857 & System Firmware & Persistence & 12 & 16.7% \\
+T0858 & Change Operating Mode & Evasion & 7 & 85.7% \\
+T0859 & Valid Accounts & Credential Access & 2 & 50.0% \\
+T0866 & Exploitation of Remote Se & Initial Access & 13 & 100.0% \\
+T0867 & Lateral Tool Transfer & Lateral Movement & 1 & 100.0% \\
+T0890 & Exploitation for Privileg & Privilege Escalation & 18 & 22.2% \\
+\midrule
+\multicolumn{5}{l}{\footnotesize Tactic coverage: 83.3% (10/12 IoT ATT\&CK tactics)} \\
+\bottomrule
+\end{tabular}
+\end{table}

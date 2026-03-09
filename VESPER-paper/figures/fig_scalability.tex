@@ -1,0 +1,67 @@
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=\columnwidth,
+      height=5.5cm,
+      xlabel={Number of Event-Bus Devices},
+      ylabel={Throughput (events/s)},
+      ylabel style={font=\small},
+      xlabel style={font=\small},
+      xmin=0, xmax=210,
+      ymin=0, ymax=12000,
+      xtick={5,10,25,50,100,200},
+      ytick={0,2000,4000,6000,8000,10000,12000},
+      grid=major,
+      grid style={gray!20},
+      legend style={at={(0.03,0.97)}, anchor=north west, font=\scriptsize},
+      legend cell align=left,
+    ]
+    % Throughput
+    \addplot[thick, mark=square*, blue!80, mark size=2.5pt,
+             error bars/.cd, y dir=both, y explicit]
+      coordinates {
+        (5,435)     +- (0,2)
+        (10,814)    +- (0,23)
+        (25,1812)   +- (0,15)
+        (50,3220)   +- (0,33)
+        (100,5984)  +- (0,13)
+        (200,10901) +- (0,73)
+      };
+    \addlegendentry{Throughput}
+
+    % CPU on secondary axis
+    \end{axis}
+
+    \begin{axis}[
+      width=\columnwidth,
+      height=5.5cm,
+      axis y line*=right,
+      axis x line=none,
+      ylabel={CPU Utilization (\%)},
+      ylabel style={font=\small, text=red!70!black},
+      xmin=0, xmax=210,
+      ymin=0, ymax=50,
+      ytick={0,10,20,30,40,50},
+      y tick label style={color=red!70!black},
+      legend style={at={(0.97,0.97)}, anchor=north east, font=\scriptsize},
+      legend cell align=left,
+    ]
+    \addplot[thick, mark=triangle*, red!70, mark size=2.5pt, dashed]
+      coordinates {
+        (5,4.8)
+        (10,8.9)
+        (25,15.1)
+        (50,23.8)
+        (100,28.5)
+        (200,35.1)
+      };
+    \addlegendentry{CPU (\%)}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Event-bus throughput (left axis) and CPU utilization (right axis)
+  as device count scales from 5 to 200.  Total throughput scales
+  near-linearly ($25\times$ for $40\times$ devices) while CPU remains
+  below 36\%.  Error bars: 95\% CI over 5~trials.}
+  \label{fig:scalability}
+\end{figure}

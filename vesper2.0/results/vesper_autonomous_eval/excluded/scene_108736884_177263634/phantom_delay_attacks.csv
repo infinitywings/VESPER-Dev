@@ -1,0 +1,4 @@
+scene_id,attack_name,variant,category,success,cvss_score,delay_seconds,messages_delayed,duration_ms
+108736884_177263634,"State-Update Delay Attack (Fu et al. Type 1)",state_update_delay,tcp_transparent_proxy_delay,1,9.3,5.0,1,0.0
+108736884_177263634,"Erroneous Automation Execution (Fu et al. Type 2)",erroneous_execution,automation_erroneous_execution,1,9.3,5.0,1,0.0
+108736884_177263634,"Action Reorder Attack (Fu et al. Type 4)",action_reorder,action_command_reorder,1,9.3,5.0,1,0.0

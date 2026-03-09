@@ -1,0 +1,148 @@
+{
+  "device_scaling": [
+    {
+      "num_devices": 5,
+      "throughput_events_per_sec": 435.1,
+      "throughput_ci_95": [
+        433.1,
+        437.1
+      ],
+      "cpu_percent": 4.8,
+      "memory_mb": 63.7,
+      "avg_latency_ms": 0.06,
+      "trials": 5
+    },
+    {
+      "num_devices": 10,
+      "throughput_events_per_sec": 814.0,
+      "throughput_ci_95": [
+        790.9,
+        837.1
+      ],
+      "cpu_percent": 8.9,
+      "memory_mb": 87.6,
+      "avg_latency_ms": 0.09,
+      "trials": 5
+    },
+    {
+      "num_devices": 25,
+      "throughput_events_per_sec": 1811.7,
+      "throughput_ci_95": [
+        1796.4,
+        1827.0
+      ],
+      "cpu_percent": 15.1,
+      "memory_mb": 70.1,
+      "avg_latency_ms": 0.08,
+      "trials": 5
+    },
+    {
+      "num_devices": 50,
+      "throughput_events_per_sec": 3220.3,
+      "throughput_ci_95": [
+        3187.4,
+        3253.3
+      ],
+      "cpu_percent": 23.8,
+      "memory_mb": 70.8,
+      "avg_latency_ms": 0.07,
+      "trials": 5
+    },
+    {
+      "num_devices": 100,
+      "throughput_events_per_sec": 5983.5,
+      "throughput_ci_95": [
+        5970.9,
+        5996.1
+      ],
+      "cpu_percent": 28.5,
+      "memory_mb": 87.7,
+      "avg_latency_ms": 0.05,
+      "trials": 5
+    },
+    {
+      "num_devices": 200,
+      "throughput_events_per_sec": 10901.1,
+      "throughput_ci_95": [
+        10828.5,
+        10973.7
+      ],
+      "cpu_percent": 35.1,
+      "memory_mb": 105.9,
+      "avg_latency_ms": 0.03,
+      "trials": 5
+    }
+  ],
+  "duration_stability": [
+    {
+      "sim_hours": 1,
+      "real_duration_s": 60.0,
+      "event_count": 25270,
+      "events_per_sec": 421.1,
+      "memory_start_mb": 111.1,
+      "memory_end_mb": 117.7,
+      "memory_growth_mb": 6.61,
+      "db_size_mb": 1.129
+    },
+    {
+      "sim_hours": 6,
+      "real_duration_s": 120.0,
+      "event_count": 50480,
+      "events_per_sec": 420.6,
+      "memory_start_mb": 114.9,
+      "memory_end_mb": 109.7,
+      "memory_growth_mb": -5.23,
+      "db_size_mb": 2.281
+    },
+    {
+      "sim_hours": 24,
+      "real_duration_s": 120.0,
+      "event_count": 50460,
+      "events_per_sec": 420.5,
+      "memory_start_mb": 101.2,
+      "memory_end_mb": 104.5,
+      "memory_growth_mb": 3.3,
+      "db_size_mb": 2.281
+    },
+    {
+      "sim_hours": 168,
+      "real_duration_s": 120.0,
+      "event_count": 50370,
+      "events_per_sec": 419.7,
+      "memory_start_mb": 94.1,
+      "memory_end_mb": 118.8,
+      "memory_growth_mb": 24.73,
+      "db_size_mb": 2.277
+    }
+  ],
+  "docker_scaling": [
+    {
+      "num_containers": 3,
+      "avg_startup_s": 0.2,
+      "total_startup_s": 0.6,
+      "avg_tcp_latency_ms": 12.62,
+      "started_ok": 3
+    },
+    {
+      "num_containers": 5,
+      "avg_startup_s": 0.14,
+      "total_startup_s": 0.7,
+      "avg_tcp_latency_ms": 2.31,
+      "started_ok": 5
+    },
+    {
+      "num_containers": 10,
+      "avg_startup_s": 0.19,
+      "total_startup_s": 1.86,
+      "avg_tcp_latency_ms": 13.01,
+      "started_ok": 10
+    },
+    {
+      "num_containers": 20,
+      "avg_startup_s": 0.34,
+      "total_startup_s": 6.79,
+      "avg_tcp_latency_ms": 19.26,
+      "started_ok": 20
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "render_asset": "NONE",
+  "collision_asset": "NONE",
+  "is_collidable": false,
+  "mass": 0.0,
+  "COM": [0.0, 0.0, 0.0],
+  "inertia": [0.0, 0.0, 0.0],
+  "friction_coefficient": 0.5,
+  "rolling_friction_coefficient": 0.0,
+  "spinning_friction_coefficient": 0.0,
+  "restitution_coefficient": 0.1,
+  "scale": [0.3, 1.7, 0.3],
+  "requires_lighting": true,
+  "use_mesh_for_collision": false,
+  "join_collision_meshes": false,
+  "margin": 0.04,
+  "orient_up": [0, 1, 0],
+  "orient_front": [0, 0, -1],
+  "units_to_meters": 1.0
+}

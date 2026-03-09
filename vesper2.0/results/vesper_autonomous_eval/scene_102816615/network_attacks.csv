@@ -1,0 +1,15 @@
+scene_id,attack_name,category,success,packets_sent,packets_captured,duration_ms
+102816615,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.0
+102816615,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+102816615,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.7
+102816615,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,506.6
+102816615,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1112.9
+102816615,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.5
+102816615,"Zigbee Frame Replay",protocol_replay,1,0,0,1.6
+102816615,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.0
+102816615,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,6.7
+102816615,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+102816615,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+102816615,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+102816615,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+102816615,"Traffic Fingerprinting",traffic_analysis,1,0,0,7821.8

@@ -1,0 +1,644 @@
+{
+  "rq1": {
+    "vesper": {
+      "Sleeping": 316,
+      "Personal_Hygiene": 139,
+      "Meal_Preparation": 344,
+      "Working": 277,
+      "Other": 168,
+      "Housekeeping": 74,
+      "Exercising": 156,
+      "Socializing": 86,
+      "Relaxing": 188
+    },
+    "comparisons": {
+      "casas/aruba": {
+        "reference_counts": {
+          "Sleeping": 109719,
+          "Personal_Hygiene": 42561,
+          "Other": 297129,
+          "Relaxing": 139612,
+          "Meal_Preparation": 208960
+        },
+        "kl_divergence": 0.6053,
+        "js_divergence": 0.1702,
+        "wasserstein": 1.227,
+        "transition_matrix_dist": 1.6527,
+        "temporal_correlation": 0.3982,
+        "vesper_entropy": 2.1437,
+        "reference_entropy": 2.0173,
+        "vesper_days": 174,
+        "reference_days": 220
+      },
+      "casas/milan": {
+        "reference_counts": {
+          "Personal_Hygiene": 19037,
+          "Relaxing": 24543,
+          "Sleeping": 23452,
+          "Meal_Preparation": 74474,
+          "Other": 67962
+        },
+        "kl_divergence": 0.5736,
+        "js_divergence": 0.1662,
+        "wasserstein": 0.9823,
+        "transition_matrix_dist": 1.7365,
+        "temporal_correlation": 0.4863,
+        "vesper_entropy": 2.1437,
+        "reference_entropy": 1.926,
+        "vesper_days": 174,
+        "reference_days": 65
+      },
+      "casas/cairo": {
+        "reference_counts": {
+          "Sleeping": 63617,
+          "Relaxing": 83856,
+          "Meal_Preparation": 133815,
+          "Other": 41687
+        },
+        "kl_divergence": 0.5922,
+        "js_divergence": 0.1825,
+        "wasserstein": 0.4324,
+        "transition_matrix_dist": 1.5385,
+        "temporal_correlation": 0.6886,
+        "vesper_entropy": 2.1437,
+        "reference_entropy": 1.845,
+        "vesper_days": 174,
+        "reference_days": 57
+      },
+      "aras/house_a": {
+        "reference_counts": {
+          "Relaxing": 312,
+          "Socializing": 146,
+          "Personal_Hygiene": 176,
+          "Sleeping": 36,
+          "Other": 146,
+          "Meal_Preparation": 149,
+          "Working": 53,
+          "Housekeeping": 70
+        },
+        "kl_divergence": 0.4392,
+        "js_divergence": 0.1182,
+        "wasserstein": 1.141,
+        "transition_matrix_dist": 1.343,
+        "temporal_correlation": -0.118,
+        "vesper_entropy": 2.1437,
+        "reference_entropy": 2.6409,
+        "vesper_days": 174,
+        "reference_days": 30
+      },
+      "aras/house_b": {
+        "reference_counts": {
+          "Sleeping": 43,
+          "Personal_Hygiene": 138,
+          "Other": 131,
+          "Meal_Preparation": 63,
+          "Housekeeping": 19,
+          "Socializing": 16,
+          "Working": 54,
+          "Relaxing": 86
+        },
+        "kl_divergence": 0.3662,
+        "js_divergence": 0.0932,
+        "wasserstein": 0.8121,
+        "transition_matrix_dist": 1.4899,
+        "temporal_correlation": 0.0925,
+        "vesper_entropy": 2.1437,
+        "reference_entropy": 2.3886,
+        "vesper_days": 174,
+        "reference_days": 30
+      }
+    },
+    "aggregate": {
+      "mean_js": 0.1461,
+      "js_ci_95": [
+        0.0984,
+        0.1937
+      ],
+      "mean_kl": 0.5153,
+      "kl_ci_95": [
+        0.3829,
+        0.6476
+      ],
+      "mean_wasserstein": 0.919,
+      "wass_ci_95": [
+        0.5281,
+        1.3098
+      ],
+      "num_comparisons": 5
+    }
+  },
+  "rq4": {
+    "event_bus_dispatch": {
+      "count": 1000,
+      "mean_ms": 0.002,
+      "std_ms": 0.004,
+      "p50_ms": 0.002,
+      "p95_ms": 0.003,
+      "p99_ms": 0.007,
+      "min_ms": 0.001,
+      "max_ms": 0.081
+    },
+    "db_task_write": {
+      "count": 1000,
+      "mean_ms": 0.288,
+      "std_ms": 0.58,
+      "p50_ms": 0.188,
+      "p95_ms": 0.406,
+      "p99_ms": 2.839,
+      "min_ms": 0.157,
+      "max_ms": 12.83
+    },
+    "db_query": {
+      "count": 1000,
+      "mean_ms": 0.004,
+      "p50_ms": 0.004,
+      "p95_ms": 0.005,
+      "p99_ms": 0.006
+    },
+    "llm_schedule_generation": {
+      "count": 10,
+      "mean_ms": 11127.9,
+      "p50_ms": 6325.2,
+      "p95_ms": 34244.1,
+      "p99_ms": 51230.1
+    }
+  },
+  "rq3": {
+    "device_scaling": [
+      {
+        "num_devices": 5,
+        "throughput_events_per_sec": 435.1,
+        "throughput_ci_95": [
+          433.1,
+          437.1
+        ],
+        "cpu_percent": 4.8,
+        "memory_mb": 63.7,
+        "avg_latency_ms": 0.06,
+        "trials": 5
+      },
+      {
+        "num_devices": 10,
+        "throughput_events_per_sec": 814.0,
+        "throughput_ci_95": [
+          790.9,
+          837.1
+        ],
+        "cpu_percent": 8.9,
+        "memory_mb": 87.6,
+        "avg_latency_ms": 0.09,
+        "trials": 5
+      },
+      {
+        "num_devices": 25,
+        "throughput_events_per_sec": 1811.7,
+        "throughput_ci_95": [
+          1796.4,
+          1827.0
+        ],
+        "cpu_percent": 15.1,
+        "memory_mb": 70.1,
+        "avg_latency_ms": 0.08,
+        "trials": 5
+      },
+      {
+        "num_devices": 50,
+        "throughput_events_per_sec": 3220.3,
+        "throughput_ci_95": [
+          3187.4,
+          3253.3
+        ],
+        "cpu_percent": 23.8,
+        "memory_mb": 70.8,
+        "avg_latency_ms": 0.07,
+        "trials": 5
+      },
+      {
+        "num_devices": 100,
+        "throughput_events_per_sec": 5983.5,
+        "throughput_ci_95": [
+          5970.9,
+          5996.1
+        ],
+        "cpu_percent": 28.5,
+        "memory_mb": 87.7,
+        "avg_latency_ms": 0.05,
+        "trials": 5
+      },
+      {
+        "num_devices": 200,
+        "throughput_events_per_sec": 10901.1,
+        "throughput_ci_95": [
+          10828.5,
+          10973.7
+        ],
+        "cpu_percent": 35.1,
+        "memory_mb": 105.9,
+        "avg_latency_ms": 0.03,
+        "trials": 5
+      }
+    ],
+    "duration_stability": [
+      {
+        "sim_hours": 1,
+        "real_duration_s": 60.0,
+        "event_count": 25270,
+        "events_per_sec": 421.1,
+        "memory_start_mb": 111.1,
+        "memory_end_mb": 117.7,
+        "memory_growth_mb": 6.61,
+        "db_size_mb": 1.129
+      },
+      {
+        "sim_hours": 6,
+        "real_duration_s": 120.0,
+        "event_count": 50480,
+        "events_per_sec": 420.6,
+        "memory_start_mb": 114.9,
+        "memory_end_mb": 109.7,
+        "memory_growth_mb": -5.23,
+        "db_size_mb": 2.281
+      },
+      {
+        "sim_hours": 24,
+        "real_duration_s": 120.0,
+        "event_count": 50460,
+        "events_per_sec": 420.5,
+        "memory_start_mb": 101.2,
+        "memory_end_mb": 104.5,
+        "memory_growth_mb": 3.3,
+        "db_size_mb": 2.281
+      },
+      {
+        "sim_hours": 168,
+        "real_duration_s": 120.0,
+        "event_count": 50370,
+        "events_per_sec": 419.7,
+        "memory_start_mb": 94.1,
+        "memory_end_mb": 118.8,
+        "memory_growth_mb": 24.73,
+        "db_size_mb": 2.277
+      }
+    ],
+    "docker_scaling": [
+      {
+        "num_containers": 3,
+        "avg_startup_s": 0.2,
+        "total_startup_s": 0.6,
+        "avg_tcp_latency_ms": 12.62,
+        "started_ok": 3
+      },
+      {
+        "num_containers": 5,
+        "avg_startup_s": 0.14,
+        "total_startup_s": 0.7,
+        "avg_tcp_latency_ms": 2.31,
+        "started_ok": 5
+      },
+      {
+        "num_containers": 10,
+        "avg_startup_s": 0.19,
+        "total_startup_s": 1.86,
+        "avg_tcp_latency_ms": 13.01,
+        "started_ok": 10
+      },
+      {
+        "num_containers": 20,
+        "avg_startup_s": 0.34,
+        "total_startup_s": 6.79,
+        "avg_tcp_latency_ms": 19.26,
+        "started_ok": 20
+      }
+    ]
+  },
+  "rq5": {
+    "classifiers": {
+      "casas/aruba": {
+        "train_samples": 1155,
+        "test_samples": 797981,
+        "common_classes": 5,
+        "classes": [
+          "Meal_Preparation",
+          "Other",
+          "Personal_Hygiene",
+          "Relaxing",
+          "Sleeping"
+        ],
+        "random_forest": {
+          "accuracy": 0.2112,
+          "f1_weighted": 0.1251
+        },
+        "gradient_boosting": {
+          "accuracy": 0.2112,
+          "f1_weighted": 0.1251
+        },
+        "cross_val_mean": 0.2789,
+        "cross_val_ci_95": [
+          0.2758,
+          0.2821
+        ]
+      },
+      "casas/milan": {
+        "train_samples": 1155,
+        "test_samples": 209468,
+        "common_classes": 5,
+        "classes": [
+          "Meal_Preparation",
+          "Other",
+          "Personal_Hygiene",
+          "Relaxing",
+          "Sleeping"
+        ],
+        "random_forest": {
+          "accuracy": 0.2557,
+          "f1_weighted": 0.1796
+        },
+        "gradient_boosting": {
+          "accuracy": 0.2557,
+          "f1_weighted": 0.1796
+        },
+        "cross_val_mean": 0.2927,
+        "cross_val_ci_95": [
+          0.2867,
+          0.2986
+        ]
+      },
+      "casas/cairo": {
+        "train_samples": 1016,
+        "test_samples": 322975,
+        "common_classes": 4,
+        "classes": [
+          "Meal_Preparation",
+          "Other",
+          "Relaxing",
+          "Sleeping"
+        ],
+        "random_forest": {
+          "accuracy": 0.3436,
+          "f1_weighted": 0.2693
+        },
+        "gradient_boosting": {
+          "accuracy": 0.3436,
+          "f1_weighted": 0.2693
+        },
+        "cross_val_mean": 0.3205,
+        "cross_val_ci_95": [
+          0.3153,
+          0.3258
+        ]
+      },
+      "aras/house_a": {
+        "train_samples": 1592,
+        "test_samples": 1088,
+        "common_classes": 8,
+        "classes": [
+          "Housekeeping",
+          "Meal_Preparation",
+          "Other",
+          "Personal_Hygiene",
+          "Relaxing",
+          "Sleeping",
+          "Socializing",
+          "Working"
+        ],
+        "random_forest": {
+          "accuracy": 0.0754,
+          "f1_weighted": 0.0484
+        },
+        "gradient_boosting": {
+          "accuracy": 0.0634,
+          "f1_weighted": 0.0288
+        },
+        "cross_val_mean": 0.175,
+        "cross_val_ci_95": [
+          0.1288,
+          0.2212
+        ]
+      },
+      "aras/house_b": {
+        "train_samples": 1592,
+        "test_samples": 550,
+        "common_classes": 8,
+        "classes": [
+          "Housekeeping",
+          "Meal_Preparation",
+          "Other",
+          "Personal_Hygiene",
+          "Relaxing",
+          "Sleeping",
+          "Socializing",
+          "Working"
+        ],
+        "random_forest": {
+          "accuracy": 0.0891,
+          "f1_weighted": 0.0499
+        },
+        "gradient_boosting": {
+          "accuracy": 0.0745,
+          "f1_weighted": 0.0349
+        },
+        "cross_val_mean": 0.1905,
+        "cross_val_ci_95": [
+          0.1501,
+          0.2309
+        ]
+      }
+    },
+    "aggregate": {
+      "rf_accuracy": 0.195,
+      "rf_accuracy_ci_95": [
+        0.054,
+        0.336
+      ],
+      "rf_f1_weighted": 0.1345,
+      "rf_f1_ci_95": [
+        0.0185,
+        0.2504
+      ],
+      "gb_accuracy": 0.1897,
+      "gb_accuracy_ci_95": [
+        0.0405,
+        0.3388
+      ],
+      "gb_f1_weighted": 0.1275,
+      "gb_f1_ci_95": [
+        0.0016,
+        0.2535
+      ]
+    }
+  },
+  "rq2": {
+    "models": {
+      "openai/gpt-oss-20b": {
+        "total_attempts": 50,
+        "successes": 50,
+        "error_rate": 0.0,
+        "avg_entropy": 2.801,
+        "entropy_ci_95": [
+          2.7692,
+          2.8327
+        ],
+        "avg_latency_s": 33.03,
+        "latency_ci_95": [
+          30.45,
+          35.6
+        ],
+        "avg_tasks_per_schedule": 19.2,
+        "avg_unique_categories": 8.0,
+        "context_sensitivity": 0.1845
+      },
+      "meta-llama-3.1-8b-instruct": {
+        "total_attempts": 50,
+        "successes": 50,
+        "error_rate": 0.0,
+        "avg_entropy": 2.707,
+        "entropy_ci_95": [
+          2.654,
+          2.76
+        ],
+        "avg_latency_s": 33.85,
+        "latency_ci_95": [
+          32.62,
+          35.08
+        ],
+        "avg_tasks_per_schedule": 13.9,
+        "avg_unique_categories": 7.4,
+        "context_sensitivity": 0.1253
+      },
+      "gemma-2-9b-it": {
+        "total_attempts": 50,
+        "successes": 50,
+        "error_rate": 0.0,
+        "avg_entropy": 2.6796,
+        "entropy_ci_95": [
+          2.6425,
+          2.7168
+        ],
+        "avg_latency_s": 55.42,
+        "latency_ci_95": [
+          53.46,
+          57.39
+        ],
+        "avg_tasks_per_schedule": 14.9,
+        "avg_unique_categories": 7.1,
+        "context_sensitivity": 0.2544
+      },
+      "mistralai/mistral-7b-instruct-v0.3": {
+        "total_attempts": 50,
+        "successes": 48,
+        "error_rate": 0.04,
+        "avg_entropy": 2.3536,
+        "entropy_ci_95": [
+          2.2976,
+          2.4096
+        ],
+        "avg_latency_s": 32.08,
+        "latency_ci_95": [
+          31.07,
+          33.09
+        ],
+        "avg_tasks_per_schedule": 10.8,
+        "avg_unique_categories": 5.7,
+        "context_sensitivity": 0.2251
+      },
+      "qwen2.5-7b-instruct": {
+        "total_attempts": 50,
+        "successes": 50,
+        "error_rate": 0.0,
+        "avg_entropy": 2.4887,
+        "entropy_ci_95": [
+          2.409,
+          2.5683
+        ],
+        "avg_latency_s": 24.25,
+        "latency_ci_95": [
+          23.08,
+          25.43
+        ],
+        "avg_tasks_per_schedule": 13.4,
+        "avg_unique_categories": 6.5,
+        "context_sensitivity": 0.2769
+      },
+      "phi-3.5-mini-instruct": {
+        "total_attempts": 50,
+        "successes": 48,
+        "error_rate": 0.04,
+        "avg_entropy": 2.6927,
+        "entropy_ci_95": [
+          2.618,
+          2.7673
+        ],
+        "avg_latency_s": 23.53,
+        "latency_ci_95": [
+          22.66,
+          24.4
+        ],
+        "avg_tasks_per_schedule": 14.2,
+        "avg_unique_categories": 7.4,
+        "context_sensitivity": 0.1944
+      }
+    },
+    "pairwise": {
+      "openai/gpt-oss-20b_vs_meta-llama-3.1-8b-instruct": {
+        "cohens_d": 0.6111,
+        "effect_size": "medium"
+      },
+      "openai/gpt-oss-20b_vs_gemma-2-9b-it": {
+        "cohens_d": 0.9982,
+        "effect_size": "large"
+      },
+      "openai/gpt-oss-20b_vs_mistralai/mistral-7b-instruct-v0.3": {
+        "cohens_d": 2.8523,
+        "effect_size": "large"
+      },
+      "openai/gpt-oss-20b_vs_qwen2.5-7b-instruct": {
+        "cohens_d": 1.4641,
+        "effect_size": "large"
+      },
+      "openai/gpt-oss-20b_vs_phi-3.5-mini-instruct": {
+        "cohens_d": 0.5503,
+        "effect_size": "medium"
+      },
+      "meta-llama-3.1-8b-instruct_vs_gemma-2-9b-it": {
+        "cohens_d": 0.17,
+        "effect_size": "small"
+      },
+      "meta-llama-3.1-8b-instruct_vs_mistralai/mistral-7b-instruct-v0.3": {
+        "cohens_d": 1.8628,
+        "effect_size": "large"
+      },
+      "meta-llama-3.1-8b-instruct_vs_qwen2.5-7b-instruct": {
+        "cohens_d": 0.9173,
+        "effect_size": "large"
+      },
+      "meta-llama-3.1-8b-instruct_vs_phi-3.5-mini-instruct": {
+        "cohens_d": 0.0641,
+        "effect_size": "small"
+      },
+      "gemma-2-9b-it_vs_mistralai/mistral-7b-instruct-v0.3": {
+        "cohens_d": 1.9861,
+        "effect_size": "large"
+      },
+      "gemma-2-9b-it_vs_qwen2.5-7b-instruct": {
+        "cohens_d": 0.8735,
+        "effect_size": "large"
+      },
+      "gemma-2-9b-it_vs_phi-3.5-mini-instruct": {
+        "cohens_d": -0.0643,
+        "effect_size": "small"
+      },
+      "mistralai/mistral-7b-instruct-v0.3_vs_qwen2.5-7b-instruct": {
+        "cohens_d": -0.5593,
+        "effect_size": "medium"
+      },
+      "mistralai/mistral-7b-instruct-v0.3_vs_phi-3.5-mini-instruct": {
+        "cohens_d": -1.4916,
+        "effect_size": "large"
+      },
+      "qwen2.5-7b-instruct_vs_phi-3.5-mini-instruct": {
+        "cohens_d": -0.758,
+        "effect_size": "medium"
+      }
+    }
+  }
+}

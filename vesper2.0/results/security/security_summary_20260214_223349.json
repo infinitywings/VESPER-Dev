@@ -1,0 +1,9 @@
+{
+  "timestamp": "20260214_223349",
+  "firmware_attacks": {},
+  "network_attacks": {
+    "total": 14,
+    "successful": 9,
+    "rate": "64.3%"
+  }
+}

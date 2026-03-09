@@ -1,0 +1,21 @@
+# VESPER — Scalability Experiment (RQ3)
+# Measure throughput, latency, and resource usage as the system scales.
+
+name: "scalability_benchmark"
+description: >
+  Scale-up evaluation: device event throughput, Docker container
+  management, and long-duration stability under accelerated time.
+
+seed: 42
+output_dir: "results/scalability"
+
+run_activity_comparison: false
+run_scalability: true
+run_latency: false
+run_llm_ablation: false
+
+device_counts: [5, 10, 25, 50, 100, 200]
+container_counts: [3, 5, 10, 20]
+duration_hours: [1, 6, 24, 168]
+scalability_trials: 5
+scalability_duration_s: 30.0

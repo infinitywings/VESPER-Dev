@@ -1,0 +1,59 @@
+\begin{table}[t]
+  \centering
+  \caption{Large-scale autonomous evaluation across 28 HSSD scenes
+  (7~simulated days each, 60$\times$ time acceleration, SmartThings
+  cloud sync enabled).  This is the primary end-to-end validation of
+  \sys{}.}
+  \label{tab:autonomous-eval}
+  \small
+  \begin{tabular}{l r}
+    \toprule
+    {Metric} & {Value} \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Scale}} \\
+    \quad Scenes evaluated          & 28 \\
+    \quad Scenes with full navigation & 26 / 28~(92.9\%) \\
+    \quad Wall-clock runtime        & 88.0 h \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Environment Diversity}} \\
+    \quad Rooms per scene (avg / range)   & 15.1 / [6--35] \\
+    \quad Room coverage (\%)              & 62.3\%~(95\% CI: [55.3, 69.3]) \\
+    \quad IoT devices per scene (avg / range) & 30.9 / [15--64] \\
+    \quad Automations per scene (avg)     & 5.9 \\
+    \quad Articulated objects discovered  & 316 \\
+    \quad Articulated interactions        & 11{,}936 \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Activity Generation (LLM)}} \\
+    \quad LLM model                       & GPT-OSS 20B \\
+    \quad Tasks scheduled (total)         & 4{,}307 \\
+    \quad Tasks navigated (total)         & 3{,}580 \\
+    \quad Task completion rate            & 83.1\% \\
+    \quad Tasks per scene (avg / range)   & 153.8 / [3--190] \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Navigation}} \\
+    \quad Navigation trials               & 3{,}580 \\
+    \quad Navigation success rate         & 94.9\%~(95\% CI: [91.2, 98.3]) \\
+    \quad Mean SPL                        & 1.000 \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Firmware \& SmartThings}} \\
+    \quad Docker containers per scene     & 6 \\
+    \quad Proximity-triggered toggles     & 47{,}207 \\
+    \quad SmartThings cloud state pushes  & 47{,}207 \\
+    \quad Cloud push success rate         & 100.0\% \\
+    \quad Scenes with active ngrok        & 28 / 28 \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Motion \& Sensors}} \\
+    \quad Total motion events             & 6{,}250 \\
+    \quad Total motion detections         & 19{,}933 \\
+    \quad Motion events per scene (avg)   & 223 \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Security (3 Suites $\times$ 28 Scenes)}} \\
+    \quad Total attacks run               & 980 \\
+    \quad Total exploited                 & 660~(67.3\%) \\
+    \quad Firmware exploit rate           & 58.3\%~(294/504) \\
+    \quad Network exploit rate            & 73.5\%~(288/392) \\
+    \quad Phantom-delay exploit rate      & 92.9\%~(78/84) \\
+    \quad Mean security score             & 67.4\%~(95\% CI: [66.1, 68.6]) \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,28 @@
+\begin{table*}[t]
+  \centering
+  \caption{Comparison of \sys{} with existing IoT simulation platforms, 3D
+  simulators, and digital twin frameworks.  \ding{51} = supported,
+  \ding{55} = not supported, \textbf{P} = partial.
+  \sys{} is the only platform that integrates all six capabilities
+  in a single reproducible framework.}
+  \label{tab:system-comparison}
+  \small
+  \begin{tabular}{l c c c c c c}
+    \toprule
+    {Platform} & {3D Sim.} & {Firmware} & {Cloud IoT} & {Activity Gen.} & {Security} & {Open Source} \\
+    \midrule
+    IoTSim~\cite{iotsim}                 & \ding{55} & \ding{55} & \textbf{P}  & \ding{55} & \ding{55} & \ding{51} \\
+    FIESTA-IoT~\cite{fiesta-iot}         & \ding{55} & \ding{55} & \ding{51}   & \ding{55} & \ding{55} & \ding{51} \\
+    DPWSim~\cite{dpwsim}                 & \ding{55} & \ding{55} & \textbf{P}  & \ding{55} & \ding{55} & \ding{51} \\
+    Habitat~3.0~\cite{habitat3}          & \ding{51} & \ding{55} & \ding{55}   & \ding{55} & \ding{55} & \ding{51} \\
+    AI2-THOR~\cite{ai2thor}              & \ding{51} & \ding{55} & \ding{55}   & \ding{55} & \ding{55} & \ding{51} \\
+    iGibson~2.0~\cite{igibson}           & \ding{51} & \ding{55} & \ding{55}   & \ding{55} & \ding{55} & \ding{51} \\
+    Firmadyne~\cite{firmadyne}           & \ding{55} & \ding{51} & \ding{55}   & \ding{55} & \ding{51} & \ding{51} \\
+    Azure DT~\cite{azure-digital-twins}  & \ding{55} & \ding{55} & \ding{51}   & \ding{55} & \ding{55} & \ding{55} \\
+    AWS TwinMaker~\cite{aws-iot-twinmaker} & \ding{55} & \ding{55} & \ding{51} & \ding{55} & \ding{55} & \ding{55} \\
+    \midrule
+    \textbf{\sys{} (ours)} & \ding{51} & \ding{51} & \ding{51}   & \ding{51} & \ding{51} & \ding{51} \\
+    \bottomrule
+  \end{tabular}
+  \vspace{-2mm}
+\end{table*}

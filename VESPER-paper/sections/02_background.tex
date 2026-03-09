@@ -1,0 +1,61 @@
+\section{Background}\label{sec:background}
+
+\subsection{Smart Home Simulation}
+
+Simulating smart home environments requires modeling three
+interdependent domains: the \emph{physical space} (rooms, furniture,
+appliances), the \emph{occupant behavior} (movement, activities,
+routines), and the \emph{device ecosystem} (sensors, actuators,
+communication protocols, cloud services).  Existing tools address
+these in isolation.
+
+\textbf{3D Embodied Simulation.}
+Habitat~\cite{habitat19iccv,habitat2,habitat3}, AI2-THOR~\cite{ai2thor},
+and iGibson~\cite{igibson} provide photorealistic 3D environments with
+physics engines, but focus on embodied AI navigation tasks rather
+than IoT device modeling.  Habitat~3.0 introduced humanoid avatars
+with realistic motion and multi-agent coordination, making it
+suitable as a foundation for occupant simulation.
+
+\textbf{IoT Testbeds and Simulators.}
+IoTSim~\cite{iotsim}, FIESTA-IoT~\cite{fiesta-iot}, and SWoTSuite~\cite{swotsuite} model
+device networks but lack 3D spatial grounding.  They represent devices
+as abstract message endpoints, missing firmware-level behaviors such as
+sensor drift, interrupt timing, and flash-storage wear.
+
+\textbf{Activity Generation.}
+Traditional approaches use Markov chains~\cite{markov-activity}, stochastic Petri
+nets~\cite{petri-net-activity}, or agent-based models~\cite{abm-activity} to generate occupant
+activities.  These methods require extensive manual parameterization
+and struggle to produce the contextual variety observed in real
+households with diverse occupant demographics.
+
+\subsection{Firmware-in-the-Loop Testing}
+
+Firmware-in-the-loop (FIL) testing runs actual device firmware on
+emulated hardware to catch bugs that unit tests and hardware-in-the-loop
+setups miss.  QEMU~\cite{qemu} provides full-system ARM emulation and has
+been used for IoT firmware analysis~\cite{firmadyne,avatar}.  \sys{}
+packages QEMU instances in Docker containers, each running a compiled
+ARM binary with simulated GPIO, UART, and network peripherals.
+
+\subsection{LLMs for Behavioral Modeling}
+
+Recent work has explored LLMs as world models~\cite{llm-world-model} and behavior
+planners~\cite{llm-planner}.  Park et al.~\cite{generative-agents} demonstrated
+that LLM-driven agents can produce believable daily routines in a
+virtual town.  \sys{} adapts this insight to the smart home domain:
+instead of open-ended sandbox behavior, we use structured prompts to
+generate \emph{activity schedules}---timestamped sequences of
+activities with room assignments and device interactions---that can be
+validated against real-world activity datasets.
+
+\subsection{SmartThings Ecosystem}
+
+Samsung SmartThings is a leading IoT cloud platform supporting
+hundreds of device types via its Schema Connector and Device
+Profiles.  The Schema Connector protocol defines a webhook-based
+lifecycle (discovery, state refresh, command handling) through which
+third-party devices integrate with the SmartThings app.  \sys{}'s
+bridge implements this protocol, allowing simulated devices to appear
+alongside real hardware in a user's SmartThings account.

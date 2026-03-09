@@ -1,0 +1,393 @@
+scene_id,attack_name,category,success,packets_sent,packets_captured,duration_ms
+102343992,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,109.2
+102343992,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+102343992,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.6
+102343992,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,505.0
+102343992,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1111.4
+102343992,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.1
+102343992,"Zigbee Frame Replay",protocol_replay,1,0,0,1.5
+102343992,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.8
+102343992,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1.7
+102343992,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+102343992,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+102343992,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+102343992,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+102343992,"Traffic Fingerprinting",traffic_analysis,1,0,0,11817.4
+102344193,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.0
+102344193,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.3
+102344193,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,100.6
+102344193,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,502.8
+102344193,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1111.4
+102344193,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.2
+102344193,"Zigbee Frame Replay",protocol_replay,1,0,0,1.7
+102344193,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.7
+102344193,"Protocol Downgrade (No Encryption)",protocol_downgrade,1,0,0,1003.3
+102344193,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+102344193,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+102344193,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+102344193,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+102344193,"Traffic Fingerprinting",traffic_analysis,1,0,0,9821.7
+102344439,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.0
+102344439,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+102344439,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.7
+102344439,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,504.9
+102344439,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1112.2
+102344439,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.2
+102344439,"Zigbee Frame Replay",protocol_replay,1,0,0,1.1
+102344439,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.3
+102344439,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,5.7
+102344439,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+102344439,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+102344439,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+102344439,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+102344439,"Traffic Fingerprinting",traffic_analysis,1,0,0,11824.6
+102816009,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.9
+102816009,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.5
+102816009,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,101.6
+102816009,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,502.4
+102816009,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1105.0
+102816009,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.3
+102816009,"Zigbee Frame Replay",protocol_replay,1,0,0,2.6
+102816009,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.0
+102816009,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1.6
+102816009,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+102816009,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+102816009,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+102816009,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+102816009,"Traffic Fingerprinting",traffic_analysis,1,0,0,7810.7
+102816615,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.0
+102816615,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+102816615,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.7
+102816615,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,506.6
+102816615,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1112.9
+102816615,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.5
+102816615,"Zigbee Frame Replay",protocol_replay,1,0,0,1.6
+102816615,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.0
+102816615,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,6.7
+102816615,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+102816615,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+102816615,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+102816615,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+102816615,"Traffic Fingerprinting",traffic_analysis,1,0,0,7821.8
+102816852,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.1
+102816852,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.5
+102816852,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,101.3
+102816852,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,502.5
+102816852,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1105.3
+102816852,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2509.4
+102816852,"Zigbee Frame Replay",protocol_replay,1,0,0,0.0
+102816852,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.9
+102816852,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,18.5
+102816852,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+102816852,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.1
+102816852,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+102816852,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+102816852,"Traffic Fingerprinting",traffic_analysis,1,0,0,11814.2
+103997445_171030492,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.9
+103997445_171030492,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+103997445_171030492,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.7
+103997445_171030492,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,504.5
+103997445_171030492,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1110.0
+103997445_171030492,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2516.8
+103997445_171030492,"Zigbee Frame Replay",protocol_replay,1,0,0,1.8
+103997445_171030492,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.7
+103997445_171030492,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1.8
+103997445_171030492,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+103997445_171030492,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+103997445_171030492,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+103997445_171030492,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+103997445_171030492,"Traffic Fingerprinting",traffic_analysis,1,0,0,7818.2
+103997562_171030642,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,106.1
+103997562_171030642,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+103997562_171030642,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.2
+103997562_171030642,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,504.1
+103997562_171030642,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1108.3
+103997562_171030642,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2515.3
+103997562_171030642,"Zigbee Frame Replay",protocol_replay,1,0,0,1.9
+103997562_171030642,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.8
+103997562_171030642,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,2.2
+103997562_171030642,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+103997562_171030642,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+103997562_171030642,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+103997562_171030642,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.1
+103997562_171030642,"Traffic Fingerprinting",traffic_analysis,1,0,0,3815.5
+103997799_171031002,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.9
+103997799_171031002,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+103997799_171031002,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,101.9
+103997799_171031002,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,505.7
+103997799_171031002,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1107.8
+103997799_171031002,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2521.8
+103997799_171031002,"Zigbee Frame Replay",protocol_replay,1,0,0,0.7
+103997799_171031002,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.3
+103997799_171031002,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1004.5
+103997799_171031002,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+103997799_171031002,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+103997799_171031002,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+103997799_171031002,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.0
+103997799_171031002,"Traffic Fingerprinting",traffic_analysis,1,0,0,3814.8
+103997994_171031320,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,107.6
+103997994_171031320,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+103997994_171031320,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,101.7
+103997994_171031320,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,507.0
+103997994_171031320,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1109.3
+103997994_171031320,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2515.9
+103997994_171031320,"Zigbee Frame Replay",protocol_replay,1,0,0,1.9
+103997994_171031320,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.3
+103997994_171031320,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1004.8
+103997994_171031320,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+103997994_171031320,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.1
+103997994_171031320,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+103997994_171031320,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.4
+103997994_171031320,"Traffic Fingerprinting",traffic_analysis,1,0,0,3819.1
+104348160_171513093,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,106.6
+104348160_171513093,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+104348160_171513093,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,100.9
+104348160_171513093,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,504.4
+104348160_171513093,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1108.9
+104348160_171513093,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.6
+104348160_171513093,"Zigbee Frame Replay",protocol_replay,1,0,0,1.7
+104348160_171513093,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,2.5
+104348160_171513093,"Protocol Downgrade (No Encryption)",protocol_downgrade,1,0,0,1004.8
+104348160_171513093,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+104348160_171513093,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+104348160_171513093,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+104348160_171513093,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.6
+104348160_171513093,"Traffic Fingerprinting",traffic_analysis,1,0,0,1815.2
+104348361_171513414,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,106.0
+104348361_171513414,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+104348361_171513414,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,101.9
+104348361_171513414,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,506.2
+104348361_171513414,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1111.2
+104348361_171513414,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2513.2
+104348361_171513414,"Zigbee Frame Replay",protocol_replay,1,0,0,1.6
+104348361_171513414,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.0
+104348361_171513414,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,5.3
+104348361_171513414,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,1.4
+104348361_171513414,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+104348361_171513414,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+104348361_171513414,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.1
+104348361_171513414,"Traffic Fingerprinting",traffic_analysis,1,0,0,1811.3
+104862417_172226382,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,107.9
+104862417_172226382,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.3
+104862417_172226382,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,101.4
+104862417_172226382,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,503.2
+104862417_172226382,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1104.8
+104862417_172226382,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2511.7
+104862417_172226382,"Zigbee Frame Replay",protocol_replay,1,0,0,2.0
+104862417_172226382,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,2.6
+104862417_172226382,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1.6
+104862417_172226382,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+104862417_172226382,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+104862417_172226382,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+104862417_172226382,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.5
+104862417_172226382,"Traffic Fingerprinting",traffic_analysis,1,0,0,1812.3
+104862573_172226682,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,107.1
+104862573_172226682,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+104862573_172226682,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.8
+104862573_172226682,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,504.8
+104862573_172226682,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1108.8
+104862573_172226682,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.3
+104862573_172226682,"Zigbee Frame Replay",protocol_replay,1,0,0,1.2
+104862573_172226682,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.7
+104862573_172226682,"Protocol Downgrade (No Encryption)",protocol_downgrade,1,0,0,1004.2
+104862573_172226682,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+104862573_172226682,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+104862573_172226682,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+104862573_172226682,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.3
+104862573_172226682,"Traffic Fingerprinting",traffic_analysis,1,0,0,3816.5
+104862687_172226883,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,104.3
+104862687_172226883,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+104862687_172226883,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,100.7
+104862687_172226883,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,505.4
+104862687_172226883,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1108.7
+104862687_172226883,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2513.9
+104862687_172226883,"Zigbee Frame Replay",protocol_replay,1,0,0,1.8
+104862687_172226883,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,2.2
+104862687_172226883,"Protocol Downgrade (No Encryption)",protocol_downgrade,1,0,0,1003.0
+104862687_172226883,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+104862687_172226883,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+104862687_172226883,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+104862687_172226883,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.4
+104862687_172226883,"Traffic Fingerprinting",traffic_analysis,1,0,0,1812.1
+105515235_173104215,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,104.7
+105515235_173104215,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+105515235_173104215,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.8
+105515235_173104215,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,505.7
+105515235_173104215,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1106.3
+105515235_173104215,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.5
+105515235_173104215,"Zigbee Frame Replay",protocol_replay,1,0,0,0.9
+105515235_173104215,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.5
+105515235_173104215,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1.8
+105515235_173104215,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+105515235_173104215,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+105515235_173104215,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+105515235_173104215,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.4
+105515235_173104215,"Traffic Fingerprinting",traffic_analysis,1,0,0,1815.9
+105515403_173104449,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,104.9
+105515403_173104449,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.4
+105515403_173104449,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,100.9
+105515403_173104449,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,504.2
+105515403_173104449,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1106.9
+105515403_173104449,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2511.3
+105515403_173104449,"Zigbee Frame Replay",protocol_replay,1,0,0,1.7
+105515403_173104449,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.3
+105515403_173104449,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,11.1
+105515403_173104449,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+105515403_173104449,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+105515403_173104449,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+105515403_173104449,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.7
+105515403_173104449,"Traffic Fingerprinting",traffic_analysis,1,0,0,3811.4
+105515541_173104641,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.8
+105515541_173104641,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.7
+105515541_173104641,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,103.9
+105515541_173104641,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,506.2
+105515541_173104641,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1110.3
+105515541_173104641,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2513.9
+105515541_173104641,"Zigbee Frame Replay",protocol_replay,1,0,0,1.7
+105515541_173104641,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.3
+105515541_173104641,"Protocol Downgrade (No Encryption)",protocol_downgrade,1,0,0,1003.8
+105515541_173104641,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+105515541_173104641,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+105515541_173104641,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+105515541_173104641,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.3
+105515541_173104641,"Traffic Fingerprinting",traffic_analysis,1,0,0,1812.9
+106366248_174226527,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,104.2
+106366248_174226527,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+106366248_174226527,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.6
+106366248_174226527,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,504.0
+106366248_174226527,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1107.5
+106366248_174226527,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.4
+106366248_174226527,"Zigbee Frame Replay",protocol_replay,1,0,0,1.7
+106366248_174226527,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.6
+106366248_174226527,"Protocol Downgrade (No Encryption)",protocol_downgrade,1,0,0,1003.7
+106366248_174226527,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+106366248_174226527,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+106366248_174226527,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+106366248_174226527,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+106366248_174226527,"Traffic Fingerprinting",traffic_analysis,1,0,0,1816.8
+106366371_174226743,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.6
+106366371_174226743,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.4
+106366371_174226743,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,101.7
+106366371_174226743,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,502.8
+106366371_174226743,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1104.1
+106366371_174226743,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2517.6
+106366371_174226743,"Zigbee Frame Replay",protocol_replay,1,0,0,1.8
+106366371_174226743,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.9
+106366371_174226743,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1003.5
+106366371_174226743,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+106366371_174226743,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+106366371_174226743,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+106366371_174226743,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.4
+106366371_174226743,"Traffic Fingerprinting",traffic_analysis,1,0,0,1810.2
+106878915_174887025,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,106.3
+106878915_174887025,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.3
+106878915_174887025,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.3
+106878915_174887025,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,504.5
+106878915_174887025,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1106.0
+106878915_174887025,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2510.2
+106878915_174887025,"Zigbee Frame Replay",protocol_replay,1,0,0,0.6
+106878915_174887025,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.3
+106878915_174887025,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1002.2
+106878915_174887025,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+106878915_174887025,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+106878915_174887025,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.1
+106878915_174887025,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.3
+106878915_174887025,"Traffic Fingerprinting",traffic_analysis,1,0,0,1810.7
+106879080_174887211,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,106.6
+106879080_174887211,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.4
+106879080_174887211,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,101.8
+106879080_174887211,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,503.1
+106879080_174887211,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1110.3
+106879080_174887211,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.5
+106879080_174887211,"Zigbee Frame Replay",protocol_replay,1,0,0,1.5
+106879080_174887211,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.1
+106879080_174887211,"Protocol Downgrade (No Encryption)",protocol_downgrade,1,0,0,24.1
+106879080_174887211,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+106879080_174887211,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+106879080_174887211,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+106879080_174887211,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+106879080_174887211,"Traffic Fingerprinting",traffic_analysis,1,0,0,1810.1
+107734110_175999914,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,106.3
+107734110_175999914,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+107734110_175999914,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.2
+107734110_175999914,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,506.1
+107734110_175999914,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1111.4
+107734110_175999914,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.2
+107734110_175999914,"Zigbee Frame Replay",protocol_replay,1,0,0,1.2
+107734110_175999914,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.9
+107734110_175999914,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,8.7
+107734110_175999914,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+107734110_175999914,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+107734110_175999914,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+107734110_175999914,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.7
+107734110_175999914,"Traffic Fingerprinting",traffic_analysis,1,0,0,1814.3
+107734176_176000019,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,104.3
+107734176_176000019,"MQTT Message Injection",mqtt_message_injection,0,0,0,101.4
+107734176_176000019,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.7
+107734176_176000019,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,502.7
+107734176_176000019,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1106.8
+107734176_176000019,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2513.8
+107734176_176000019,"Zigbee Frame Replay",protocol_replay,1,0,0,2.2
+107734176_176000019,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,2.5
+107734176_176000019,"Protocol Downgrade (No Encryption)",protocol_downgrade,1,0,0,1003.6
+107734176_176000019,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+107734176_176000019,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+107734176_176000019,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+107734176_176000019,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.7
+107734176_176000019,"Traffic Fingerprinting",traffic_analysis,1,0,0,1809.7
+107734449_176000403,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.5
+107734449_176000403,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+107734449_176000403,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.0
+107734449_176000403,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,504.7
+107734449_176000403,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1105.1
+107734449_176000403,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2511.8
+107734449_176000403,"Zigbee Frame Replay",protocol_replay,1,0,0,0.8
+107734449_176000403,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.1
+107734449_176000403,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1.8
+107734449_176000403,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+107734449_176000403,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.1
+107734449_176000403,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.1
+107734449_176000403,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,0.0
+107734449_176000403,"Traffic Fingerprinting",traffic_analysis,1,0,0,5817.5
+108294558_176710095,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,105.8
+108294558_176710095,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+108294558_176710095,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.6
+108294558_176710095,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,505.1
+108294558_176710095,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1109.5
+108294558_176710095,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2514.8
+108294558_176710095,"Zigbee Frame Replay",protocol_replay,1,0,0,1.5
+108294558_176710095,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.9
+108294558_176710095,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1.3
+108294558_176710095,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+108294558_176710095,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.1
+108294558_176710095,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.1
+108294558_176710095,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.6
+108294558_176710095,"Traffic Fingerprinting",traffic_analysis,1,0,0,5819.7
+108294798_176710428,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,106.1
+108294798_176710428,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+108294798_176710428,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.4
+108294798_176710428,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,505.0
+108294798_176710428,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1110.3
+108294798_176710428,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2512.4
+108294798_176710428,"Zigbee Frame Replay",protocol_replay,1,0,0,0.9
+108294798_176710428,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,1.0
+108294798_176710428,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,4.3
+108294798_176710428,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+108294798_176710428,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+108294798_176710428,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+108294798_176710428,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.1
+108294798_176710428,"Traffic Fingerprinting",traffic_analysis,1,0,0,1815.5
+108294939_176710668,"MQTT Unauthorized Subscribe (Eavesdropping)",mqtt_eavesdropping,0,0,0,106.4
+108294939_176710668,"MQTT Message Injection",mqtt_message_injection,0,0,0,102.4
+108294939_176710668,"MQTT Topic Hijack (Command MITM)",mqtt_topic_hijack,0,0,0,102.7
+108294939_176710668,"TCP Connection Hijack",tcp_connection_hijack,1,0,0,505.4
+108294939_176710668,"TCP Man-in-the-Middle Proxy",tcp_man_in_the_middle,1,0,4,1106.8
+108294939_176710668,"TCP Connection Flood DoS",network_denial_of_service,1,50,0,2512.7
+108294939_176710668,"Zigbee Frame Replay",protocol_replay,1,0,0,1.3
+108294939_176710668,"Zigbee Network Key Extraction",protocol_downgrade,1,0,0,0.9
+108294939_176710668,"Protocol Downgrade (No Encryption)",protocol_downgrade,0,0,0,1003.4
+108294939_176710668,"ARP Cache Poisoning (Simulated)",arp_spoofing,1,0,0,0.0
+108294939_176710668,"DNS Poisoning (Simulated)",dns_poisoning,1,0,0,0.0
+108294939_176710668,"WiFi Deauthentication Attack (Simulated)",deauthentication_attack,1,30,0,0.0
+108294939_176710668,"Evil Twin Access Point (Simulated)",evil_twin_ap,1,0,0,1.1
+108294939_176710668,"Traffic Fingerprinting",traffic_analysis,1,0,0,3817.5

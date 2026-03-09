@@ -1,0 +1,48 @@
+VESPER Autonomous Evaluation — Summary
+============================================================
+
+Scene: 108294939_176710668
+  Rooms: 10  Devices: 22  Automations: 5
+  Firmware Sensors: 39
+  Navmesh Area: 152.0 m²
+  Nav Trials: 148  Success Rate: 99.3%
+  Mean SPL: 1.000
+  Sensor Detection Rate: 0.0%
+  Automation Trigger Rate: 0.0%
+  Articulated Objects: 16  Interactions: 428
+  SmartThings Containers: 6  Proximity Toggles: 2055
+  SmartThings Cloud: pushes=2055  commands=0  ngrok=YES
+  Security Attacks: 24/35 exploitable (69% vulnerability rate)
+    Firmware:      11/18 (8 categories)
+    Network:       10/14 (10 categories)
+    Phantom-Delay: 3/3 (mean CVSS 9.3)
+  Tasks Scheduled: 172  Navigated: 148
+  Room Coverage: 60.0%
+  Duration: 32115.6s
+
+AGGREGATE
+  Scenes: 1
+  Total Nav Trials: 148
+  Aggregate Success Rate: 99.3%
+  Aggregate Mean SPL: 1.000
+
+  Articulated Objects:
+    Total Discovered: 16
+    Total Interactions: 428
+
+  SmartThings Cloud Sync:
+    Docker Containers Total: 6
+    Proximity Toggles Total: 2055
+    Cloud State Pushes (3D→ST): 2055
+    Cloud Commands (ST→3D): 0
+    Scenes with ngrok: 1/1
+
+  Security Assessment (All 3 Suites):
+    Scenes with Attacks: 1/1
+    Total Attacks Run: 35
+    Total Exploitable: 24 (69%)
+    Firmware:      11/18 (61%)
+    Network:       10/14 (71%)
+    Phantom-Delay: 3/3 (100%)
+    Aggregate Mean CVSS (PD): 9.3
+    Containers Targeted: 6

@@ -1,0 +1,291 @@
+\section{Implementation}\label{sec:implementation}
+
+\sys{} is implemented in approximately 15{,}000 lines of core
+Python~3.9 (excluding tests, scripts, and evaluation tooling),
+with ARM firmware written in bare-metal C ($\sim$1{,}600 lines across
+six device variants).  We highlight key implementation
+decisions below.
+
+\subsection{3D Simulation}
+
+We build on Habitat-Lab v0.3.0 with the Habitat-Sim renderer.
+Scenes are loaded from the HSSD-Hab and Replica-CAD datasets.
+Humanoid navigation uses the built-in shortest-path follower with a
+custom task scheduler that dispatches activities from the LLM-generated
+schedule.  Object interactions (pick, place, open, toggle) use
+Habitat's rearrangement primitives.
+
+\subsection{Firmware Containers}
+
+Each device type has a corresponding Dockerfile that:
+\begin{enumerate}
+  \item Installs the QEMU ARM system emulator (v10.2).
+  \item Copies the pre-compiled firmware ELF binary for the
+    target device type.
+  \item Exposes a TCP socket (default port~15\,000) for UART I/O.
+  \item Launches QEMU with the LM3S6965EVB machine profile:\\
+    \texttt{qemu-system-arm -machine lm3s6965evb}\\
+    \texttt{-cpu cortex-m3 -nographic}\\
+    \texttt{-kernel <device>.elf}\\
+    \texttt{-serial tcp::15000,server,nowait}
+\end{enumerate}
+A Python \texttt{DeviceFirmwareManager} class wraps the Docker SDK to
+create, start, stop, and remove containers.  Health checks ping the
+TCP socket; unresponsive containers are restarted automatically.
+A \texttt{DeviceType} enum with 28~name aliases (e.g., ``thermostat''
+$\to$ \textsc{Temperature\_Sensor}, ``bulb'' $\to$
+\textsc{Smart\_Light}) enables fuzzy device-type resolution from
+natural-language scene descriptions.
+
+\paragraph{Firmware Build System.}
+All six firmware variants are compiled with a shared Makefile using
+\texttt{arm-none-eabi-gcc} and the flags
+\texttt{-mcpu=cortex-m3 -mthumb -Os -nostartfiles -nostdlib
+-ffunction-sections -fdata-sections}.  A custom linker script
+(\texttt{linker.ld}) maps the ISR vector table to flash address
+\texttt{0x0000\_0000} and allocates 64\,KB flash and 20\,KB SRAM.
+Each firmware image is approximately 300~lines of C implementing
+the UART driver (PL011-compatible registers at \texttt{0x4000C000}),
+command dispatcher, GPIO handlers, and device-specific sensor models.
+The build produces both ELF (for QEMU) and raw binary outputs.
+
+We provide reference firmware images for six device types:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Smart Light} --- PWM-controlled LED with on/off/dim,
+    brightness (0--100\%), and color temperature
+    (2\,700--6\,500\,K).
+  \item \textbf{Motion Sensor} --- PIR interrupt with configurable
+    sensitivity (1--10) and cooldown timer.
+  \item \textbf{Temperature Sensor} --- ADC sampling at 1\,Hz with
+    Kalman filtering and threshold alerts.
+  \item \textbf{Humidity Sensor} --- combined RH\% and temperature
+    monitoring with user-invocable calibration.
+  \item \textbf{Door Sensor} --- magnetic contact with open/closed
+    state and tamper detection.
+  \item \textbf{Smart Plug} --- relay-driven outlet with real-time
+    power metering (watts) and schedule control.
+\end{itemize}
+
+\paragraph{UART Communication Protocol.}
+Each firmware processes newline-terminated ASCII commands over UART0.
+The host-side Python driver sends commands via a TCP socket and
+accumulates byte-by-byte QEMU output (a consequence of the
+hardware-accurate UART emulation) into complete response lines.
+The shared command set includes: \texttt{IDENTIFY}, \texttt{ON/OFF},
+\texttt{STATUS}, \texttt{GET\_ALL}, \texttt{AUTH:<token>},
+\texttt{SET\_ID:<name>}, \texttt{FW\_UPDATE:<hex>}, \texttt{FW\_APPLY},
+\texttt{DEBUG\_DUMP}, \texttt{REBOOT}, \texttt{SET\_SCHEDULE}, and
+\texttt{CALIBRATE}, plus device-specific extensions (e.g.,
+\texttt{SET\_BRIGHTNESS}, \texttt{SET\_SENSITIVITY}).
+
+\subsection{LLM Integration}
+
+\sys{} communicates with LLMs through the OpenAI-compatible API
+exposed by LMStudio on \texttt{localhost:1234}.  The
+\texttt{LLMClient} class supports configurable model selection,
+temperature, and retry logic.  Prompts are Jinja2 templates
+parameterized by persona fields, day type, and room inventory.
+
+All experiments and the large-scale autonomous evaluation use
+GPT-OSS~20B, a 20-billion-parameter open-source model running
+locally with 4-bit quantization (GGUF format) on consumer hardware
+(Apple M2~Pro, 32\,GB RAM).  The model generates structured JSON
+schedules conditioned on persona profiles, room inventories, and
+day type (weekday vs.\ weekend).
+
+\subsection{SmartThings Integration}
+
+The Schema Connector is a Flask application that handles the
+SmartThings lifecycle webhooks.  OAuth2 tokens are managed via a
+token store backed by SQLite.  Device profiles are auto-generated
+from the Device Registry, mapping \sys{} device types to
+SmartThings capability identifiers (e.g.,
+\texttt{st.capability.switch}, \texttt{st.capability.temperatureMeasurement}).
+
+State updates are pushed to SmartThings via HTTPS POST to the
+state callback URL, using exponential backoff on transient failures.
+Incoming commands are translated to firmware-level GPIO events and
+dispatched through the event bus.
+
+\subsection{Simulated Home Network}
+
+The simulated network is implemented as a configurable Docker network
+(\texttt{vesper-home-network}, \texttt{172.20.0.0/24}) supporting
+four driver modes via a \texttt{NetworkMode} enum:
+\texttt{BRIDGE} (default), \texttt{MACVLAN}, \texttt{IPVLAN}, and
+\texttt{HOST}.  A \texttt{NetworkConfig} dataclass centralizes all
+topology parameters: gateway (\texttt{172.20.0.1}), MQTT broker
+(\texttt{172.20.0.2}), device IPs (starting at \texttt{172.20.0.10}),
+latency (5.0\,ms $\pm$ 2.0\,ms jitter), bandwidth (100\,Mbps), and
+packet-loss ratio.
+
+\paragraph{Wireshark Integration.}
+Attack traffic is captured through two complementary paths.
+First, \texttt{tshark}~4.6.3 (Wireshark CLI) runs on the loopback
+interface with a BPF filter targeting the firmware TCP ports,
+writing per-attack and global \texttt{.pcap} files that are
+independently verifiable with \texttt{wireshark} or
+\texttt{tcpdump} (\Cref{sec:eval-pcap}).
+Second, an \texttt{InstrumentedSocket} wrapper records every
+TX/RX payload with nanosecond timestamps at the application layer,
+providing structured packet logs even when Wireshark is unavailable.
+When macvlan or ipvlan mode is selected, a
+\texttt{WiresharkLiveCapture} module can additionally start
+Wireshark on the parent NIC (auto-detected via \texttt{ifconfig}
+on macOS or \texttt{ip route} on Linux), enabling real-time
+inspection of raw container frames.
+This multi-path architecture ensures that attack traffic evidence
+is always available (\Cref{tab:traffic-analysis}).
+
+\paragraph{MQTT Broker.}
+The \texttt{MQTTBrokerSimulator} is a threaded Python server
+accepting up to 32~concurrent client connections.  It implements
+publish, subscribe (including wildcard \texttt{\#} and \texttt{+}
+matching), retained messages, and optional username/password
+authentication.  The broker routes device telemetry through a
+hierarchical topic scheme:
+\texttt{vesper/devices/<id>/\{state,events,commands\}}.
+
+\paragraph{Protocol Simulators.}
+Pluggable \texttt{ProtocolSimulator} instances provide lightweight
+application-layer models of Zigbee, Z-Wave, and BLE communication.
+Each simulator handles device registration, message routing with
+configurable latency and packet loss, and network-key management.
+Protocol-specific RF framing is not modeled; instead, simulated
+protocol attacks (Zigbee replay, key extraction) operate over TCP
+connections to the firmware containers.  A \texttt{PacketCapture}
+module records all traffic with nanosecond timestamps for post-hoc
+forensic analysis.
+
+\subsection{Attack Framework}
+
+The security testing pipeline consists of five complementary attack
+suites totaling 36~unique attacks in approximately 3{,}200~lines
+of Python.
+
+\paragraph{Firmware Attacks (Suite~1).}
+The \texttt{FirmwareAttackFramework} class implements 18~firmware-level
+attacks organized into nine categories.
+Each attack method opens a raw TCP socket to the target QEMU UART
+port, sends a crafted payload, and parses the firmware response
+to determine exploit success.
+Key attack implementations include:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Buffer overflow} (3~variants) --- sends oversized
+    \texttt{FW\_UPDATE} payloads (256--1\,024~bytes) targeting the
+    unchecked 128-byte \texttt{fw\_update\_buf}; a heap-spray variant
+    writes NOP sleds followed by a shellcode marker.
+  \item \textbf{Authentication bypass} (2~variants) --- issues
+    privileged commands (\texttt{FW\_UPDATE}, \texttt{REBOOT}) without
+    a prior \texttt{AUTH} handshake; tests empty- and null-token
+    acceptance.
+  \item \textbf{Command injection} (2~variants) --- embeds shell
+    metacharacters (\texttt{;}, \texttt{|}, backticks) and format
+    strings (\texttt{\%x}, \texttt{\%n}) within \texttt{SET\_ID}
+    payloads.
+  \item \textbf{Firmware update exploitation} (2~variants) ---
+    pushes unsigned binary payloads via \texttt{FW\_UPDATE} and
+    triggers \texttt{FW\_APPLY} without integrity verification.
+  \item \textbf{Information disclosure} (2~variants) --- reads
+    auth tokens and firmware buffers via \texttt{DEBUG\_DUMP}; probes
+    for verbose error messages leaking internal state.
+  \item \textbf{Denial of service} (2~variants) --- rapid-fire
+    command flooding (100~commands in burst) and resource exhaustion
+    through repeated \texttt{FW\_UPDATE} writes.
+  \item \textbf{State manipulation}, \textbf{replay}, and
+    \textbf{protocol fuzzing} round out the suite with
+    unauthorized state changes, captured-command replay, and
+    random/boundary-value input generation.
+\end{itemize}
+Each attack returns an \texttt{AttackResult} dataclass containing
+the exploit outcome (success/failure), CVSS~v3.1 severity level,
+captured evidence, wall-clock duration, impact description, and
+suggested mitigation.
+
+\paragraph{Network Attacks (Suite~2).}
+The \texttt{NetworkAttackFramework} orchestrates 14~network-level
+attacks across five attack suites:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{MQTT suite} (3) --- unauthorized topic subscription,
+    malicious message injection to device command topics, and
+    wildcard topic hijacking.
+  \item \textbf{TCP/IP suite} (3) --- TCP connection hijacking via
+    sequence-number prediction, man-in-the-middle proxy insertion,
+    and SYN flood denial of service.
+  \item \textbf{Protocol suite} (3) --- simulated Zigbee frame
+    replay, simulated network-key extraction (demonstrating the
+    well-known Trust Center link key weakness), and protocol
+    downgrade verification (testing whether devices accept
+    unencrypted connections).
+  \item \textbf{Infrastructure suite} (3) --- ARP cache poisoning
+    (conceptual on Docker bridge), simulated DNS response spoofing,
+    and simulated WiFi deauthentication (modeled without
+    physical-layer frame injection).
+  \item \textbf{Traffic analysis suite} (2) --- simulated evil twin
+    access point with credential harvesting, and active traffic
+    fingerprinting via device identification commands.
+\end{itemize}
+
+\paragraph{Phantom-Delay Attack (Suite~3).}
+Three attack variants adapted from Fu~et~al.~\cite{phantom-delay}
+target IoT timeout behaviors via transparent TCP proxying:
+state-update delay, erroneous automation execution, and routine
+invalidation.  Each variant intercepts UART-over-TCP and MQTT
+traffic on the Docker bridge network to selectively delay events
+without triggering device-offline alerts.
+
+\paragraph{Malicious SmartApp (Suite~4).}
+A standalone attack module (\texttt{smartapp.py}, $\sim$380 lines)
+targets the SmartThings Schema Connector's HTTP API.  The attack
+uses raw HTTP (no external dependencies) to:
+\begin{enumerate}[leftmargin=*]
+  \item Probe the connector's \texttt{/health} endpoint.
+  \item Send a \texttt{discoveryRequest} to enumerate all registered
+    devices without valid OAuth credentials.
+  \item Issue a \texttt{stateRefreshRequest} to steal the callback
+    token stored in memory.
+  \item Inject a forged \texttt{commandRequest} (e.g., DISARM) that
+    the connector accepts without user confirmation.
+\end{enumerate}
+This attack targets CWE-269 (Improper Privilege Management) and
+CWE-862 (Missing Authorization), with a CVSS base score of~8.8.
+
+\paragraph{ESP32 Buffer Overflow (Suite~5).}
+A standalone attack module (\texttt{esp32\_overflow.py},
+$\sim$400~lines) targets the 128-byte command buffer in the ESP32
+firmware.  The exploit constructs a 137-byte payload:
+\begin{itemize}[leftmargin=*]
+  \item 32~bytes of Thumb-mode NOP sled (\texttt{0xBF00} repeated).
+  \item A 12-byte \texttt{VESPER\_PWNED} shellcode marker.
+  \item 88~bytes of padding to reach the saved link register at
+    offset~132 from the buffer start.
+  \item A 4-byte fake return address (\texttt{0x20000081}, with
+    Thumb bit set) pointing into the NOP sled in SRAM.
+\end{itemize}
+The payload triggers a device crash (DoS) when the overwritten
+return address causes an invalid instruction fetch.  The device
+becomes unresponsive for $\sim$12\,s before rebooting.  This attack
+targets CWE-120 (Buffer Copy without Size Check) and CWE-787
+(Out-of-bounds Write), with a CVSS base score of~9.8 (Critical).
+
+\subsection{Security Evaluation Pipeline}
+
+A \texttt{SecurityEvaluator} module (900~lines) processes raw attack
+results into conference-grade metrics.  It computes CVSS~v3.1 base
+scores using the standard formula (exploitability $\times$ impact),
+maps each finding to MITRE ATT\&CK for IoT techniques (15~techniques
+across 10~of 12~tactics), and classifies attacks along the seven-stage
+IoT Cyber Kill Chain.  Statistical significance is assessed with
+chi-squared, Fisher's exact, Kruskal-Wallis, and Mann-Whitney~U
+tests.  The pipeline auto-generates six \LaTeX{} tables and six
+publication-ready PDF figures (heatmaps, box plots, bar charts)
+for direct inclusion in the manuscript.
+
+\subsection{Configuration and Reproducibility}
+
+All simulation parameters are specified in a single YAML
+configuration file loaded by a Pydantic configuration model.
+Key parameters include the random seed (\texttt{seed: 42}),
+simulation duration, device inventory, persona selection, and LLM
+model.  Experiment configurations for all evaluations are provided
+in the repository under \texttt{vesper/evaluation/configs/}.

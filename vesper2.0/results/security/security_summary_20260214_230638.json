@@ -1,0 +1,40 @@
+{
+  "timestamp": "20260214_230638",
+  "firmware_attacks": {
+    "motion_sensor": {
+      "total": 18,
+      "successful": 8,
+      "rate": "44.4%"
+    },
+    "temperature_sensor": {
+      "total": 18,
+      "successful": 10,
+      "rate": "55.6%"
+    },
+    "smart_light": {
+      "total": 18,
+      "successful": 11,
+      "rate": "61.1%"
+    },
+    "humidity_sensor": {
+      "total": 18,
+      "successful": 10,
+      "rate": "55.6%"
+    },
+    "door_sensor": {
+      "total": 18,
+      "successful": 8,
+      "rate": "44.4%"
+    },
+    "smart_plug": {
+      "total": 18,
+      "successful": 9,
+      "rate": "50.0%"
+    }
+  },
+  "network_attacks": {
+    "total": 14,
+    "successful": 9,
+    "rate": "64.3%"
+  }
+}

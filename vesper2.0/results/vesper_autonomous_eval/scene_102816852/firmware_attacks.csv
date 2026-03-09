@@ -1,0 +1,19 @@
+scene_id,attack_name,category,severity,success,cve_reference,duration_ms
+102816852,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",61.5
+102816852,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",12.2
+102816852,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",18.0
+102816852,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",16.4
+102816852,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",5.7
+102816852,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",23.7
+102816852,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",416.2
+102816852,"Command Injection (Null Byte)",command_injection,low,0,"",3003.5
+102816852,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",22.9
+102816852,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",10.5
+102816852,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",656.6
+102816852,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4438.1
+102816852,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",232.8
+102816852,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",5.8
+102816852,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",210.0
+102816852,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24058.5
+102816852,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",44.9
+102816852,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",19.6

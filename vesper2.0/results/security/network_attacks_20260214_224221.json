@@ -1,0 +1,282 @@
+[
+  {
+    "attack_name": "MQTT Unauthorized Subscribe (Eavesdropping)",
+    "category": "mqtt_eavesdropping",
+    "success": true,
+    "description": "Subscribe to device topics without authentication to eavesdrop",
+    "evidence": [
+      "Subscribed to 'vesper/devices/#': SUBACK\n",
+      "Subscribed to 'vesper/+/state': SUBACK\n",
+      "Subscribed to 'vesper/+/events': SUBACK\n",
+      "Subscribed to 'vesper/+/commands': SUBACK\n",
+      "Subscribed to '$SYS/#': SUBACK\n"
+    ],
+    "impact": "Full visibility into all device states, commands, and events",
+    "mitigation": "Enable MQTT ACL, require client certificates, use TLS",
+    "duration_ms": 2519.1431045532227,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "MQTT Message Injection",
+    "category": "mqtt_message_injection",
+    "success": true,
+    "description": "Inject false sensor data and commands into MQTT topics",
+    "evidence": [
+      "Injected into 'vesper/devices/temp-sensor-001/state': {\"temperature\": 99.9, \"unit\": \"C\"}",
+      "Injected into 'vesper/devices/motion-sensor-001/events': {\"motion\": \"active\", \"source\": \"spoofed\"}",
+      "Injected into 'vesper/devices/door-sensor-001/state': {\"door\": \"open\", \"tamper\": \"yes\"}",
+      "Injected into 'vesper/devices/smart-plug-001/commands': {\"command\": \"OFF\"}",
+      "Injected into 'vesper/devices/smart-light-001/commands': {\"command\": \"ON\", \"brightness\": 100}"
+    ],
+    "impact": "Falsified sensor data triggers incorrect automations, device control",
+    "mitigation": "Implement message signing, per-topic ACLs, payload validation",
+    "duration_ms": 511.4922523498535,
+    "packets_sent": 5,
+    "packets_captured": 0,
+    "intercepted_data": [
+      {
+        "topic": "vesper/devices/temp-sensor-001/state",
+        "payload": "{\"temperature\": 99.9, \"unit\": \"C\"}"
+      },
+      {
+        "topic": "vesper/devices/motion-sensor-001/events",
+        "payload": "{\"motion\": \"active\", \"source\": \"spoofed\"}"
+      },
+      {
+        "topic": "vesper/devices/door-sensor-001/state",
+        "payload": "{\"door\": \"open\", \"tamper\": \"yes\"}"
+      },
+      {
+        "topic": "vesper/devices/smart-plug-001/commands",
+        "payload": "{\"command\": \"OFF\"}"
+      },
+      {
+        "topic": "vesper/devices/smart-light-001/commands",
+        "payload": "{\"command\": \"ON\", \"brightness\": 100}"
+      }
+    ]
+  },
+  {
+    "attack_name": "MQTT Topic Hijack (Command MITM)",
+    "category": "mqtt_topic_hijack",
+    "success": true,
+    "description": "Intercept and modify device commands via MQTT topic subscription",
+    "evidence": [
+      "Hijack subscription to 'vesper/devices/+/commands': MSG vesper/devices/smart-plug-001/commands {\"comma",
+      "Hijacked command: {\"command\": \"ON\", \"brightness\": 50} \u2192 {\"command\": \"OFF\"}"
+    ],
+    "impact": "Attacker can modify any command before it reaches devices",
+    "mitigation": "End-to-end encryption between controller and devices, signed commands",
+    "duration_ms": 207.42297172546387,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": [
+      {
+        "original": "{\"command\": \"ON\", \"brightness\": 50}",
+        "modified": "{\"command\": \"OFF\"}",
+        "topic": "vesper/devices/smart-light-001/commands"
+      }
+    ]
+  },
+  {
+    "attack_name": "TCP Connection Hijack",
+    "category": "tcp_connection_hijack",
+    "success": false,
+    "description": "No devices to target",
+    "evidence": [],
+    "impact": "",
+    "mitigation": "",
+    "duration_ms": 0.024080276489257812,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "TCP MITM Proxy",
+    "category": "tcp_man_in_the_middle",
+    "success": false,
+    "description": "No devices to target",
+    "evidence": [],
+    "impact": "",
+    "mitigation": "",
+    "duration_ms": 0.03886222839355469,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "TCP Connection Flood",
+    "category": "network_denial_of_service",
+    "success": false,
+    "description": "No devices to target",
+    "evidence": [],
+    "impact": "",
+    "mitigation": "",
+    "duration_ms": 0.03814697265625,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "Zigbee Frame Replay",
+    "category": "protocol_replay",
+    "success": true,
+    "description": "Capture and replay Zigbee command frames (On/Off cluster)",
+    "evidence": [
+      "Captured Zigbee frame: cluster=0x0006, cmd=toggle",
+      "Replayed captured frame (no frame counter check)",
+      "Frame accepted by coordinator \u2014 no replay protection!",
+      "Zigbee HA profile does not enforce frame counters by default"
+    ],
+    "impact": "Re-trigger device actions (toggle lights, unlock doors)",
+    "mitigation": "Enable Zigbee 3.0 security with frame counters, use install codes",
+    "duration_ms": 0.06890296936035156,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "Zigbee Network Key Extraction",
+    "category": "protocol_downgrade",
+    "success": true,
+    "description": "Extract Zigbee network key using well-known Trust Center link key",
+    "evidence": [
+      "Default TC Link Key: 5a6967426565416c6c69616e63653039",
+      "ASCII: ZigBeeAlliance09",
+      "Simulated captured network key: ef2a1ec64f0c212885e4205e17a22f28",
+      "During device pairing, network key is encrypted with TC link key",
+      "Since TC link key is well-known, network key can be decrypted!"
+    ],
+    "impact": "Full network key compromise \u2014 can decrypt all Zigbee traffic",
+    "mitigation": "Use Zigbee 3.0 install codes for per-device unique link keys",
+    "duration_ms": 0.2009868621826172,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "Protocol Downgrade (No Encryption)",
+    "category": "protocol_downgrade",
+    "success": false,
+    "description": "Verify if devices accept unencrypted connections",
+    "evidence": [
+      "Attempting connection without TLS/encryption",
+      "No device targets available"
+    ],
+    "impact": "All traffic visible in plaintext, credential theft, command injection",
+    "mitigation": "Require TLS 1.3 for all connections, reject unencrypted traffic",
+    "duration_ms": 0.02193450927734375,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "ARP Cache Poisoning (Simulated)",
+    "category": "arp_spoofing",
+    "success": true,
+    "description": "Poison ARP cache to redirect traffic through attacker",
+    "evidence": [
+      "Crafted ARP reply: 172.20.0.1 is at 52:54:00:de:ad:01",
+      "Target device: 172.20.0.10",
+      "ARP cache poisoning would redirect gateway traffic through attacker",
+      "Docker bridge networks are vulnerable to ARP spoofing by default",
+      "Requires --mac-address control and raw socket access"
+    ],
+    "impact": "Man-in-the-middle position, traffic interception",
+    "mitigation": "Use Docker macvlan networks, enable ARP inspection, static ARP entries",
+    "duration_ms": 0.028848648071289062,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "DNS Poisoning (Simulated)",
+    "category": "dns_poisoning",
+    "success": true,
+    "description": "Poison DNS to redirect device cloud connections to attacker",
+    "evidence": [
+      "Poisoned: api.smartthings.com \u2192 172.20.0.99 (attacker)",
+      "Poisoned: mqtt.vesper.local \u2192 172.20.0.99 (attacker)",
+      "Poisoned: firmware.update.vesper.io \u2192 172.20.0.99 (attacker)",
+      "Poisoned: telemetry.vesper.io \u2192 172.20.0.99 (attacker)",
+      "IoT devices rarely validate DNS responses (no DNSSEC)",
+      "Firmware update URLs are particularly dangerous targets",
+      "Could redirect SmartThings API to capture OAuth tokens"
+    ],
+    "impact": "Credential theft, malicious firmware delivery, data exfiltration",
+    "mitigation": "Use DNSSEC, certificate pinning, encrypted DNS (DoH/DoT)",
+    "duration_ms": 0.046253204345703125,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "WiFi Deauthentication Attack (Simulated)",
+    "category": "deauthentication_attack",
+    "success": true,
+    "description": "Send deauthentication frames to disconnect WiFi IoT devices",
+    "evidence": [
+      "Crafting IEEE 802.11 deauthentication frames",
+      "Target: All devices on BSS",
+      "Reason code: 7 (Class 3 frame from non-associated station)",
+      "802.11 management frames are unauthenticated in WPA2",
+      "WPA3 with PMF (802.11w) prevents deauth attacks",
+      "IoT devices rarely support WPA3"
+    ],
+    "impact": "Device offline, DoS, force reconnection to evil twin",
+    "mitigation": "WPA3 with Protected Management Frames (PMF)",
+    "duration_ms": 0.04696846008300781,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  },
+  {
+    "attack_name": "Evil Twin Access Point (Simulated)",
+    "category": "evil_twin_ap",
+    "success": true,
+    "description": "Fake AP captures device credentials after deauthentication",
+    "evidence": [
+      "Creating evil twin AP: 'VESPER-Home-WiFi'",
+      "Signal strength: -30 dBm (stronger than legitimate AP)",
+      "Security: Open (captive portal for credential capture)",
+      "Device temp-sensor-001 connected to evil twin!",
+      "Device motion-sensor-001 connected to evil twin!",
+      "Capturing all traffic in plaintext...",
+      "Captured from temp-sensor-001: MQTT CONNECT username=vesper password=vesper_iot",
+      "Captured from motion-sensor-001: HTTP POST /api/auth token=abc123"
+    ],
+    "impact": "Complete credential theft, traffic interception",
+    "mitigation": "WPA3-Enterprise, certificate-based auth, network monitoring",
+    "duration_ms": 0.04315376281738281,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": [
+      {
+        "device": "temp-sensor-001",
+        "data": "MQTT CONNECT username=vesper password=vesper_iot"
+      },
+      {
+        "device": "motion-sensor-001",
+        "data": "HTTP POST /api/auth token=abc123"
+      }
+    ]
+  },
+  {
+    "attack_name": "Traffic Fingerprinting",
+    "category": "traffic_analysis",
+    "success": false,
+    "description": "Passive traffic analysis to identify device types and firmware versions",
+    "evidence": [
+      "Identified 0 devices via traffic fingerprinting",
+      "Even encrypted traffic leaks: packet size, timing, frequency"
+    ],
+    "impact": "Device inventory disclosure, vulnerability targeting",
+    "mitigation": "Traffic padding, random delays, encrypted metadata",
+    "duration_ms": 0.05078315734863281,
+    "packets_sent": 0,
+    "packets_captured": 0,
+    "intercepted_data": []
+  }
+]

@@ -1,0 +1,156 @@
+{
+  "classifiers": {
+    "casas/aruba": {
+      "train_samples": 1155,
+      "test_samples": 797981,
+      "common_classes": 5,
+      "classes": [
+        "Meal_Preparation",
+        "Other",
+        "Personal_Hygiene",
+        "Relaxing",
+        "Sleeping"
+      ],
+      "random_forest": {
+        "accuracy": 0.2112,
+        "f1_weighted": 0.1251
+      },
+      "gradient_boosting": {
+        "accuracy": 0.2112,
+        "f1_weighted": 0.1251
+      },
+      "cross_val_mean": 0.2789,
+      "cross_val_ci_95": [
+        0.2758,
+        0.2821
+      ]
+    },
+    "casas/milan": {
+      "train_samples": 1155,
+      "test_samples": 209468,
+      "common_classes": 5,
+      "classes": [
+        "Meal_Preparation",
+        "Other",
+        "Personal_Hygiene",
+        "Relaxing",
+        "Sleeping"
+      ],
+      "random_forest": {
+        "accuracy": 0.2557,
+        "f1_weighted": 0.1796
+      },
+      "gradient_boosting": {
+        "accuracy": 0.2557,
+        "f1_weighted": 0.1796
+      },
+      "cross_val_mean": 0.2927,
+      "cross_val_ci_95": [
+        0.2867,
+        0.2986
+      ]
+    },
+    "casas/cairo": {
+      "train_samples": 1016,
+      "test_samples": 322975,
+      "common_classes": 4,
+      "classes": [
+        "Meal_Preparation",
+        "Other",
+        "Relaxing",
+        "Sleeping"
+      ],
+      "random_forest": {
+        "accuracy": 0.3436,
+        "f1_weighted": 0.2693
+      },
+      "gradient_boosting": {
+        "accuracy": 0.3436,
+        "f1_weighted": 0.2693
+      },
+      "cross_val_mean": 0.3205,
+      "cross_val_ci_95": [
+        0.3153,
+        0.3258
+      ]
+    },
+    "aras/house_a": {
+      "train_samples": 1592,
+      "test_samples": 1088,
+      "common_classes": 8,
+      "classes": [
+        "Housekeeping",
+        "Meal_Preparation",
+        "Other",
+        "Personal_Hygiene",
+        "Relaxing",
+        "Sleeping",
+        "Socializing",
+        "Working"
+      ],
+      "random_forest": {
+        "accuracy": 0.0754,
+        "f1_weighted": 0.0484
+      },
+      "gradient_boosting": {
+        "accuracy": 0.0634,
+        "f1_weighted": 0.0288
+      },
+      "cross_val_mean": 0.175,
+      "cross_val_ci_95": [
+        0.1288,
+        0.2212
+      ]
+    },
+    "aras/house_b": {
+      "train_samples": 1592,
+      "test_samples": 550,
+      "common_classes": 8,
+      "classes": [
+        "Housekeeping",
+        "Meal_Preparation",
+        "Other",
+        "Personal_Hygiene",
+        "Relaxing",
+        "Sleeping",
+        "Socializing",
+        "Working"
+      ],
+      "random_forest": {
+        "accuracy": 0.0891,
+        "f1_weighted": 0.0499
+      },
+      "gradient_boosting": {
+        "accuracy": 0.0745,
+        "f1_weighted": 0.0349
+      },
+      "cross_val_mean": 0.1905,
+      "cross_val_ci_95": [
+        0.1501,
+        0.2309
+      ]
+    }
+  },
+  "aggregate": {
+    "rf_accuracy": 0.195,
+    "rf_accuracy_ci_95": [
+      0.054,
+      0.336
+    ],
+    "rf_f1_weighted": 0.1345,
+    "rf_f1_ci_95": [
+      0.0185,
+      0.2504
+    ],
+    "gb_accuracy": 0.1897,
+    "gb_accuracy_ci_95": [
+      0.0405,
+      0.3388
+    ],
+    "gb_f1_weighted": 0.1275,
+    "gb_f1_ci_95": [
+      0.0016,
+      0.2535
+    ]
+  }
+}

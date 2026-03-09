@@ -1,0 +1,308 @@
+[
+  {
+    "attack_name": "Buffer Overflow (Command Buffer)",
+    "category": "buffer_overflow",
+    "severity": "medium",
+    "success": false,
+    "description": "Attempt to overflow the 64-byte command buffer with overlong input",
+    "evidence": [
+      "Firmware processed overlong command (responded with ERROR)",
+      "No crash detected \u2014 buffer truncation may be in place",
+      "Device still responsive after 128-byte input"
+    ],
+    "impact": "Input truncated safely",
+    "mitigation": "Add strict bounds checking on command input length",
+    "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)",
+    "duration_ms": 18.27239990234375
+  },
+  {
+    "attack_name": "Buffer Overflow (SET_ID)",
+    "category": "buffer_overflow",
+    "severity": "medium",
+    "success": false,
+    "description": "Overflow device_id[32] buffer via SET_ID command",
+    "evidence": [
+      "Original IDENTIFY: DEVICE:VESPER_MOTION_V1\nTYPE:MOTION_SENSOR\nCAPS:motion,armed,sensitivity\nFIRMWARE:1.0.0\nID:",
+      "SET_ID response: ID:BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\nACK",
+      "Post-overflow IDENTIFY: DEVICE:VESPER_MOTION_V1\nTYPE:MOTION_SENSOR\nCAPS:motion,armed,sensitivity\nFIRMWARE:1.0.0\nID:BBBBBBBBB",
+      "Long ID accepted and stored (truncated to buffer size)"
+    ],
+    "impact": "Device ID corruption, adjacent memory overwrite",
+    "mitigation": "Validate input length before copy, use safe string functions",
+    "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)",
+    "duration_ms": 5.262851715087891
+  },
+  {
+    "attack_name": "Authentication Bypass (No Token)",
+    "category": "authentication_bypass",
+    "severity": "critical",
+    "success": true,
+    "description": "Execute privileged commands without any authentication token",
+    "evidence": [
+      "'ON' executed without auth: SWITCH:on\nACK",
+      "'OFF' executed without auth: SWITCH:off\nACK",
+      "'SET_ID:hacked' executed without auth: ID:hacked\nACK",
+      "'REBOOT' executed without auth: ACK:REBOOT\nBOOTED",
+      "'DEBUG_DUMP' executed without auth: DEBUG:MEMORY_DUMP"
+    ],
+    "impact": "Full device control without credentials",
+    "mitigation": "Implement mandatory authentication for all state-changing commands",
+    "cve_reference": "CVE-2019-19356 (Netis router auth bypass)",
+    "duration_ms": 3.8330554962158203
+  },
+  {
+    "attack_name": "Authentication Bypass (Weak Token Validation)",
+    "category": "authentication_bypass",
+    "severity": "critical",
+    "success": true,
+    "description": "AUTH command accepts any token value including empty strings",
+    "evidence": [
+      "Token '...' accepted: AUTH:OK\nACK",
+      "Token 'admin...' accepted: AUTH:OK\nACK",
+      "Token 'xxxxxxxxxxxxxxxxxxxx...' accepted: AUTH:OK\nACK",
+      "Token '../../etc/passwd...' accepted: AUTH:OK\nACK",
+      "Token '\u0000\u0000\u0000\u0000...' accepted: AUTH:OK"
+    ],
+    "impact": "Any attacker can authenticate with arbitrary credentials",
+    "mitigation": "Implement proper token validation, use challenge-response auth",
+    "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",
+    "duration_ms": 4.995107650756836
+  },
+  {
+    "attack_name": "Information Disclosure (Debug Dump)",
+    "category": "information_disclosure",
+    "severity": "high",
+    "success": true,
+    "description": "DEBUG_DUMP command exposes sensitive internal state without auth",
+    "evidence": [
+      "DEBUG_DUMP command accessible without authentication",
+      "AUTH TOKEN LEAKED in debug output!",
+      "Token field exposed: DEBUG:MEMORY_DUMP\nSEED:0\nTOKEN:super_secret_token_12345\nTICKS:1422",
+      "Random seed exposed \u2014 enables prediction of random values"
+    ],
+    "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+    "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+    "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)",
+    "duration_ms": 2.126932144165039
+  },
+  {
+    "attack_name": "Information Disclosure (Token Leakage)",
+    "category": "information_disclosure",
+    "severity": "informational",
+    "success": false,
+    "description": "Check if auth token leaks through normal command responses",
+    "evidence": [
+      "Token not in 'STATUS' response (safe)",
+      "Token not in 'IDENTIFY' response (safe)",
+      "Token not in 'GET_ALL' response (safe)",
+      "Token not in 'GET_SWITCH' response (safe)"
+    ],
+    "impact": "Credential theft via traffic interception",
+    "mitigation": "Never echo credentials in responses, use one-way hashing",
+    "cve_reference": "",
+    "duration_ms": 3.9520263671875
+  },
+  {
+    "attack_name": "Command Injection (Newline)",
+    "category": "command_injection",
+    "severity": "high",
+    "success": true,
+    "description": "Embed newline character to inject a second command in single request",
+    "evidence": [
+      "Initial state: SWITCH:on",
+      "Injection response: SWITCH:on",
+      "Final state: SWITCH:off",
+      "Command injection successful! OFF executed via newline injection"
+    ],
+    "impact": "Arbitrary command execution via crafted input",
+    "mitigation": "Sanitize input, reject commands containing control characters",
+    "cve_reference": "CVE-2019-17621 (D-Link command injection)",
+    "duration_ms": 408.679723739624
+  },
+  {
+    "attack_name": "Command Injection (Null Byte)",
+    "category": "command_injection",
+    "severity": "low",
+    "success": false,
+    "description": "Embed null bytes in commands to confuse C string handling",
+    "evidence": [
+      "Response to null-byte injection: STATUS:OK\n"
+    ],
+    "impact": "Bypass input validation, inject commands",
+    "mitigation": "Handle null bytes explicitly in input parsing",
+    "cve_reference": "",
+    "duration_ms": 3002.0177364349365
+  },
+  {
+    "attack_name": "Firmware Update Buffer Overflow",
+    "category": "firmware_update_attack",
+    "severity": "medium",
+    "success": false,
+    "description": "Overflow fw_update_buf[128] via FW_UPDATE command",
+    "evidence": [
+      "Normal FW_UPDATE (64 bytes): ERROR:UNKNOWN:FW_UPDATE:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "Overflow FW_UPDATE (256 bytes): ERROR:UNKNOWN:FW_UPDATE:BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+    ],
+    "impact": "Memory corruption, potential arbitrary code execution",
+    "mitigation": "Validate firmware size, use secure boot, verify signatures",
+    "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)",
+    "duration_ms": 6.949901580810547
+  },
+  {
+    "attack_name": "Unsigned Firmware Update",
+    "category": "firmware_update_attack",
+    "severity": "low",
+    "success": false,
+    "description": "Upload arbitrary firmware with no cryptographic signature check",
+    "evidence": [
+      "FW_UPDATE response: ERROR:UNKNOWN:FW_UPDATE:MALICIOUS_FIRMWARE_PAYLOAD_XXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "FW_APPLY response: ERROR:UNKNOWN:FW_APPLY"
+    ],
+    "impact": "Complete device takeover via malicious firmware",
+    "mitigation": "Implement secure boot chain with signed firmware verification",
+    "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)",
+    "duration_ms": 2.6738643646240234
+  },
+  {
+    "attack_name": "Denial of Service (Command Flood)",
+    "category": "denial_of_service",
+    "severity": "medium",
+    "success": true,
+    "description": "Flood device with 100 rapid commands",
+    "evidence": [
+      "Pre-flood status: STATUS:OK",
+      "Flood: 100 commands in 0.03s",
+      "Success during flood: 0/100",
+      "Post-flood status: STATUS:OK",
+      "Device degraded or unresponsive after command flood!"
+    ],
+    "impact": "Device becomes unresponsive, legitimate commands fail",
+    "mitigation": "Implement rate limiting, connection throttling",
+    "cve_reference": "",
+    "duration_ms": 534.4080924987793
+  },
+  {
+    "attack_name": "Denial of Service (Large Payload)",
+    "category": "denial_of_service",
+    "severity": "low",
+    "success": false,
+    "description": "Send large payloads (up to 64KB) to exhaust device resources",
+    "evidence": [
+      "Pre-test: STATUS:OK",
+      "  1024B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+      "  4096B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+      "  16384B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+      "  65536B payload: ERROR:UNKNOWN:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+      "Post-test: STATUS:OK"
+    ],
+    "impact": "Resource exhaustion, device crash",
+    "mitigation": "Limit maximum input size, implement input validation",
+    "cve_reference": "",
+    "duration_ms": 1138.0350589752197
+  },
+  {
+    "attack_name": "State Manipulation (Sensor Disarm)",
+    "category": "state_manipulation",
+    "severity": "critical",
+    "success": true,
+    "description": "Remotely disable a security sensor without authentication",
+    "evidence": [
+      "Before attack: SWITCH:on",
+      "DISARM response: ARMED:no\nACK",
+      "OFF response: SWITCH:off\nACK",
+      "After attack: SWITCH:off",
+      "Sensor disarmed! Physical security compromised."
+    ],
+    "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+    "mitigation": "Require authenticated commands for security-critical operations",
+    "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",
+    "duration_ms": 209.7938060760498
+  },
+  {
+    "attack_name": "State Manipulation (Calibration Abuse)",
+    "category": "state_manipulation",
+    "severity": "low",
+    "success": false,
+    "description": "Corrupt sensor readings via CALIBRATE command with invalid values",
+    "evidence": [
+      "Original temp: ERROR:UNKNOWN:GET_TEMP",
+      "CALIBRATE:-128 response: ERROR:UNKNOWN:CALIBRATE:-128",
+      "Post-calibration temp: ERROR:UNKNOWN:GET_TEMP"
+    ],
+    "impact": "Falsified sensor data, incorrect automation triggers",
+    "mitigation": "Validate calibration ranges, require authentication",
+    "cve_reference": "",
+    "duration_ms": 3.1058788299560547
+  },
+  {
+    "attack_name": "Replay Attack",
+    "category": "replay_attack",
+    "severity": "high",
+    "success": true,
+    "description": "Replay previously captured commands \u2014 no freshness validation",
+    "evidence": [
+      "Device off: SWITCH:off",
+      "Replayed 'ON': SWITCH:on\nACK",
+      "Device after replay: SWITCH:on",
+      "Replay attack successful \u2014 no nonce/timestamp protection"
+    ],
+    "impact": "Attacker can replay any previously observed command",
+    "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+    "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)",
+    "duration_ms": 204.78200912475586
+  },
+  {
+    "attack_name": "Protocol Fuzzing (Random)",
+    "category": "protocol_fuzzing",
+    "severity": "high",
+    "success": true,
+    "description": "Sent 8 random/malformed inputs to test robustness",
+    "evidence": [
+      "Fuzz #0: 32B \u2192 ",
+      "Fuzz #1: 32B \u2192 ",
+      "Fuzz #2: 100B \u2192 ERROR:UNKNOWN:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\n",
+      "Fuzz #3: 100B \u2192 ",
+      "Fuzz #4: 25B \u2192 ERROR:UNKNOWN:bz\f>T6Q1#nY[xo-(e.4`Vx(/pF(B`A^]0}\\\u000bU/\\ 6bUawW<K!{PQv\u000bG6d7@A,=]\n",
+      "Fuzz #5: 261B \u2192 ERROR:UNKNOWN:SET_\nERROR:UNKNOWN:\u000b\f\nERROR:UNKNOWN:\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+",
+      "Fuzz #6: 402B \u2192 ERROR:UNKNOWN:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nER",
+      "Fuzz #7: 8B \u2192 ",
+      "DEVICE CRASHED during fuzzing!"
+    ],
+    "impact": "Device crash or unexpected behavior",
+    "mitigation": "Implement robust input validation, fuzz testing in CI",
+    "cve_reference": "",
+    "duration_ms": 24478.66916656494
+  },
+  {
+    "attack_name": "Format String Attack",
+    "category": "protocol_fuzzing",
+    "severity": "low",
+    "success": false,
+    "description": "Test format string vulnerability with %s/%x/%n payloads",
+    "evidence": [],
+    "impact": "No format string vulnerability",
+    "mitigation": "Never use user input as printf format string",
+    "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)",
+    "duration_ms": 6.031036376953125
+  },
+  {
+    "attack_name": "Out-of-Bounds Write (Schedule Array)",
+    "category": "buffer_overflow",
+    "severity": "low",
+    "success": false,
+    "description": "Write beyond schedule[4] array bounds via SET_SCHEDULE command",
+    "evidence": [
+      "Normal SET_SCHEDULE:0: ERROR:UNKNOWN:SET_SCHEDULE:0:100",
+      "OOB index 4: ERROR:UNKNOWN:SET_SCHEDULE:4:99999",
+      "OOB index 5: ERROR:UNKNOWN:SET_SCHEDULE:5:99999",
+      "OOB index 8: ERROR:UNKNOWN:SET_SCHEDULE:8:99999",
+      "OOB index 9: ERROR:UNKNOWN:SET_SCHEDULE:9:99999",
+      "OOB index 15: ERROR:UNKNOWN:SET_SCHEDULE:15:99999",
+      "OOB index 99: ERROR:UNKNOWN:SET_SCHEDULE:99:99999"
+    ],
+    "impact": "Arbitrary memory write, potential code execution",
+    "mitigation": "Validate array index bounds before write",
+    "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)",
+    "duration_ms": 7.127046585083008
+  }
+]

@@ -1,0 +1,79 @@
+\section{Conclusion}\label{sec:conclusion}
+
+We presented \sys{}, a high-fidelity smart home simulation platform
+that integrates Habitat~3.0 embodied AI simulation, QEMU-based
+firmware-in-the-loop emulation, LLM-driven activity generation, and
+bi-directional SmartThings cloud synchronization.
+
+Our evaluation across five research questions and a large-scale
+autonomous study (28~HSSD scenes, 7~simulated days each, 88.0~hours
+wall-clock time) demonstrated that:
+\begin{itemize}[leftmargin=*]
+  \item \sys{}-generated activity schedules exhibit moderate
+    distributional similarity to real-world CASAS and ARAS datasets
+    (mean JS divergence~$= 0.218$),
+    with the closest match on ARAS-House~B (JS~$= 0.101$).
+    A leave-one-out Markov baseline comparison shows \sys{}
+    outperforms Markov on diverse multi-occupant homes (ARAS),
+    achieving 50--62\% lower JS divergence, while Markov excels
+    on structurally similar single-occupant CASAS homes
+    (\textbf{RQ1}).
+  \item The platform scales to 200 concurrent event-bus devices at
+    over 10{,}000~events/s with CPU below 36\% and memory under
+    106\,MB, confirmed by 28~scenes of continuous operation
+    with bounded memory growth (\textbf{RQ2}).
+  \item Event-bus dispatch latency is 7\,$\mu$s at P99; database
+    operations complete in under 3\,ms.  The autonomous evaluation
+    delivered 47{,}207~SmartThings cloud updates with zero data
+    loss (\textbf{RQ3}).
+  \item Zero-shot Sim2Real transfer with enriched 119-dimensional
+    feature representations achieves 0.813~accuracy on ARAS-A
+    (F1~$= 0.783$), demonstrating that \sys{}-generated patterns
+    capture transferable temporal structure.  Domain discrimination
+    remains high on CASAS datasets due to categorical mismatch,
+    motivating future domain adaptation work (\textbf{RQ4}).
+  \item A security assessment of 982~attacks across five suites
+    (firmware, network, phantom-delay, malicious SmartApp, ESP32
+    buffer overflow) against six device types yields a 67.4\%
+    exploit rate with a mean CVSS~3.1 score of~8.1, validated
+    against 24~real-world CVEs and covering 7 of 10 OWASP IoT
+    Top~10 categories.
+    Packet-level traffic analysis---validated by \texttt{tshark}
+    pcap captures (154{,}151~TCP segments, 12.1\,MB, 736~individual
+    pcap files across 980~attack executions in 28~scenes,
+    \Cref{sec:eval-pcap})---confirms that all attack traffic
+    traverses the real Docker bridge network and is independently
+    verifiable with Wireshark, substantiating \sys{}'s claim as a
+    network-realistic security evaluation platform (\textbf{RQ5}).
+\end{itemize}
+
+The autonomous evaluation further validated end-to-end reliability:
+94.9\% navigation success across 3{,}580~trials,
+4{,}307~LLM-generated tasks using GPT-OSS~20B, and
+26~of~28 scenes completing full navigation protocols without
+intervention.  The two remaining scenes ran security attacks
+successfully but failed to generate valid navmeshes.
+
+\sys{} is, to our knowledge, the first platform to integrate embodied
+3D simulation with real device firmware execution and live
+cloud-connected IoT in a single reproducible framework.  A case study reproducing
+the Phantom-Delay Attack~\cite{phantom-delay} within \sys{}'s
+Docker network further validates the platform's utility for
+IoT security research---enabling reproduction of published
+protocol-level exploits without physical hardware.
+We release the platform,
+evaluation framework, and all experiment configurations as open
+source to support reproducible IoT research.
+
+\paragraph{Future Work.}
+We plan to (1)~add multi-occupant coordination with inter-agent
+communication, (2)~integrate additional IoT platforms (Google Home,
+Apple HomeKit), (3)~conduct an ablation study across multiple LLM
+models to quantify the impact of model choice on schedule diversity
+and correctness, (4)~fine-tune a compact LLM on successful \sys{}
+schedules to reduce generation errors, (5)~extend the firmware
+library to include Zigbee and Z-Wave protocol stacks, and
+(6)~investigate domain adaptation techniques (e.g., feature alignment,
+few-shot fine-tuning) to further improve Sim2Real transfer accuracy
+on fine-grained activity datasets beyond the 0.813 achieved on
+ARAS-A.

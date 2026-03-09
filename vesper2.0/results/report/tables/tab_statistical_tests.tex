@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Statistical significance tests for security evaluation. $\alpha = 0.05$ for all tests. Effect sizes and confidence intervals ensure results are not artifacts of sample size.}
+\label{tab:stat-tests}
+\small
+\begin{tabular}{l l r l}
+\toprule
+\textbf{Test} & \textbf{Hypothesis} & \textbf{\textit{p}-value} & \textbf{Result} \\
+\midrule
+$\chi^2$ (device independence) & Exploit rate $\perp$ device type & 0.8974 & Fail to reject \\
+Fisher / $\chi^2$ (layer) & FW rate $=$ Network rate & 0.5534 & Fail to reject \\
+Kruskal-Wallis & CVSS dist. equal across devices & 0.8850 & Fail to reject \\
+Mann-Whitney $U$ & TTE dist. equal (succ. vs fail) & 0.2655 & Fail to reject \\
+\bottomrule
+\end{tabular}
+\\\footnotesize * $p < 0.05$, ** $p < 0.01$
+\end{table}

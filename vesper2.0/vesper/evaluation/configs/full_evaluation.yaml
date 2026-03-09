@@ -1,0 +1,47 @@
+# VESPER Evaluation — Full Pipeline
+# Runs all experiments end-to-end for paper submission.
+
+name: "vesper_full_evaluation"
+description: >
+  Complete evaluation pipeline for VESPER: activity realism,
+  LLM ablation, scalability, and latency benchmarks.
+  Designed for UbiComp / CHI submission.
+
+seed: 42
+output_dir: "results/full_evaluation"
+confidence_level: 0.95
+num_trials: 5
+
+# ---- Toggle experiments ----
+run_activity_comparison: true
+run_scalability: true
+run_latency: true
+run_llm_ablation: true
+
+# ---- Activity Comparison (RQ1) ----
+reference_datasets:
+  casas: "data/datasets/casas"
+  aras: "data/datasets/aras"
+vesper_db_path: "logs/vesper_tasks.db"
+comparison_days: 30
+
+# ---- Scalability (RQ3) ----
+device_counts: [5, 10, 25, 50, 100, 200]
+container_counts: [3, 5, 10, 20]
+duration_hours: [1, 6, 24, 168]
+scalability_trials: 5
+scalability_duration_s: 30.0
+
+# ---- Latency (RQ4) ----
+latency_iterations: 1000
+
+# ---- LLM Ablation (RQ2) ----
+lmstudio_url: "http://localhost:1234/v1/chat/completions"
+llm_models:
+  - qwen2.5-7b-instruct
+  - llama-3.1-8b-instruct
+  - mistral-7b-instruct-v0.3
+  - gemma-2-9b-it
+  - phi-3.5-mini-instruct
+llm_schedules_per_config: 30
+llm_temperature: 0.7

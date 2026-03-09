@@ -1,0 +1,26 @@
+\begin{table}[t]
+  \centering
+  \caption{External vulnerability coverage.  Our 36 attack implementations
+  map to 8~major IoT vulnerability classes, 24~real-world CVEs, and 7/10
+  OWASP IoT Top~10 categories, demonstrating broad coverage of the
+  IoT threat landscape.}
+  \label{tab:cve-validation}
+  \small
+  \begin{tabular}{l c l c}
+    \toprule
+    {Vulnerability Class} & {\# CVEs} & {Our Attack Suite} & {CVSS Range} \\
+    \midrule
+    Auth.\ Bypass         & 4 & Suite~1: all 6 devices    & 7.5--9.8 \\
+    Buffer Overflow       & 4 & Suite~1+5: fw\_overflow    & 7.8--9.8 \\
+    Command Injection     & 4 & Suite~1: cmd\_injection    & 8.1--9.8 \\
+    Firmware Update       & 3 & Suite~1: fw\_update        & 7.2--9.8 \\
+    Denial of Service     & 3 & Suite~1+2: dos, syn\_flood & 5.3--7.5 \\
+    MQTT Exploitation     & 2 & Suite~2: mqtt\_sniff/inj.  & 6.5--8.2 \\
+    ARP/MITM              & 2 & Suite~2+3: arp, phantom   & 6.8--8.8 \\
+    Smart App Abuse       & 2 & Suite~4: malicious app    & 7.5--8.8 \\
+    \midrule
+    \textbf{Total}        & \textbf{24} & \textbf{36 implementations} & \\
+    \bottomrule
+    \multicolumn{4}{l}{\footnotesize OWASP IoT Top~10 coverage: 7/10 categories (I1--I3, I5--I7, I9).} \\
+  \end{tabular}
+\end{table}

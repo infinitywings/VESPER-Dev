@@ -1,0 +1,505 @@
+scene_id,attack_name,category,severity,success,cve_reference,duration_ms
+102343992,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",65.9
+102343992,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",11.7
+102343992,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",10.4
+102343992,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",15.4
+102343992,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",55.1
+102343992,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",9.1
+102343992,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",416.1
+102343992,"Command Injection (Null Byte)",command_injection,low,0,"",3010.4
+102343992,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",21.2
+102343992,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",7.7
+102343992,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",612.9
+102343992,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3850.6
+102343992,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",213.2
+102343992,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",10.2
+102343992,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",208.7
+102343992,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24069.0
+102343992,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",16.0
+102343992,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",22.6
+102344193,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",65.5
+102344193,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",11.3
+102344193,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",14.0
+102344193,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",17.6
+102344193,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",4.2
+102344193,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",8.3
+102344193,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",411.5
+102344193,"Command Injection (Null Byte)",command_injection,low,0,"",3005.1
+102344193,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",20.9
+102344193,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",8.8
+102344193,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",638.8
+102344193,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3829.8
+102344193,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",214.4
+102344193,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",10.1
+102344193,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",208.8
+102344193,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24054.6
+102344193,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",23.7
+102344193,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",19.8
+102344439,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",60.1
+102344439,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",10.1
+102344439,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",10.4
+102344439,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",15.1
+102344439,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",5.4
+102344439,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",9.5
+102344439,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",410.3
+102344439,"Command Injection (Null Byte)",command_injection,low,0,"",3007.5
+102344439,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",26.0
+102344439,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",7.3
+102344439,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",625.5
+102344439,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3780.7
+102344439,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",213.5
+102344439,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",7.5
+102344439,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",212.5
+102344439,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24067.2
+102344439,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",14.3
+102344439,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",20.6
+102816009,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",112.6
+102816009,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",22.7
+102816009,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",14.7
+102816009,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",14.7
+102816009,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",5.2
+102816009,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",11.5
+102816009,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",438.8
+102816009,"Command Injection (Null Byte)",command_injection,low,0,"",3006.3
+102816009,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",56.2
+102816009,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",18.1
+102816009,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",632.6
+102816009,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3944.3
+102816009,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",213.3
+102816009,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",10.2
+102816009,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",211.4
+102816009,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24054.4
+102816009,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",28.6
+102816009,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",40.8
+102816615,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",66.3
+102816615,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",9.5
+102816615,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",10.0
+102816615,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",22.5
+102816615,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",4.9
+102816615,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",11.2
+102816615,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",411.8
+102816615,"Command Injection (Null Byte)",command_injection,low,0,"",3007.2
+102816615,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",19.4
+102816615,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",9.8
+102816615,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",647.4
+102816615,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4232.1
+102816615,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",213.7
+102816615,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",7.6
+102816615,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",210.2
+102816615,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24062.2
+102816615,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",19.1
+102816615,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",26.4
+102816852,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",61.5
+102816852,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",12.2
+102816852,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",18.0
+102816852,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",16.4
+102816852,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",5.7
+102816852,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",23.7
+102816852,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",416.2
+102816852,"Command Injection (Null Byte)",command_injection,low,0,"",3003.5
+102816852,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",22.9
+102816852,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",10.5
+102816852,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",656.6
+102816852,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4438.1
+102816852,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",232.8
+102816852,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",5.8
+102816852,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",210.0
+102816852,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24058.5
+102816852,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",44.9
+102816852,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",19.6
+103997445_171030492,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",66.5
+103997445_171030492,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",13.0
+103997445_171030492,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",17.2
+103997445_171030492,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",15.8
+103997445_171030492,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",4.1
+103997445_171030492,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",9.7
+103997445_171030492,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",412.5
+103997445_171030492,"Command Injection (Null Byte)",command_injection,low,0,"",3007.8
+103997445_171030492,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",24.3
+103997445_171030492,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",10.9
+103997445_171030492,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",636.9
+103997445_171030492,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4265.9
+103997445_171030492,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",215.9
+103997445_171030492,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",17.6
+103997445_171030492,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",211.6
+103997445_171030492,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24060.5
+103997445_171030492,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",16.8
+103997445_171030492,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",26.7
+103997562_171030642,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",74.6
+103997562_171030642,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",15.0
+103997562_171030642,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",15.8
+103997562_171030642,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",17.3
+103997562_171030642,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",6.7
+103997562_171030642,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",27.8
+103997562_171030642,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",420.7
+103997562_171030642,"Command Injection (Null Byte)",command_injection,low,0,"",4582.4
+103997562_171030642,"Firmware Update Buffer Overflow",firmware_update_attack,medium,0,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",24.1
+103997562_171030642,"Unsigned Firmware Update",firmware_update_attack,low,0,"CVE-2020-10882 (TP-Link unsigned firmware update)",7.5
+103997562_171030642,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",633.9
+103997562_171030642,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",35.6
+103997562_171030642,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",227.6
+103997562_171030642,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",7.8
+103997562_171030642,"Replay Attack",replay_attack,low,0,"CVE-2018-11714 (Zigbee replay vulnerability)",208.7
+103997562_171030642,"Protocol Fuzzing (Random)",protocol_fuzzing,low,0,"",27799.8
+103997562_171030642,"Format String Attack",protocol_fuzzing,high,1,"CVE-2019-14889 (libssh format string vulnerability)",15.2
+103997562_171030642,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",15.8
+103997799_171031002,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",77.0
+103997799_171031002,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",13.0
+103997799_171031002,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",15.0
+103997799_171031002,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",49.0
+103997799_171031002,"Information Disclosure (Debug Dump)",information_disclosure,low,0,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",18.4
+103997799_171031002,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",10.2
+103997799_171031002,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",418.7
+103997799_171031002,"Command Injection (Null Byte)",command_injection,low,0,"",3007.7
+103997799_171031002,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",24.2
+103997799_171031002,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",11.9
+103997799_171031002,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",664.4
+103997799_171031002,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3816.6
+103997799_171031002,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",221.7
+103997799_171031002,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",8.0
+103997799_171031002,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",210.0
+103997799_171031002,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24066.2
+103997799_171031002,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",26.4
+103997799_171031002,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",23.6
+103997994_171031320,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",76.4
+103997994_171031320,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",13.5
+103997994_171031320,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",16.8
+103997994_171031320,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",19.2
+103997994_171031320,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",52.5
+103997994_171031320,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",10.0
+103997994_171031320,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",413.2
+103997994_171031320,"Command Injection (Null Byte)",command_injection,low,0,"",3007.6
+103997994_171031320,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",43.0
+103997994_171031320,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",11.9
+103997994_171031320,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",679.8
+103997994_171031320,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4010.3
+103997994_171031320,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",217.0
+103997994_171031320,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",14.6
+103997994_171031320,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",207.6
+103997994_171031320,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24069.9
+103997994_171031320,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",13.0
+103997994_171031320,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",28.6
+104348160_171513093,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",74.6
+104348160_171513093,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",12.5
+104348160_171513093,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",13.5
+104348160_171513093,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",13.2
+104348160_171513093,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",7.6
+104348160_171513093,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",12.1
+104348160_171513093,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",414.1
+104348160_171513093,"Command Injection (Null Byte)",command_injection,low,0,"",3006.3
+104348160_171513093,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",28.2
+104348160_171513093,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",10.3
+104348160_171513093,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",675.2
+104348160_171513093,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4043.7
+104348160_171513093,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",217.5
+104348160_171513093,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",15.1
+104348160_171513093,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",210.1
+104348160_171513093,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24074.1
+104348160_171513093,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",16.0
+104348160_171513093,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",19.6
+104348361_171513414,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",68.5
+104348361_171513414,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",11.3
+104348361_171513414,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",12.2
+104348361_171513414,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",15.8
+104348361_171513414,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",4.7
+104348361_171513414,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",8.4
+104348361_171513414,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",413.3
+104348361_171513414,"Command Injection (Null Byte)",command_injection,low,0,"",3005.7
+104348361_171513414,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",21.2
+104348361_171513414,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",8.3
+104348361_171513414,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",652.1
+104348361_171513414,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4062.7
+104348361_171513414,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",214.9
+104348361_171513414,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",7.2
+104348361_171513414,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",209.2
+104348361_171513414,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24076.2
+104348361_171513414,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",15.7
+104348361_171513414,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",26.6
+104862417_172226382,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",57.2
+104862417_172226382,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",12.1
+104862417_172226382,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",10.6
+104862417_172226382,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",15.7
+104862417_172226382,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",3.8
+104862417_172226382,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",18.2
+104862417_172226382,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",410.7
+104862417_172226382,"Command Injection (Null Byte)",command_injection,low,0,"",3005.3
+104862417_172226382,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",21.2
+104862417_172226382,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",9.1
+104862417_172226382,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",623.5
+104862417_172226382,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4086.6
+104862417_172226382,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",213.0
+104862417_172226382,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",6.4
+104862417_172226382,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",209.0
+104862417_172226382,"Protocol Fuzzing (Random)",protocol_fuzzing,low,0,"",24058.0
+104862417_172226382,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",17.0
+104862417_172226382,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",19.1
+104862573_172226682,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",62.4
+104862573_172226682,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",13.3
+104862573_172226682,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",27.1
+104862573_172226682,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",15.6
+104862573_172226682,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",4.9
+104862573_172226682,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",8.7
+104862573_172226682,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",414.4
+104862573_172226682,"Command Injection (Null Byte)",command_injection,low,0,"",3008.3
+104862573_172226682,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",24.7
+104862573_172226682,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",10.0
+104862573_172226682,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",647.1
+104862573_172226682,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3874.9
+104862573_172226682,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",229.9
+104862573_172226682,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",8.7
+104862573_172226682,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",207.0
+104862573_172226682,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24093.5
+104862573_172226682,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",22.2
+104862573_172226682,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",25.4
+104862687_172226883,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",68.4
+104862687_172226883,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",12.7
+104862687_172226883,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",13.5
+104862687_172226883,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",13.1
+104862687_172226883,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",6.2
+104862687_172226883,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",14.6
+104862687_172226883,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",414.5
+104862687_172226883,"Command Injection (Null Byte)",command_injection,low,0,"",3005.8
+104862687_172226883,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",18.0
+104862687_172226883,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",11.7
+104862687_172226883,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",647.1
+104862687_172226883,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3966.5
+104862687_172226883,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",214.1
+104862687_172226883,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",9.7
+104862687_172226883,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",213.1
+104862687_172226883,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24070.7
+104862687_172226883,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",29.7
+104862687_172226883,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",44.4
+105515235_173104215,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",79.0
+105515235_173104215,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",12.2
+105515235_173104215,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",14.9
+105515235_173104215,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",11.2
+105515235_173104215,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",22.8
+105515235_173104215,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",11.0
+105515235_173104215,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",436.4
+105515235_173104215,"Command Injection (Null Byte)",command_injection,low,0,"",3044.0
+105515235_173104215,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",19.2
+105515235_173104215,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",15.4
+105515235_173104215,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",632.2
+105515235_173104215,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3828.7
+105515235_173104215,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",215.5
+105515235_173104215,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",14.2
+105515235_173104215,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",211.7
+105515235_173104215,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24062.2
+105515235_173104215,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",21.7
+105515235_173104215,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",19.3
+105515403_173104449,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",73.5
+105515403_173104449,"Buffer Overflow (SET_ID)",buffer_overflow,medium,1,"CVE-2021-28372 (ThroughTek IoT device overflow)",7.8
+105515403_173104449,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",18.2
+105515403_173104449,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",15.1
+105515403_173104449,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",3.7
+105515403_173104449,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",8.4
+105515403_173104449,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",412.1
+105515403_173104449,"Command Injection (Null Byte)",command_injection,low,0,"",3004.0
+105515403_173104449,"Firmware Update Buffer Overflow",firmware_update_attack,medium,0,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",22.9
+105515403_173104449,"Unsigned Firmware Update",firmware_update_attack,low,0,"CVE-2020-10882 (TP-Link unsigned firmware update)",8.9
+105515403_173104449,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",653.0
+105515403_173104449,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3851.4
+105515403_173104449,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",212.1
+105515403_173104449,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",7.2
+105515403_173104449,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",208.9
+105515403_173104449,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",30730.2
+105515403_173104449,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",14.9
+105515403_173104449,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",28.8
+105515541_173104641,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",73.8
+105515541_173104641,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",12.5
+105515541_173104641,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",22.1
+105515541_173104641,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",24.0
+105515541_173104641,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",4.1
+105515541_173104641,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",8.7
+105515541_173104641,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",417.4
+105515541_173104641,"Command Injection (Null Byte)",command_injection,low,0,"",3009.0
+105515541_173104641,"Firmware Update Buffer Overflow",firmware_update_attack,medium,0,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",23.6
+105515541_173104641,"Unsigned Firmware Update",firmware_update_attack,low,0,"CVE-2020-10882 (TP-Link unsigned firmware update)",8.2
+105515541_173104641,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",620.4
+105515541_173104641,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3996.3
+105515541_173104641,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",216.4
+105515541_173104641,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",10.8
+105515541_173104641,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",211.1
+105515541_173104641,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",32731.1
+105515541_173104641,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",20.0
+105515541_173104641,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",20.0
+106366248_174226527,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",69.7
+106366248_174226527,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",11.3
+106366248_174226527,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",18.8
+106366248_174226527,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",14.6
+106366248_174226527,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",4.7
+106366248_174226527,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",22.5
+106366248_174226527,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",413.5
+106366248_174226527,"Command Injection (Null Byte)",command_injection,low,0,"",3006.2
+106366248_174226527,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",21.2
+106366248_174226527,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",8.6
+106366248_174226527,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",658.3
+106366248_174226527,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4138.8
+106366248_174226527,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",216.2
+106366248_174226527,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",9.3
+106366248_174226527,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",210.0
+106366248_174226527,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24066.1
+106366248_174226527,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",15.9
+106366248_174226527,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",20.4
+106366371_174226743,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",98.7
+106366371_174226743,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",23.4
+106366371_174226743,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",16.5
+106366371_174226743,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",14.7
+106366371_174226743,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",5.0
+106366371_174226743,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",15.9
+106366371_174226743,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",411.6
+106366371_174226743,"Command Injection (Null Byte)",command_injection,low,0,"",3004.0
+106366371_174226743,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",18.0
+106366371_174226743,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",11.4
+106366371_174226743,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",688.3
+106366371_174226743,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4022.7
+106366371_174226743,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",219.1
+106366371_174226743,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",8.4
+106366371_174226743,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",210.9
+106366371_174226743,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24056.4
+106366371_174226743,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",16.0
+106366371_174226743,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",30.0
+106878915_174887025,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",148.5
+106878915_174887025,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",21.0
+106878915_174887025,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",35.9
+106878915_174887025,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",44.6
+106878915_174887025,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",38.8
+106878915_174887025,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",9.9
+106878915_174887025,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",449.5
+106878915_174887025,"Command Injection (Null Byte)",command_injection,low,0,"",3004.6
+106878915_174887025,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",50.2
+106878915_174887025,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",23.8
+106878915_174887025,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",782.4
+106878915_174887025,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",5878.7
+106878915_174887025,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",212.7
+106878915_174887025,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",7.7
+106878915_174887025,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",207.0
+106878915_174887025,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24076.3
+106878915_174887025,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",16.4
+106878915_174887025,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",17.8
+106879080_174887211,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",71.8
+106879080_174887211,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",12.3
+106879080_174887211,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",18.9
+106879080_174887211,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",19.7
+106879080_174887211,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",3.8
+106879080_174887211,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",9.0
+106879080_174887211,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",412.2
+106879080_174887211,"Command Injection (Null Byte)",command_injection,low,0,"",3007.1
+106879080_174887211,"Firmware Update Buffer Overflow",firmware_update_attack,medium,0,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",32.9
+106879080_174887211,"Unsigned Firmware Update",firmware_update_attack,low,0,"CVE-2020-10882 (TP-Link unsigned firmware update)",8.6
+106879080_174887211,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",633.7
+106879080_174887211,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3802.0
+106879080_174887211,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",220.5
+106879080_174887211,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",15.5
+106879080_174887211,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",209.5
+106879080_174887211,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",30590.6
+106879080_174887211,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",22.7
+106879080_174887211,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",27.3
+107734110_175999914,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",213.0
+107734110_175999914,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",31.6
+107734110_175999914,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",59.9
+107734110_175999914,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",12.8
+107734110_175999914,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",4.2
+107734110_175999914,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",9.4
+107734110_175999914,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",413.2
+107734110_175999914,"Command Injection (Null Byte)",command_injection,low,0,"",3006.5
+107734110_175999914,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",54.9
+107734110_175999914,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",11.6
+107734110_175999914,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",624.9
+107734110_175999914,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3868.3
+107734110_175999914,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",214.0
+107734110_175999914,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",9.1
+107734110_175999914,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",209.2
+107734110_175999914,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24071.1
+107734110_175999914,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",22.6
+107734110_175999914,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",18.9
+107734176_176000019,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",294.1
+107734176_176000019,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",27.4
+107734176_176000019,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",27.0
+107734176_176000019,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",19.4
+107734176_176000019,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",5.9
+107734176_176000019,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",10.5
+107734176_176000019,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",411.9
+107734176_176000019,"Command Injection (Null Byte)",command_injection,low,0,"",3008.8
+107734176_176000019,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",18.8
+107734176_176000019,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",9.0
+107734176_176000019,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",675.9
+107734176_176000019,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4147.2
+107734176_176000019,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",218.7
+107734176_176000019,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",27.7
+107734176_176000019,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",219.5
+107734176_176000019,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24061.9
+107734176_176000019,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",18.1
+107734176_176000019,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",21.4
+107734449_176000403,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",77.5
+107734449_176000403,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",11.7
+107734449_176000403,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",9.2
+107734449_176000403,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",13.1
+107734449_176000403,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",4.3
+107734449_176000403,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",9.3
+107734449_176000403,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",462.5
+107734449_176000403,"Command Injection (Null Byte)",command_injection,low,0,"",3006.1
+107734449_176000403,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",21.3
+107734449_176000403,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",8.5
+107734449_176000403,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",630.6
+107734449_176000403,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3984.9
+107734449_176000403,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",214.5
+107734449_176000403,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",10.2
+107734449_176000403,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",210.1
+107734449_176000403,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24072.4
+107734449_176000403,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",20.1
+107734449_176000403,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",22.5
+108294558_176710095,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",73.8
+108294558_176710095,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",10.9
+108294558_176710095,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",10.9
+108294558_176710095,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",19.9
+108294558_176710095,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",6.1
+108294558_176710095,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",21.0
+108294558_176710095,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",413.2
+108294558_176710095,"Command Injection (Null Byte)",command_injection,low,0,"",3007.6
+108294558_176710095,"Firmware Update Buffer Overflow",firmware_update_attack,medium,0,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",26.5
+108294558_176710095,"Unsigned Firmware Update",firmware_update_attack,low,0,"CVE-2020-10882 (TP-Link unsigned firmware update)",8.8
+108294558_176710095,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",659.9
+108294558_176710095,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4258.0
+108294558_176710095,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",216.6
+108294558_176710095,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",7.5
+108294558_176710095,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",209.7
+108294558_176710095,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",32773.0
+108294558_176710095,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",22.6
+108294558_176710095,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",21.2
+108294798_176710428,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",70.0
+108294798_176710428,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",11.9
+108294798_176710428,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",24.0
+108294798_176710428,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",11.8
+108294798_176710428,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",5.5
+108294798_176710428,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",17.8
+108294798_176710428,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",415.1
+108294798_176710428,"Command Injection (Null Byte)",command_injection,low,0,"",3010.2
+108294798_176710428,"Firmware Update Buffer Overflow",firmware_update_attack,medium,0,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",19.8
+108294798_176710428,"Unsigned Firmware Update",firmware_update_attack,low,0,"CVE-2020-10882 (TP-Link unsigned firmware update)",7.9
+108294798_176710428,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",618.1
+108294798_176710428,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",4118.9
+108294798_176710428,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",215.1
+108294798_176710428,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",10.6
+108294798_176710428,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",214.5
+108294798_176710428,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",33356.8
+108294798_176710428,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",18.9
+108294798_176710428,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",18.4
+108294939_176710668,"Buffer Overflow (Command Buffer)",buffer_overflow,medium,0,"CVE-2020-12695 (UPnP buffer overflow in IoT devices)",70.2
+108294939_176710668,"Buffer Overflow (SET_ID)",buffer_overflow,medium,0,"CVE-2021-28372 (ThroughTek IoT device overflow)",10.7
+108294939_176710668,"Authentication Bypass (No Token)",authentication_bypass,critical,1,"CVE-2019-19356 (Netis router auth bypass)",12.5
+108294939_176710668,"Authentication Bypass (Weak Token Validation)",authentication_bypass,critical,1,"CVE-2020-25078 (D-Link DCS camera hardcoded credentials)",18.7
+108294939_176710668,"Information Disclosure (Debug Dump)",information_disclosure,high,1,"CVE-2021-36260 (Hikvision debug endpoint info disclosure)",5.4
+108294939_176710668,"Information Disclosure (Token Leakage)",information_disclosure,informational,0,"",8.9
+108294939_176710668,"Command Injection (Newline)",command_injection,high,1,"CVE-2019-17621 (D-Link command injection)",413.8
+108294939_176710668,"Command Injection (Null Byte)",command_injection,low,0,"",3005.8
+108294939_176710668,"Firmware Update Buffer Overflow",firmware_update_attack,critical,1,"CVE-2022-25845 (Firmware update vulnerability in smart devices)",34.2
+108294939_176710668,"Unsigned Firmware Update",firmware_update_attack,critical,1,"CVE-2020-10882 (TP-Link unsigned firmware update)",8.5
+108294939_176710668,"Denial of Service (Command Flood)",denial_of_service,medium,1,"",645.8
+108294939_176710668,"Denial of Service (Large Payload)",denial_of_service,medium,1,"",3874.5
+108294939_176710668,"State Manipulation (Sensor Disarm)",state_manipulation,critical,1,"CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)",214.8
+108294939_176710668,"State Manipulation (Calibration Abuse)",state_manipulation,low,0,"",15.4
+108294939_176710668,"Replay Attack",replay_attack,high,1,"CVE-2018-11714 (Zigbee replay vulnerability)",208.7
+108294939_176710668,"Protocol Fuzzing (Random)",protocol_fuzzing,high,1,"",24064.5
+108294939_176710668,"Format String Attack",protocol_fuzzing,low,0,"CVE-2019-14889 (libssh format string vulnerability)",18.5
+108294939_176710668,"Out-of-Bounds Write (Schedule Array)",buffer_overflow,low,0,"CVE-2021-33104 (IoT OOB write vulnerability)",29.6

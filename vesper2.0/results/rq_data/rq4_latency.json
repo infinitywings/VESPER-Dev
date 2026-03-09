@@ -1,0 +1,36 @@
+{
+  "event_bus_dispatch": {
+    "count": 1000,
+    "mean_ms": 0.002,
+    "std_ms": 0.004,
+    "p50_ms": 0.002,
+    "p95_ms": 0.003,
+    "p99_ms": 0.007,
+    "min_ms": 0.001,
+    "max_ms": 0.081
+  },
+  "db_task_write": {
+    "count": 1000,
+    "mean_ms": 0.288,
+    "std_ms": 0.58,
+    "p50_ms": 0.188,
+    "p95_ms": 0.406,
+    "p99_ms": 2.839,
+    "min_ms": 0.157,
+    "max_ms": 12.83
+  },
+  "db_query": {
+    "count": 1000,
+    "mean_ms": 0.004,
+    "p50_ms": 0.004,
+    "p95_ms": 0.005,
+    "p99_ms": 0.006
+  },
+  "llm_schedule_generation": {
+    "count": 10,
+    "mean_ms": 11127.9,
+    "p50_ms": 6325.2,
+    "p95_ms": 34244.1,
+    "p99_ms": 51230.1
+  }
+}

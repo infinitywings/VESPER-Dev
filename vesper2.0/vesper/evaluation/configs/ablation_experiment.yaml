@@ -1,0 +1,26 @@
+# VESPER — LLM Ablation Study (RQ2)
+# Compare schedule generation quality across LLM models & personas.
+
+name: "llm_ablation_study"
+description: >
+  Ablation study comparing five LLM models (via LMStudio) and a
+  rule-based baseline on schedule diversity (entropy), correctness,
+  context sensitivity, and latency across 10 diverse personas.
+
+seed: 42
+output_dir: "results/llm_ablation"
+
+run_activity_comparison: false
+run_scalability: false
+run_latency: false
+run_llm_ablation: true
+
+lmstudio_url: "http://localhost:1234/v1/chat/completions"
+llm_models:
+  - qwen2.5-7b-instruct
+  - llama-3.1-8b-instruct
+  - mistral-7b-instruct-v0.3
+  - gemma-2-9b-it
+  - phi-3.5-mini-instruct
+llm_schedules_per_config: 30
+llm_temperature: 0.7

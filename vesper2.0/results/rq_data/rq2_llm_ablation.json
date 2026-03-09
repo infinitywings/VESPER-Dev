@@ -1,0 +1,174 @@
+{
+  "models": {
+    "openai/gpt-oss-20b": {
+      "total_attempts": 50,
+      "successes": 50,
+      "error_rate": 0.0,
+      "avg_entropy": 2.801,
+      "entropy_ci_95": [
+        2.7692,
+        2.8327
+      ],
+      "avg_latency_s": 33.03,
+      "latency_ci_95": [
+        30.45,
+        35.6
+      ],
+      "avg_tasks_per_schedule": 19.2,
+      "avg_unique_categories": 8.0,
+      "context_sensitivity": 0.1845
+    },
+    "meta-llama-3.1-8b-instruct": {
+      "total_attempts": 50,
+      "successes": 50,
+      "error_rate": 0.0,
+      "avg_entropy": 2.707,
+      "entropy_ci_95": [
+        2.654,
+        2.76
+      ],
+      "avg_latency_s": 33.85,
+      "latency_ci_95": [
+        32.62,
+        35.08
+      ],
+      "avg_tasks_per_schedule": 13.9,
+      "avg_unique_categories": 7.4,
+      "context_sensitivity": 0.1253
+    },
+    "gemma-2-9b-it": {
+      "total_attempts": 50,
+      "successes": 50,
+      "error_rate": 0.0,
+      "avg_entropy": 2.6796,
+      "entropy_ci_95": [
+        2.6425,
+        2.7168
+      ],
+      "avg_latency_s": 55.42,
+      "latency_ci_95": [
+        53.46,
+        57.39
+      ],
+      "avg_tasks_per_schedule": 14.9,
+      "avg_unique_categories": 7.1,
+      "context_sensitivity": 0.2544
+    },
+    "mistralai/mistral-7b-instruct-v0.3": {
+      "total_attempts": 50,
+      "successes": 48,
+      "error_rate": 0.04,
+      "avg_entropy": 2.3536,
+      "entropy_ci_95": [
+        2.2976,
+        2.4096
+      ],
+      "avg_latency_s": 32.08,
+      "latency_ci_95": [
+        31.07,
+        33.09
+      ],
+      "avg_tasks_per_schedule": 10.8,
+      "avg_unique_categories": 5.7,
+      "context_sensitivity": 0.2251
+    },
+    "qwen2.5-7b-instruct": {
+      "total_attempts": 50,
+      "successes": 50,
+      "error_rate": 0.0,
+      "avg_entropy": 2.4887,
+      "entropy_ci_95": [
+        2.409,
+        2.5683
+      ],
+      "avg_latency_s": 24.25,
+      "latency_ci_95": [
+        23.08,
+        25.43
+      ],
+      "avg_tasks_per_schedule": 13.4,
+      "avg_unique_categories": 6.5,
+      "context_sensitivity": 0.2769
+    },
+    "phi-3.5-mini-instruct": {
+      "total_attempts": 50,
+      "successes": 48,
+      "error_rate": 0.04,
+      "avg_entropy": 2.6927,
+      "entropy_ci_95": [
+        2.618,
+        2.7673
+      ],
+      "avg_latency_s": 23.53,
+      "latency_ci_95": [
+        22.66,
+        24.4
+      ],
+      "avg_tasks_per_schedule": 14.2,
+      "avg_unique_categories": 7.4,
+      "context_sensitivity": 0.1944
+    }
+  },
+  "pairwise": {
+    "openai/gpt-oss-20b_vs_meta-llama-3.1-8b-instruct": {
+      "cohens_d": 0.6111,
+      "effect_size": "medium"
+    },
+    "openai/gpt-oss-20b_vs_gemma-2-9b-it": {
+      "cohens_d": 0.9982,
+      "effect_size": "large"
+    },
+    "openai/gpt-oss-20b_vs_mistralai/mistral-7b-instruct-v0.3": {
+      "cohens_d": 2.8523,
+      "effect_size": "large"
+    },
+    "openai/gpt-oss-20b_vs_qwen2.5-7b-instruct": {
+      "cohens_d": 1.4641,
+      "effect_size": "large"
+    },
+    "openai/gpt-oss-20b_vs_phi-3.5-mini-instruct": {
+      "cohens_d": 0.5503,
+      "effect_size": "medium"
+    },
+    "meta-llama-3.1-8b-instruct_vs_gemma-2-9b-it": {
+      "cohens_d": 0.17,
+      "effect_size": "small"
+    },
+    "meta-llama-3.1-8b-instruct_vs_mistralai/mistral-7b-instruct-v0.3": {
+      "cohens_d": 1.8628,
+      "effect_size": "large"
+    },
+    "meta-llama-3.1-8b-instruct_vs_qwen2.5-7b-instruct": {
+      "cohens_d": 0.9173,
+      "effect_size": "large"
+    },
+    "meta-llama-3.1-8b-instruct_vs_phi-3.5-mini-instruct": {
+      "cohens_d": 0.0641,
+      "effect_size": "small"
+    },
+    "gemma-2-9b-it_vs_mistralai/mistral-7b-instruct-v0.3": {
+      "cohens_d": 1.9861,
+      "effect_size": "large"
+    },
+    "gemma-2-9b-it_vs_qwen2.5-7b-instruct": {
+      "cohens_d": 0.8735,
+      "effect_size": "large"
+    },
+    "gemma-2-9b-it_vs_phi-3.5-mini-instruct": {
+      "cohens_d": -0.0643,
+      "effect_size": "small"
+    },
+    "mistralai/mistral-7b-instruct-v0.3_vs_qwen2.5-7b-instruct": {
+      "cohens_d": -0.5593,
+      "effect_size": "medium"
+    },
+    "mistralai/mistral-7b-instruct-v0.3_vs_phi-3.5-mini-instruct": {
+      "cohens_d": -1.4916,
+      "effect_size": "large"
+    },
+    "qwen2.5-7b-instruct_vs_phi-3.5-mini-instruct": {
+      "cohens_d": -0.758,
+      "effect_size": "medium"
+    }
+  }
+}

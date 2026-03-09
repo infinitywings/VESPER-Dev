@@ -1,0 +1,128 @@
+{
+  "vesper": {
+    "Sleeping": 316,
+    "Personal_Hygiene": 139,
+    "Meal_Preparation": 344,
+    "Working": 277,
+    "Other": 168,
+    "Housekeeping": 74,
+    "Exercising": 156,
+    "Socializing": 86,
+    "Relaxing": 188
+  },
+  "comparisons": {
+    "casas/aruba": {
+      "reference_counts": {
+        "Sleeping": 109719,
+        "Personal_Hygiene": 42561,
+        "Other": 297129,
+        "Relaxing": 139612,
+        "Meal_Preparation": 208960
+      },
+      "kl_divergence": 0.6053,
+      "js_divergence": 0.1702,
+      "wasserstein": 1.227,
+      "transition_matrix_dist": 1.6527,
+      "temporal_correlation": 0.3982,
+      "vesper_entropy": 2.1437,
+      "reference_entropy": 2.0173,
+      "vesper_days": 174,
+      "reference_days": 220
+    },
+    "casas/milan": {
+      "reference_counts": {
+        "Personal_Hygiene": 19037,
+        "Relaxing": 24543,
+        "Sleeping": 23452,
+        "Meal_Preparation": 74474,
+        "Other": 67962
+      },
+      "kl_divergence": 0.5736,
+      "js_divergence": 0.1662,
+      "wasserstein": 0.9823,
+      "transition_matrix_dist": 1.7365,
+      "temporal_correlation": 0.4863,
+      "vesper_entropy": 2.1437,
+      "reference_entropy": 1.926,
+      "vesper_days": 174,
+      "reference_days": 65
+    },
+    "casas/cairo": {
+      "reference_counts": {
+        "Sleeping": 63617,
+        "Relaxing": 83856,
+        "Meal_Preparation": 133815,
+        "Other": 41687
+      },
+      "kl_divergence": 0.5922,
+      "js_divergence": 0.1825,
+      "wasserstein": 0.4324,
+      "transition_matrix_dist": 1.5385,
+      "temporal_correlation": 0.6886,
+      "vesper_entropy": 2.1437,
+      "reference_entropy": 1.845,
+      "vesper_days": 174,
+      "reference_days": 57
+    },
+    "aras/house_a": {
+      "reference_counts": {
+        "Relaxing": 312,
+        "Socializing": 146,
+        "Personal_Hygiene": 176,
+        "Sleeping": 36,
+        "Other": 146,
+        "Meal_Preparation": 149,
+        "Working": 53,
+        "Housekeeping": 70
+      },
+      "kl_divergence": 0.4392,
+      "js_divergence": 0.1182,
+      "wasserstein": 1.141,
+      "transition_matrix_dist": 1.343,
+      "temporal_correlation": -0.118,
+      "vesper_entropy": 2.1437,
+      "reference_entropy": 2.6409,
+      "vesper_days": 174,
+      "reference_days": 30
+    },
+    "aras/house_b": {
+      "reference_counts": {
+        "Sleeping": 43,
+        "Personal_Hygiene": 138,
+        "Other": 131,
+        "Meal_Preparation": 63,
+        "Housekeeping": 19,
+        "Socializing": 16,
+        "Working": 54,
+        "Relaxing": 86
+      },
+      "kl_divergence": 0.3662,
+      "js_divergence": 0.0932,
+      "wasserstein": 0.8121,
+      "transition_matrix_dist": 1.4899,
+      "temporal_correlation": 0.0925,
+      "vesper_entropy": 2.1437,
+      "reference_entropy": 2.3886,
+      "vesper_days": 174,
+      "reference_days": 30
+    }
+  },
+  "aggregate": {
+    "mean_js": 0.1461,
+    "js_ci_95": [
+      0.0984,
+      0.1937
+    ],
+    "mean_kl": 0.5153,
+    "kl_ci_95": [
+      0.3829,
+      0.6476
+    ],
+    "mean_wasserstein": 0.919,
+    "wass_ci_95": [
+      0.5281,
+      1.3098
+    ],
+    "num_comparisons": 5
+  }
+}

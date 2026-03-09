@@ -1,0 +1,3617 @@
+{
+  "timestamp": "2026-02-14T23:19:49.884610",
+  "summary": {
+    "total_attacks": 122,
+    "firmware": {
+      "total": 108,
+      "successful": 56,
+      "rate": 0.5185185185185185,
+      "mean_cvss": 7.844444444444446,
+      "max_cvss": 10.0,
+      "mean_cvss_successful": 8.433928571428572,
+      "unique_categories": 9
+    },
+    "network": {
+      "total": 14,
+      "successful": 9,
+      "rate": 0.6428571428571429,
+      "mean_cvss": 7.549999999999999,
+      "max_cvss": 10.0,
+      "mean_cvss_successful": 8.499999999999998,
+      "unique_categories": 13
+    },
+    "combined": {
+      "total": 122,
+      "successful": 65,
+      "rate": 0.5327868852459017,
+      "mean_cvss": 7.810655737704919,
+      "max_cvss": 10.0,
+      "mean_cvss_successful": 8.443076923076923,
+      "unique_categories": 22
+    },
+    "device_types_tested": 6,
+    "attack_categories": 22
+  },
+  "cvss_analysis": {
+    "score_distribution": {
+      "mean": 7.810655737704919,
+      "median": 8.2,
+      "std": 1.9995412333279234,
+      "min": 3.1,
+      "max": 10.0
+    },
+    "successful_distribution": {
+      "mean": 8.443076923076923,
+      "median": 8.2,
+      "std": 1.3882993725882737
+    },
+    "severity_breakdown": {
+      "High": {
+        "total": 51,
+        "exploited": 33,
+        "exploit_rate": 0.6470588235294118
+      },
+      "Critical": {
+        "total": 41,
+        "exploited": 25,
+        "exploit_rate": 0.6097560975609756
+      },
+      "Low": {
+        "total": 13,
+        "exploited": 0,
+        "exploit_rate": 0.0
+      },
+      "Medium": {
+        "total": 17,
+        "exploited": 7,
+        "exploit_rate": 0.4117647058823529
+      }
+    },
+    "weighted_risk_score": 4.498360655737704,
+    "mean_cvss_95ci": [
+      7.450781258130278,
+      8.17053021727956
+    ]
+  },
+  "mitre_coverage": {
+    "tactics_attempted": [
+      "Collection",
+      "Credential Access",
+      "Discovery",
+      "Evasion",
+      "Execution",
+      "Impact",
+      "Initial Access",
+      "Lateral Movement",
+      "Persistence",
+      "Privilege Escalation"
+    ],
+    "tactics_exploited": [
+      "Collection",
+      "Credential Access",
+      "Discovery",
+      "Evasion",
+      "Execution",
+      "Impact",
+      "Initial Access",
+      "Lateral Movement",
+      "Persistence",
+      "Privilege Escalation"
+    ],
+    "tactic_coverage": 0.8333333333333334,
+    "tactic_exploit_coverage": 0.8333333333333334,
+    "techniques": {
+      "T0890": {
+        "technique": "Exploitation for Privilege Escalation",
+        "tactic": "Privilege Escalation",
+        "total_attempts": 18,
+        "successful": 4,
+        "devices_affected": [
+          "smart_plug",
+          "smart_light",
+          "humidity_sensor"
+        ],
+        "exploit_rate": 0.2222222222222222
+      },
+      "T0866": {
+        "technique": "Exploitation of Remote Services",
+        "tactic": "Initial Access",
+        "total_attempts": 13,
+        "successful": 13,
+        "devices_affected": [
+          "motion_sensor",
+          "smart_plug",
+          "temperature_sensor",
+          "network",
+          "door_sensor",
+          "smart_light",
+          "humidity_sensor"
+        ],
+        "exploit_rate": 1.0
+      },
+      "T0846": {
+        "technique": "Remote System Discovery",
+        "tactic": "Discovery",
+        "total_attempts": 12,
+        "successful": 6,
+        "devices_affected": [
+          "motion_sensor",
+          "smart_plug",
+          "temperature_sensor",
+          "door_sensor",
+          "smart_light",
+          "humidity_sensor"
+        ],
+        "exploit_rate": 0.5
+      },
+      "T0807": {
+        "technique": "Command-Line Interface",
+        "tactic": "Execution",
+        "total_attempts": 24,
+        "successful": 10,
+        "devices_affected": [
+          "motion_sensor",
+          "smart_plug",
+          "temperature_sensor",
+          "door_sensor",
+          "smart_light",
+          "humidity_sensor"
+        ],
+        "exploit_rate": 0.4166666666666667
+      },
+      "T0857": {
+        "technique": "System Firmware",
+        "tactic": "Persistence",
+        "total_attempts": 12,
+        "successful": 2,
+        "devices_affected": [
+          "smart_light"
+        ],
+        "exploit_rate": 0.16666666666666666
+      },
+      "T0814": {
+        "technique": "Denial of Service",
+        "tactic": "Impact",
+        "total_attempts": 14,
+        "successful": 11,
+        "devices_affected": [
+          "motion_sensor",
+          "smart_plug",
+          "temperature_sensor",
+          "network",
+          "door_sensor",
+          "smart_light",
+          "humidity_sensor"
+        ],
+        "exploit_rate": 0.7857142857142857
+      },
+      "T0831": {
+        "technique": "Manipulation of Control",
+        "tactic": "Impact",
+        "total_attempts": 12,
+        "successful": 7,
+        "devices_affected": [
+          "motion_sensor",
+          "smart_plug",
+          "temperature_sensor",
+          "door_sensor",
+          "smart_light",
+          "humidity_sensor"
+        ],
+        "exploit_rate": 0.5833333333333334
+      },
+      "T0858": {
+        "technique": "Change Operating Mode",
+        "tactic": "Evasion",
+        "total_attempts": 7,
+        "successful": 6,
+        "devices_affected": [
+          "motion_sensor",
+          "temperature_sensor",
+          "network",
+          "door_sensor",
+          "smart_light",
+          "humidity_sensor"
+        ],
+        "exploit_rate": 0.8571428571428571
+      },
+      "T0801": {
+        "technique": "Monitor Process State",
+        "tactic": "Collection",
+        "total_attempts": 1,
+        "successful": 1,
+        "devices_affected": [
+          "network"
+        ],
+        "exploit_rate": 1.0
+      },
+      "T0867": {
+        "technique": "Lateral Tool Transfer",
+        "tactic": "Lateral Movement",
+        "total_attempts": 1,
+        "successful": 1,
+        "devices_affected": [
+          "network"
+        ],
+        "exploit_rate": 1.0
+      },
+      "T0802": {
+        "technique": "Automated Collection",
+        "tactic": "Collection",
+        "total_attempts": 1,
+        "successful": 1,
+        "devices_affected": [
+          "network"
+        ],
+        "exploit_rate": 1.0
+      },
+      "T0830": {
+        "technique": "Man in the Middle",
+        "tactic": "Collection",
+        "total_attempts": 3,
+        "successful": 1,
+        "devices_affected": [
+          "network"
+        ],
+        "exploit_rate": 0.3333333333333333
+      },
+      "T0859": {
+        "technique": "Valid Accounts",
+        "tactic": "Credential Access",
+        "total_attempts": 2,
+        "successful": 1,
+        "devices_affected": [
+          "network"
+        ],
+        "exploit_rate": 0.5
+      },
+      "T0848": {
+        "technique": "Rogue Master",
+        "tactic": "Initial Access",
+        "total_attempts": 1,
+        "successful": 1,
+        "devices_affected": [
+          "network"
+        ],
+        "exploit_rate": 1.0
+      },
+      "T0840": {
+        "technique": "Network Sniffing",
+        "tactic": "Discovery",
+        "total_attempts": 1,
+        "successful": 0,
+        "devices_affected": [],
+        "exploit_rate": 0.0
+      }
+    },
+    "unique_techniques": 15
+  },
+  "kill_chain_analysis": {
+    "stages": {
+      "Reconnaissance": {
+        "total_attacks": 14,
+        "exploited": 7,
+        "exploit_rate": 0.5,
+        "categories": [
+          "information_disclosure",
+          "mqtt_eavesdropping",
+          "traffic_analysis"
+        ],
+        "max_cvss": 7.5
+      },
+      "Weaponization": {
+        "total_attacks": 42,
+        "exploited": 14,
+        "exploit_rate": 0.3333333333333333,
+        "categories": [
+          "buffer_overflow",
+          "command_injection",
+          "protocol_fuzzing"
+        ],
+        "max_cvss": 9.0
+      },
+      "Delivery": {
+        "total_attacks": 33,
+        "exploited": 14,
+        "exploit_rate": 0.42424242424242425,
+        "categories": [
+          "command_injection",
+          "deauthentication_attack",
+          "firmware_update_attack",
+          "mqtt_message_injection",
+          "protocol_replay",
+          "replay_attack"
+        ],
+        "max_cvss": 10.0
+      },
+      "Exploitation": {
+        "total_attacks": 37,
+        "exploited": 20,
+        "exploit_rate": 0.5405405405405406,
+        "categories": [
+          "arp_spoofing",
+          "authentication_bypass",
+          "buffer_overflow",
+          "dns_poisoning",
+          "evil_twin_ap",
+          "protocol_downgrade",
+          "tcp_connection_hijack",
+          "tcp_man_in_the_middle"
+        ],
+        "max_cvss": 10.0
+      },
+      "Installation": {
+        "total_attacks": 12,
+        "exploited": 2,
+        "exploit_rate": 0.16666666666666666,
+        "categories": [
+          "firmware_update_attack"
+        ],
+        "max_cvss": 10.0
+      },
+      "Command & Control": {
+        "total_attacks": 5,
+        "exploited": 5,
+        "exploit_rate": 1.0,
+        "categories": [
+          "arp_spoofing",
+          "dns_poisoning",
+          "evil_twin_ap",
+          "mqtt_message_injection",
+          "mqtt_topic_hijack"
+        ],
+        "max_cvss": 10.0
+      },
+      "Actions on Objectives": {
+        "total_attacks": 26,
+        "exploited": 18,
+        "exploit_rate": 0.6923076923076923,
+        "categories": [
+          "deauthentication_attack",
+          "denial_of_service",
+          "network_denial_of_service",
+          "state_manipulation"
+        ],
+        "max_cvss": 10.0
+      }
+    },
+    "total_stages": 7,
+    "stages_covered": 7,
+    "stages_exploited": 7,
+    "kill_chain_completeness": 1.0,
+    "longest_exploitable_chain": [
+      "Reconnaissance",
+      "Weaponization",
+      "Delivery",
+      "Exploitation",
+      "Installation",
+      "Command & Control",
+      "Actions on Objectives"
+    ]
+  },
+  "device_comparison": {
+    "motion_sensor": {
+      "total_attacks": 18,
+      "successful": 8,
+      "exploit_rate": 0.4444444444444444,
+      "mean_cvss": 7.844444444444444,
+      "mean_cvss_successful": 8.7,
+      "max_cvss": 10.0,
+      "critical_vulns": 3,
+      "high_vulns": 5,
+      "category_breakdown": {
+        "buffer_overflow": {
+          "total": 3,
+          "exploited": 0
+        },
+        "authentication_bypass": {
+          "total": 2,
+          "exploited": 2
+        },
+        "information_disclosure": {
+          "total": 2,
+          "exploited": 1
+        },
+        "command_injection": {
+          "total": 2,
+          "exploited": 1
+        },
+        "firmware_update_attack": {
+          "total": 2,
+          "exploited": 0
+        },
+        "denial_of_service": {
+          "total": 2,
+          "exploited": 1
+        },
+        "state_manipulation": {
+          "total": 2,
+          "exploited": 1
+        },
+        "replay_attack": {
+          "total": 1,
+          "exploited": 1
+        },
+        "protocol_fuzzing": {
+          "total": 2,
+          "exploited": 1
+        }
+      },
+      "median_tte_ms": 207.28790760040283
+    },
+    "temperature_sensor": {
+      "total_attacks": 18,
+      "successful": 10,
+      "exploit_rate": 0.5555555555555556,
+      "mean_cvss": 7.844444444444444,
+      "mean_cvss_successful": 8.02,
+      "max_cvss": 10.0,
+      "critical_vulns": 3,
+      "high_vulns": 5,
+      "category_breakdown": {
+        "buffer_overflow": {
+          "total": 3,
+          "exploited": 0
+        },
+        "authentication_bypass": {
+          "total": 2,
+          "exploited": 2
+        },
+        "information_disclosure": {
+          "total": 2,
+          "exploited": 1
+        },
+        "command_injection": {
+          "total": 2,
+          "exploited": 1
+        },
+        "firmware_update_attack": {
+          "total": 2,
+          "exploited": 0
+        },
+        "denial_of_service": {
+          "total": 2,
+          "exploited": 2
+        },
+        "state_manipulation": {
+          "total": 2,
+          "exploited": 2
+        },
+        "replay_attack": {
+          "total": 1,
+          "exploited": 1
+        },
+        "protocol_fuzzing": {
+          "total": 2,
+          "exploited": 1
+        }
+      },
+      "median_tte_ms": 207.2732448577881
+    },
+    "smart_light": {
+      "total_attacks": 18,
+      "successful": 11,
+      "exploit_rate": 0.6111111111111112,
+      "mean_cvss": 7.844444444444444,
+      "mean_cvss_successful": 8.890909090909092,
+      "max_cvss": 10.0,
+      "critical_vulns": 5,
+      "high_vulns": 6,
+      "category_breakdown": {
+        "buffer_overflow": {
+          "total": 3,
+          "exploited": 1
+        },
+        "authentication_bypass": {
+          "total": 2,
+          "exploited": 2
+        },
+        "information_disclosure": {
+          "total": 2,
+          "exploited": 1
+        },
+        "command_injection": {
+          "total": 2,
+          "exploited": 1
+        },
+        "firmware_update_attack": {
+          "total": 2,
+          "exploited": 2
+        },
+        "denial_of_service": {
+          "total": 2,
+          "exploited": 1
+        },
+        "state_manipulation": {
+          "total": 2,
+          "exploited": 1
+        },
+        "replay_attack": {
+          "total": 1,
+          "exploited": 1
+        },
+        "protocol_fuzzing": {
+          "total": 2,
+          "exploited": 1
+        }
+      },
+      "median_tte_ms": 13.641119003295898
+    },
+    "humidity_sensor": {
+      "total_attacks": 18,
+      "successful": 10,
+      "exploit_rate": 0.5555555555555556,
+      "mean_cvss": 7.844444444444444,
+      "mean_cvss_successful": 8.31,
+      "max_cvss": 10.0,
+      "critical_vulns": 3,
+      "high_vulns": 6,
+      "category_breakdown": {
+        "buffer_overflow": {
+          "total": 3,
+          "exploited": 1
+        },
+        "authentication_bypass": {
+          "total": 2,
+          "exploited": 2
+        },
+        "information_disclosure": {
+          "total": 2,
+          "exploited": 1
+        },
+        "command_injection": {
+          "total": 2,
+          "exploited": 1
+        },
+        "firmware_update_attack": {
+          "total": 2,
+          "exploited": 0
+        },
+        "denial_of_service": {
+          "total": 2,
+          "exploited": 2
+        },
+        "state_manipulation": {
+          "total": 2,
+          "exploited": 1
+        },
+        "replay_attack": {
+          "total": 1,
+          "exploited": 1
+        },
+        "protocol_fuzzing": {
+          "total": 2,
+          "exploited": 1
+        }
+      },
+      "median_tte_ms": 207.47828483581543
+    },
+    "door_sensor": {
+      "total_attacks": 18,
+      "successful": 8,
+      "exploit_rate": 0.4444444444444444,
+      "mean_cvss": 7.844444444444444,
+      "mean_cvss_successful": 8.3375,
+      "max_cvss": 10.0,
+      "critical_vulns": 3,
+      "high_vulns": 4,
+      "category_breakdown": {
+        "buffer_overflow": {
+          "total": 3,
+          "exploited": 0
+        },
+        "authentication_bypass": {
+          "total": 2,
+          "exploited": 2
+        },
+        "information_disclosure": {
+          "total": 2,
+          "exploited": 1
+        },
+        "command_injection": {
+          "total": 2,
+          "exploited": 0
+        },
+        "firmware_update_attack": {
+          "total": 2,
+          "exploited": 0
+        },
+        "denial_of_service": {
+          "total": 2,
+          "exploited": 2
+        },
+        "state_manipulation": {
+          "total": 2,
+          "exploited": 1
+        },
+        "replay_attack": {
+          "total": 1,
+          "exploited": 1
+        },
+        "protocol_fuzzing": {
+          "total": 2,
+          "exploited": 1
+        }
+      },
+      "median_tte_ms": 173.01952838897705
+    },
+    "smart_plug": {
+      "total_attacks": 18,
+      "successful": 9,
+      "exploit_rate": 0.5,
+      "mean_cvss": 7.844444444444444,
+      "mean_cvss_successful": 8.322222222222223,
+      "max_cvss": 10.0,
+      "critical_vulns": 3,
+      "high_vulns": 5,
+      "category_breakdown": {
+        "buffer_overflow": {
+          "total": 3,
+          "exploited": 2
+        },
+        "authentication_bypass": {
+          "total": 2,
+          "exploited": 2
+        },
+        "information_disclosure": {
+          "total": 2,
+          "exploited": 1
+        },
+        "command_injection": {
+          "total": 2,
+          "exploited": 0
+        },
+        "firmware_update_attack": {
+          "total": 2,
+          "exploited": 0
+        },
+        "denial_of_service": {
+          "total": 2,
+          "exploited": 2
+        },
+        "state_manipulation": {
+          "total": 2,
+          "exploited": 1
+        },
+        "replay_attack": {
+          "total": 1,
+          "exploited": 0
+        },
+        "protocol_fuzzing": {
+          "total": 2,
+          "exploited": 1
+        }
+      },
+      "median_tte_ms": 14.565706253051758
+    }
+  },
+  "attack_surface": {
+    "arp_spoofing": {
+      "total": 1,
+      "exploited": 1,
+      "exploit_rate": 1.0,
+      "mean_cvss": 8.1,
+      "max_cvss": 8.1,
+      "devices_affected": 1,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 9.450000000000001
+    },
+    "authentication_bypass": {
+      "total": 12,
+      "exploited": 12,
+      "exploit_rate": 1.0,
+      "mean_cvss": 10.0,
+      "max_cvss": 10.0,
+      "devices_affected": 6,
+      "layers": [
+        "firmware"
+      ],
+      "risk_score": 20.0
+    },
+    "buffer_overflow": {
+      "total": 18,
+      "exploited": 4,
+      "exploit_rate": 0.2222222222222222,
+      "mean_cvss": 8.199999999999998,
+      "max_cvss": 8.2,
+      "devices_affected": 3,
+      "layers": [
+        "firmware"
+      ],
+      "risk_score": 2.7333333333333325
+    },
+    "command_injection": {
+      "total": 12,
+      "exploited": 4,
+      "exploit_rate": 0.3333333333333333,
+      "mean_cvss": 5.95,
+      "max_cvss": 8.2,
+      "devices_affected": 4,
+      "layers": [
+        "firmware"
+      ],
+      "risk_score": 3.3055555555555554
+    },
+    "deauthentication_attack": {
+      "total": 1,
+      "exploited": 1,
+      "exploit_rate": 1.0,
+      "mean_cvss": 6.5,
+      "max_cvss": 6.5,
+      "devices_affected": 1,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 7.583333333333334
+    },
+    "denial_of_service": {
+      "total": 12,
+      "exploited": 10,
+      "exploit_rate": 0.8333333333333334,
+      "mean_cvss": 6.3999999999999995,
+      "max_cvss": 7.5,
+      "devices_affected": 6,
+      "layers": [
+        "firmware"
+      ],
+      "risk_score": 10.666666666666666
+    },
+    "dns_poisoning": {
+      "total": 1,
+      "exploited": 1,
+      "exploit_rate": 1.0,
+      "mean_cvss": 10.0,
+      "max_cvss": 10.0,
+      "devices_affected": 1,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 11.666666666666668
+    },
+    "evil_twin_ap": {
+      "total": 1,
+      "exploited": 1,
+      "exploit_rate": 1.0,
+      "mean_cvss": 9.3,
+      "max_cvss": 9.3,
+      "devices_affected": 1,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 10.850000000000001
+    },
+    "firmware_update_attack": {
+      "total": 12,
+      "exploited": 2,
+      "exploit_rate": 0.16666666666666666,
+      "mean_cvss": 10.0,
+      "max_cvss": 10.0,
+      "devices_affected": 1,
+      "layers": [
+        "firmware"
+      ],
+      "risk_score": 1.9444444444444444
+    },
+    "information_disclosure": {
+      "total": 12,
+      "exploited": 6,
+      "exploit_rate": 0.5,
+      "mean_cvss": 5.6000000000000005,
+      "max_cvss": 7.5,
+      "devices_affected": 6,
+      "layers": [
+        "firmware"
+      ],
+      "risk_score": 5.6000000000000005
+    },
+    "mqtt_eavesdropping": {
+      "total": 1,
+      "exploited": 1,
+      "exploit_rate": 1.0,
+      "mean_cvss": 7.5,
+      "max_cvss": 7.5,
+      "devices_affected": 1,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 8.75
+    },
+    "mqtt_message_injection": {
+      "total": 1,
+      "exploited": 1,
+      "exploit_rate": 1.0,
+      "mean_cvss": 9.3,
+      "max_cvss": 9.3,
+      "devices_affected": 1,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 10.850000000000001
+    },
+    "mqtt_topic_hijack": {
+      "total": 1,
+      "exploited": 1,
+      "exploit_rate": 1.0,
+      "mean_cvss": 10.0,
+      "max_cvss": 10.0,
+      "devices_affected": 1,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 11.666666666666668
+    },
+    "network_denial_of_service": {
+      "total": 1,
+      "exploited": 0,
+      "exploit_rate": 0.0,
+      "mean_cvss": 7.5,
+      "max_cvss": 7.5,
+      "devices_affected": 0,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 0.0
+    },
+    "protocol_downgrade": {
+      "total": 2,
+      "exploited": 1,
+      "exploit_rate": 0.5,
+      "mean_cvss": 7.6000000000000005,
+      "max_cvss": 9.3,
+      "devices_affected": 1,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 4.433333333333334
+    },
+    "protocol_fuzzing": {
+      "total": 12,
+      "exploited": 6,
+      "exploit_rate": 0.5,
+      "mean_cvss": 8.6,
+      "max_cvss": 9.0,
+      "devices_affected": 6,
+      "layers": [
+        "firmware"
+      ],
+      "risk_score": 8.6
+    },
+    "protocol_replay": {
+      "total": 1,
+      "exploited": 1,
+      "exploit_rate": 1.0,
+      "mean_cvss": 6.5,
+      "max_cvss": 6.5,
+      "devices_affected": 1,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 7.583333333333334
+    },
+    "replay_attack": {
+      "total": 6,
+      "exploited": 5,
+      "exploit_rate": 0.8333333333333334,
+      "mean_cvss": 8.200000000000001,
+      "max_cvss": 8.2,
+      "devices_affected": 5,
+      "layers": [
+        "firmware"
+      ],
+      "risk_score": 12.527777777777782
+    },
+    "state_manipulation": {
+      "total": 12,
+      "exploited": 7,
+      "exploit_rate": 0.5833333333333334,
+      "mean_cvss": 7.6499999999999995,
+      "max_cvss": 10.0,
+      "devices_affected": 6,
+      "layers": [
+        "firmware"
+      ],
+      "risk_score": 8.925
+    },
+    "tcp_connection_hijack": {
+      "total": 1,
+      "exploited": 0,
+      "exploit_rate": 0.0,
+      "mean_cvss": 5.9,
+      "max_cvss": 5.9,
+      "devices_affected": 0,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 0.0
+    },
+    "tcp_man_in_the_middle": {
+      "total": 1,
+      "exploited": 0,
+      "exploit_rate": 0.0,
+      "mean_cvss": 6.8,
+      "max_cvss": 6.8,
+      "devices_affected": 0,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 0.0
+    },
+    "traffic_analysis": {
+      "total": 1,
+      "exploited": 0,
+      "exploit_rate": 0.0,
+      "mean_cvss": 3.1,
+      "max_cvss": 3.1,
+      "devices_affected": 0,
+      "layers": [
+        "network"
+      ],
+      "risk_score": 0.0
+    }
+  },
+  "temporal_analysis": {
+    "firmware_durations": {
+      "mean_ms": 1711.2767299016316,
+      "median_ms": 11.717915534973145,
+      "std_ms": 5565.683330572526,
+      "p95_ms": 16958.906459808175,
+      "p99_ms": 24474.555537700653,
+      "min_ms": 1.8169879913330078,
+      "max_ms": 25353.466033935547,
+      "total_ms": 184817.88682937622
+    },
+    "network_durations": {
+      "mean_ms": 289.7599935531616,
+      "median_ms": 0.2524852752685547,
+      "std_ms": 662.8024712449214,
+      "p95_ms": 1406.5380096435542,
+      "p99_ms": 2299.353218078612,
+      "min_ms": 0.009059906005859375,
+      "max_ms": 2522.557020187378,
+      "total_ms": 4056.6399097442627
+    },
+    "successful_durations": {
+      "mean_ms": 2537.3195758232705,
+      "median_ms": 204.40173149108887,
+      "std_ms": 7003.062473499324,
+      "p95_ms": 24055.598783493042,
+      "p99_ms": 24793.59603881836,
+      "min_ms": 0.009059906005859375,
+      "max_ms": 25353.466033935547,
+      "total_ms": 164925.77242851257
+    },
+    "failed_durations": {
+      "mean_ms": 420.15358439663,
+      "median_ms": 7.817268371582031,
+      "std_ms": 962.2619120375298,
+      "p95_ms": 3002.593469619751,
+      "p99_ms": 3044.2920875549316,
+      "min_ms": 0.2300739288330078,
+      "max_ms": 3086.1077308654785,
+      "total_ms": 23948.75431060791
+    },
+    "tte_by_severity": {
+      "Critical": {
+        "mean_ms": 83.0797290802002,
+        "median_ms": 6.809234619140625,
+        "std_ms": 127.43351158977372,
+        "p95_ms": 212.32223510742188,
+        "p99_ms": 446.7494392395013,
+        "min_ms": 0.009059906005859375,
+        "max_ms": 520.7080841064453,
+        "total_ms": 2076.993227005005
+      },
+      "High": {
+        "mean_ms": 4694.885434526385,
+        "median_ms": 408.679723739624,
+        "std_ms": 9301.141212626044,
+        "p95_ms": 24443.409490585327,
+        "p99_ms": 25073.531036376953,
+        "min_ms": 0.011205673217773438,
+        "max_ms": 25353.466033935547,
+        "total_ms": 154931.21933937073
+      },
+      "Medium": {
+        "mean_ms": 1131.079980305263,
+        "median_ms": 138.04101943969727,
+        "std_ms": 1437.6605570542602,
+        "p95_ms": 3476.4490127563467,
+        "p99_ms": 3743.3979034423824,
+        "min_ms": 0.014781951904296875,
+        "max_ms": 3810.1351261138916,
+        "total_ms": 7917.559862136841
+      }
+    }
+  },
+  "statistical_tests": {
+    "chi2_device_independence": {
+      "test": "Chi-squared test of independence",
+      "hypothesis": "H0: Exploit rate is independent of device type",
+      "chi2_statistic": 1.6318681318681318,
+      "p_value": 0.897368930515235,
+      "dof": 5,
+      "significant_at_005": "False",
+      "significant_at_001": "False",
+      "interpretation": "Fail to reject H0 \u2014 no significant difference across devices"
+    },
+    "fw_vs_network_exploit_rate": {
+      "test": "Chi-squared test (Yates correction)",
+      "hypothesis": "H0: Firmware and network exploit rates are equal",
+      "firmware_rate": 0.5185185185185185,
+      "network_rate": 0.6428571428571429,
+      "odds_ratio": 0.5982905982905983,
+      "p_value": 0.5534013919950331,
+      "significant_at_005": "False",
+      "interpretation": "Fail to reject H0 \u2014 no significant difference between layers"
+    },
+    "kruskal_wallis_cvss": {
+      "test": "Kruskal-Wallis H test",
+      "hypothesis": "H0: CVSS score distributions are equal across device types",
+      "h_statistic": 1.7307278818238074,
+      "p_value": 0.8850060549993323,
+      "significant_at_005": "False"
+    },
+    "exploit_rate_effect_size": {
+      "metric": "Coefficient of variation of exploit rates",
+      "rates_by_device": {
+        "motion_sensor": 0.4444444444444444,
+        "temperature_sensor": 0.5555555555555556,
+        "smart_light": 0.6111111111111112,
+        "humidity_sensor": 0.5555555555555556,
+        "door_sensor": 0.4444444444444444,
+        "smart_plug": 0.5
+      },
+      "mean_rate": 0.5185185185185186,
+      "std_rate": 0.0614189775991741,
+      "cv": 0.11845088536983574
+    },
+    "mann_whitney_duration": {
+      "test": "Mann-Whitney U test",
+      "hypothesis": "H0: Duration distributions are equal for successful vs failed attacks",
+      "u_statistic": 2070.0,
+      "p_value": 0.26547892001063644,
+      "significant_at_005": "False",
+      "successful_median_ms": 204.40173149108887,
+      "failed_median_ms": 7.817268371582031
+    }
+  },
+  "cross_layer_analysis": {
+    "firmware": {
+      "total": 108,
+      "successful": 56,
+      "exploit_rate": 0.5185185185185185,
+      "mean_cvss": 7.844444444444446,
+      "mean_cvss_exploited": 8.433928571428572,
+      "median_tte_ms": 205.71482181549072,
+      "categories": 9,
+      "tactics_covered": 7
+    },
+    "network": {
+      "total": 14,
+      "successful": 9,
+      "exploit_rate": 0.6428571428571429,
+      "mean_cvss": 7.549999999999999,
+      "mean_cvss_exploited": 8.499999999999998,
+      "median_tte_ms": 0.02384185791015625,
+      "categories": 13,
+      "tactics_covered": 7
+    },
+    "combined_exploited_categories": 18,
+    "firmware_only_categories": [
+      "authentication_bypass",
+      "buffer_overflow",
+      "command_injection",
+      "denial_of_service",
+      "firmware_update_attack",
+      "information_disclosure",
+      "protocol_fuzzing",
+      "replay_attack",
+      "state_manipulation"
+    ],
+    "network_only_categories": [
+      "arp_spoofing",
+      "deauthentication_attack",
+      "dns_poisoning",
+      "evil_twin_ap",
+      "mqtt_eavesdropping",
+      "mqtt_message_injection",
+      "mqtt_topic_hijack",
+      "protocol_downgrade",
+      "protocol_replay"
+    ],
+    "both_layers_categories": []
+  },
+  "scored_attacks": [
+    {
+      "name": "Buffer Overflow (Command Buffer)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 18.27239990234375,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Input truncated safely",
+      "mitigation": "Add strict bounds checking on command input length",
+      "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)"
+    },
+    {
+      "name": "Buffer Overflow (SET_ID)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 5.262851715087891,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Device ID corruption, adjacent memory overwrite",
+      "mitigation": "Validate input length before copy, use safe string functions",
+      "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)"
+    },
+    {
+      "name": "Authentication Bypass (No Token)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 3.8330554962158203,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Full device control without credentials",
+      "mitigation": "Implement mandatory authentication for all state-changing commands",
+      "cve_reference": "CVE-2019-19356 (Netis router auth bypass)"
+    },
+    {
+      "name": "Authentication Bypass (Weak Token Validation)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 4.995107650756836,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Any attacker can authenticate with arbitrary credentials",
+      "mitigation": "Implement proper token validation, use challenge-response auth",
+      "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)"
+    },
+    {
+      "name": "Information Disclosure (Debug Dump)",
+      "category": "information_disclosure",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 2.126932144165039,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+      "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+      "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)"
+    },
+    {
+      "name": "Information Disclosure (Token Leakage)",
+      "category": "information_disclosure",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 3.9520263671875,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Credential theft via traffic interception",
+      "mitigation": "Never echo credentials in responses, use one-way hashing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Command Injection (Newline)",
+      "category": "command_injection",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 408.679723739624,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Arbitrary command execution via crafted input",
+      "mitigation": "Sanitize input, reject commands containing control characters",
+      "cve_reference": "CVE-2019-17621 (D-Link command injection)"
+    },
+    {
+      "name": "Command Injection (Null Byte)",
+      "category": "command_injection",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 3002.0177364349365,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Bypass input validation, inject commands",
+      "mitigation": "Handle null bytes explicitly in input parsing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Firmware Update Buffer Overflow",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 6.949901580810547,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Memory corruption, potential arbitrary code execution",
+      "mitigation": "Validate firmware size, use secure boot, verify signatures",
+      "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)"
+    },
+    {
+      "name": "Unsigned Firmware Update",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 2.6738643646240234,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Complete device takeover via malicious firmware",
+      "mitigation": "Implement secure boot chain with signed firmware verification",
+      "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)"
+    },
+    {
+      "name": "Denial of Service (Command Flood)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 534.4080924987793,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Device becomes unresponsive, legitimate commands fail",
+      "mitigation": "Implement rate limiting, connection throttling",
+      "cve_reference": ""
+    },
+    {
+      "name": "Denial of Service (Large Payload)",
+      "category": "denial_of_service",
+      "success": false,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 1138.0350589752197,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Resource exhaustion, device crash",
+      "mitigation": "Limit maximum input size, implement input validation",
+      "cve_reference": ""
+    },
+    {
+      "name": "State Manipulation (Sensor Disarm)",
+      "category": "state_manipulation",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 209.7938060760498,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+      "mitigation": "Require authenticated commands for security-critical operations",
+      "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)"
+    },
+    {
+      "name": "State Manipulation (Calibration Abuse)",
+      "category": "state_manipulation",
+      "success": false,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 3.1058788299560547,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Falsified sensor data, incorrect automation triggers",
+      "mitigation": "Validate calibration ranges, require authentication",
+      "cve_reference": ""
+    },
+    {
+      "name": "Replay Attack",
+      "category": "replay_attack",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Evasion",
+      "mitre_technique_id": "T0858",
+      "mitre_technique": "Change Operating Mode",
+      "kill_chain_stages": [
+        "Delivery"
+      ],
+      "duration_ms": 204.78200912475586,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Attacker can replay any previously observed command",
+      "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+      "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)"
+    },
+    {
+      "name": "Protocol Fuzzing (Random)",
+      "category": "protocol_fuzzing",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 24478.66916656494,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Device crash or unexpected behavior",
+      "mitigation": "Implement robust input validation, fuzz testing in CI",
+      "cve_reference": ""
+    },
+    {
+      "name": "Format String Attack",
+      "category": "protocol_fuzzing",
+      "success": false,
+      "cvss_score": 9.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 6.031036376953125,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "No format string vulnerability",
+      "mitigation": "Never use user input as printf format string",
+      "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)"
+    },
+    {
+      "name": "Out-of-Bounds Write (Schedule Array)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 7.127046585083008,
+      "device_type": "motion_sensor",
+      "layer": "firmware",
+      "impact": "Arbitrary memory write, potential code execution",
+      "mitigation": "Validate array index bounds before write",
+      "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)"
+    },
+    {
+      "name": "Buffer Overflow (Command Buffer)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 20.931005477905273,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Input truncated safely",
+      "mitigation": "Add strict bounds checking on command input length",
+      "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)"
+    },
+    {
+      "name": "Buffer Overflow (SET_ID)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 4.737138748168945,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Device ID corruption, adjacent memory overwrite",
+      "mitigation": "Validate input length before copy, use safe string functions",
+      "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)"
+    },
+    {
+      "name": "Authentication Bypass (No Token)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 3.834962844848633,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Full device control without credentials",
+      "mitigation": "Implement mandatory authentication for all state-changing commands",
+      "cve_reference": "CVE-2019-19356 (Netis router auth bypass)"
+    },
+    {
+      "name": "Authentication Bypass (Weak Token Validation)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 4.516124725341797,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Any attacker can authenticate with arbitrary credentials",
+      "mitigation": "Implement proper token validation, use challenge-response auth",
+      "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)"
+    },
+    {
+      "name": "Information Disclosure (Debug Dump)",
+      "category": "information_disclosure",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 1.8169879913330078,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+      "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+      "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)"
+    },
+    {
+      "name": "Information Disclosure (Token Leakage)",
+      "category": "information_disclosure",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 4.329919815063477,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Credential theft via traffic interception",
+      "mitigation": "Never echo credentials in responses, use one-way hashing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Command Injection (Newline)",
+      "category": "command_injection",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 413.2540225982666,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Arbitrary command execution via crafted input",
+      "mitigation": "Sanitize input, reject commands containing control characters",
+      "cve_reference": "CVE-2019-17621 (D-Link command injection)"
+    },
+    {
+      "name": "Command Injection (Null Byte)",
+      "category": "command_injection",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 3086.1077308654785,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Bypass input validation, inject commands",
+      "mitigation": "Handle null bytes explicitly in input parsing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Firmware Update Buffer Overflow",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 8.004188537597656,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Memory corruption, potential arbitrary code execution",
+      "mitigation": "Validate firmware size, use secure boot, verify signatures",
+      "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)"
+    },
+    {
+      "name": "Unsigned Firmware Update",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 3.0777454376220703,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Complete device takeover via malicious firmware",
+      "mitigation": "Implement secure boot chain with signed firmware verification",
+      "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)"
+    },
+    {
+      "name": "Denial of Service (Command Flood)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 538.7887954711914,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Device becomes unresponsive, legitimate commands fail",
+      "mitigation": "Implement rate limiting, connection throttling",
+      "cve_reference": ""
+    },
+    {
+      "name": "Denial of Service (Large Payload)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 1268.4202194213867,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Resource exhaustion, device crash",
+      "mitigation": "Limit maximum input size, implement input validation",
+      "cve_reference": ""
+    },
+    {
+      "name": "State Manipulation (Sensor Disarm)",
+      "category": "state_manipulation",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 210.1447582244873,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+      "mitigation": "Require authenticated commands for security-critical operations",
+      "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)"
+    },
+    {
+      "name": "State Manipulation (Calibration Abuse)",
+      "category": "state_manipulation",
+      "success": true,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 3.076791763305664,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Falsified sensor data, incorrect automation triggers",
+      "mitigation": "Validate calibration ranges, require authentication",
+      "cve_reference": ""
+    },
+    {
+      "name": "Replay Attack",
+      "category": "replay_attack",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Evasion",
+      "mitre_technique_id": "T0858",
+      "mitre_technique": "Change Operating Mode",
+      "kill_chain_stages": [
+        "Delivery"
+      ],
+      "duration_ms": 204.40173149108887,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Attacker can replay any previously observed command",
+      "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+      "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)"
+    },
+    {
+      "name": "Protocol Fuzzing (Random)",
+      "category": "protocol_fuzzing",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 24419.90303993225,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Device crash or unexpected behavior",
+      "mitigation": "Implement robust input validation, fuzz testing in CI",
+      "cve_reference": ""
+    },
+    {
+      "name": "Format String Attack",
+      "category": "protocol_fuzzing",
+      "success": false,
+      "cvss_score": 9.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 6.303071975708008,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "No format string vulnerability",
+      "mitigation": "Never use user input as printf format string",
+      "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)"
+    },
+    {
+      "name": "Out-of-Bounds Write (Schedule Array)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 7.817268371582031,
+      "device_type": "temperature_sensor",
+      "layer": "firmware",
+      "impact": "Arbitrary memory write, potential code execution",
+      "mitigation": "Validate array index bounds before write",
+      "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)"
+    },
+    {
+      "name": "Buffer Overflow (Command Buffer)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 42.662858963012695,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Input truncated safely",
+      "mitigation": "Add strict bounds checking on command input length",
+      "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)"
+    },
+    {
+      "name": "Buffer Overflow (SET_ID)",
+      "category": "buffer_overflow",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 5.920171737670898,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Device ID corruption, adjacent memory overwrite",
+      "mitigation": "Validate input length before copy, use safe string functions",
+      "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)"
+    },
+    {
+      "name": "Authentication Bypass (No Token)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 10.858774185180664,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Full device control without credentials",
+      "mitigation": "Implement mandatory authentication for all state-changing commands",
+      "cve_reference": "CVE-2019-19356 (Netis router auth bypass)"
+    },
+    {
+      "name": "Authentication Bypass (Weak Token Validation)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 13.641119003295898,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Any attacker can authenticate with arbitrary credentials",
+      "mitigation": "Implement proper token validation, use challenge-response auth",
+      "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)"
+    },
+    {
+      "name": "Information Disclosure (Debug Dump)",
+      "category": "information_disclosure",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 2.2509098052978516,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+      "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+      "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)"
+    },
+    {
+      "name": "Information Disclosure (Token Leakage)",
+      "category": "information_disclosure",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 7.870912551879883,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Credential theft via traffic interception",
+      "mitigation": "Never echo credentials in responses, use one-way hashing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Command Injection (Newline)",
+      "category": "command_injection",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 413.0430221557617,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Arbitrary command execution via crafted input",
+      "mitigation": "Sanitize input, reject commands containing control characters",
+      "cve_reference": "CVE-2019-17621 (D-Link command injection)"
+    },
+    {
+      "name": "Command Injection (Null Byte)",
+      "category": "command_injection",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 3011.436939239502,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Bypass input validation, inject commands",
+      "mitigation": "Handle null bytes explicitly in input parsing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Firmware Update Buffer Overflow",
+      "category": "firmware_update_attack",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 12.25590705871582,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Memory corruption, potential arbitrary code execution",
+      "mitigation": "Validate firmware size, use secure boot, verify signatures",
+      "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)"
+    },
+    {
+      "name": "Unsigned Firmware Update",
+      "category": "firmware_update_attack",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 2.360105514526367,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Complete device takeover via malicious firmware",
+      "mitigation": "Implement secure boot chain with signed firmware verification",
+      "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)"
+    },
+    {
+      "name": "Denial of Service (Command Flood)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 551.3951778411865,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Device becomes unresponsive, legitimate commands fail",
+      "mitigation": "Implement rate limiting, connection throttling",
+      "cve_reference": ""
+    },
+    {
+      "name": "Denial of Service (Large Payload)",
+      "category": "denial_of_service",
+      "success": false,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 2419.102907180786,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Resource exhaustion, device crash",
+      "mitigation": "Limit maximum input size, implement input validation",
+      "cve_reference": ""
+    },
+    {
+      "name": "State Manipulation (Sensor Disarm)",
+      "category": "state_manipulation",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 212.54706382751465,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+      "mitigation": "Require authenticated commands for security-critical operations",
+      "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)"
+    },
+    {
+      "name": "State Manipulation (Calibration Abuse)",
+      "category": "state_manipulation",
+      "success": false,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 4.0340423583984375,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Falsified sensor data, incorrect automation triggers",
+      "mitigation": "Validate calibration ranges, require authentication",
+      "cve_reference": ""
+    },
+    {
+      "name": "Replay Attack",
+      "category": "replay_attack",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Evasion",
+      "mitre_technique_id": "T0858",
+      "mitre_technique": "Change Operating Mode",
+      "kill_chain_stages": [
+        "Delivery"
+      ],
+      "duration_ms": 210.9227180480957,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Attacker can replay any previously observed command",
+      "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+      "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)"
+    },
+    {
+      "name": "Protocol Fuzzing (Random)",
+      "category": "protocol_fuzzing",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 24058.03394317627,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Device crash or unexpected behavior",
+      "mitigation": "Implement robust input validation, fuzz testing in CI",
+      "cve_reference": ""
+    },
+    {
+      "name": "Format String Attack",
+      "category": "protocol_fuzzing",
+      "success": false,
+      "cvss_score": 9.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 7.555246353149414,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "No format string vulnerability",
+      "mitigation": "Never use user input as printf format string",
+      "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)"
+    },
+    {
+      "name": "Out-of-Bounds Write (Schedule Array)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 9.268999099731445,
+      "device_type": "smart_light",
+      "layer": "firmware",
+      "impact": "Arbitrary memory write, potential code execution",
+      "mitigation": "Validate array index bounds before write",
+      "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)"
+    },
+    {
+      "name": "Buffer Overflow (Command Buffer)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 38.56468200683594,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Input truncated safely",
+      "mitigation": "Add strict bounds checking on command input length",
+      "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)"
+    },
+    {
+      "name": "Buffer Overflow (SET_ID)",
+      "category": "buffer_overflow",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 6.445884704589844,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Device ID corruption, adjacent memory overwrite",
+      "mitigation": "Validate input length before copy, use safe string functions",
+      "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)"
+    },
+    {
+      "name": "Authentication Bypass (No Token)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 5.298376083374023,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Full device control without credentials",
+      "mitigation": "Implement mandatory authentication for all state-changing commands",
+      "cve_reference": "CVE-2019-19356 (Netis router auth bypass)"
+    },
+    {
+      "name": "Authentication Bypass (Weak Token Validation)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 6.396293640136719,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Any attacker can authenticate with arbitrary credentials",
+      "mitigation": "Implement proper token validation, use challenge-response auth",
+      "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)"
+    },
+    {
+      "name": "Information Disclosure (Debug Dump)",
+      "category": "information_disclosure",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 2.9540061950683594,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+      "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+      "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)"
+    },
+    {
+      "name": "Information Disclosure (Token Leakage)",
+      "category": "information_disclosure",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 5.672931671142578,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Credential theft via traffic interception",
+      "mitigation": "Never echo credentials in responses, use one-way hashing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Command Injection (Newline)",
+      "category": "command_injection",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 410.68291664123535,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Arbitrary command execution via crafted input",
+      "mitigation": "Sanitize input, reject commands containing control characters",
+      "cve_reference": "CVE-2019-17621 (D-Link command injection)"
+    },
+    {
+      "name": "Command Injection (Null Byte)",
+      "category": "command_injection",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 3002.6590824127197,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Bypass input validation, inject commands",
+      "mitigation": "Handle null bytes explicitly in input parsing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Firmware Update Buffer Overflow",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 16.99090003967285,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Memory corruption, potential arbitrary code execution",
+      "mitigation": "Validate firmware size, use secure boot, verify signatures",
+      "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)"
+    },
+    {
+      "name": "Unsigned Firmware Update",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 4.996061325073242,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Complete device takeover via malicious firmware",
+      "mitigation": "Implement secure boot chain with signed firmware verification",
+      "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)"
+    },
+    {
+      "name": "Denial of Service (Command Flood)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 559.5850944519043,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Device becomes unresponsive, legitimate commands fail",
+      "mitigation": "Implement rate limiting, connection throttling",
+      "cve_reference": ""
+    },
+    {
+      "name": "Denial of Service (Large Payload)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 3810.1351261138916,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Resource exhaustion, device crash",
+      "mitigation": "Limit maximum input size, implement input validation",
+      "cve_reference": ""
+    },
+    {
+      "name": "State Manipulation (Sensor Disarm)",
+      "category": "state_manipulation",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 206.6476345062256,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+      "mitigation": "Require authenticated commands for security-critical operations",
+      "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)"
+    },
+    {
+      "name": "State Manipulation (Calibration Abuse)",
+      "category": "state_manipulation",
+      "success": false,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 3.905057907104492,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Falsified sensor data, incorrect automation triggers",
+      "mitigation": "Validate calibration ranges, require authentication",
+      "cve_reference": ""
+    },
+    {
+      "name": "Replay Attack",
+      "category": "replay_attack",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Evasion",
+      "mitre_technique_id": "T0858",
+      "mitre_technique": "Change Operating Mode",
+      "kill_chain_stages": [
+        "Delivery"
+      ],
+      "duration_ms": 208.30893516540527,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Attacker can replay any previously observed command",
+      "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+      "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)"
+    },
+    {
+      "name": "Protocol Fuzzing (Random)",
+      "category": "protocol_fuzzing",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 24045.858144760132,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Device crash or unexpected behavior",
+      "mitigation": "Implement robust input validation, fuzz testing in CI",
+      "cve_reference": ""
+    },
+    {
+      "name": "Format String Attack",
+      "category": "protocol_fuzzing",
+      "success": false,
+      "cvss_score": 9.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 7.761716842651367,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "No format string vulnerability",
+      "mitigation": "Never use user input as printf format string",
+      "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)"
+    },
+    {
+      "name": "Out-of-Bounds Write (Schedule Array)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 10.972261428833008,
+      "device_type": "humidity_sensor",
+      "layer": "firmware",
+      "impact": "Arbitrary memory write, potential code execution",
+      "mitigation": "Validate array index bounds before write",
+      "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)"
+    },
+    {
+      "name": "Buffer Overflow (Command Buffer)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 36.69619560241699,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Input truncated safely",
+      "mitigation": "Add strict bounds checking on command input length",
+      "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)"
+    },
+    {
+      "name": "Buffer Overflow (SET_ID)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 6.891965866088867,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Device ID corruption, adjacent memory overwrite",
+      "mitigation": "Validate input length before copy, use safe string functions",
+      "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)"
+    },
+    {
+      "name": "Authentication Bypass (No Token)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 4.270792007446289,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Full device control without credentials",
+      "mitigation": "Implement mandatory authentication for all state-changing commands",
+      "cve_reference": "CVE-2019-19356 (Netis router auth bypass)"
+    },
+    {
+      "name": "Authentication Bypass (Weak Token Validation)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 6.809234619140625,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Any attacker can authenticate with arbitrary credentials",
+      "mitigation": "Implement proper token validation, use challenge-response auth",
+      "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)"
+    },
+    {
+      "name": "Information Disclosure (Debug Dump)",
+      "category": "information_disclosure",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 2.384185791015625,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+      "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+      "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)"
+    },
+    {
+      "name": "Information Disclosure (Token Leakage)",
+      "category": "information_disclosure",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 4.9228668212890625,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Credential theft via traffic interception",
+      "mitigation": "Never echo credentials in responses, use one-way hashing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Command Injection (Newline)",
+      "category": "command_injection",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 412.5649929046631,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Arbitrary command execution via crafted input",
+      "mitigation": "Sanitize input, reject commands containing control characters",
+      "cve_reference": "CVE-2019-17621 (D-Link command injection)"
+    },
+    {
+      "name": "Command Injection (Null Byte)",
+      "category": "command_injection",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 3002.553939819336,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Bypass input validation, inject commands",
+      "mitigation": "Handle null bytes explicitly in input parsing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Firmware Update Buffer Overflow",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 13.180732727050781,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Memory corruption, potential arbitrary code execution",
+      "mitigation": "Validate firmware size, use secure boot, verify signatures",
+      "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)"
+    },
+    {
+      "name": "Unsigned Firmware Update",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 5.131006240844727,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Complete device takeover via malicious firmware",
+      "mitigation": "Implement secure boot chain with signed firmware verification",
+      "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)"
+    },
+    {
+      "name": "Denial of Service (Command Flood)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 549.0841865539551,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Device becomes unresponsive, legitimate commands fail",
+      "mitigation": "Implement rate limiting, connection throttling",
+      "cve_reference": ""
+    },
+    {
+      "name": "Denial of Service (Large Payload)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 138.04101943969727,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Resource exhaustion, device crash",
+      "mitigation": "Limit maximum input size, implement input validation",
+      "cve_reference": ""
+    },
+    {
+      "name": "State Manipulation (Sensor Disarm)",
+      "category": "state_manipulation",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 208.76598358154297,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+      "mitigation": "Require authenticated commands for security-critical operations",
+      "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)"
+    },
+    {
+      "name": "State Manipulation (Calibration Abuse)",
+      "category": "state_manipulation",
+      "success": false,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 4.508018493652344,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Falsified sensor data, incorrect automation triggers",
+      "mitigation": "Validate calibration ranges, require authentication",
+      "cve_reference": ""
+    },
+    {
+      "name": "Replay Attack",
+      "category": "replay_attack",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Evasion",
+      "mitre_technique_id": "T0858",
+      "mitre_technique": "Change Operating Mode",
+      "kill_chain_stages": [
+        "Delivery"
+      ],
+      "duration_ms": 207.99803733825684,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Attacker can replay any previously observed command",
+      "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+      "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)"
+    },
+    {
+      "name": "Protocol Fuzzing (Random)",
+      "category": "protocol_fuzzing",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 25353.466033935547,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Device crash or unexpected behavior",
+      "mitigation": "Implement robust input validation, fuzz testing in CI",
+      "cve_reference": ""
+    },
+    {
+      "name": "Format String Attack",
+      "category": "protocol_fuzzing",
+      "success": false,
+      "cvss_score": 9.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 9.594917297363281,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "No format string vulnerability",
+      "mitigation": "Never use user input as printf format string",
+      "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)"
+    },
+    {
+      "name": "Out-of-Bounds Write (Schedule Array)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 11.179924011230469,
+      "device_type": "door_sensor",
+      "layer": "firmware",
+      "impact": "Arbitrary memory write, potential code execution",
+      "mitigation": "Validate array index bounds before write",
+      "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)"
+    },
+    {
+      "name": "Buffer Overflow (Command Buffer)",
+      "category": "buffer_overflow",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 40.38810729980469,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Input truncated safely",
+      "mitigation": "Add strict bounds checking on command input length",
+      "cve_reference": "CVE-2020-12695 (UPnP buffer overflow in IoT devices)"
+    },
+    {
+      "name": "Buffer Overflow (SET_ID)",
+      "category": "buffer_overflow",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 6.68025016784668,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Device ID corruption, adjacent memory overwrite",
+      "mitigation": "Validate input length before copy, use safe string functions",
+      "cve_reference": "CVE-2021-28372 (ThroughTek IoT device overflow)"
+    },
+    {
+      "name": "Authentication Bypass (No Token)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 4.768133163452148,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Full device control without credentials",
+      "mitigation": "Implement mandatory authentication for all state-changing commands",
+      "cve_reference": "CVE-2019-19356 (Netis router auth bypass)"
+    },
+    {
+      "name": "Authentication Bypass (Weak Token Validation)",
+      "category": "authentication_bypass",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 7.309675216674805,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Any attacker can authenticate with arbitrary credentials",
+      "mitigation": "Implement proper token validation, use challenge-response auth",
+      "cve_reference": "CVE-2020-25078 (D-Link DCS camera hardcoded credentials)"
+    },
+    {
+      "name": "Information Disclosure (Debug Dump)",
+      "category": "information_disclosure",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 2.7093887329101562,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Auth token theft, PRNG seed disclosure enables state prediction",
+      "mitigation": "Remove DEBUG_DUMP in production, require admin auth for debug commands",
+      "cve_reference": "CVE-2021-36260 (Hikvision debug endpoint info disclosure)"
+    },
+    {
+      "name": "Information Disclosure (Token Leakage)",
+      "category": "information_disclosure",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0846",
+      "mitre_technique": "Remote System Discovery",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 5.918264389038086,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Credential theft via traffic interception",
+      "mitigation": "Never echo credentials in responses, use one-way hashing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Command Injection (Newline)",
+      "category": "command_injection",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 413.00201416015625,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Arbitrary command execution via crafted input",
+      "mitigation": "Sanitize input, reject commands containing control characters",
+      "cve_reference": "CVE-2019-17621 (D-Link command injection)"
+    },
+    {
+      "name": "Command Injection (Null Byte)",
+      "category": "command_injection",
+      "success": false,
+      "cvss_score": 3.7,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Delivery"
+      ],
+      "duration_ms": 3002.577066421509,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Bypass input validation, inject commands",
+      "mitigation": "Handle null bytes explicitly in input parsing",
+      "cve_reference": ""
+    },
+    {
+      "name": "Firmware Update Buffer Overflow",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 16.994953155517578,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Memory corruption, potential arbitrary code execution",
+      "mitigation": "Validate firmware size, use secure boot, verify signatures",
+      "cve_reference": "CVE-2022-25845 (Firmware update vulnerability in smart devices)"
+    },
+    {
+      "name": "Unsigned Firmware Update",
+      "category": "firmware_update_attack",
+      "success": false,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Persistence",
+      "mitre_technique_id": "T0857",
+      "mitre_technique": "System Firmware",
+      "kill_chain_stages": [
+        "Delivery",
+        "Installation"
+      ],
+      "duration_ms": 5.31005859375,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Complete device takeover via malicious firmware",
+      "mitigation": "Implement secure boot chain with signed firmware verification",
+      "cve_reference": "CVE-2020-10882 (TP-Link unsigned firmware update)"
+    },
+    {
+      "name": "Denial of Service (Command Flood)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 550.5177974700928,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Device becomes unresponsive, legitimate commands fail",
+      "mitigation": "Implement rate limiting, connection throttling",
+      "cve_reference": ""
+    },
+    {
+      "name": "Denial of Service (Large Payload)",
+      "category": "denial_of_service",
+      "success": true,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 2697.848081588745,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Resource exhaustion, device crash",
+      "mitigation": "Limit maximum input size, implement input validation",
+      "cve_reference": ""
+    },
+    {
+      "name": "State Manipulation (Sensor Disarm)",
+      "category": "state_manipulation",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 211.42292022705078,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Physical security bypass \u2014 motion/door sensor disabled",
+      "mitigation": "Require authenticated commands for security-critical operations",
+      "cve_reference": "CVE-2019-9483 (SimpliSafe alarm disarm vulnerability)"
+    },
+    {
+      "name": "State Manipulation (Calibration Abuse)",
+      "category": "state_manipulation",
+      "success": false,
+      "cvss_score": 5.3,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0831",
+      "mitre_technique": "Manipulation of Control",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 4.120111465454102,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Falsified sensor data, incorrect automation triggers",
+      "mitigation": "Validate calibration ranges, require authentication",
+      "cve_reference": ""
+    },
+    {
+      "name": "Replay Attack",
+      "category": "replay_attack",
+      "success": false,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Evasion",
+      "mitre_technique_id": "T0858",
+      "mitre_technique": "Change Operating Mode",
+      "kill_chain_stages": [
+        "Delivery"
+      ],
+      "duration_ms": 208.19711685180664,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Attacker can replay any previously observed command",
+      "mitigation": "Implement nonces, timestamps, or sequence numbers in protocol",
+      "cve_reference": "CVE-2018-11714 (Zigbee replay vulnerability)"
+    },
+    {
+      "name": "Protocol Fuzzing (Random)",
+      "category": "protocol_fuzzing",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 24039.014101028442,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Device crash or unexpected behavior",
+      "mitigation": "Implement robust input validation, fuzz testing in CI",
+      "cve_reference": ""
+    },
+    {
+      "name": "Format String Attack",
+      "category": "protocol_fuzzing",
+      "success": false,
+      "cvss_score": 9.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_tactic": "Execution",
+      "mitre_technique_id": "T0807",
+      "mitre_technique": "Command-Line Interface",
+      "kill_chain_stages": [
+        "Weaponization"
+      ],
+      "duration_ms": 9.321928024291992,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "No format string vulnerability",
+      "mitigation": "Never use user input as printf format string",
+      "cve_reference": "CVE-2019-14889 (libssh format string vulnerability)"
+    },
+    {
+      "name": "Out-of-Bounds Write (Schedule Array)",
+      "category": "buffer_overflow",
+      "success": true,
+      "cvss_score": 8.2,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L",
+      "mitre_tactic": "Privilege Escalation",
+      "mitre_technique_id": "T0890",
+      "mitre_technique": "Exploitation for Privilege Escalation",
+      "kill_chain_stages": [
+        "Weaponization",
+        "Exploitation"
+      ],
+      "duration_ms": 14.565706253051758,
+      "device_type": "smart_plug",
+      "layer": "firmware",
+      "impact": "Arbitrary memory write, potential code execution",
+      "mitigation": "Validate array index bounds before write",
+      "cve_reference": "CVE-2021-33104 (IoT OOB write vulnerability)"
+    },
+    {
+      "name": "MQTT Unauthorized Subscribe (Eavesdropping)",
+      "category": "mqtt_eavesdropping",
+      "success": true,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "mitre_tactic": "Collection",
+      "mitre_technique_id": "T0801",
+      "mitre_technique": "Monitor Process State",
+      "kill_chain_stages": [
+        "Reconnaissance",
+        "Collection"
+      ],
+      "duration_ms": 2522.557020187378,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Full visibility into all device states, commands, and events",
+      "mitigation": "Enable MQTT ACL, require client certificates, use TLS",
+      "cve_reference": ""
+    },
+    {
+      "name": "MQTT Message Injection",
+      "category": "mqtt_message_injection",
+      "success": true,
+      "cvss_score": 9.3,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:L",
+      "mitre_tactic": "Lateral Movement",
+      "mitre_technique_id": "T0867",
+      "mitre_technique": "Lateral Tool Transfer",
+      "kill_chain_stages": [
+        "Delivery",
+        "Command & Control"
+      ],
+      "duration_ms": 520.7080841064453,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Falsified sensor data triggers incorrect automations, device control",
+      "mitigation": "Implement message signing, per-topic ACLs, payload validation",
+      "cve_reference": ""
+    },
+    {
+      "name": "MQTT Topic Hijack (Command MITM)",
+      "category": "mqtt_topic_hijack",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "mitre_tactic": "Collection",
+      "mitre_technique_id": "T0802",
+      "mitre_technique": "Automated Collection",
+      "kill_chain_stages": [
+        "Command & Control"
+      ],
+      "duration_ms": 205.7199478149414,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Attacker can modify any command before it reaches devices",
+      "mitigation": "End-to-end encryption between controller and devices, signed commands",
+      "cve_reference": ""
+    },
+    {
+      "name": "TCP Connection Hijack",
+      "category": "tcp_connection_hijack",
+      "success": false,
+      "cvss_score": 5.9,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N",
+      "mitre_tactic": "Collection",
+      "mitre_technique_id": "T0830",
+      "mitre_technique": "Man in the Middle",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 0.6330013275146484,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Parallel control of device, command injection",
+      "mitigation": "Mutual TLS, connection limits, session tokens",
+      "cve_reference": ""
+    },
+    {
+      "name": "TCP Man-in-the-Middle Proxy",
+      "category": "tcp_man_in_the_middle",
+      "success": false,
+      "cvss_score": 6.8,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "mitre_tactic": "Collection",
+      "mitre_technique_id": "T0830",
+      "mitre_technique": "Man in the Middle",
+      "kill_chain_stages": [
+        "Exploitation",
+        "Collection"
+      ],
+      "duration_ms": 805.6046962738037,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Credential theft, command interception and modification",
+      "mitigation": "Use TLS/mTLS for all device connections",
+      "cve_reference": ""
+    },
+    {
+      "name": "TCP Connection Flood",
+      "category": "network_denial_of_service",
+      "success": false,
+      "cvss_score": 7.5,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Actions on Objectives"
+      ],
+      "duration_ms": 0.2300739288330078,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "",
+      "mitigation": "",
+      "cve_reference": ""
+    },
+    {
+      "name": "Zigbee Frame Replay",
+      "category": "protocol_replay",
+      "success": true,
+      "cvss_score": 6.5,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "mitre_tactic": "Evasion",
+      "mitre_technique_id": "T0858",
+      "mitre_technique": "Change Operating Mode",
+      "kill_chain_stages": [
+        "Delivery"
+      ],
+      "duration_ms": 0.02384185791015625,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Re-trigger device actions (toggle lights, unlock doors)",
+      "mitigation": "Enable Zigbee 3.0 security with frame counters, use install codes",
+      "cve_reference": ""
+    },
+    {
+      "name": "Zigbee Network Key Extraction",
+      "category": "protocol_downgrade",
+      "success": true,
+      "cvss_score": 9.3,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "mitre_tactic": "Credential Access",
+      "mitre_technique_id": "T0859",
+      "mitre_technique": "Valid Accounts",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 0.07319450378417969,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Full network key compromise \u2014 can decrypt all Zigbee traffic",
+      "mitigation": "Use Zigbee 3.0 install codes for per-device unique link keys",
+      "cve_reference": ""
+    },
+    {
+      "name": "Protocol Downgrade (No Encryption)",
+      "category": "protocol_downgrade",
+      "success": false,
+      "cvss_score": 5.9,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "mitre_tactic": "Credential Access",
+      "mitre_technique_id": "T0859",
+      "mitre_technique": "Valid Accounts",
+      "kill_chain_stages": [
+        "Exploitation"
+      ],
+      "duration_ms": 0.27489662170410156,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "All traffic visible in plaintext, credential theft, command injection",
+      "mitigation": "Require TLS 1.3 for all connections, reject unencrypted traffic",
+      "cve_reference": ""
+    },
+    {
+      "name": "ARP Cache Poisoning (Simulated)",
+      "category": "arp_spoofing",
+      "success": true,
+      "cvss_score": 8.1,
+      "cvss_severity": "High",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "mitre_tactic": "Collection",
+      "mitre_technique_id": "T0830",
+      "mitre_technique": "Man in the Middle",
+      "kill_chain_stages": [
+        "Exploitation",
+        "Command & Control"
+      ],
+      "duration_ms": 0.011205673217773438,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Man-in-the-middle position, traffic interception",
+      "mitigation": "Use Docker macvlan networks, enable ARP inspection, static ARP entries",
+      "cve_reference": ""
+    },
+    {
+      "name": "DNS Poisoning (Simulated)",
+      "category": "dns_poisoning",
+      "success": true,
+      "cvss_score": 10.0,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0848",
+      "mitre_technique": "Rogue Master",
+      "kill_chain_stages": [
+        "Exploitation",
+        "Command & Control"
+      ],
+      "duration_ms": 0.009059906005859375,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Credential theft, malicious firmware delivery, data exfiltration",
+      "mitigation": "Use DNSSEC, certificate pinning, encrypted DNS (DoH/DoT)",
+      "cve_reference": ""
+    },
+    {
+      "name": "WiFi Deauthentication Attack (Simulated)",
+      "category": "deauthentication_attack",
+      "success": true,
+      "cvss_score": 6.5,
+      "cvss_severity": "Medium",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "mitre_tactic": "Impact",
+      "mitre_technique_id": "T0814",
+      "mitre_technique": "Denial of Service",
+      "kill_chain_stages": [
+        "Delivery",
+        "Actions on Objectives"
+      ],
+      "duration_ms": 0.014781951904296875,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Device offline, DoS, force reconnection to evil twin",
+      "mitigation": "WPA3 with Protected Management Frames (PMF)",
+      "cve_reference": ""
+    },
+    {
+      "name": "Evil Twin Access Point (Simulated)",
+      "category": "evil_twin_ap",
+      "success": true,
+      "cvss_score": 9.3,
+      "cvss_severity": "Critical",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique_id": "T0866",
+      "mitre_technique": "Exploitation of Remote Services",
+      "kill_chain_stages": [
+        "Exploitation",
+        "Command & Control"
+      ],
+      "duration_ms": 0.013113021850585938,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Complete credential theft, traffic interception",
+      "mitigation": "WPA3-Enterprise, certificate-based auth, network monitoring",
+      "cve_reference": ""
+    },
+    {
+      "name": "Traffic Fingerprinting",
+      "category": "traffic_analysis",
+      "success": false,
+      "cvss_score": 3.1,
+      "cvss_severity": "Low",
+      "cvss_vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+      "mitre_tactic": "Discovery",
+      "mitre_technique_id": "T0840",
+      "mitre_technique": "Network Sniffing",
+      "kill_chain_stages": [
+        "Reconnaissance"
+      ],
+      "duration_ms": 0.7669925689697266,
+      "device_type": "network",
+      "layer": "network",
+      "impact": "Device inventory disclosure, vulnerability targeting",
+      "mitigation": "Traffic padding, random delays, encrypted metadata",
+      "cve_reference": ""
+    }
+  ]
+}

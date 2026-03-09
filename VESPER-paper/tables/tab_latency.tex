@@ -1,0 +1,18 @@
+\begin{table}[t]
+  \centering
+  \caption{End-to-end latency profiling across critical data paths.
+  All intra-platform values in milliseconds; LLM generation in seconds.
+  1{,}000~iterations per path (10 for LLM).}
+  \label{tab:latency}
+  \small
+  \begin{tabular}{l S[table-format=4.3] S[table-format=5.3] S[table-format=5.3]}
+    \toprule
+    {Data Path} & {P50} & {P95} & {P99} \\
+    \midrule
+    Event bus dispatch (ms)     & 0.002  & 0.003   & 0.007   \\
+    DB query (ms)               & 0.004  & 0.005   & 0.006   \\
+    SQLite task write (ms)      & 0.188  & 0.406   & 2.839   \\
+    LLM schedule gen.\ (s)     & 6.33   & 34.24   & 51.23   \\
+    \bottomrule
+  \end{tabular}
+\end{table}
