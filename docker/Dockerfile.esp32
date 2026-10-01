@@ -1,0 +1,100 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# VESPER — ESP32 QEMU Device Container
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# Builds Espressif's QEMU fork (qemu-system-xtensa) with the ESP32 firmware.
+# Each container = one SmartThings IoT device.
+#
+# The container connects to the Mininet-WiFi topology via:
+#   - A veth pair bridged into the station's network namespace
+#   - OR via Docker macvlan attached to the Mininet-WiFi bridge
+#
+# Usage:
+#   docker build -f docker/Dockerfile.esp32 -t vesper-esp32:latest .
+#   docker run --rm --net=container:vesper-router \
+#       -e DEVICE_TYPE=smart_light \
+#       -e DEVICE_ID=kitchen-light-01 \
+#       vesper-esp32:latest
+# ═══════════════════════════════════════════════════════════════════════════════
+
+FROM ubuntu:22.04 AS builder
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git wget curl cmake ninja-build gcc g++ \
+    python3 python3-pip python3-venv \
+    libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev \
+    libgcrypt-dev libslirp-dev \
+    flex bison \
+    && rm -rf /var/lib/apt/lists/*
+
+# ── Build Espressif QEMU (qemu-system-xtensa with ESP32 support) ─────────────
+RUN git clone --depth 1 https://github.com/espressif/qemu.git /opt/qemu-esp32 && \
+    cd /opt/qemu-esp32 && \
+    ./configure \
+        --target-list=xtensa-softmmu \
+        --prefix=/opt/qemu-esp32-install \
+        --enable-slirp \
+        --disable-werror && \
+    make -j$(nproc) && \
+    make install
+
+# ── Install ESP-IDF (for building firmware) ───────────────────────────────────
+RUN mkdir -p /opt/esp && \
+    cd /opt/esp && \
+    git clone --depth 1 -b v5.2 --recursive https://github.com/espressif/esp-idf.git && \
+    cd esp-idf && \
+    ./install.sh esp32
+
+# ── Build the VESPER ESP32 firmware ───────────────────────────────────────────
+COPY vesper/firmware/esp32 /opt/vesper-firmware
+
+RUN cd /opt/esp/esp-idf && \
+    . ./export.sh && \
+    cd /opt/vesper-firmware && \
+    idf.py set-target esp32 && \
+    idf.py build
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Runtime stage — slim image with just QEMU + firmware binary
+# ═══════════════════════════════════════════════════════════════════════════════
+
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libglib2.0-0 libpixman-1-0 libslirp0 libfdt1 \
+    python3 python3-pip \
+    iproute2 iputils-ping net-tools socat \
+    mosquitto-clients \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install --no-cache-dir paho-mqtt>=1.6
+
+# Copy QEMU binary
+COPY --from=builder /opt/qemu-esp32-install /opt/qemu-esp32
+
+# Copy compiled firmware
+COPY --from=builder /opt/vesper-firmware/build/vesper-esp32.bin /opt/firmware/vesper-esp32.bin
+COPY --from=builder /opt/vesper-firmware/build/bootloader/bootloader.bin /opt/firmware/bootloader.bin
+COPY --from=builder /opt/vesper-firmware/build/partition_table/partition-table.bin /opt/firmware/partition-table.bin
+
+# Copy the ESP32 QEMU runner
+COPY docker/esp32/entrypoint.sh /opt/entrypoint.sh
+COPY docker/esp32/qemu_launch.sh /opt/qemu_launch.sh
+RUN chmod +x /opt/entrypoint.sh /opt/qemu_launch.sh
+
+# Environment variables (overridden per device)
+ENV DEVICE_TYPE=smart_light
+ENV DEVICE_ID=vesper-device-01
+ENV MQTT_BROKER=192.168.4.1
+ENV MQTT_PORT=1883
+ENV QEMU_SERIAL_PORT=5555
+
+EXPOSE 5555
+
+WORKDIR /opt
+ENTRYPOINT ["/opt/entrypoint.sh"]

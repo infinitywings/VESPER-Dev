@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite VESPER when using this software. The manuscript is submitted, not accepted."
+type: software
+title: "VESPER: An Activity-Conditioned Smart-Home Network Testbed with Cross-Layer Observability"
+authors:
+  - family-names: Bui
+    given-names: Huan
+    affiliation: University of North Carolina at Charlotte
+  - family-names: Fu
+    given-names: Chenglong
+    affiliation: University of North Carolina at Charlotte
+    email: chenglong.fu@charlotte.edu
+repository-code: "https://github.com/infinitywings/VESPER-Dev"
+url: "https://github.com/infinitywings/VESPER-Dev"
+license: MIT
+version: 0.1.0
+preferred-citation:
+  type: unpublished
+  title: "VESPER: An Activity-Conditioned Smart-Home Network Testbed with Cross-Layer Observability"
+  authors:
+    - family-names: Bui
+      given-names: Huan
+    - family-names: Fu
+      given-names: Chenglong
+  year: 2026
+  notes: "Manuscript submitted to IEEE INFOCOM 2027; not an accepted publication."
+  url: "https://github.com/infinitywings/VESPER-Dev"

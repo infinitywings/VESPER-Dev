@@ -1,0 +1,20 @@
+{
+  "name": "vesper-matter-bridge",
+  "version": "1.0.0",
+  "description": "VESPER Matter Bridge — Exposes simulated IoT devices as real Matter endpoints via matter.js",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "bridge.mjs",
+  "scripts": {
+    "start": "node bridge.mjs",
+    "dev": "node --watch bridge.mjs"
+  },
+  "dependencies": {
+    "@matter/main": "^0.16.10",
+    "@matter/nodejs": "^0.16.10",
+    "express": "^4.21.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

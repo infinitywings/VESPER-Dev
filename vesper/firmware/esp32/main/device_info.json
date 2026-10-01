@@ -1,0 +1,8 @@
+{
+  "deviceInfo": {
+    "firmwareVersion": "2.0.0-esp32",
+    "privateKey": "VESPER_DEVICE_PRIVATE_KEY_PLACEHOLDER",
+    "publicKey": "VESPER_DEVICE_PUBLIC_KEY_PLACEHOLDER",
+    "serialNumber": "VESPER-ESP32-001"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "onboardingConfig": {
+    "deviceOnboardingId": "VESPER",
+    "mnId": "VESPER",
+    "setupId": "001",
+    "vid": "VESPER-ESP32-Light",
+    "deviceTypeId": "Light",
+    "ownershipValidationTypes": ["JUSTWORKS"],
+    "identityType": "ED25519",
+    "deviceIntegrationProfileKey": {
+      "id": "VESPER-DIP-001",
+      "majorVersion": 0,
+      "minorVersion": 1
+    }
+  }
+}

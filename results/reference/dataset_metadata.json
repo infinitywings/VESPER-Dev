@@ -1,0 +1,12 @@
+{
+  "source_repository": "https://github.com/huuhuannt1998/vesper",
+  "source_commit": "0e99cc24ede4e9079c9dcbbdb6abbd112ef23bf2",
+  "train_windows": 12099,
+  "test_windows": 5884,
+  "total_windows": 17983,
+  "listed_train_homes": 13,
+  "listed_test_homes": 7,
+  "listed_home_count": 20,
+  "episode_payloads_in_source_git_tree": false,
+  "note": "Counts are corroborated by baseline/split metadata only. Raw episode payloads are not distributed here; detector scores are not independently rerun."
+}

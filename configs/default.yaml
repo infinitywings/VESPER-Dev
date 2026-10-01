@@ -1,0 +1,205 @@
+simulation:
+  # Simulation tick rate in Hz
+  tick_rate: 30
+  # Maximum number of humanoid agents
+  max_agents: 2
+  # Enable headless mode (no rendering)
+  headless: false
+  # Random seed for reproducibility
+  seed: 42
+
+environment:
+  # Dataset to use: "hssd-hab" or "replica-cad"
+  dataset: "hssd-hab"
+  # Scene identifier within the dataset
+  scene: "default"
+  # Physics engine: "bullet" or "none"
+  physics: "bullet"
+
+devices:
+  motion_sensor:
+    # Detection radius in meters
+    detection_radius: 3.0
+    # Cooldown between triggers in seconds
+    cooldown: 2.0
+    # Vertical field of view angle (degrees)
+    fov_vertical: 90.0
+
+  contact_sensor:
+    # Debounce time in seconds
+    debounce: 0.1
+
+  smart_door:
+    # Time to open/close in seconds
+    transition_time: 1.5
+    # Auto-close after N seconds (0 = disabled)
+    auto_close: 0
+
+  light_sensor:
+    # Sample rate in Hz
+    sample_rate: 10.0
+    # Minimum lux change to trigger event
+    threshold: 5.0
+
+event_bus:
+  # Maximum queue size
+  max_queue_size: 1000
+  # Enable event logging
+  logging: true
+  # Log file path (relative to project root)
+  log_file: "logs/events.jsonl"
+
+# ── Network configuration ────────────────────────────────────────────────────
+network:
+  # ── WiFi emulation (Mininet-WiFi) ──────────────────────────────────────
+  wifi:
+    enabled: true
+    ssid: "VESPER-IoT-Network"
+    password: "vesper-secure-2026"
+    channel: 6
+    mode: "g"                  # 802.11g (2.4 GHz)
+    encrypt: "wpa2"
+
+  # ── IP / subnet ─────────────────────────────────────────────────────────
+  subnet: "192.168.4.0/24"
+  gateway: "192.168.4.1"
+
+  # ── Matter bridge (runs on the AP gateway) ─────────────────────────────
+  matter_bridge:
+    host: "192.168.4.1"
+    port: 8484
+    # Matter commissioning port (mDNS/UDP)
+    commissioning_port: 5540
+    # TLS is disabled by default for emulated testing; enable for Sim2Real
+    tls_enabled: false
+
+  # ── Firewall / iptables (applied on the AP inside Mininet-WiFi) ────────
+  # Mirrors a real consumer WiFi router's default security posture:
+  #   - Stateful firewall (conntrack)
+  #   - NAT masquerade for WAN egress
+  #   - Client isolation (AP Isolation / station-to-station block)
+    #   - Explicit ACCEPT for DHCP, DNS, Matter, NTP only
+  #   - DROP all other inbound from WAN
+  firewall:
+    enabled: true
+    # AP Isolation: block direct station-to-station traffic (like real routers)
+    ap_isolation: false          # Set true for high-security scenarios
+    # Rate-limiting: SYN flood protection (real routers do this)
+    syn_flood_protection: true
+    syn_rate_limit: "25/sec"
+    syn_burst: 50
+    # ICMP rate limit (real routers limit ping)
+    icmp_rate_limit: "10/sec"
+    # Allowed services from LAN → AP (everything else is dropped)
+    allowed_services:
+      - { port: 53,   proto: "udp", comment: "DNS" }
+      - { port: 67,   proto: "udp", comment: "DHCP" }
+      - { port: 68,   proto: "udp", comment: "DHCP client" }
+      - { port: 123,  proto: "udp", comment: "NTP" }
+      - { port: 8484, proto: "tcp", comment: "Matter bridge REST" }
+      - { port: 5540, proto: "udp", comment: "Matter commissioning" }
+    # Drop invalid packets (real routers do this)
+    drop_invalid: true
+    # Log dropped packets (for pcap forensics)
+    log_dropped: true
+    log_prefix: "VESPER-FW-DROP: "
+
+  # ── Packet capture (tshark / Wireshark) ─────────────────────────────────
+  wireshark:
+    enabled: false
+    # Capture on station wireless interfaces (e.g., "sta1-wlan0") or AP
+    capture_interface: "ap1-wlan1"
+    # BPF filter for targeted capture
+    capture_filter: ""
+    # Directory for .pcap files
+    pcap_dir: "results/pcap"
+
+# ── Firmware configuration ───────────────────────────────────────────────────
+firmware:
+  backend: "esp32"               # ESP32 via Espressif QEMU fork
+  qemu_binary: "qemu-system-xtensa"
+  esp_idf_version: "v5.2"
+  # Serial TCP ports for each device (matches docker-compose.yml)
+  serial_port_base: 5561
+  # SmartThings Device SDK integration
+  smartthings_sdk: true
+  # FreeRTOS configuration
+  freertos:
+    unicore: true                # QEMU emulates single-core ESP32
+    tick_rate_hz: 1000
+
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+  # Log format
+  format: "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+
+# ── Hub configuration ────────────────────────────────────────────────────────
+hub:
+  # Enable the hub subsystem
+  enabled: true
+  # Hub type: "virtual" (software routing) or "physical" (Aeotec SmartThings)
+  hub_type: "virtual"
+  # Matter bridge URL (matches network.matter_bridge)
+  matter_bridge_url: "http://192.168.4.1:8484"
+  # Home Assistant URL (Docker container on host network)
+  ha_url: "http://localhost:8123"
+  # Home Assistant long-lived access token (set via env var or here)
+  ha_token: null
+  # SmartThings PAT (for physical hub only)
+  smartthings_token: null
+  smartthings_location_id: null
+  # State polling interval in seconds
+  poll_interval: 5.0
+
+# ── Matter device integration ────────────────────────────────────────────────
+matter:
+  # Enable Matter protocol support via Home Assistant
+  enabled: false
+  # python-matter-server WebSocket URL (Docker container on host network)
+  matter_server_url: "ws://localhost:5580/ws"
+  # Automatically discover Matter devices on startup
+  auto_discover: true
+
+# ── Web UI Dashboard ─────────────────────────────────────────────────────────
+dashboard:
+  # Enable the real-time monitoring dashboard
+  enabled: true
+  # Bind address
+  host: "127.0.0.1"
+  # Dashboard port (HA uses 8123, so we use 8080)
+  port: 8080
+
+# ── LLM / Evaluation configuration ──────────────────────────────────────────
+llm:
+  # LM Studio API endpoint (OpenAI-compatible)
+  endpoint: "http://localhost:1234/v1/chat/completions"
+  # Provider: "lmstudio", "openai", "ollama"
+  provider: "lmstudio"
+  # Temperature for generation
+  temperature: 0.7
+  # Max tokens per completion
+  max_tokens: 2048
+
+evaluation:
+  # Final-data LLM models for cross-family comparison
+  # Three models represented in the retained scene-results snapshot.
+  final_models:
+    - model_id: "qwen2.5-7b-instruct"
+      model_family: "qwen"
+      params: "7B"
+      provider: "alibaba"
+    - model_id: "meta-llama-3.1-8b-instruct"
+      model_family: "llama"
+      params: "8B"
+      provider: "meta"
+    - model_id: "gemma-2-9b-it"
+      model_family: "gemma"
+      params: "9B"
+      provider: "google"
+  # Random seeds for reproducibility (5 seeds per experiment)
+  seeds: [42, 123, 456, 789, 1024]
+  # Default output directory (relative to project root)
+  output_dir: "results"
+  # Skip LM Studio model availability check
+  skip_model_check: false
