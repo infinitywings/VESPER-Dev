@@ -1,0 +1,34 @@
+name: Experiment or feature proposal
+description: Propose a focused research workflow or capability.
+title: "[Proposal] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check docs/roadmap.md first. Describe a research need and a minimal example, rather than assuming a planned capability is already available.
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question or user problem
+      description: Who needs this change, and what experiment would it enable?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Smallest useful example
+      description: Describe the scene, resident activity, devices, policy, or connector needed. Use synthetic data.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Completion test
+      description: What observable result or regression test would demonstrate that the feature works?
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Dependencies and boundaries
+      description: Optional services, assets and licenses, privacy considerations, and alternatives already considered.

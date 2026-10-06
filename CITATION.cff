@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite VESPER when using this software. The manuscript is submitted, not accepted."
 type: software
-title: "VESPER: An Activity-Conditioned Smart-Home Network Testbed with Cross-Layer Observability"
+title: "VESPER"
 authors:
   - family-names: Bui
     given-names: Huan
