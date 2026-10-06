@@ -1,0 +1,2 @@
+# Install the core package and its unit-test tools; no Habitat or cloud service.
+-e .[dev]

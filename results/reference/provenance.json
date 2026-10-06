@@ -1,0 +1,26 @@
+{
+  "source_repository": "https://github.com/huuhuannt1998/vesper",
+  "source_commit": "0e99cc24ede4e9079c9dcbbdb6abbd112ef23bf2",
+  "inputs": [
+    {
+      "path": "results/rq_data/rq1_activity_realism.json",
+      "sha256": "afa6272595b93dfac3a885f014a5515aecb282576875e74eae4ac04e955c69fd"
+    },
+    {
+      "path": "results/iotj_auto/qwen2.5-7b-instruct/eval_results.json",
+      "sha256": "5fc7b94511dd4724be4b1b3daf39bf25d7248ad812f0849f16a215c5df1a0f60"
+    },
+    {
+      "path": "results/iotj_auto/meta-llama-3.1-8b-instruct/eval_results.json",
+      "sha256": "f0f96cba39cf546f342303af26fbf6d24d07c79d722b76bb4a8e3cf14de320c6"
+    },
+    {
+      "path": "results/iotj_auto/gemma-2-9b-it/eval_results.json",
+      "sha256": "bda664789367fa7ead388f4a57d996b97c5fc0a63378634e8e6bc74a7cd7b469"
+    },
+    {
+      "path": "results/vesper_sh/baseline_results.json",
+      "sha256": "ac1c5b7ff32f66fb13b60ddc21cbacc88e9d2001ceefed8028ea243111775eeb"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# VESPER — Mininet-WiFi Emulated Home Router
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# Builds a container with Mininet-WiFi (Fontes et al., SoftCOM 2015) for
+# realistic 802.11 emulation using mac80211_hwsim virtual radios.
+#
+# Features:
+#   - Real WPA2-PSK via hostapd (per-station auth)
+#   - DHCP/DNS via dnsmasq
+#   - MQTT broker (mosquitto) on the LAN
+#   - iptables NAT + firewall
+#   - tshark/tcpdump for pcap capture
+#   - Python API exposed via Mininet-WiFi's Mininet_wifi class
+#
+# Usage:
+#   docker build -f docker/Dockerfile.router -t vesper-router:latest .
+#   docker run --rm --privileged --net host \
+#       -v /lib/modules:/lib/modules:ro \
+#       -v $(pwd)/results:/results \
+#       vesper-router:latest
+#
+# Requires: --privileged (mac80211_hwsim needs CAP_NET_ADMIN + module loading)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+FROM ubuntu:22.04
+
+LABEL maintainer="VESPER Research Team"
+LABEL description="Mininet-WiFi emulated home WiFi router for IoT security research"
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+
+# ── System dependencies ──────────────────────────────────────────────────────
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    # Core networking
+    iproute2 iptables iputils-ping net-tools bridge-utils ethtool kmod \
+    # WiFi tools
+    hostapd wpasupplicant wireless-tools iw rfkill \
+    # DHCP/DNS
+    dnsmasq \
+    # Packet capture
+    tshark tcpdump \
+    # Python + build tools
+    python3 python3-pip python3-setuptools python3-dev \
+    git wget curl sudo \
+    # Mininet dependencies
+    cgroup-tools openvswitch-switch \
+    # Build tools for Mininet-WiFi
+    build-essential autoconf automake libtool pkg-config \
+    libnl-3-dev libnl-genl-3-dev libssl-dev \
+    # Process management
+    supervisor \
+    && rm -rf /var/lib/apt/lists/*
+
+# ── Install Mininet-WiFi ─────────────────────────────────────────────────────
+RUN git clone --depth 1 https://github.com/intrig-unicamp/mininet-wifi.git /opt/mininet-wifi && \
+    cd /opt/mininet-wifi && \
+    pip3 install --no-cache-dir -e . && \
+    # Install wireless dependencies (mac80211_hwsim userspace tools, wmediumd)
+    cd /opt/mininet-wifi && \
+    util/install.sh -Wl 2>/dev/null || true
+
+# ── Install additional Python packages ────────────────────────────────────────
+RUN pip3 install --no-cache-dir \
+    scapy>=2.5 \
+    pyshark>=0.6 \
+    netifaces>=0.11
+
+# ── Create directory structure ────────────────────────────────────────────────
+RUN mkdir -p /etc/vesper /var/log/vesper /var/lib/vesper/pcap /results
+
+# ── Copy VESPER router configurations ─────────────────────────────────────────
+COPY docker/router/vesper_topology.py /opt/vesper/vesper_topology.py
+COPY docker/router/entrypoint.sh /opt/vesper/entrypoint.sh
+RUN chmod +x /opt/vesper/entrypoint.sh
+
+# ── Expose ports ──────────────────────────────────────────────────────────────
+# 53/udp  = DNS
+# 67/udp  = DHCP
+# 6653    = OpenFlow (Mininet-WiFi controller)
+EXPOSE 53/udp 67/udp 6653
+
+WORKDIR /opt/vesper
+ENTRYPOINT ["/opt/vesper/entrypoint.sh"]

@@ -1,0 +1,232 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# VESPER Docker Compose — Full IoT Security Testbed
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# Architecture:
+#   vesper-router          : Mininet-WiFi AP + dnsmasq + NAT
+#   vesper-dev-N           : ESP32 QEMU devices (one per IoT device)
+#   vesper-homeassistant   : Home Assistant (device control + Matter fabric)
+#   vesper-matter-server   : python-matter-server (Matter controller)
+#
+# The router creates a virtual WiFi network (mac80211_hwsim + hostapd).
+# ESP32 devices connect to the router's network namespace.
+# Home Assistant manages all devices via Matter protocol.
+#
+# Usage:
+#   docker compose up --build                    # Start full topology
+#   docker compose up vesper-router              # Router only
+#   docker compose up vesper-homeassistant       # HA + Matter only
+#   docker compose --profile matter up           # Include Matter server
+#   docker compose down                          # Tear down
+#
+# Requirements:
+#   - Linux host (mac80211_hwsim is a kernel module)
+#   - Docker with --privileged support
+#   - /lib/modules mounted (for modprobe)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+services:
+  # ── Emulated WiFi Router (Mininet-WiFi) ──────────────────────────────────
+  vesper-router:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.router
+    container_name: vesper-router
+    privileged: true
+    network_mode: host
+    volumes:
+      - /lib/modules:/lib/modules:ro
+      - /sys/kernel/debug:/sys/kernel/debug:rw
+      - ../results:/results
+      - pcap-data:/var/lib/vesper/pcap
+      - ../vesper:/opt/vesper-lib/vesper:ro
+    environment:
+      - VESPER_WIFI_SSID=VESPER-IoT-Network
+      - VESPER_WIFI_PASS=vesper-secure-2026
+      - VESPER_WIFI_CHANNEL=6
+      - VESPER_NUM_RADIOS=10
+    command: ["--pcap", "--cli"]
+    restart: unless-stopped
+
+  # ── ESP32 IoT Devices ───────────────────────────────────────────────────
+  # Each device runs ESP32 QEMU firmware and connects to the WiFi router.
+  # Use docker compose --scale vesper-dev-light=3 to add more devices.
+
+  vesper-dev-kitchen:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.esp32
+    container_name: vesper-dev-kitchen
+    network_mode: "service:vesper-router"
+    depends_on:
+      - vesper-router
+    environment:
+      - DEVICE_TYPE=smart_light
+      - DEVICE_ID=kitchen-light-01
+      - MATTER_BRIDGE=vesper-matter-bridge:8484
+    restart: unless-stopped
+
+  vesper-dev-living:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.esp32
+    container_name: vesper-dev-living
+    network_mode: "service:vesper-router"
+    depends_on:
+      - vesper-router
+    environment:
+      - DEVICE_TYPE=smart_light
+      - DEVICE_ID=living-room-light-01
+      - MATTER_BRIDGE=vesper-matter-bridge:8484
+    restart: unless-stopped
+
+  vesper-dev-bedroom:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.esp32
+    container_name: vesper-dev-bedroom
+    network_mode: "service:vesper-router"
+    depends_on:
+      - vesper-router
+    environment:
+      - DEVICE_TYPE=smart_light
+      - DEVICE_ID=bedroom-light-01
+      - MATTER_BRIDGE=vesper-matter-bridge:8484
+    restart: unless-stopped
+
+  vesper-dev-motion:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.esp32
+    container_name: vesper-dev-motion
+    network_mode: "service:vesper-router"
+    depends_on:
+      - vesper-router
+    environment:
+      - DEVICE_TYPE=motion_sensor
+      - DEVICE_ID=motion-sensor-01
+      - MATTER_BRIDGE=vesper-matter-bridge:8484
+    restart: unless-stopped
+
+  vesper-dev-temp:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.esp32
+    container_name: vesper-dev-temp
+    network_mode: "service:vesper-router"
+    depends_on:
+      - vesper-router
+    environment:
+      - DEVICE_TYPE=temperature_sensor
+      - DEVICE_ID=temp-sensor-01
+      - MATTER_BRIDGE=vesper-matter-bridge:8484
+    restart: unless-stopped
+
+  vesper-dev-door:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.esp32
+    container_name: vesper-dev-door
+    network_mode: "service:vesper-router"
+    depends_on:
+      - vesper-router
+    environment:
+      - DEVICE_TYPE=door_sensor
+      - DEVICE_ID=door-sensor-01
+      - MATTER_BRIDGE=vesper-matter-bridge:8484
+    restart: unless-stopped
+
+  vesper-dev-plug:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.esp32
+    container_name: vesper-dev-plug
+    network_mode: "service:vesper-router"
+    depends_on:
+      - vesper-router
+    environment:
+      - DEVICE_TYPE=smart_plug
+      - DEVICE_ID=smart-plug-01
+      - MATTER_BRIDGE=vesper-matter-bridge:8484
+    restart: unless-stopped
+
+  vesper-dev-humidity:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.esp32
+    container_name: vesper-dev-humidity
+    network_mode: "service:vesper-router"
+    depends_on:
+      - vesper-router
+    environment:
+      - DEVICE_TYPE=humidity_sensor
+      - DEVICE_ID=humidity-sensor-01
+      - MATTER_BRIDGE=vesper-matter-bridge:8484
+    restart: unless-stopped
+
+  # ── Home Assistant ───────────────────────────────────────────────────
+  # Manages all IoT devices via Matter protocol.
+  # Access UI at http://localhost:8123
+  vesper-homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: vesper-homeassistant
+    privileged: true
+    ports:
+      - "8123:8123"
+    volumes:
+      - ha-config:/config
+      - /run/dbus:/run/dbus:ro
+    environment:
+      - TZ=America/New_York
+    restart: unless-stopped
+
+  # ── Matter Server (python-matter-server) ─────────────────────────────
+  # Provides the Matter controller fabric via WebSocket API (port 5580).
+  # Home Assistant connects to this to manage Matter devices.
+  vesper-matter-server:
+    image: ghcr.io/home-assistant-libs/python-matter-server:stable
+    container_name: vesper-matter-server
+    ports:
+      - "5580:5580"
+    security_opt:
+      - apparmor=unconfined
+    volumes:
+      - matter-data:/data
+    environment:
+      - TZ=America/New_York
+    depends_on:
+      - vesper-homeassistant
+    restart: unless-stopped
+
+  # ── Matter Bridge (matter.js) ─────────────────────────────────────────
+  # Exposes VESPER simulated IoT devices as real Matter endpoints.
+  # Python eval script pushes devices via REST API (port 8484).
+  # python-matter-server commissions this bridge → HA discovers endpoints.
+  vesper-matter-bridge:
+    build:
+      context: ./matter-bridge
+      dockerfile: Dockerfile
+    container_name: vesper-matter-bridge
+    ports:
+      - "8484:8484"
+      - "5541:5540"
+    volumes:
+      - matter-bridge-data:/app/.matter
+    environment:
+      - API_PORT=8484
+      - MATTER_PORT=5540
+      - PASSCODE=20202021
+      - DISCRIMINATOR=3840
+    depends_on:
+      - vesper-matter-server
+    restart: unless-stopped
+
+volumes:
+  pcap-data:
+    driver: local
+  ha-config:
+    driver: local
+  matter-data:
+    driver: local
+  matter-bridge-data:
+    driver: local

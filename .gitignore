@@ -1,0 +1,148 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# VESPER .gitignore
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Secrets & credentials ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+.secrets/
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.installed.cfg
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+sdist/
+wheels/
+pip-wheel-metadata/
+
+# ── Virtual environments ─────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── IDE / editor ─────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Testing ──────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+
+# ── Jupyter ──────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── LaTeX paper (kept in Overleaf, not committed to GitHub) ──────────────────
+paper-latex/
+
+# ── Large data / Habitat datasets ───────────────────────────────────────────
+# Versioned scene data (15 GB+) — download via habitat_sim.utils.datasets_download
+data/versioned_data/
+data/datasets/
+data/scene_datasets/
+data/humanoids/
+data/robots/
+data/objects/
+data/hab3_bench_assets
+data/replica_cad
+!data/versioned_data/.gitkeep
+!data/datasets/.gitkeep
+
+# Habitat 3D mesh files
+*.glb
+*.navmesh
+*.ply
+*.obj
+*.mtl
+!*.scene_dataset_config.json
+!*.scene_instance.json
+
+# SQLite databases
+*.db
+
+# ── Model weights ────────────────────────────────────────────────────────────
+*.pt
+*.pth
+*.onnx
+*.bin
+*.safetensors
+*.gguf
+
+# ── Network captures (can be large) ─────────────────────────────────────────
+*.pcap
+*.pcapng
+
+# ── Results — large / intermediate outputs ───────────────────────────────────
+# Keep key results (eval_results.json, summaries), ignore bulk data
+results/pcap/
+results/pcap_analysis/pcaps/
+results/smoke_test/
+results/improved/
+results/trace_validation/
+results/trace_validation_real/
+results/traffic_analysis/
+results/vesper_autonomous_eval/pcaps_*/
+results/vesper_autonomous_eval/old_result/
+
+# ── Docker build artifacts ───────────────────────────────────────────────────
+*.tar
+*.tar.gz
+
+# ── Temporary files ──────────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+
+# ── Third-party vendored repos ───────────────────────────────────────────────
+IoT-Phantom-Delay-Attack-main/
+habitat-lab-official/
+results/vesper_sh_raw/
+results/vsh_run/
+results/vsh_sanity_mac/
+results/vesper_sh/episodes/
+results/vesper_sh_regen/
+
+# Release tree: retain only the reviewed small reference summaries.
+results/*
+!results/reference/
+results/reference/*
+!results/reference/*.json
+# Dependencies are acquired upstream, not committed.
+third_party/
+data/*
+!data/README.md
+# Paper/internal artifacts must not return in future commits.
+VESPER-paper/
+vesper2.0/
+scope.md
+status.md
+*DEVELOPMENT_PLAN*.md
+docs/superpowers/

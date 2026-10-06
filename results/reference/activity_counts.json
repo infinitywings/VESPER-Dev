@@ -1,0 +1,94 @@
+{
+  "source_repository": "https://github.com/huuhuannt1998/vesper",
+  "source_commit": "0e99cc24ede4e9079c9dcbbdb6abbd112ef23bf2",
+  "description": "Historical mapped category-count snapshot; not newly generated measurements.",
+  "categories": [
+    "Sleeping",
+    "Personal_Hygiene",
+    "Meal_Preparation",
+    "Working",
+    "Exercising",
+    "Relaxing",
+    "Socializing",
+    "Housekeeping",
+    "Other"
+  ],
+  "generated_counts": {
+    "Sleeping": 316,
+    "Personal_Hygiene": 139,
+    "Meal_Preparation": 344,
+    "Working": 277,
+    "Other": 168,
+    "Housekeeping": 74,
+    "Exercising": 156,
+    "Socializing": 86,
+    "Relaxing": 188
+  },
+  "references": {
+    "casas/aruba": {
+      "counts": {
+        "Sleeping": 109719,
+        "Personal_Hygiene": 42561,
+        "Other": 297129,
+        "Relaxing": 139612,
+        "Meal_Preparation": 208960
+      },
+      "reported_js": 0.1702,
+      "generated_days": 174,
+      "reference_days": 220
+    },
+    "casas/milan": {
+      "counts": {
+        "Personal_Hygiene": 19037,
+        "Relaxing": 24543,
+        "Sleeping": 23452,
+        "Meal_Preparation": 74474,
+        "Other": 67962
+      },
+      "reported_js": 0.1662,
+      "generated_days": 174,
+      "reference_days": 65
+    },
+    "casas/cairo": {
+      "counts": {
+        "Sleeping": 63617,
+        "Relaxing": 83856,
+        "Meal_Preparation": 133815,
+        "Other": 41687
+      },
+      "reported_js": 0.1825,
+      "generated_days": 174,
+      "reference_days": 57
+    },
+    "aras/house_a": {
+      "counts": {
+        "Relaxing": 312,
+        "Socializing": 146,
+        "Personal_Hygiene": 176,
+        "Sleeping": 36,
+        "Other": 146,
+        "Meal_Preparation": 149,
+        "Working": 53,
+        "Housekeeping": 70
+      },
+      "reported_js": 0.1182,
+      "generated_days": 174,
+      "reference_days": 30
+    },
+    "aras/house_b": {
+      "counts": {
+        "Sleeping": 43,
+        "Personal_Hygiene": 138,
+        "Other": 131,
+        "Meal_Preparation": 63,
+        "Housekeeping": 19,
+        "Socializing": 16,
+        "Working": 54,
+        "Relaxing": 86
+      },
+      "reported_js": 0.0932,
+      "generated_days": 174,
+      "reference_days": 30
+    }
+  }
+}

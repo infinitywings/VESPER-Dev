@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VESPER Dashboard</title>
+  <style>
+    :root {
+      --bg-primary: #0f1117;
+      --bg-secondary: #1a1d29;
+      --bg-card: #222536;
+      --border: #2e3348;
+      --text-primary: #e4e6f0;
+      --text-secondary: #8b8fa3;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --info: #3b82f6;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────── */
+    header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    header .logo .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--success);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    header .meta {
+      display: flex; gap: 20px; font-size: 13px;
+      color: var(--text-secondary);
+    }
+    header .meta .ws-badge {
+      padding: 2px 8px; border-radius: 4px; font-size: 11px;
+      font-weight: 600;
+    }
+    header .meta .ws-badge.connected { background: #16a34a33; color: var(--success); }
+    header .meta .ws-badge.disconnected { background: #ef444433; color: var(--danger); }
+
+    /* ── Tab bar ────────────────────────────────────── */
+    .tabs {
+      display: flex; background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; gap: 4px;
+    }
+    .tab {
+      padding: 10px 18px; cursor: pointer; font-size: 13px;
+      color: var(--text-secondary); border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .tab:hover { color: var(--text-primary); }
+    .tab.active {
+      color: var(--accent-light); border-bottom-color: var(--accent);
+    }
+
+    /* ── Dashboard grid ─────────────────────────────── */
+    main { padding: 20px; }
+    .panel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 16px;
+    }
+    .panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .panel-header {
+      padding: 14px 18px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px; font-weight: 600;
+    }
+    .panel-header .badge {
+      font-size: 11px; padding: 2px 8px; border-radius: 4px;
+      font-weight: 600;
+    }
+    .panel-body { padding: 14px 18px; max-height: 380px; overflow-y: auto; }
+    .panel-body::-webkit-scrollbar { width: 6px; }
+    .panel-body::-webkit-scrollbar-thumb {
+      background: var(--border); border-radius: 3px;
+    }
+
+    /* ── Full-width panel ───────────────────────────── */
+    .panel.wide { grid-column: 1 / -1; }
+    .panel.wide .panel-body { max-height: 500px; }
+
+    /* ── Device cards ───────────────────────────────── */
+    .device-card {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 12px; border-radius: 8px;
+      margin-bottom: 8px;
+      background: var(--bg-secondary);
+      transition: background 0.15s;
+    }
+    .device-card:hover { background: #2a2d40; }
+    .device-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .device-icon.light { background: #f59e0b22; }
+    .device-icon.sensor { background: #3b82f622; }
+    .device-icon.plug { background: #22c55e22; }
+    .device-icon.lock { background: #ef444422; }
+    .device-icon.hub { background: #6366f122; }
+    .device-info { flex: 1; min-width: 0; }
+    .device-info .name { font-size: 13px; font-weight: 500; }
+    .device-info .meta {
+      font-size: 11px; color: var(--text-secondary);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .device-status {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .device-status.online { background: var(--success); }
+    .device-status.offline { background: var(--danger); }
+
+    /* ── Traffic table ──────────────────────────────── */
+    .traffic-table { width: 100%; font-size: 12px; border-collapse: collapse; }
+    .traffic-table th {
+      text-align: left; padding: 6px 8px;
+      color: var(--text-secondary); font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    .traffic-table td {
+      padding: 5px 8px; border-bottom: 1px solid #1a1d2988;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+    .traffic-table tr:hover td { background: #2a2d4044; }
+    .proto-badge {
+      padding: 1px 6px; border-radius: 3px; font-size: 10px;
+      font-weight: 600; text-transform: uppercase;
+    }
+    .proto-badge.mqtt { background: #22c55e22; color: #22c55e; }
+    .proto-badge.matter { background: #6366f122; color: #818cf8; }
+    .proto-badge.wifi { background: #3b82f622; color: #3b82f6; }
+    .proto-badge.http { background: #f59e0b22; color: #f59e0b; }
+    .proto-badge.vesperiot { background: #a855f722; color: #a855f7; }
+    .proto-badge.smartthingsdocker { background: #06b6d422; color: #06b6d4; }
+    .proto-badge.sensor3d { background: #ec489922; color: #ec4899; }
+    .proto-badge.habitat3d { background: #84cc1622; color: #84cc16; }
+    .proto-badge.firmwareattack { background: #ef444422; color: #ef4444; }
+    .proto-badge.networkattack { background: #f59e0b22; color: #f59e0b; }
+    .proto-badge.phantomdelay { background: #f4364822; color: #f43648; }
+
+    /* ── Attack console ─────────────────────────────── */
+    .attack-form {
+      display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .attack-form select, .attack-form input, .attack-form button {
+      padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--bg-secondary); color: var(--text-primary);
+      font-size: 13px;
+    }
+    .attack-form button {
+      background: var(--danger); border-color: var(--danger);
+      cursor: pointer; font-weight: 600;
+    }
+    .attack-form button:hover { opacity: 0.85; }
+    .attack-log-entry {
+      padding: 8px 10px; margin-bottom: 6px; border-radius: 6px;
+      background: var(--bg-secondary); font-size: 12px;
+      font-family: 'SF Mono', monospace;
+    }
+
+    /* ── Network topology (SVG) ─────────────────────── */
+    #topology-canvas {
+      width: 100%; height: 360px;
+      background: var(--bg-primary); border-radius: 6px;
+    }
+    #topology-canvas svg { width: 100%; height: 100%; }
+
+    /* ── Stats row ──────────────────────────────────── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px; margin-bottom: 20px;
+    }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 18px;
+    }
+    .stat-card .label {
+      font-size: 11px; color: var(--text-secondary);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .stat-card .value {
+      font-size: 28px; font-weight: 700; margin-top: 4px;
+    }
+    .stat-card .sub {
+      font-size: 11px; color: var(--text-secondary); margin-top: 2px;
+    }
+
+    /* ── Section (tab content) ──────────────────────── */
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* ── Event log (real-time) ──────────────────────── */
+    .event-entry {
+      padding: 4px 8px; font-family: 'SF Mono', monospace;
+      font-size: 11px; border-bottom: 1px solid #1a1d2944;
+    }
+    .event-entry .ts { color: var(--text-secondary); margin-right: 8px; }
+    .event-entry .topic { color: var(--accent-light); margin-right: 8px; }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 768px) {
+      .panel-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <!-- ═══ Header ═══════════════════════════════════════════════════════ -->
+  <header>
+    <div class="logo">
+      <div class="dot" id="statusDot"></div>
+      <span>VESPER</span>
+      <span style="color:var(--text-secondary);font-weight:400;font-size:13px">
+        IoT Security Testbed
+      </span>
+    </div>
+    <div class="meta">
+      <span id="wsStatus" class="ws-badge disconnected">DISCONNECTED</span>
+      <span id="clockDisplay"></span>
+    </div>
+  </header>
+
+  <!-- ═══ Tabs ═════════════════════════════════════════════════════════ -->
+  <div class="tabs">
+    <div class="tab active" data-tab="overview">Overview</div>
+    <div class="tab" data-tab="eval">📊 Evaluation</div>
+    <div class="tab" data-tab="devices">Devices</div>
+    <div class="tab" data-tab="traffic">Traffic</div>
+    <div class="tab" data-tab="network">Network</div>
+    <div class="tab" data-tab="attacks">Attacks</div>
+    <div class="tab" data-tab="events">Events</div>
+    <div class="tab" data-tab="homeassistant">🏠 Home Assistant</div>
+  </div>
+
+  <main>
+    <!-- ═══ Overview Tab ═══════════════════════════════════════════════ -->
+    <div class="section active" id="section-overview">
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="label">Devices</div>
+          <div class="value" id="statDevices">0</div>
+          <div class="sub" id="statDevicesOnline">0 online</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Traffic (1 min)</div>
+          <div class="value" id="statTraffic">0</div>
+          <div class="sub">packets</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Hubs</div>
+          <div class="value" id="statHubs">0</div>
+          <div class="sub" id="statHubState">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Matter</div>
+          <div class="value" id="statMatter">—</div>
+          <div class="sub" id="statMatterDetail">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Attacks</div>
+          <div class="value" id="statAttacks">0</div>
+          <div class="sub">launched</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Uptime</div>
+          <div class="value" id="statUptime">0s</div>
+          <div class="sub">since start</div>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <div class="panel">
+          <div class="panel-header">
+            Recent Devices
+            <span class="badge" style="background:var(--accent);color:#fff"
+                  id="deviceCountBadge">0</span>
+          </div>
+          <div class="panel-body" id="overviewDevices">
+            <div style="color:var(--text-secondary);text-align:center;padding:40px">
+              Loading devices...
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            Recent Traffic
+            <span class="badge" style="background:var(--info);color:#fff"
+                  id="trafficCountBadge">0</span>
+          </div>
+          <div class="panel-body" id="overviewTraffic">
+            <div style="color:var(--text-secondary);text-align:center;padding:40px">
+              Loading traffic...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Evaluation Tab ═════════════════════════════════════════════ -->
+    <div class="section" id="section-eval">
+      <div class="stats-row" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
+        <div class="stat-card">
+          <div class="label">Scene</div>
+          <div class="value" id="evalScene" style="font-size:18px;word-break:break-all">—</div>
+          <div class="sub" id="evalDay">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Nav Trials</div>
+          <div class="value" id="evalNavTrials">0</div>
+          <div class="sub" id="evalNavSR">0% success</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Motion Events</div>
+          <div class="value" id="evalMotion">0</div>
+          <div class="sub">IoT triggers</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Automations</div>
+          <div class="value" id="evalAutomations">0</div>
+          <div class="sub">TAP rules fired</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Proximity</div>
+          <div class="value" id="evalProximity">0</div>
+          <div class="sub">ST toggles</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">3D Interact</div>
+          <div class="value" id="evalArticulated">0</div>
+          <div class="sub">articulated</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Sensor Det.</div>
+          <div class="value" id="evalSensors">0</div>
+          <div class="sub">PIR + camera</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Attacks</div>
+          <div class="value" id="evalAttacks">0</div>
+          <div class="sub" id="evalAttackSub">0 exploitable</div>
+        </div>
+      </div>
+      <div class="panel wide">
+        <div class="panel-header">
+          Evaluation Status
+          <span class="badge" id="evalBadge"
+                style="background:var(--warning);color:#fff">WAITING</span>
+        </div>
+        <div class="panel-body" id="evalLog" style="font-family:'SF Mono',monospace;font-size:12px">
+          <div style="color:var(--text-secondary);text-align:center;padding:40px">
+            Start <code>scripts/run_autonomous_eval.py</code> to see live metrics here.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Devices Tab ════════════════════════════════════════════════ -->
+    <div class="section" id="section-devices">
+      <div class="panel wide">
+        <div class="panel-header">
+          All Devices
+          <span class="badge" style="background:var(--accent);color:#fff"
+                id="allDeviceCount">0</span>
+        </div>
+        <div class="panel-body" id="allDevicesList">
+          <div style="color:var(--text-secondary);text-align:center;padding:40px">
+            Loading...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Traffic Tab ════════════════════════════════════════════════ -->
+    <div class="section" id="section-traffic">
+      <div class="panel wide">
+        <div class="panel-header">
+          Packet Inspector
+          <span class="badge" style="background:var(--info);color:#fff"
+                id="packetCount">0</span>
+        </div>
+        <div class="panel-body" id="trafficTableWrap">
+          <table class="traffic-table">
+            <thead>
+              <tr>
+                <th>Time</th><th>Source</th><th>Target</th>
+                <th>Proto</th><th>Topic</th><th>Size</th><th>Latency</th>
+              </tr>
+            </thead>
+            <tbody id="trafficBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Network Tab ════════════════════════════════════════════════ -->
+    <div class="section" id="section-network">
+      <div class="panel wide">
+        <div class="panel-header">Network Topology</div>
+        <div class="panel-body">
+          <div id="topology-canvas">
+            <svg id="topoSvg" viewBox="0 0 800 360"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Attacks Tab ════════════════════════════════════════════════ -->
+    <div class="section" id="section-attacks">
+      <div class="panel wide">
+        <div class="panel-header">Attack Console</div>
+        <div class="panel-body">
+          <div class="attack-form">
+            <select id="attackType">
+              <option value="firmware_tamper">🔧 Firmware Tamper (18 attacks)</option>
+              <option value="mqtt_spoof">📡 MQTT/Network (14 attacks)</option>
+              <option value="deauth">📶 WiFi Deauth</option>
+              <option value="evil_twin">👿 Evil Twin AP</option>
+              <option value="arp_poison">🧪 ARP Poison</option>
+              <option value="replay">🔁 Packet Replay</option>
+            </select>
+            <input type="text" id="attackTarget" placeholder="Target device ID (optional)...">
+            <button onclick="launchAttack()" id="attackBtn">🔥 Launch Attack</button>
+          </div>
+          <div id="attackLog">
+            <div style="color:var(--text-secondary);font-size:12px;padding:10px">
+              No attacks launched yet. Select an attack type and click Launch.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel wide" style="margin-top:16px">
+        <div class="panel-header">
+          Attack History
+          <span class="badge" style="background:var(--danger);color:#fff"
+                id="attackHistoryCount">0</span>
+        </div>
+        <div class="panel-body">
+          <table class="traffic-table">
+            <thead>
+              <tr>
+                <th>Time</th><th>Type</th><th>Target</th>
+                <th>Status</th><th>Duration</th><th>Detail</th>
+              </tr>
+            </thead>
+            <tbody id="attackHistoryBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Events Tab ═════════════════════════════════════════════════ -->
+    <div class="section" id="section-events">
+      <div class="panel wide">
+        <div class="panel-header">
+          Live Event Stream
+          <span class="badge" style="background:var(--success);color:#fff"
+                id="eventCount">0</span>
+        </div>
+        <div class="panel-body" id="eventStream">
+          <div style="color:var(--text-secondary);text-align:center;padding:40px">
+            Waiting for events...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Home Assistant Tab ══════════════════════════════════════════ -->
+    <div class="section" id="section-homeassistant">
+      <div class="stats-row" style="grid-template-columns:1fr 1fr">
+        <div class="stat-card">
+          <div class="label">Home Assistant</div>
+          <div class="value" id="haStatus" style="font-size:18px">Checking...</div>
+          <div class="sub" id="haDetail">http://localhost:8123</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Matter Server</div>
+          <div class="value" id="matterStatus" style="font-size:18px">—</div>
+          <div class="sub" id="matterDetail">ws://localhost:5580/ws</div>
+        </div>
+      </div>
+      <div class="panel wide" style="margin-top:16px">
+        <div class="panel-header">
+          Home Assistant Dashboard
+          <a href="http://localhost:8123" target="_blank"
+             style="color:var(--accent-light);font-size:12px;text-decoration:none">
+            ↗ Open in new tab
+          </a>
+        </div>
+        <div class="panel-body" style="padding:0;height:calc(100vh - 280px)">
+          <iframe id="haFrame" src="/ha-proxy/"
+                  style="width:100%;height:100%;border:none;border-radius:0 0 10px 10px"
+                  loading="lazy"
+                  onerror="this.style.display='none'"
+                  onload="document.getElementById('haStatus').textContent='✓ Running'">
+          </iframe>
+          <div id="haFallback" style="display:none;color:var(--text-secondary);text-align:center;padding:60px">
+            <p style="font-size:16px">🏠 Home Assistant is not running</p>
+            <p style="margin-top:10px">Start it with:</p>
+            <code style="display:inline-block;background:var(--bg-primary);padding:8px 16px;border-radius:6px;margin-top:8px">
+              docker compose -f docker/docker-compose.yml up vesper-homeassistant
+            </code>
+            <p style="margin-top:16px;font-size:13px">
+              Or access directly at <a href="http://localhost:8123" target="_blank"
+                style="color:var(--accent-light)">http://localhost:8123</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══ JavaScript ═══════════════════════════════════════════════════ -->
+  <script>
+    // ── State ───────────────────────────────────────────────────────
+    let ws = null;
+    let eventCount = 0;
+    const startTime = Date.now();
+
+    // ── Tab switching ───────────────────────────────────────────────
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('section-' + tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ── Clock ───────────────────────────────────────────────────────
+    setInterval(() => {
+      document.getElementById('clockDisplay').textContent =
+        new Date().toLocaleTimeString();
+      // Uptime
+      const s = Math.floor((Date.now() - startTime) / 1000);
+      const m = Math.floor(s / 60);
+      const h = Math.floor(m / 60);
+      document.getElementById('statUptime').textContent =
+        h > 0 ? `${h}h ${m % 60}m` : m > 0 ? `${m}m ${s % 60}s` : `${s}s`;
+    }, 1000);
+
+    // ── WebSocket ───────────────────────────────────────────────────
+    function connectWS() {
+      const proto = location.protocol === 'https:' ? 'wss' : 'ws';
+      ws = new WebSocket(`${proto}://${location.host}/ws`);
+
+      ws.onopen = () => {
+        document.getElementById('wsStatus').textContent = 'CONNECTED';
+        document.getElementById('wsStatus').className = 'ws-badge connected';
+        document.getElementById('statusDot').style.background = 'var(--success)';
+        ws.send(JSON.stringify({type: 'ping'}));
+      };
+
+      ws.onmessage = (evt) => {
+        const msg = JSON.parse(evt.data);
+        if (msg.type === 'pong' || msg.type === 'ping') {
+          // Keep-alive — respond to server pings
+          if (msg.type === 'ping') ws.send(JSON.stringify({type: 'pong'}));
+          return;
+        }
+        if (msg.type === 'event') {
+          addEventEntry(msg.data);
+        } else if (msg.type === 'attack_launched') {
+          addAttackLog(msg.data);
+        }
+      };
+
+      ws.onclose = () => {
+        document.getElementById('wsStatus').textContent = 'DISCONNECTED';
+        document.getElementById('wsStatus').className = 'ws-badge disconnected';
+        document.getElementById('statusDot').style.background = 'var(--danger)';
+        setTimeout(connectWS, 3000);
+      };
+    }
+    connectWS();
+
+    // ── Polling REST API ────────────────────────────────────────────
+    async function fetchJSON(url) {
+      try {
+        const r = await fetch(url);
+        return await r.json();
+      } catch (e) { return null; }
+    }
+
+    async function refreshAll() {
+      // Status
+      const status = await fetchJSON('/api/status');
+      if (status) {
+        const hubNames = Object.keys(status.hubs || {});
+        document.getElementById('statHubs').textContent = hubNames.length;
+        if (hubNames.length > 0) {
+          const first = status.hubs[hubNames[0]];
+          document.getElementById('statHubState').textContent =
+            first.state + ' · ' + first.device_count + ' devices';
+        }
+        document.getElementById('statMatter').textContent =
+          status.matter_connected ? '✓' : '—';
+        document.getElementById('statMatterDetail').textContent =
+          status.matter_connected ? 'Connected' : 'Not connected';
+        document.getElementById('statAttacks').textContent =
+          (await fetchJSON('/api/attacks'))?.attacks?.length || 0;
+      }
+
+      // Devices
+      const devData = await fetchJSON('/api/devices');
+      if (devData) {
+        const devs = devData.devices || [];
+        document.getElementById('statDevices').textContent = devs.length;
+        const online = devs.filter(d => d.online !== false).length;
+        document.getElementById('statDevicesOnline').textContent = online + ' online';
+        document.getElementById('deviceCountBadge').textContent = devs.length;
+        document.getElementById('allDeviceCount').textContent = devs.length;
+        renderDevices('overviewDevices', devs.slice(0, 8));
+        renderDevices('allDevicesList', devs);
+      }
+
+      // Traffic
+      const tData = await fetchJSON('/api/traffic?limit=50');
+      if (tData) {
+        const recs = tData.traffic || [];
+        document.getElementById('statTraffic').textContent = recs.length;
+        document.getElementById('trafficCountBadge').textContent = recs.length;
+        document.getElementById('packetCount').textContent = recs.length;
+        renderTraffic(recs);
+      }
+
+      // Network topology
+      const netData = await fetchJSON('/api/network');
+      if (netData) renderTopology(netData);
+
+      // Eval metrics (live from run_autonomous_eval.py)
+      const evalData = await fetchJSON('/api/eval');
+      if (evalData) {
+        if (evalData.eval_active) {
+          document.getElementById('evalScene').textContent = evalData.scene_id || '—';
+          document.getElementById('evalDay').textContent =
+            `Day ${evalData.day}/${evalData.total_days}`;
+          document.getElementById('evalNavTrials').textContent = evalData.nav_trials;
+          const sr = evalData.nav_trials > 0
+            ? Math.round(evalData.nav_success / evalData.nav_trials * 100) : 0;
+          document.getElementById('evalNavSR').textContent = sr + '% success';
+          document.getElementById('evalMotion').textContent = evalData.motion_events;
+          document.getElementById('evalAutomations').textContent = evalData.automations;
+          document.getElementById('evalProximity').textContent = evalData.proximity_toggles;
+          document.getElementById('evalArticulated').textContent =
+            evalData.articulated_interactions;
+          document.getElementById('evalSensors').textContent = evalData.sensor_detections;
+          document.getElementById('evalAttacks').textContent = evalData.attacks_run;
+          document.getElementById('evalAttackSub').textContent =
+            evalData.attacks_exploitable + ' exploitable';
+          document.getElementById('evalBadge').textContent = 'RUNNING';
+          document.getElementById('evalBadge').style.background = 'var(--success)';
+        } else {
+          document.getElementById('evalBadge').textContent = 'WAITING';
+          document.getElementById('evalBadge').style.background = 'var(--warning)';
+        }
+      }
+    }
+
+    setInterval(refreshAll, 3000);
+    refreshAll();
+
+    // ── Check Home Assistant / Matter reachability ───────────────────
+    async function checkHA() {
+      try {
+        const r = await fetch('http://localhost:8123/api/', {mode: 'no-cors'});
+        document.getElementById('haStatus').textContent = '✓ Running';
+        document.getElementById('haStatus').style.color = 'var(--success)';
+        document.getElementById('haFrame').style.display = 'block';
+        document.getElementById('haFallback').style.display = 'none';
+      } catch (e) {
+        document.getElementById('haStatus').textContent = '✗ Offline';
+        document.getElementById('haStatus').style.color = 'var(--danger)';
+        document.getElementById('haFrame').style.display = 'none';
+        document.getElementById('haFallback').style.display = 'block';
+      }
+      // Matter server check via dashboard API
+      const status = await fetchJSON('/api/status');
+      if (status) {
+        if (status.matter_connected) {
+          document.getElementById('matterStatus').textContent = '✓ Connected';
+          document.getElementById('matterStatus').style.color = 'var(--success)';
+        } else {
+          document.getElementById('matterStatus').textContent = '— Not running';
+          document.getElementById('matterStatus').style.color = 'var(--text-secondary)';
+        }
+      }
+    }
+    checkHA();
+    setInterval(checkHA, 15000);
+
+    // ── Render: Devices ─────────────────────────────────────────────
+    function deviceIcon(type) {
+      const map = {
+        smart_light: '💡', motion_sensor: '👁', temperature_sensor: '🌡',
+        humidity_sensor: '💧', door_sensor: '🚪', smart_plug: '🔌',
+        smart_door: '🔒', hub: '🏠', thermostat: '🌬',
+        security_camera: '📷', articulated: '🔧', iot_device: '📟',
+        fridge: '🧊', cabinet: '🗄',
+      };
+      return map[type] || '📟';
+    }
+    function deviceIconClass(type) {
+      if (type.includes('light')) return 'light';
+      if (type.includes('sensor') || type.includes('camera')) return 'sensor';
+      if (type.includes('plug')) return 'plug';
+      if (type.includes('lock') || type.includes('door')) return 'lock';
+      if (type.includes('articulated') || type.includes('fridge') || type.includes('cabinet')) return 'hub';
+      return 'hub';
+    }
+
+    function renderDevices(containerId, devices) {
+      const el = document.getElementById(containerId);
+      if (!devices.length) {
+        el.innerHTML = '<div style="color:var(--text-secondary);text-align:center;padding:30px">No devices registered</div>';
+        return;
+      }
+      el.innerHTML = devices.map(d => `
+        <div class="device-card" onclick="showDeviceDetail('${d.id}')" style="cursor:pointer" title="Click for details">
+          <div class="device-icon ${deviceIconClass(d.type)}">${deviceIcon(d.type)}</div>
+          <div class="device-info">
+            <div class="name">${d.name || d.id}</div>
+            <div class="meta">${d.type} · ${d.protocol || '—'} · ${d.room || '—'}${d.ip_address ? ' · ' + d.ip_address : ''}${d.capabilities ? ' · [' + d.capabilities.join(', ') + ']' : ''}</div>
+          </div>
+          <div class="device-status ${d.online !== false ? 'online' : 'offline'}"></div>
+        </div>
+      `).join('');
+    }
+
+    // ── Render: Traffic ─────────────────────────────────────────────
+    function renderTraffic(records) {
+      const tbody = document.getElementById('trafficBody');
+      tbody.innerHTML = records.slice().reverse().map(r => {
+        let ts = '—';
+        if (r.timestamp) {
+          // Handle both ISO strings and Unix timestamps
+          const d = typeof r.timestamp === 'string' ? new Date(r.timestamp) : new Date(r.timestamp * 1000);
+          ts = d.toLocaleTimeString();
+        }
+        return `<tr>
+          <td>${ts}</td>
+          <td>${r.source || '—'}</td>
+          <td>${r.target || '—'}</td>
+          <td><span class="proto-badge ${(r.protocol||'').toLowerCase().replace(/[^a-z]/g,'')}">${r.protocol||'—'}</span></td>
+          <td>${r.topic || '—'}</td>
+          <td>${r.payload_size || 0}B</td>
+          <td>${r.latency_ms != null ? r.latency_ms.toFixed(1) + 'ms' : '—'}</td>
+        </tr>`;
+      }).join('');
+
+      // Overview compact version
+      const ov = document.getElementById('overviewTraffic');
+      ov.innerHTML = records.slice(-6).reverse().map(r => `
+        <div class="device-card">
+          <div class="device-icon sensor">📡</div>
+          <div class="device-info">
+            <div class="name">${r.source || '?'} → ${r.target || '?'}</div>
+            <div class="meta">${r.protocol || '—'} · ${r.topic || '—'} · ${r.payload_size || 0}B</div>
+          </div>
+        </div>
+      `).join('') || '<div style="color:var(--text-secondary);text-align:center;padding:30px">No traffic yet</div>';
+    }
+
+    // ── Render: Topology ────────────────────────────────────────────
+    function renderTopology(data) {
+      const svg = document.getElementById('topoSvg');
+      svg.innerHTML = '';
+      const nodes = data.nodes || [];
+      const edges = data.edges || [];
+      if (!nodes.length) {
+        svg.innerHTML = '<text x="400" y="180" fill="#8b8fa3" text-anchor="middle" font-size="14">No devices in network</text>';
+        return;
+      }
+      const cx = 400, cy = 180;
+      const positions = {};
+
+      // Hub(s) in center
+      let hi = 0;
+      nodes.filter(n => n.type === 'hub').forEach(n => {
+        positions[n.id] = { x: cx + hi * 80, y: cy };
+        hi++;
+      });
+
+      // Devices in a circle around hub
+      const deviceNodes = nodes.filter(n => n.type !== 'hub');
+      deviceNodes.forEach((n, i) => {
+        const angle = (2 * Math.PI * i) / deviceNodes.length - Math.PI / 2;
+        const r = 140;
+        positions[n.id] = { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
+      });
+
+      // Draw edges
+      edges.forEach(e => {
+        const s = positions[e.source], t = positions[e.target];
+        if (!s || !t) return;
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', s.x); line.setAttribute('y1', s.y);
+        line.setAttribute('x2', t.x); line.setAttribute('y2', t.y);
+        line.setAttribute('stroke', '#2e3348'); line.setAttribute('stroke-width', '1.5');
+        svg.appendChild(line);
+      });
+
+      // Draw nodes
+      nodes.forEach(n => {
+        const p = positions[n.id];
+        if (!p) return;
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', p.x); circle.setAttribute('cy', p.y);
+        circle.setAttribute('r', n.type === 'hub' ? 22 : 16);
+        circle.setAttribute('fill', n.type === 'hub' ? '#6366f1' :
+          n.online === false ? '#ef4444' : '#22c55e');
+        circle.setAttribute('opacity', '0.8');
+        g.appendChild(circle);
+
+        const icon = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        icon.setAttribute('x', p.x); icon.setAttribute('y', p.y + 5);
+        icon.setAttribute('text-anchor', 'middle'); icon.setAttribute('font-size', '14');
+        icon.textContent = n.type === 'hub' ? '🏠' : deviceIcon(n.type);
+        g.appendChild(icon);
+
+        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        label.setAttribute('x', p.x); label.setAttribute('y', p.y + (n.type === 'hub' ? 38 : 30));
+        label.setAttribute('text-anchor', 'middle');
+        label.setAttribute('fill', '#8b8fa3'); label.setAttribute('font-size', '10');
+        label.textContent = (n.label || n.id).substring(0, 18);
+        g.appendChild(label);
+
+        svg.appendChild(g);
+      });
+    }
+
+    // ── Attack launcher ─────────────────────────────────────────────
+    async function launchAttack() {
+      const btn = document.getElementById('attackBtn');
+      btn.disabled = true;
+      btn.textContent = '⏳ Running...';
+
+      const type = document.getElementById('attackType').value;
+      const target = document.getElementById('attackTarget').value;
+      try {
+        const resp = await fetch('/api/attacks/launch', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({attack_type: type, target: target}),
+        });
+        const data = await resp.json();
+        addAttackLog(data.attack || data);
+      } catch (e) {
+        addAttackLog({type, target, status: 'error', detail: {error: e.message}});
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '🔥 Launch Attack';
+      }
+    }
+
+    function addAttackLog(entry) {
+      // Console log
+      const el = document.getElementById('attackLog');
+      if (el.querySelector('div[style]')) el.innerHTML = '';
+      const div = document.createElement('div');
+      div.className = 'attack-log-entry';
+      const ts = entry.timestamp
+        ? new Date(entry.timestamp * 1000).toLocaleTimeString()
+        : new Date().toLocaleTimeString();
+      const statusColor = entry.success ? 'var(--danger)' : 'var(--success)';
+      const statusLabel = entry.success ? '⚠️ EXPLOITABLE' : '✅ Defended';
+      let detail = '';
+      if (entry.detail) {
+        if (entry.detail.exploitable != null) {
+          detail = ` — ${entry.detail.exploitable}/${entry.detail.total} exploitable`;
+        }
+        if (entry.detail.error) detail = ` — Error: ${entry.detail.error}`;
+        if (entry.detail.info) detail = ` — ${entry.detail.info}`;
+      }
+      div.innerHTML = `<span style="color:var(--text-secondary)">[${ts}]</span> `
+        + `<strong>${entry.type}</strong> → ${entry.target || 'broadcast'} `
+        + `<span style="color:${statusColor}">${statusLabel}</span>`
+        + `<span style="color:var(--text-secondary)">${detail}</span>`
+        + (entry.duration_ms ? ` <span style="color:var(--text-secondary)">(${entry.duration_ms.toFixed(0)}ms)</span>` : '');
+      el.prepend(div);
+
+      // History table
+      const tbody = document.getElementById('attackHistoryBody');
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${ts}</td>`
+        + `<td><span class="proto-badge firmwareattack">${entry.type}</span></td>`
+        + `<td>${entry.target || 'broadcast'}</td>`
+        + `<td style="color:${statusColor}">${entry.success ? 'EXPLOITABLE' : entry.status}</td>`
+        + `<td>${entry.duration_ms ? entry.duration_ms.toFixed(0) + 'ms' : '—'}</td>`
+        + `<td style="font-size:11px;max-width:200px;overflow:hidden;text-overflow:ellipsis">${detail}</td>`;
+      tbody.prepend(tr);
+      const badge = document.getElementById('attackHistoryCount');
+      badge.textContent = tbody.children.length;
+
+      // Update overview stat
+      document.getElementById('statAttacks').textContent = (
+        parseInt(document.getElementById('statAttacks').textContent || '0') + 1
+      );
+    }
+
+    // ── Event stream ────────────────────────────────────────────────
+    function addEventEntry(data) {
+      eventCount++;
+      document.getElementById('eventCount').textContent = eventCount;
+      const el = document.getElementById('eventStream');
+      if (eventCount === 1) el.innerHTML = '';
+
+      const div = document.createElement('div');
+      div.className = 'event-entry';
+      const ts = new Date().toLocaleTimeString();
+      div.innerHTML = `<span class="ts">${ts}</span><span class="topic">${data.topic || '—'}</span>${JSON.stringify(data.payload || {}).substring(0, 120)}`;
+      el.prepend(div);
+
+      // Keep max 200 entries
+      while (el.children.length > 200) el.removeChild(el.lastChild);
+    }
+
+    // ── Device Detail Modal ───────────────────────────────────────
+    async function showDeviceDetail(deviceId) {
+      const modal = document.getElementById('deviceModal');
+      const body = document.getElementById('deviceModalBody');
+      body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-secondary)">Loading…</div>';
+      modal.style.display = 'flex';
+
+      try {
+        const resp = await fetch(`/api/devices/${encodeURIComponent(deviceId)}`);
+        if (!resp.ok) { body.innerHTML = `<p style="color:var(--danger)">Device not found</p>`; return; }
+        const d = await resp.json();
+
+        const stateRows = Object.entries(d.state || {}).map(([k,v]) =>
+          `<tr><td style="color:var(--text-secondary)">${k}</td><td>${typeof v === 'object' ? JSON.stringify(v) : v}</td></tr>`
+        ).join('');
+
+        const trafficRows = (d.traffic_log || []).slice(-10).reverse().map(t => {
+          const ts = t.timestamp ? new Date(t.timestamp * 1000).toLocaleTimeString() : '—';
+          return `<tr><td>${ts}</td><td>${t.protocol||'—'}</td><td>${t.direction||'—'}</td><td>${t.topic||'—'}</td><td>${t.payload_size||0}B</td></tr>`;
+        }).join('');
+
+        const attackRows = (d.attack_history || []).map(a => {
+          const ts = a.timestamp ? new Date(a.timestamp * 1000).toLocaleTimeString() : '—';
+          const detail = a.detail?.error || `${a.detail?.exploitable||0} exploitable`;
+          return `<tr><td>${ts}</td><td><span style="background:var(--danger);color:#fff;padding:2px 8px;border-radius:4px;font-size:11px">${a.type}</span></td><td style="color:${a.success?'var(--danger)':'var(--success)'};">${a.success?'EXPLOITED':'DEFENDED'}</td><td>${detail}</td></tr>`;
+        }).join('');
+
+        body.innerHTML = `
+          <h3 style="margin:0 0 16px 0">${deviceIcon(d.type)} ${d.name || d.id}</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+            <div><span style="color:var(--text-secondary)">ID:</span> <code>${d.id}</code></div>
+            <div><span style="color:var(--text-secondary)">Type:</span> ${d.type}</div>
+            <div><span style="color:var(--text-secondary)">Protocol:</span> ${d.protocol || '—'}</div>
+            <div><span style="color:var(--text-secondary)">Room:</span> ${d.room || '—'}</div>
+            <div><span style="color:var(--text-secondary)">IP:</span> ${d.ip_address || '—'}</div>
+            <div><span style="color:var(--text-secondary)">MAC:</span> ${d.mac_address || '—'}</div>
+            <div><span style="color:var(--text-secondary)">Hub:</span> ${d.hub || '—'}</div>
+            <div><span style="color:var(--text-secondary)">Firmware:</span> ${d.firmware || '—'}</div>
+          </div>
+
+          <details open style="margin-bottom:16px">
+            <summary style="cursor:pointer;font-weight:600;margin-bottom:8px">📊 Device State</summary>
+            <table style="width:100%;font-size:13px"><tbody>${stateRows || '<tr><td style="color:var(--text-secondary)">No state data</td></tr>'}</tbody></table>
+          </details>
+
+          <details ${trafficRows ? 'open' : ''} style="margin-bottom:16px">
+            <summary style="cursor:pointer;font-weight:600;margin-bottom:8px">📡 Recent Traffic (${(d.traffic_log||[]).length})</summary>
+            <table style="width:100%;font-size:12px">
+              <thead><tr><th>Time</th><th>Protocol</th><th>Direction</th><th>Topic</th><th>Size</th></tr></thead>
+              <tbody>${trafficRows || '<tr><td colspan="5" style="color:var(--text-secondary)">No traffic</td></tr>'}</tbody>
+            </table>
+          </details>
+
+          <details ${attackRows ? 'open' : ''}>
+            <summary style="cursor:pointer;font-weight:600;margin-bottom:8px">🔓 Attack History (${(d.attack_history||[]).length})</summary>
+            <table style="width:100%;font-size:12px">
+              <thead><tr><th>Time</th><th>Type</th><th>Result</th><th>Detail</th></tr></thead>
+              <tbody>${attackRows || '<tr><td colspan="4" style="color:var(--text-secondary)">No attacks</td></tr>'}</tbody>
+            </table>
+          </details>
+        `;
+      } catch (e) {
+        body.innerHTML = `<p style="color:var(--danger)">Error: ${e.message}</p>`;
+      }
+    }
+    function closeDeviceModal() { document.getElementById('deviceModal').style.display = 'none'; }
+  </script>
+
+  <!-- Device Detail Modal -->
+  <div id="deviceModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center" onclick="if(event.target===this)closeDeviceModal()">
+    <div style="background:var(--bg-secondary);border-radius:14px;padding:28px;max-width:720px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.5);border:1px solid var(--border)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <span style="font-size:12px;color:var(--text-secondary)">Device Detail</span>
+        <button onclick="closeDeviceModal()" style="background:none;border:none;color:var(--text-secondary);font-size:20px;cursor:pointer">✕</button>
+      </div>
+      <div id="deviceModalBody"></div>
+    </div>
+  </div>
+</body>
+</html>
